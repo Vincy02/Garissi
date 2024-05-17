@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://crnoals7bkk2k"]
+
+[ext_resource type="Texture2D" uid="uid://d233j758v35r6" path="res://Sprite/Fabrizio/fabrizio_idle.png" id="1_7k0cx"]
+[ext_resource type="Script" path="res://Scripts/fabrizio.gd" id="1_oaxyf"]
+[ext_resource type="Texture2D" uid="uid://cuts0s36gtcnt" path="res://Sprite/Fabrizio/fabrizio_1.png" id="2_o8p2c"]
+[ext_resource type="Texture2D" uid="uid://cmv363le8b6eu" path="res://Sprite/Fabrizio/fabrizio_2.png" id="3_qtgrv"]
+[ext_resource type="Texture2D" uid="uid://cu06of8ncl51t" path="res://Sprite/Fabrizio/fabrizio_3.png" id="4_7p3vs"]
+[ext_resource type="Texture2D" uid="uid://baevx3oavt3q1" path="res://Sprite/Fabrizio/fabrizio_4.png" id="5_t224s"]
+[ext_resource type="Texture2D" uid="uid://b1uxket3eb1bp" path="res://Sprite/Fabrizio/fabrizio_5.png" id="6_caa1j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrvpy"]
+atlas = ExtResource("1_7k0cx")
+region = Rect2(0, 0, 795, 921)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yo2yb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrvpy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o8p2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qtgrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7p3vs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t224s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_caa1j")
+}],
+"loop": true,
+"name": &"move",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nm1t4"]
+radius = 228.0
+height = 728.0
+
+[node name="Fabrizio" type="CharacterBody2D"]
+script = ExtResource("1_oaxyf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yo2yb")
+animation = &"idle"
+frame_progress = 0.74543
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -15)
+shape = SubResource("CapsuleShape2D_nm1t4")
