@@ -1,79 +1,41 @@
-[gd_scene load_steps=17 format=3 uid="uid://crnoals7bkk2k"]
+[gd_scene load_steps=10 format=3 uid="uid://crnoals7bkk2k"]
 
-[ext_resource type="Texture2D" uid="uid://d233j758v35r6" path="res://Sprite/Fabrizio/fabrizio_idle.png" id="1_7k0cx"]
 [ext_resource type="Script" path="res://Scripts/fabrizio.gd" id="1_oaxyf"]
-[ext_resource type="Texture2D" uid="uid://cuts0s36gtcnt" path="res://Sprite/Fabrizio/fabrizio_1.png" id="2_o8p2c"]
-[ext_resource type="Texture2D" uid="uid://bv5cc3b1382a6" path="res://Sprite/Fabrizio/fabrizio_idle_right.png" id="3_71u14"]
-[ext_resource type="Texture2D" uid="uid://cmv363le8b6eu" path="res://Sprite/Fabrizio/fabrizio_2.png" id="3_qtgrv"]
-[ext_resource type="Texture2D" uid="uid://cu06of8ncl51t" path="res://Sprite/Fabrizio/fabrizio_3.png" id="4_7p3vs"]
-[ext_resource type="Texture2D" uid="uid://baevx3oavt3q1" path="res://Sprite/Fabrizio/fabrizio_4.png" id="5_t224s"]
-[ext_resource type="Texture2D" uid="uid://b1uxket3eb1bp" path="res://Sprite/Fabrizio/fabrizio_5.png" id="6_caa1j"]
-[ext_resource type="Texture2D" uid="uid://wwvm4d4rqbvh" path="res://Sprite/Fabrizio/fabrizio_1_right.png" id="9_5lnar"]
-[ext_resource type="Texture2D" uid="uid://dualh1qifyirc" path="res://Sprite/Fabrizio/fabrizio_2_right.png" id="10_htfs6"]
-[ext_resource type="Texture2D" uid="uid://rkirusf8ufu4" path="res://Sprite/Fabrizio/fabrizio_3_right.png" id="11_64xsp"]
-[ext_resource type="Texture2D" uid="uid://cq5ja46q184g3" path="res://Sprite/Fabrizio/fabrizio_4_right.png" id="12_eq8pi"]
-[ext_resource type="Texture2D" uid="uid://b5ycbhdse70gn" path="res://Sprite/Fabrizio/fabrizio_5_right.png" id="13_mi876"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lrvpy"]
-atlas = ExtResource("1_7k0cx")
-region = Rect2(0, 0, 795, 921)
+[ext_resource type="Texture2D" uid="uid://dl10sw1fi2cym" path="res://Sprite/Fabrizio/fabrizioIdle.png" id="2_2lknf"]
+[ext_resource type="Texture2D" uid="uid://hyatn3ohqsxw" path="res://Sprite/Fabrizio/fabrizio1.png" id="3_axlbd"]
+[ext_resource type="Texture2D" uid="uid://ch10yvp7asl0l" path="res://Sprite/Fabrizio/fabrizio2.png" id="4_iy2nq"]
+[ext_resource type="Texture2D" uid="uid://t8sj62i3ypje" path="res://Sprite/Fabrizio/fabrizio3.png" id="5_gj0xh"]
+[ext_resource type="Texture2D" uid="uid://l8cs5y3vvhga" path="res://Sprite/Fabrizio/fabrizio4.png" id="6_237ou"]
+[ext_resource type="Texture2D" uid="uid://df0d4q26t7afg" path="res://Sprite/Fabrizio/fabrizio5.png" id="7_ei2uo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yo2yb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lrvpy")
+"texture": ExtResource("2_2lknf")
 }],
 "loop": true,
-"name": &"idle_left",
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_71u14")
+"texture": ExtResource("3_axlbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iy2nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gj0xh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_237ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ei2uo")
 }],
 "loop": true,
-"name": &"idle_right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_o8p2c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_qtgrv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_7p3vs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_t224s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_caa1j")
-}],
-"loop": true,
-"name": &"walk_left",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_5lnar")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_htfs6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_64xsp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_eq8pi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_mi876")
-}],
-"loop": true,
-"name": &"walk_right",
+"name": &"walk",
 "speed": 12.0
 }]
 
@@ -86,7 +48,7 @@ script = ExtResource("1_oaxyf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yo2yb")
-animation = &"idle_left"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -15)

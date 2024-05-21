@@ -1,2 +1,6 @@
 res://Scenes/fabrizio.tscn
 res://Scripts/fabrizio.gd
+res://Scenes/scene_one.tscn
+res://Scenes/park.tscn
+res://Scenes/borders.tscn
+res://Scenes/sceneOne.tscn
