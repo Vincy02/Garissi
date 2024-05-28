@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://crnoals7bkk2k"]
+
+[ext_resource type="Script" path="res://Scripts/fabrizio.gd" id="1_oaxyf"]
+[ext_resource type="Texture2D" uid="uid://bv5cc3b1382a6" path="res://Sprite/Fabrizio/fabrizio_idle_right.png" id="3_71u14"]
+[ext_resource type="Texture2D" uid="uid://wwvm4d4rqbvh" path="res://Sprite/Fabrizio/fabrizio_1_right.png" id="9_5lnar"]
+[ext_resource type="Texture2D" uid="uid://dualh1qifyirc" path="res://Sprite/Fabrizio/fabrizio_2_right.png" id="10_htfs6"]
+[ext_resource type="Texture2D" uid="uid://rkirusf8ufu4" path="res://Sprite/Fabrizio/fabrizio_3_right.png" id="11_64xsp"]
+[ext_resource type="Texture2D" uid="uid://cq5ja46q184g3" path="res://Sprite/Fabrizio/fabrizio_4_right.png" id="12_eq8pi"]
+[ext_resource type="Texture2D" uid="uid://b5ycbhdse70gn" path="res://Sprite/Fabrizio/fabrizio_5_right.png" id="13_mi876"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yo2yb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_71u14")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_5lnar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_htfs6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_64xsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_eq8pi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mi876")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nm1t4"]
+radius = 228.0
+height = 728.0
+
+[node name="Fabrizio" type="CharacterBody2D"]
+script = ExtResource("1_oaxyf")
+speed = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yo2yb")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -15)
+shape = SubResource("CapsuleShape2D_nm1t4")

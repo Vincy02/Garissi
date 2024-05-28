@@ -1,22 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://crnoals7bkk2k"]
+[gd_scene load_steps=10 format=3 uid="uid://crnoals7bkk2k"]
 
-[ext_resource type="Texture2D" uid="uid://d233j758v35r6" path="res://Sprite/Fabrizio/fabrizio_idle.png" id="1_7k0cx"]
 [ext_resource type="Script" path="res://Scripts/fabrizio.gd" id="1_oaxyf"]
-[ext_resource type="Texture2D" uid="uid://cuts0s36gtcnt" path="res://Sprite/Fabrizio/fabrizio_1.png" id="2_o8p2c"]
-[ext_resource type="Texture2D" uid="uid://cmv363le8b6eu" path="res://Sprite/Fabrizio/fabrizio_2.png" id="3_qtgrv"]
-[ext_resource type="Texture2D" uid="uid://cu06of8ncl51t" path="res://Sprite/Fabrizio/fabrizio_3.png" id="4_7p3vs"]
-[ext_resource type="Texture2D" uid="uid://baevx3oavt3q1" path="res://Sprite/Fabrizio/fabrizio_4.png" id="5_t224s"]
-[ext_resource type="Texture2D" uid="uid://b1uxket3eb1bp" path="res://Sprite/Fabrizio/fabrizio_5.png" id="6_caa1j"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lrvpy"]
-atlas = ExtResource("1_7k0cx")
-region = Rect2(0, 0, 795, 921)
+[ext_resource type="Texture2D" uid="uid://dl10sw1fi2cym" path="res://Sprite/Fabrizio/fabrizioIdle.png" id="2_2lknf"]
+[ext_resource type="Texture2D" uid="uid://hyatn3ohqsxw" path="res://Sprite/Fabrizio/fabrizio1.png" id="3_axlbd"]
+[ext_resource type="Texture2D" uid="uid://ch10yvp7asl0l" path="res://Sprite/Fabrizio/fabrizio2.png" id="4_iy2nq"]
+[ext_resource type="Texture2D" uid="uid://t8sj62i3ypje" path="res://Sprite/Fabrizio/fabrizio3.png" id="5_gj0xh"]
+[ext_resource type="Texture2D" uid="uid://l8cs5y3vvhga" path="res://Sprite/Fabrizio/fabrizio4.png" id="6_237ou"]
+[ext_resource type="Texture2D" uid="uid://df0d4q26t7afg" path="res://Sprite/Fabrizio/fabrizio5.png" id="7_ei2uo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yo2yb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lrvpy")
+"texture": ExtResource("2_2lknf")
 }],
 "loop": true,
 "name": &"idle",
@@ -24,22 +20,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_o8p2c")
+"texture": ExtResource("3_axlbd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_qtgrv")
+"texture": ExtResource("4_iy2nq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_7p3vs")
+"texture": ExtResource("5_gj0xh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_t224s")
+"texture": ExtResource("6_237ou")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_caa1j")
+"texture": ExtResource("7_ei2uo")
 }],
 "loop": true,
-"name": &"move",
+"name": &"walk",
 "speed": 12.0
 }]
 
@@ -53,7 +49,6 @@ script = ExtResource("1_oaxyf")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yo2yb")
 animation = &"idle"
-frame_progress = 0.74543
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -15)
