@@ -1,6 +1,7 @@
+res://Scenes/menu.tscn
 res://Scenes/fabrizio.tscn
-res://Scripts/fabrizio.gd
-res://Scenes/scene_one.tscn
-res://Scenes/park.tscn
 res://Scenes/borders.tscn
 res://Scenes/sceneOne.tscn
+res://Scripts/followCam.gd
+res://Scripts/fabrizio.gd
+res://Scenes/test.tscn

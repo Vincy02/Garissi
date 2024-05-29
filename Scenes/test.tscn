@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://btcc4nvtu3rft"]
+
+[ext_resource type="Texture2D" uid="uid://c8ktuxaqng0sq" path="res://Sprite/City/sqaure.png" id="1_gcu31"]
+[ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/fabrizio.tscn" id="2_xw0aw"]
+[ext_resource type="Script" path="res://Scripts/followCam.gd" id="3_85r4f"]
+[ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="4_ueu3b"]
+
+[node name="SceneOne" type="Node2D"]
+
+[node name="Sqaure" type="Sprite2D" parent="."]
+position = Vector2(1326, 747)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_gcu31")
+
+[node name="Fabrizio" parent="." node_paths=PackedStringArray("map") instance=ExtResource("2_xw0aw")]
+position = Vector2(482, 372)
+scale = Vector2(0.2, 0.2)
+map = NodePath("../Sqaure")
+
+[node name="followCam" type="Camera2D" parent="Fabrizio" node_paths=PackedStringArray("map")]
+light_mask = 0
+visibility_layer = 0
+limit_left = 0
+limit_top = 0
+script = ExtResource("3_85r4f")
+map = NodePath("../../Sqaure")
+
+[node name="Borders" parent="." instance=ExtResource("4_ueu3b")]
+scale = Vector2(2.06, 2.06)

@@ -1,10 +1,13 @@
 extends CharacterBody2D
 
 @export var speed: int = 500
+@export var map: Sprite2D
 var animated_sprite: AnimatedSprite2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	position = Vector2(100, 500)
+	var x = (map.texture.get_size().x * map.scale.x)/2
+	var y = (map.texture.get_size().y * map.scale.y)/2
+	position = Vector2(x, y)
 	animated_sprite = $AnimatedSprite2D
 	animated_sprite.flip_h = 1
 
