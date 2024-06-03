@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boktrkdk4ky2s"
-path="res://.godot/imported/barSquare.png-b5cd790fa6bdecb016ee75555d636b43.ctex"
+uid="uid://dw18yn4j8gk4t"
+path="res://.godot/imported/bar.png-3b91a24d15b2d5d40e533548d5d5df15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/City/barSquare.png"
-dest_files=["res://.godot/imported/barSquare.png-b5cd790fa6bdecb016ee75555d636b43.ctex"]
+source_file="res://Sprite/City/bar.png"
+dest_files=["res://.godot/imported/bar.png-3b91a24d15b2d5d40e533548d5d5df15.ctex"]
 
 [params]
 

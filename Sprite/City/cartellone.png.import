@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0q2erd7lhs7a"
-path="res://.godot/imported/secondBannerSquare.png-7d61ec41b79a3588d86bf2ae04c66b08.ctex"
+uid="uid://bjejntxiras2e"
+path="res://.godot/imported/cartellone.png-aeaabdcd2377f652144ebb04dc7bed09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/City/secondBannerSquare.png"
-dest_files=["res://.godot/imported/secondBannerSquare.png-7d61ec41b79a3588d86bf2ae04c66b08.ctex"]
+source_file="res://Sprite/City/cartellone.png"
+dest_files=["res://.godot/imported/cartellone.png-aeaabdcd2377f652144ebb04dc7bed09.ctex"]
 
 [params]
 

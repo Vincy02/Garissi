@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0j5qxon0w1jw"
-path="res://.godot/imported/comuneSquare.png-06c38bc833c75129c81426531697de20.ctex"
+uid="uid://che1aot2dcsoh"
+path="res://.godot/imported/comune.png-8398442368983193993141d32e4ac56d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/City/comuneSquare.png"
-dest_files=["res://.godot/imported/comuneSquare.png-06c38bc833c75129c81426531697de20.ctex"]
+source_file="res://Sprite/City/comune.png"
+dest_files=["res://.godot/imported/comune.png-8398442368983193993141d32e4ac56d.ctex"]
 
 [params]
 

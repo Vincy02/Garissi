@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gqpa6ocrgvve"
-path="res://.godot/imported/flowerbedSquare.png-6a1a6b6e6363131796faaf059d3b4d45.ctex"
+uid="uid://7yttdjtekshq"
+path="res://.godot/imported/aioula.png-7a7090fcdf7cc9d2cd4b3ffb034f0dfe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/City/flowerbedSquare.png"
-dest_files=["res://.godot/imported/flowerbedSquare.png-6a1a6b6e6363131796faaf059d3b4d45.ctex"]
+source_file="res://Sprite/City/aioula.png"
+dest_files=["res://.godot/imported/aioula.png-7a7090fcdf7cc9d2cd4b3ffb034f0dfe.ctex"]
 
 [params]
 
