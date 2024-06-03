@@ -1,7 +1,3 @@
-res://Scenes/menu.tscn
 res://Scenes/fabrizio.tscn
-res://Scenes/borders.tscn
-res://Scenes/sceneOne.tscn
-res://Scripts/followCam.gd
-res://Scripts/fabrizio.gd
 res://Scenes/test.tscn
+res://Scenes/menu.tscn
