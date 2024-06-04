@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://ec0yl4fgrqcq"]
+
+[ext_resource type="Texture2D" uid="uid://dsifana3jx8y8" path="res://Sprite/City/cartellone1.png" id="1_reh5w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fei0h"]
+size = Vector2(168.875, 2161)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axmgb"]
+size = Vector2(2925.5, 1319.81)
+
+[node name="CartelloneUno" type="Node2D"]
+
+[node name="Cartellone_Uno" type="CharacterBody2D" parent="."]
+
+[node name="Cartellone_Uno" type="Sprite2D" parent="Cartellone_Uno"]
+position = Vector2(1648, 1289)
+texture = ExtResource("1_reh5w")
+
+[node name="CollisionShapeRight" type="CollisionShape2D" parent="Cartellone_Uno"]
+position = Vector2(3181, 1474)
+shape = SubResource("RectangleShape2D_fei0h")
+
+[node name="CollisionShapeLeft" type="CollisionShape2D" parent="Cartellone_Uno"]
+position = Vector2(105, 1469)
+shape = SubResource("RectangleShape2D_fei0h")
+
+[node name="CollisionShapeBar" type="CollisionShape2D" parent="Cartellone_Uno"]
+position = Vector2(1648, 1072)
+shape = SubResource("RectangleShape2D_axmgb")
