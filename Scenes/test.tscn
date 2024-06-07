@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://btcc4nvtu3rft"]
+[gd_scene load_steps=12 format=3 uid="uid://btcc4nvtu3rft"]
 
 [ext_resource type="PackedScene" uid="uid://clqpppuywx1g0" path="res://Scenes/Comune.tscn" id="1_e63wa"]
 [ext_resource type="Texture2D" uid="uid://dkq6nesoeoo4r" path="res://Sprite/City/tendina.png" id="2_dg5fk"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ec0yl4fgrqcq" path="res://Scenes/Cartellone_Uno.tscn" id="4_merwo"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="4_ueu3b"]
 [ext_resource type="PackedScene" uid="uid://bt38fe7ady0p5" path="res://Scenes/Cartellone_Due.tscn" id="5_pb64t"]
+[ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="10_gnfpk"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mouic"]
 load_path = "res://.godot/imported/square.png-a221151fa95b2af00c35ab8d21443d17.ctex"
@@ -71,3 +72,18 @@ map = NodePath("../../Sqaure")
 light_mask = 2
 visibility_layer = 2
 scale = Vector2(2.055, 2.055)
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Door_W" parent="Doors" instance=ExtResource("10_gnfpk")]
+position = Vector2(-93, 781)
+scale = Vector2(11.24, 11.24)
+destination_level_tag = "park"
+destination_door_tag = "E"
+spawn_direction = "right"
+
+[node name="Spawn" parent="Doors/Door_W" index="1"]
+position = Vector2(15.5694, -0.177936)
+rotation = -1.57079
+
+[editable path="Doors/Door_W"]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://b01t8dhql51pl"]
+
+[ext_resource type="Texture2D" uid="uid://bk1m1s52vhkpm" path="res://Sprite/Park/bg.png" id="1_uisja"]
+[ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="2_md658"]
+[ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_g3j4a"]
+[ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/fabrizio.tscn" id="4_4snhs"]
+[ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_3ake0"]
+
+[node name="park" type="Node2D"]
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(1313, 739)
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("1_uisja")
+
+[node name="Borders" parent="." instance=ExtResource("2_md658")]
+light_mask = 2
+visibility_layer = 2
+scale = Vector2(2.045, 2.045)
+
+[node name="Door" type="Node2D" parent="."]
+position = Vector2(-9, 1)
+
+[node name="Door_E" parent="Door" instance=ExtResource("3_g3j4a")]
+position = Vector2(2688, 970)
+scale = Vector2(7.365, 7.365)
+destination_level_tag = "test"
+destination_door_tag = "W"
+spawn_direction = "left"
+
+[node name="Spawn" parent="Door/Door_E" index="1"]
+position = Vector2(-15.3428, 8.28719e-06)
+
+[node name="Fabrizio" parent="." node_paths=PackedStringArray("map") instance=ExtResource("4_4snhs")]
+scale = Vector2(0.2, 0.2)
+map = NodePath("../Bg")
+
+[node name="followCam" type="Camera2D" parent="Fabrizio" node_paths=PackedStringArray("map")]
+light_mask = 0
+visibility_layer = 0
+script = ExtResource("5_3ake0")
+map = NodePath("../../Bg")
+
+[editable path="Door/Door_E"]

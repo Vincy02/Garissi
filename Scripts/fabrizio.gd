@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+class_name Player
 @export var speed: int = 500
 @export var map: Sprite2D
 var animated_sprite: AnimatedSprite2D
