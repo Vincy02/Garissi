@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b01t8dhql51pl"]
 
-[ext_resource type="Texture2D" uid="uid://bk1m1s52vhkpm" path="res://Sprite/Park/bg.png" id="1_uisja"]
+[ext_resource type="Texture2D" uid="uid://dpqoqj4q1kikj" path="res://Sprite/Park/bg.png" id="1_mvsox"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="2_md658"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_g3j4a"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/fabrizio.tscn" id="4_4snhs"]
@@ -9,9 +9,9 @@
 [node name="park" type="Node2D"]
 
 [node name="Bg" type="Sprite2D" parent="."]
-position = Vector2(1313, 739)
-scale = Vector2(0.135, 0.135)
-texture = ExtResource("1_uisja")
+position = Vector2(1311.71, 734.581)
+scale = Vector2(0.198159, 0.197817)
+texture = ExtResource("1_mvsox")
 
 [node name="Borders" parent="." instance=ExtResource("2_md658")]
 light_mask = 2
