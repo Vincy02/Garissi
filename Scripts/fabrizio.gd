@@ -10,8 +10,14 @@ func _ready():
 	var y = (map.texture.get_size().y * map.scale.y)/2
 	position = Vector2(x, y)
 	animated_sprite = $AnimatedSprite2D
-	animated_sprite.flip_h = 1
-
+	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
+	
+func _on_spawn(position: Vector2, direction: String):
+	global_position = position
+	animated_sprite.play("idle")
+	if(direction == "left"):
+		animated_sprite.flip_h = 1
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var direction = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")

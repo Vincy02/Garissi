@@ -1,7 +1,13 @@
-res://Scenes/park.tscn
 res://Scenes/test.tscn
 res://Scenes/bar.tscn
 res://Scenes/fabrizio.tscn
 res://Scenes/Cartellone_Uno.tscn
 res://Scenes/menu.tscn
 res://Scenes/door.tscn
+res://Scenes/park.tscn
+res://Scripts/followCam.gd
+res://Scripts/park.gd
+res://Scripts/fabrizio.gd
+res://Scripts/Global/navigationManager.gd
+res://Scripts/door.gd
+res://Scenes/square.tscn
