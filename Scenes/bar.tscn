@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://u4r2r7voc3tk"]
 
-[ext_resource type="Texture2D" uid="uid://dw18yn4j8gk4t" path="res://Sprite/City/bar.png" id="1_3cvsp"]
-[ext_resource type="Texture2D" uid="uid://bfefkob0upvt6" path="res://Sprite/City/staccionata.png" id="2_fsp65"]
+[ext_resource type="Texture2D" uid="uid://dw18yn4j8gk4t" path="res://Sprites/Square/bar.png" id="1_3cvsp"]
+[ext_resource type="Texture2D" uid="uid://bfefkob0upvt6" path="res://Sprites/Square/fence.png" id="2_fsp65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8seah"]
 size = Vector2(2462, 1089.25)
@@ -29,29 +29,29 @@ texture = ExtResource("1_3cvsp")
 position = Vector2(1221, 825.375)
 shape = SubResource("RectangleShape2D_8seah")
 
-[node name="Staccionata" type="CharacterBody2D" parent="."]
+[node name="Fence" type="CharacterBody2D" parent="."]
 
-[node name="Staccionata" type="Sprite2D" parent="Staccionata"]
+[node name="Fence" type="Sprite2D" parent="Fence"]
 position = Vector2(1279.25, 1306.25)
 scale = Vector2(0.849021, 0.870401)
 texture = ExtResource("2_fsp65")
 
-[node name="CollisionShapeLeft" type="CollisionShape2D" parent="Staccionata"]
+[node name="CollisionShapeLeft" type="CollisionShape2D" parent="Fence"]
 position = Vector2(2.25, 2895.75)
 shape = SubResource("RectangleShape2D_cogj0")
 
-[node name="CollisionShapeRight" type="CollisionShape2D" parent="Staccionata"]
+[node name="CollisionShapeRight" type="CollisionShape2D" parent="Fence"]
 position = Vector2(2559, 2896)
 shape = SubResource("RectangleShape2D_cogj0")
 
-[node name="CollisionShapeLeft2" type="CollisionShape2D" parent="Staccionata"]
+[node name="CollisionShapeLeft2" type="CollisionShape2D" parent="Fence"]
 position = Vector2(-717.5, 1050.75)
 shape = SubResource("RectangleShape2D_g61a5")
 
-[node name="CollisionShapeRight2" type="CollisionShape2D" parent="Staccionata"]
+[node name="CollisionShapeRight2" type="CollisionShape2D" parent="Fence"]
 position = Vector2(3275, 1050)
 shape = SubResource("RectangleShape2D_g61a5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Staccionata"]
+[node name="CollisionShapeTop" type="CollisionShape2D" parent="Fence"]
 position = Vector2(1297, -284.5)
 shape = SubResource("RectangleShape2D_vd74b")

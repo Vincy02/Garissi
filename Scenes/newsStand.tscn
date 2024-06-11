@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://b53vayhqngl1q"]
+
+[ext_resource type="Texture2D" uid="uid://dck3vxaagwoou" path="res://Sprites/Square/newsStand.png" id="1_7pae0"]
+[ext_resource type="Texture2D" uid="uid://bfefkob0upvt6" path="res://Sprites/Square/fence.png" id="2_2dtk4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jf1rm"]
+size = Vector2(2893, 1480)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwww7"]
+size = Vector2(1687.5, 510.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmxwe"]
+size = Vector2(259, 3179.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bopp"]
+size = Vector2(4152, 509)
+
+[node name="NewsStand" type="Node2D"]
+
+[node name="NewsStand" type="CharacterBody2D" parent="."]
+
+[node name="NewsStand" type="Sprite2D" parent="NewsStand"]
+position = Vector2(2085, 1749)
+texture = ExtResource("1_7pae0")
+
+[node name="CollisionShapeNewsStand" type="CollisionShape2D" parent="NewsStand"]
+position = Vector2(2089.5, 1245)
+shape = SubResource("RectangleShape2D_jf1rm")
+
+[node name="Fence" type="CharacterBody2D" parent="."]
+
+[node name="Fence" type="Sprite2D" parent="Fence"]
+position = Vector2(2124.25, 1853.5)
+scale = Vector2(0.849021, 0.874292)
+texture = ExtResource("2_2dtk4")
+
+[node name="CollisionShapeLeft" type="CollisionShape2D" parent="Fence"]
+position = Vector2(847.25, 3434.75)
+shape = SubResource("RectangleShape2D_cwww7")
+
+[node name="CollisionShapeRight" type="CollisionShape2D" parent="Fence"]
+position = Vector2(3404, 3435)
+shape = SubResource("RectangleShape2D_cwww7")
+
+[node name="CollisionShapeLeft2" type="CollisionShape2D" parent="Fence"]
+position = Vector2(127.5, 1589.75)
+shape = SubResource("RectangleShape2D_jmxwe")
+
+[node name="CollisionShapeRight2" type="CollisionShape2D" parent="Fence"]
+position = Vector2(4120, 1589)
+shape = SubResource("RectangleShape2D_jmxwe")
+
+[node name="CollisionShapeTop" type="CollisionShape2D" parent="Fence"]
+position = Vector2(2142, 254.5)
+shape = SubResource("RectangleShape2D_7bopp")

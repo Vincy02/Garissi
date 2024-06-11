@@ -2,5 +2,13 @@ res://Scenes/square.tscn
 res://Scenes/park.tscn
 res://Scenes/door.tscn
 res://Scenes/Global/transition_screen.tscn
+res://Scenes/adPanel1.tscn
+res://Scenes/adPanel2.tscn
+res://Scenes/bar.tscn
+res://Scenes/cityHall.tscn
+res://Scenes/newsStand.tscn
+res://Scenes/menu.tscn
+res://Scenes/cityCentre.tscn
 res://Scripts/Global/navigationManager.gd
-res://Scripts/transition_screen.gd
+res://Scripts/level.gd
+res://Scenes/borders.tscn

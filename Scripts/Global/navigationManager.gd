@@ -1,8 +1,8 @@
 extends Node
 
-const scene_test = preload("res://Scenes/square.tscn")
+const scene_square = preload("res://Scenes/square.tscn")
 const scene_park = preload("res://Scenes/park.tscn")
-
+const scene_cityCentre = preload("res://Scenes/cityCentre.tscn")
 signal on_trigger_player_spawn
 
 var spawn_door_tag 
@@ -11,10 +11,12 @@ func go_to_level(level_tag, destination_tag):
 	var scene_to_load
 	
 	match level_tag:
-		"test":
-			scene_to_load = scene_test
+		"square":
+			scene_to_load = scene_square
 		"park":
 			scene_to_load = scene_park
+		"cityCentre":
+			scene_to_load = scene_cityCentre		
 	
 	if scene_to_load != null:
 		TransitionScreen.transition()

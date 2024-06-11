@@ -2,28 +2,28 @@
 
 [node name="Menu" type="Node2D"]
 
-[node name="contiune" type="Button" parent="."]
+[node name="Contiune" type="Button" parent="."]
 offset_left = 266.0
 offset_top = 264.0
 offset_right = 427.0
 offset_bottom = 362.0
 text = "CONTIUNA PARTITA"
 
-[node name="startGame" type="Button" parent="."]
+[node name="StartGame" type="Button" parent="."]
 offset_left = 284.0
 offset_top = 410.0
 offset_right = 408.0
 offset_bottom = 508.0
 text = "INIZIA PARTITA"
 
-[node name="options" type="Button" parent="."]
+[node name="Options" type="Button" parent="."]
 offset_left = 871.0
 offset_top = 256.0
 offset_right = 995.0
 offset_bottom = 354.0
 text = "OPZIONI"
 
-[node name="exit" type="Button" parent="."]
+[node name="Exit" type="Button" parent="."]
 offset_left = 870.0
 offset_top = 409.0
 offset_right = 994.0

@@ -1,19 +1,19 @@
 [gd_scene load_steps=7 format=3 uid="uid://b01t8dhql51pl"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_2ovvn"]
-[ext_resource type="Texture2D" uid="uid://dpqoqj4q1kikj" path="res://Sprite/Park/bg.png" id="1_mvsox"]
+[ext_resource type="Texture2D" uid="uid://dpqoqj4q1kikj" path="res://Sprites/Park/bg.png" id="2_lwlfk"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="2_md658"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_g3j4a"]
-[ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/fabrizio.tscn" id="4_4snhs"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_3ake0"]
+[ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="5_b5pcg"]
 
-[node name="park" type="Node2D"]
+[node name="Park" type="Node2D"]
 script = ExtResource("1_2ovvn")
 
-[node name="Bg" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(1304, 732)
 scale = Vector2(0.198159, 0.197817)
-texture = ExtResource("1_mvsox")
+texture = ExtResource("2_lwlfk")
 
 [node name="Borders" parent="." instance=ExtResource("2_md658")]
 light_mask = 2
@@ -24,23 +24,23 @@ scale = Vector2(2.033, 2.033)
 position = Vector2(-9, 1)
 
 [node name="Door_E" parent="Doors" instance=ExtResource("3_g3j4a")]
-position = Vector2(2678, 970)
+position = Vector2(2667, 970)
 scale = Vector2(7.365, 7.365)
-destination_level_tag = "test"
+destination_level_tag = "square"
 destination_door_tag = "W"
 spawn_direction = "right"
 
 [node name="Spawn" parent="Doors/Door_E" index="1"]
 position = Vector2(-20.3666, 8.28719e-06)
 
-[node name="Fabrizio" parent="." node_paths=PackedStringArray("map") instance=ExtResource("4_4snhs")]
+[node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("5_b5pcg")]
 scale = Vector2(0.2, 0.2)
-map = NodePath("../Bg")
+map = NodePath("../Background")
 
-[node name="followCam" type="Camera2D" parent="Fabrizio" node_paths=PackedStringArray("map")]
+[node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
 light_mask = 0
 visibility_layer = 0
 script = ExtResource("5_3ake0")
-map = NodePath("../../Bg")
+map = NodePath("../../Background")
 
 [editable path="Doors/Door_E"]
