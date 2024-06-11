@@ -1,3 +1,6 @@
+AnimationPlayer
+ColorRect
+CanvasLayer
 Camera2D
 Node2D
 Marker2D
@@ -10,4 +13,3 @@ CollisionPolygon2D
 Node
 Button
 AnimatedSprite2D
-AnimationPlayer
