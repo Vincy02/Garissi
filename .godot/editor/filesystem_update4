@@ -1,6 +1,6 @@
-res://Scenes/fabrizio.tscn
-res://Scripts/fabrizio.gd
-res://Scenes/scene_one.tscn
+res://Scenes/square.tscn
 res://Scenes/park.tscn
-res://Scenes/borders.tscn
-res://Scenes/sceneOne.tscn
+res://Scenes/door.tscn
+res://Scenes/Global/transition_screen.tscn
+res://Scripts/Global/navigationManager.gd
+res://Scripts/transition_screen.gd
