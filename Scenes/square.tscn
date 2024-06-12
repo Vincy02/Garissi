@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://btcc4nvtu3rft"]
+[gd_scene load_steps=14 format=3 uid="uid://btcc4nvtu3rft"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_yc4ar"]
 [ext_resource type="PackedScene" uid="uid://u4r2r7voc3tk" path="res://Scenes/bar.tscn" id="2_ana0w"]
@@ -15,10 +15,13 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mouic"]
 load_path = "res://.godot/imported/square.png-a221151fa95b2af00c35ab8d21443d17.ctex"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8oe8"]
+size = Vector2(16.1388, 13.879)
+
 [node name="SceneOne" type="Node2D"]
 script = ExtResource("1_yc4ar")
 
-[node name="Sqaure" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 light_mask = 2
 visibility_layer = 2
 position = Vector2(1316, 740)
@@ -60,7 +63,7 @@ light_mask = 3
 visibility_layer = 3
 position = Vector2(639, 792)
 scale = Vector2(0.2, 0.2)
-map = NodePath("../Sqaure")
+map = NodePath("../Background")
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
 light_mask = 0
@@ -68,7 +71,7 @@ visibility_layer = 0
 limit_left = 0
 limit_top = 0
 script = ExtResource("8_yo0ik")
-map = NodePath("../../Sqaure")
+map = NodePath("../../Background")
 
 [node name="Borders" parent="." instance=ExtResource("9_nhf34")]
 light_mask = 2
@@ -98,5 +101,21 @@ spawn_direction = "right"
 [node name="Spawn" parent="Doors/Door_E" index="1"]
 position = Vector2(-14.2984, 0)
 
+[node name="Door_Bar" parent="Doors" instance=ExtResource("10_lu4he")]
+position = Vector2(2133, 348)
+scale = Vector2(11.24, 11.24)
+destination_level_tag = "barInside"
+destination_door_tag = "S"
+spawn_direction = "right"
+
+[node name="CollisionShape2D" parent="Doors/Door_Bar" index="0"]
+position = Vector2(-1.9306, 2.4911)
+shape = SubResource("RectangleShape2D_v8oe8")
+
+[node name="Spawn" parent="Doors/Door_Bar" index="1"]
+position = Vector2(-1.60142, 7.91815)
+rotation = -1.57079
+
 [editable path="Doors/Door_W"]
 [editable path="Doors/Door_E"]
+[editable path="Doors/Door_Bar"]
