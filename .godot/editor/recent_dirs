@@ -1,7 +1,7 @@
-res://Scenes/Global
 res://Scripts
-res://Sprite/Park
-res://Scripts/Global
+res://Sprites/Square
 res://Scenes
-res://Sprite/City
+res://Sprites/CityCentre
+res://Scenes/Global
+res://Scripts/Global
 res://.godot/imported
