@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://btcc4nvtu3rft"]
+[gd_scene load_steps=15 format=3 uid="uid://btcc4nvtu3rft"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_yc4ar"]
 [ext_resource type="PackedScene" uid="uid://u4r2r7voc3tk" path="res://Scenes/bar.tscn" id="2_ana0w"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="8_yo0ik"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="9_nhf34"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="10_lu4he"]
+[ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/InputSettings/inputSettings.tscn" id="12_57hjf"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mouic"]
 load_path = "res://.godot/imported/square.png-a221151fa95b2af00c35ab8d21443d17.ctex"
@@ -115,6 +116,11 @@ shape = SubResource("RectangleShape2D_v8oe8")
 [node name="Spawn" parent="Doors/Door_Bar" index="1"]
 position = Vector2(-1.60142, 7.91815)
 rotation = -1.57079
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InputSettings" parent="CanvasLayer" instance=ExtResource("12_57hjf")]
+visible = false
 
 [editable path="Doors/Door_W"]
 [editable path="Doors/Door_E"]
