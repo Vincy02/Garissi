@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="7_pgmjy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyjbf"]
-size = Vector2(892.5, 162.5)
+size = Vector2(892.5, 99)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34j1n"]
 size = Vector2(32.4199, 29.5552)
@@ -28,10 +28,10 @@ position = Vector2(448, 333)
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_6cms4")
 
-[node name="BarCounterCollision" type="StaticBody2D" parent="."]
+[node name="NewsStandCounterCollision" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BarCounterCollision"]
-position = Vector2(447.75, 282.25)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NewsStandCounterCollision"]
+position = Vector2(447.75, 250.5)
 shape = SubResource("RectangleShape2D_uyjbf")
 
 [node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("4_irop4")]

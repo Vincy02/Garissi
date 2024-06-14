@@ -1,7 +1,4 @@
 res://Scenes/square.tscn
-res://Scenes/input settings/inputSettings.tscn
-res://Scripts/inputSettings.gd
-res://Scenes/inputButton.tscn
-res://Scripts/level.gd
-res://Scenes/InputSettings/inputSettings.tscn
-res://Scenes/InputSettings/inputButton.tscn
+res://Scenes/player.tscn
+res://Scenes/newsStandInside.tscn
+res://Scenes/barInside.tscn

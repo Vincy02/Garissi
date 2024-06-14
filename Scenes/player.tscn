@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://l8cs5y3vvhga" path="res://Sprites/Player/player4.png" id="6_237ou"]
 [ext_resource type="Texture2D" uid="uid://df0d4q26t7afg" path="res://Sprites/Player/player5.png" id="7_ei2uo"]
 
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_yo2yb"]
 animations = [{
 "frames": [{
