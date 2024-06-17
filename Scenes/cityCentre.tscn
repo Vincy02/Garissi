@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bmdirm1u4hqx3"]
+[gd_scene load_steps=26 format=3 uid="uid://bmdirm1u4hqx3"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_u82kj"]
 [ext_resource type="Texture2D" uid="uid://d2b70egdk8oww" path="res://Sprites/CityCentre/background.png" id="2_1iegc"]
@@ -42,6 +42,9 @@ size = Vector2(602, 256)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ke4gg"]
 size = Vector2(141.242, 474.359)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e71d1"]
+size = Vector2(6.49469, 11.6014)
 
 [node name="CityCentre" type="Node2D"]
 script = ExtResource("1_u82kj")
@@ -157,6 +160,21 @@ spawn_direction = "left"
 position = Vector2(15.5694, -0.177936)
 rotation = -1.57079
 
+[node name="Door_Church" parent="Doors" instance=ExtResource("3_uhgre")]
+position = Vector2(-936, 681)
+scale = Vector2(11.24, 11.24)
+destination_level_tag = "churchInside"
+destination_door_tag = "S"
+spawn_direction = "left"
+
+[node name="CollisionShape2D" parent="Doors/Door_Church" index="0"]
+position = Vector2(198.71, -53.2206)
+shape = SubResource("RectangleShape2D_e71d1")
+
+[node name="Spawn" parent="Doors/Door_Church" index="1"]
+position = Vector2(198.665, -43.4164)
+rotation = -1.57079
+
 [node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("4_7om6w")]
 light_mask = 3
 visibility_layer = 3
@@ -178,3 +196,4 @@ map = NodePath("../../Background")
 visible = false
 
 [editable path="Doors/Door_W"]
+[editable path="Doors/Door_Church"]

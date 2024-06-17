@@ -6,6 +6,7 @@ extends Control
 var is_remapping = false
 var action_to_remap = null
 var remapping_button = null
+@onready var pause_menu = $"."
 
 var input_actions = {
 	"MoveUp": "Move up",
@@ -18,6 +19,7 @@ var input_actions = {
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_create_action_list()
+	pause_menu.visible = false
 	pass # Replace with function body.
 
 func _create_action_list():
@@ -42,4 +44,10 @@ func _create_action_list():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("Pause"):
+		if !get_tree().paused:
+			get_tree().paused = true
+			pause_menu.visible = true
+		else:
+			get_tree().paused = false
+			pause_menu.visible = false
