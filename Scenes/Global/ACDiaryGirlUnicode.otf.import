@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cok6ncou2s3e"
-path="res://.godot/imported/AC-DiaryGirl_Unicode.ttf-2cf4466526898155770eb8cb778aec2a.fontdata"
+uid="uid://crmpbal4ch8up"
+path="res://.godot/imported/ACDiaryGirlUnicode.otf-0930266df0aec9be3fa29927debf0f05.fontdata"
 
 [deps]
 
-source_file="res://Scenes/InputSettings/AC-DiaryGirl_Unicode.ttf"
-dest_files=["res://.godot/imported/AC-DiaryGirl_Unicode.ttf-2cf4466526898155770eb8cb778aec2a.fontdata"]
+source_file="res://Scenes/Global/ACDiaryGirlUnicode.otf"
+dest_files=["res://.godot/imported/ACDiaryGirlUnicode.otf-0930266df0aec9be3fa29927debf0f05.fontdata"]
 
 [params]
 

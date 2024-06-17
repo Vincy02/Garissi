@@ -4,3 +4,5 @@ res://Scenes/barInside.tscn
 res://Scenes/park.tscn
 res://Scenes/cityCentre.tscn
 res://Scenes/upZone.tscn
+res://Scenes/InputSettings/inputButton.tscn
+res://Scenes/InputSettings/inputSettings.tscn

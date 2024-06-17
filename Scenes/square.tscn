@@ -1,12 +1,12 @@
 [gd_scene load_steps=17 format=3 uid="uid://btcc4nvtu3rft"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_yc4ar"]
-[ext_resource type="PackedScene" uid="uid://u4r2r7voc3tk" path="res://Scenes/bar.tscn" id="2_ana0w"]
-[ext_resource type="PackedScene" uid="uid://clqpppuywx1g0" path="res://Scenes/cityHall.tscn" id="2_dyo4k"]
-[ext_resource type="PackedScene" uid="uid://b53vayhqngl1q" path="res://Scenes/newsStand.tscn" id="4_3v6yj"]
+[ext_resource type="PackedScene" uid="uid://clqpppuywx1g0" path="res://Scenes/SquareObj/cityHall.tscn" id="2_tqofx"]
+[ext_resource type="PackedScene" uid="uid://u4r2r7voc3tk" path="res://Scenes/SquareObj/bar.tscn" id="3_u5o7i"]
+[ext_resource type="PackedScene" uid="uid://b53vayhqngl1q" path="res://Scenes/SquareObj/newsStand.tscn" id="4_ypc5u"]
 [ext_resource type="Texture2D" uid="uid://dkq6nesoeoo4r" path="res://Sprites/Square/curtain.png" id="5_yexi6"]
-[ext_resource type="PackedScene" uid="uid://bt38fe7ady0p5" path="res://Scenes/adPanel1.tscn" id="6_grbb4"]
-[ext_resource type="PackedScene" uid="uid://ec0yl4fgrqcq" path="res://Scenes/adPanel2.tscn" id="7_ivr8v"]
+[ext_resource type="PackedScene" uid="uid://bt38fe7ady0p5" path="res://Scenes/SquareObj/adPanel1.tscn" id="6_kxy3q"]
+[ext_resource type="PackedScene" uid="uid://ec0yl4fgrqcq" path="res://Scenes/SquareObj/adPanel2.tscn" id="7_bpjpf"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="8_kmige"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="8_yo0ik"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="9_nhf34"]
@@ -35,15 +35,15 @@ position = Vector2(1316, 740)
 scale = Vector2(0.2, 0.2)
 texture = SubResource("CompressedTexture2D_mouic")
 
-[node name="CityHall" parent="." instance=ExtResource("2_dyo4k")]
+[node name="CityHall" parent="." instance=ExtResource("2_tqofx")]
 position = Vector2(134, 3)
 scale = Vector2(0.13, 0.13)
 
-[node name="Bar" parent="." instance=ExtResource("2_ana0w")]
+[node name="Bar" parent="." instance=ExtResource("3_u5o7i")]
 position = Vector2(1911, 104)
 scale = Vector2(0.15, 0.15)
 
-[node name="NewsStand" parent="." instance=ExtResource("4_3v6yj")]
+[node name="NewsStand" parent="." instance=ExtResource("4_ypc5u")]
 position = Vector2(231, 890)
 scale = Vector2(0.12, 0.12)
 
@@ -55,12 +55,12 @@ position = Vector2(2104, 298)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("5_yexi6")
 
-[node name="AdPanel1" parent="." instance=ExtResource("6_grbb4")]
+[node name="AdPanel1" parent="." instance=ExtResource("6_kxy3q")]
 top_level = true
 position = Vector2(2078, 919)
 scale = Vector2(0.15, 0.15)
 
-[node name="AdPanel2" parent="." instance=ExtResource("7_ivr8v")]
+[node name="AdPanel2" parent="." instance=ExtResource("7_bpjpf")]
 top_level = true
 position = Vector2(1673, 1077)
 scale = Vector2(0.15, 0.15)

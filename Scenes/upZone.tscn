@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbpu50l5aef5k"]
+[gd_scene load_steps=10 format=3 uid="uid://dbpu50l5aef5k"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_vuua6"]
 [ext_resource type="Texture2D" uid="uid://xlu4mvawgri0" path="res://Sprites/UpZone/upZone.png" id="2_etwou"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="4_euucv"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_sjsw8"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="6_07qtv"]
+[ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/InputSettings/inputSettings.tscn" id="7_1r405"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewdfn"]
 size = Vector2(1756, 72.75)
@@ -62,5 +63,10 @@ map = NodePath("../../Background")
 
 [node name="Borders" parent="." instance=ExtResource("6_07qtv")]
 scale = Vector2(1.38, 1.67)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InputSettings" parent="CanvasLayer" instance=ExtResource("7_1r405")]
+visible = false
 
 [editable path="Doors/Door_S"]

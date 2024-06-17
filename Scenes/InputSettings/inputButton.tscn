@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnh6h6y2fs8pj"]
 
-[ext_resource type="FontFile" uid="uid://cok6ncou2s3e" path="res://Scenes/InputSettings/AC-DiaryGirl_Unicode.ttf" id="1_ausb0"]
+[ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Scenes/Global/ACDiaryGirlUnicode.otf" id="1_5ej3u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrkhh"]
 bg_color = Color(0, 0, 0, 0.392157)
@@ -35,7 +35,7 @@ layout_mode = 2
 [node name="LabelAction" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 mouse_filter = 1
-theme_override_fonts/font = ExtResource("1_ausb0")
+theme_override_fonts/font = ExtResource("1_5ej3u")
 text = "Vincenzo Monopoli"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -47,7 +47,7 @@ mouse_filter = 1
 
 [node name="LabelInput" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_ausb0")
+theme_override_fonts/font = ExtResource("1_5ej3u")
 text = "Input key
 "
 horizontal_alignment = 1
