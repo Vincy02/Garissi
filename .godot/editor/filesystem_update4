@@ -1,4 +1,6 @@
 res://Scenes/square.tscn
-res://Scenes/player.tscn
 res://Scenes/newsStandInside.tscn
 res://Scenes/barInside.tscn
+res://Scenes/park.tscn
+res://Scenes/cityCentre.tscn
+res://Scenes/upZone.tscn

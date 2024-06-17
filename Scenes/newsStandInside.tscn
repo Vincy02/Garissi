@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvcb6xv0gih1x"]
+[gd_scene load_steps=11 format=3 uid="uid://bvcb6xv0gih1x"]
 
 [ext_resource type="Texture2D" uid="uid://bvcf8ygbngc0r" path="res://Sprites/Square/newsStandInside.png" id="1_2kx8t"]
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_pdr0l"]
 [ext_resource type="Texture2D" uid="uid://bj5jm124msah1" path="res://Sprites/Square/newsStandCounter.png" id="2_mdhbk"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="3_v6byu"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="4_e0yg6"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="5_qorsg"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="6_tebp3"]
+[ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/InputSettings/inputSettings.tscn" id="8_rncse"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_typ6s"]
 size = Vector2(892.5, 128.75)
@@ -15,6 +17,7 @@ size = Vector2(32.4199, 29.5552)
 
 [node name="NewsStandInside" type="Node2D"]
 position = Vector2(-192, 0)
+script = ExtResource("1_pdr0l")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(450, 511)
@@ -63,5 +66,10 @@ shape = SubResource("RectangleShape2D_kefs5")
 [node name="Spawn" parent="Doors/Door_S" index="1"]
 position = Vector2(99.5551, 124.466)
 rotation = -1.57079
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InputSettings" parent="CanvasLayer" instance=ExtResource("8_rncse")]
+visible = false
 
 [editable path="Doors/Door_S"]

@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbpu50l5aef5k"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_vuua6"]
+[ext_resource type="Texture2D" uid="uid://xlu4mvawgri0" path="res://Sprites/UpZone/upZone.png" id="2_etwou"]
+[ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_q21d4"]
+[ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="4_euucv"]
+[ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_sjsw8"]
+[ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="6_07qtv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewdfn"]
+size = Vector2(1756, 72.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ka206"]
+size = Vector2(24.1459, 23.4342)
+
+[node name="UpZone" type="Node2D"]
+script = ExtResource("1_vuua6")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(883, 602)
+texture = ExtResource("2_etwou")
+
+[node name="BuildingCollision" type="StaticBody2D" parent="."]
+position = Vector2(614, 254)
+
+[node name="CollisionShape1" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(268, 282)
+shape = SubResource("RectangleShape2D_ewdfn")
+
+[node name="Doors" type="Node2D" parent="."]
+position = Vector2(3, 474)
+
+[node name="Door_S" parent="Doors" instance=ExtResource("3_q21d4")]
+position = Vector2(857, 815)
+scale = Vector2(11.24, 11.24)
+destination_level_tag = "square"
+destination_door_tag = "N"
+spawn_direction = "left"
+
+[node name="CollisionShape2D" parent="Doors/Door_S" index="0"]
+position = Vector2(2.07296, 1.71709)
+shape = SubResource("RectangleShape2D_ka206")
+
+[node name="Spawn" parent="Doors/Door_S" index="1"]
+position = Vector2(1.77936, -16.548)
+rotation = -1.57079
+
+[node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("4_euucv")]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(80, 114)
+scale = Vector2(0.2, 0.2)
+map = NodePath("../Background")
+
+[node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
+light_mask = 0
+visibility_layer = 0
+limit_left = 0
+limit_top = 0
+script = ExtResource("5_sjsw8")
+map = NodePath("../../Background")
+
+[node name="Borders" parent="." instance=ExtResource("6_07qtv")]
+scale = Vector2(1.38, 1.67)
+
+[editable path="Doors/Door_S"]

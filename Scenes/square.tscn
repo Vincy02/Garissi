@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://btcc4nvtu3rft"]
+[gd_scene load_steps=17 format=3 uid="uid://btcc4nvtu3rft"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_yc4ar"]
 [ext_resource type="PackedScene" uid="uid://u4r2r7voc3tk" path="res://Scenes/bar.tscn" id="2_ana0w"]
@@ -16,13 +16,16 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mouic"]
 load_path = "res://.godot/imported/square.png-a221151fa95b2af00c35ab8d21443d17.ctex"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1iv5x"]
+size = Vector2(25.1246, 23.968)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8oe8"]
 size = Vector2(16.1388, 13.879)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjl40"]
 size = Vector2(9.66193, 9.07474)
 
-[node name="SceneOne" type="Node2D"]
+[node name="Square" type="Node2D"]
 script = ExtResource("1_yc4ar")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -95,6 +98,21 @@ spawn_direction = "left"
 position = Vector2(15.5694, -0.177936)
 rotation = -1.57079
 
+[node name="Door_N" parent="Doors" instance=ExtResource("10_lu4he")]
+position = Vector2(1311, -97)
+scale = Vector2(11.24, 11.24)
+destination_level_tag = "upZone"
+destination_door_tag = "S"
+spawn_direction = "left"
+
+[node name="CollisionShape2D" parent="Doors/Door_N" index="0"]
+position = Vector2(-0.0889711, -1.9573)
+shape = SubResource("RectangleShape2D_1iv5x")
+
+[node name="Spawn" parent="Doors/Door_N" index="1"]
+position = Vector2(0.17794, 15.9253)
+rotation = -1.57079
+
 [node name="Door_E" parent="Doors" instance=ExtResource("10_lu4he")]
 position = Vector2(2729, 781)
 scale = Vector2(11.26, 11.26)
@@ -141,6 +159,7 @@ rotation = -1.57079
 visible = false
 
 [editable path="Doors/Door_W"]
+[editable path="Doors/Door_N"]
 [editable path="Doors/Door_E"]
 [editable path="Doors/Door_Bar"]
 [editable path="Doors/Door_NewsStand"]
