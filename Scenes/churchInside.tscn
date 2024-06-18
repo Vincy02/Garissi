@@ -1,17 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://dpj7l0a40t02f"]
+[gd_scene load_steps=11 format=3 uid="uid://dpj7l0a40t02f"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_dnk14"]
 [ext_resource type="Texture2D" uid="uid://cdrvfj1kvycht" path="res://Sprites/Church/churchInside.png" id="2_5s5fm"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_p3vk2"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="4_uq0om"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_38go0"]
-[ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/InputSettings/inputSettings.tscn" id="6_t34pk"]
+[ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="7_j0i1k"]
+[ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="7_qfw8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvnrd"]
 size = Vector2(319, 390)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pudu5"]
-size = Vector2(598, 102)
+size = Vector2(904, 70)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvgyo"]
 
@@ -19,7 +20,7 @@ size = Vector2(598, 102)
 script = ExtResource("1_dnk14")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(256, 547)
+position = Vector2(256, 546)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_5s5fm")
 
@@ -35,7 +36,7 @@ position = Vector2(-99, 491)
 shape = SubResource("RectangleShape2D_gvnrd")
 
 [node name="CollisionShape3" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(-362, 50)
+position = Vector2(-364, 40)
 shape = SubResource("RectangleShape2D_pudu5")
 
 [node name="Doors" type="Node2D" parent="."]
@@ -71,9 +72,13 @@ limit_top = 0
 script = ExtResource("5_38go0")
 map = NodePath("../../Background")
 
+[node name="Borders" parent="." instance=ExtResource("7_j0i1k")]
+position = Vector2(-194, 0)
+scale = Vector2(0.703, 1.517)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="InputSettings" parent="CanvasLayer" instance=ExtResource("6_t34pk")]
-visible = false
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_qfw8g")]
+process_mode = 3
 
 [editable path="Doors/Door_S"]

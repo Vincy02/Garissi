@@ -19,7 +19,6 @@ var input_actions = {
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_create_action_list()
-	pause_menu.visible = false
 	pass # Replace with function body.
 
 func _create_action_list():
@@ -41,13 +40,3 @@ func _create_action_list():
 			input_label.text = ""
 			
 		action_list.add_child(button)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_just_pressed("Pause"):
-		if !get_tree().paused:
-			get_tree().paused = true
-			pause_menu.visible = true
-		else:
-			get_tree().paused = false
-			pause_menu.visible = false

@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bluraerm8ybxi" path="res://Sprites/CityCentre/building6.png" id="8_iofv3"]
 [ext_resource type="Texture2D" uid="uid://cck03mjxncy6r" path="res://Sprites/CityCentre/building7.png" id="9_vymw4"]
 [ext_resource type="Texture2D" uid="uid://c2tupedavj8g8" path="res://Sprites/CityCentre/church.png" id="10_vrbg3"]
-[ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/InputSettings/inputSettings.tscn" id="15_qmli4"]
+[ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="15_lclfx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wplox"]
 size = Vector2(328.938, 227)
@@ -192,8 +192,8 @@ map = NodePath("../../Background")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="InputSettings" parent="CanvasLayer" instance=ExtResource("15_qmli4")]
-visible = false
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("15_lclfx")]
+process_mode = 3
 
 [editable path="Doors/Door_W"]
 [editable path="Doors/Door_Church"]

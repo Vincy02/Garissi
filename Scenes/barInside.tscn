@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="4_irop4"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_203hs"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="7_pgmjy"]
-[ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/InputSettings/inputSettings.tscn" id="8_emfyh"]
+[ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="8_ud3gp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyjbf"]
 size = Vector2(892.5, 99)
@@ -68,7 +68,7 @@ rotation = -1.57079
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="InputSettings" parent="CanvasLayer" instance=ExtResource("8_emfyh")]
-visible = false
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_ud3gp")]
+process_mode = 3
 
 [editable path="Doors/Door_S"]
