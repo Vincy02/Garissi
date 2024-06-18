@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b01t8dhql51pl"]
+[gd_scene load_steps=8 format=3 uid="uid://b01t8dhql51pl"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_2ovvn"]
 [ext_resource type="Texture2D" uid="uid://dpqoqj4q1kikj" path="res://Sprites/Park/bg.png" id="2_lwlfk"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_g3j4a"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_3ake0"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="5_b5pcg"]
+[ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/InputSettings/inputSettings.tscn" id="7_3laoj"]
 
 [node name="Park" type="Node2D"]
 script = ExtResource("1_2ovvn")
@@ -42,5 +43,10 @@ light_mask = 0
 visibility_layer = 0
 script = ExtResource("5_3ake0")
 map = NodePath("../../Background")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InputSettings" parent="CanvasLayer" instance=ExtResource("7_3laoj")]
+visible = false
 
 [editable path="Doors/Door_E"]

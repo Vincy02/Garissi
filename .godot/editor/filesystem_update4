@@ -1,8 +1,12 @@
 res://Scenes/square.tscn
-res://Scenes/cityCentre.tscn
-res://Scenes/park.tscn
-res://Scenes/door.tscn
-res://Scenes/cityHall.tscn
-res://Scenes/borders.tscn
+res://Scenes/newsStandInside.tscn
 res://Scenes/barInside.tscn
+res://Scenes/park.tscn
+res://Scenes/cityCentre.tscn
+res://Scenes/upZone.tscn
+res://Scenes/InputSettings/inputButton.tscn
+res://Scenes/InputSettings/inputSettings.tscn
+res://Scripts/inputSettings.gd
+res://Scripts/level.gd
 res://Scripts/Global/navigationManager.gd
+res://Scenes/churchInside.tscn

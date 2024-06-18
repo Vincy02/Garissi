@@ -1,10 +1,12 @@
 extends Node2D
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if NavigationManager.spawn_door_tag != null:
 		_on_level_spawn(NavigationManager.spawn_door_tag)
+		
+func _process(delta):
+	pass
 	
 func _on_level_spawn(destination_tag: String):
 	var door_path = "Doors/Door_" + destination_tag

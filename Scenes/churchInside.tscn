@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://dpj7l0a40t02f"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_dnk14"]
+[ext_resource type="Texture2D" uid="uid://cdrvfj1kvycht" path="res://Sprites/Church/churchInside.png" id="2_5s5fm"]
+[ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_p3vk2"]
+[ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="4_uq0om"]
+[ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_38go0"]
+[ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/InputSettings/inputSettings.tscn" id="6_t34pk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvnrd"]
+size = Vector2(319, 390)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pudu5"]
+size = Vector2(598, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvgyo"]
+
+[node name="ChurchInside" type="Node2D"]
+script = ExtResource("1_dnk14")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(256, 547)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_5s5fm")
+
+[node name="BuildingCollision" type="StaticBody2D" parent="."]
+position = Vector2(614, 254)
+
+[node name="CollisionShape1" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(-610.5, 489)
+shape = SubResource("RectangleShape2D_gvnrd")
+
+[node name="CollisionShape2" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(-99, 491)
+shape = SubResource("RectangleShape2D_gvnrd")
+
+[node name="CollisionShape3" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(-362, 50)
+shape = SubResource("RectangleShape2D_pudu5")
+
+[node name="Doors" type="Node2D" parent="."]
+position = Vector2(3, 474)
+
+[node name="Door_S" parent="Doors" instance=ExtResource("3_p3vk2")]
+position = Vector2(230, 703)
+scale = Vector2(11.24, 11.24)
+destination_level_tag = "cityCentre"
+destination_door_tag = "Church"
+spawn_direction = "left"
+
+[node name="CollisionShape2D" parent="Doors/Door_S" index="0"]
+position = Vector2(2.07296, 1.71709)
+shape = SubResource("RectangleShape2D_kvgyo")
+
+[node name="Spawn" parent="Doors/Door_S" index="1"]
+position = Vector2(1.77936, -16.548)
+rotation = -1.57079
+
+[node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("4_uq0om")]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(-109, 92)
+scale = Vector2(0.2, 0.2)
+map = NodePath("../Background")
+
+[node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
+light_mask = 0
+visibility_layer = 0
+limit_left = 0
+limit_top = 0
+script = ExtResource("5_38go0")
+map = NodePath("../../Background")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InputSettings" parent="CanvasLayer" instance=ExtResource("6_t34pk")]
+visible = false
+
+[editable path="Doors/Door_S"]
