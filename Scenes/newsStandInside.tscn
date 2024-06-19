@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvcb6xv0gih1x"]
+[gd_scene load_steps=12 format=3 uid="uid://bvcb6xv0gih1x"]
 
-[ext_resource type="Texture2D" uid="uid://bvcf8ygbngc0r" path="res://Sprites/Square/newsStandInside.png" id="1_2kx8t"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_pdr0l"]
-[ext_resource type="Texture2D" uid="uid://bj5jm124msah1" path="res://Sprites/Square/newsStandCounter.png" id="2_mdhbk"]
+[ext_resource type="Texture2D" uid="uid://bvcf8ygbngc0r" path="res://Sprites/Square/NewsStand/newsStandInside.png" id="2_0bvab"]
+[ext_resource type="Texture2D" uid="uid://bj5jm124msah1" path="res://Sprites/Square/NewsStand/newsStandCounter.png" id="3_duqsk"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="3_v6byu"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="4_e0yg6"]
+[ext_resource type="Texture2D" uid="uid://crxkfkymrorjl" path="res://Sprites/Square/NewsStand/newsStandSign.png" id="4_fsnxo"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="5_qorsg"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="6_tebp3"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="8_q3wyf"]
@@ -22,12 +23,12 @@ script = ExtResource("1_pdr0l")
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(450, 511)
 scale = Vector2(0.428366, 0.449824)
-texture = ExtResource("1_2kx8t")
+texture = ExtResource("2_0bvab")
 
 [node name="BarCounter" type="Sprite2D" parent="."]
 position = Vector2(443, 372)
 scale = Vector2(0.395884, 0.360465)
-texture = ExtResource("2_mdhbk")
+texture = ExtResource("3_duqsk")
 
 [node name="BarCounterCollision" type="StaticBody2D" parent="."]
 position = Vector2(1, 66)
@@ -35,6 +36,19 @@ position = Vector2(1, 66)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarCounterCollision"]
 position = Vector2(451, 272.625)
 shape = SubResource("RectangleShape2D_typ6s")
+
+[node name="Sign" type="Sprite2D" parent="."]
+position = Vector2(171, 665)
+scale = Vector2(0.4, 0.364)
+texture = ExtResource("4_fsnxo")
+
+[node name="SignCollision" type="StaticBody2D" parent="."]
+position = Vector2(-20, 462)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SignCollision"]
+position = Vector2(191, 203)
+scale = Vector2(0.4, 0.364)
+polygon = PackedVector2Array(132, -281.8, 132, -279.5, 140, -266.6, 140, -262, 255.5, 145, 256.2, 145, 260, 152.5, 260, 173, 258.7, 173, 246.7, 182, 242.3, 182, -61.6, 282, -84.7, 282, -93, 272.8, -93, 268, -115.5, 171.4, -241.6, 227, -249.7, 227, -260, 218.5, -260, 193.3, -201.7, -199, -200.5, -199, -196.6, -215, -194.9, -215, -188.9, -222, -186.5, -222, -180.5, -225, -175.4, -225, 108.5, -282, 130.4, -282)
 
 [node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("3_v6byu")]
 scale = Vector2(0.2, 0.2)

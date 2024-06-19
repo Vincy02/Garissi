@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://dpu0uxlfklphi"]
 
-[ext_resource type="Texture2D" uid="uid://dn1ve26bml4et" path="res://Sprites/Square/insideBar.png" id="1_8423f"]
+[ext_resource type="Texture2D" uid="uid://dn1ve26bml4et" path="res://Sprites/Square/Bar/insideBar.png" id="1_8423f"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_wr75h"]
-[ext_resource type="Texture2D" uid="uid://b2wxgv1ka06ec" path="res://Sprites/Square/barCounter.png" id="2_6cms4"]
+[ext_resource type="Texture2D" uid="uid://b2wxgv1ka06ec" path="res://Sprites/Square/Bar/barCounter.png" id="2_6cms4"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_837wm"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="4_irop4"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_203hs"]

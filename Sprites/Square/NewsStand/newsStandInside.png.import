@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdrvfj1kvycht"
-path="res://.godot/imported/churchInside.png-1539279f6e5804ad762640a8fbfb24c2.ctex"
+uid="uid://bvcf8ygbngc0r"
+path="res://.godot/imported/newsStandInside.png-c45de8dc78b8d33aa5a28b7db0560541.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Church/churchInside.png"
-dest_files=["res://.godot/imported/churchInside.png-1539279f6e5804ad762640a8fbfb24c2.ctex"]
+source_file="res://Sprites/Square/NewsStand/newsStandInside.png"
+dest_files=["res://.godot/imported/newsStandInside.png-c45de8dc78b8d33aa5a28b7db0560541.ctex"]
 
 [params]
 

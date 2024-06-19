@@ -1,3 +1,5 @@
+CollisionShape2D
+CollisionPolygon2D
 PanelContainer
 Button
 MarginContainer
@@ -10,5 +12,3 @@ AnimationPlayer
 Sprite2D
 CanvasLayer
 ScrollContainer
-StaticBody2D
-CollisionShape2D

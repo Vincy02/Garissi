@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn1ve26bml4et"
-path="res://.godot/imported/insideBar.png-8057bdf5b7cdf01b393d9912c7fa06d0.ctex"
+uid="uid://cf6rqfs4vcnku"
+path="res://.godot/imported/churchInside.png-684589e669d8bd3549dcf8ef04d01922.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Square/insideBar.png"
-dest_files=["res://.godot/imported/insideBar.png-8057bdf5b7cdf01b393d9912c7fa06d0.ctex"]
+source_file="res://Sprites/CityCentre/Church/churchInside.png"
+dest_files=["res://.godot/imported/churchInside.png-684589e669d8bd3549dcf8ef04d01922.ctex"]
 
 [params]
 

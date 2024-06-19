@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvcf8ygbngc0r"
-path="res://.godot/imported/newsStandInside.png-0bb5d6f64d303017c43f0cc0d34cf9b5.ctex"
+uid="uid://b2wxgv1ka06ec"
+path="res://.godot/imported/barCounter.png-d473b6305f2f4acf171126ad570a47e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Square/newsStandInside.png"
-dest_files=["res://.godot/imported/newsStandInside.png-0bb5d6f64d303017c43f0cc0d34cf9b5.ctex"]
+source_file="res://Sprites/Square/Bar/barCounter.png"
+dest_files=["res://.godot/imported/barCounter.png-d473b6305f2f4acf171126ad570a47e3.ctex"]
 
 [params]
 
