@@ -14,7 +14,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pu02u"]
 
-[node name="mainMenu" type="Control"]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,8 +66,23 @@ alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 20
 alignment = 1
+
+[node name="Separator14" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator13" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator12" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator11" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator10" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="Separator9" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -82,9 +97,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Separator5" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Separator4" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="continue" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
@@ -104,7 +116,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_pu02u")
 disabled = true
 text = "continua partita"
 
-[node name="Separator3" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Separator4" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="newGame" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
@@ -122,7 +134,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_jekra")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pu02u")
 text = "nuova partita"
 
-[node name="Separator2" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Separator3" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="options" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
@@ -139,6 +151,24 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_memtk")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_jekra")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pu02u")
 text = "opzioni"
+
+[node name="Separator2" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="commands" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.647059, 0.647059, 0.647059, 1)
+theme_override_colors/font_hover_color = Color(0.646029, 0.646029, 0.646029, 1)
+theme_override_fonts/font = ExtResource("2_bv3qf")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7i6t6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ro7tc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_memtk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jekra")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pu02u")
+text = "comandi"
 
 [node name="Separator" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2

@@ -17,7 +17,6 @@ size = Vector2(892.5, 128.75)
 size = Vector2(32.4199, 29.5552)
 
 [node name="NewsStandInside" type="Node2D"]
-position = Vector2(-192, 0)
 script = ExtResource("1_pdr0l")
 
 [node name="Background" type="Sprite2D" parent="."]

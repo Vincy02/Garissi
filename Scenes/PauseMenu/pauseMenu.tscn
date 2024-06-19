@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2avt6b6weif7"]
+[gd_scene load_steps=11 format=3 uid="uid://c2avt6b6weif7"]
 
 [ext_resource type="Script" path="res://Scripts/pauseSettings.gd" id="1_pf6uf"]
 [ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Scenes/Global/ACDiaryGirlUnicode.otf" id="2_5es47"]
 [ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/InputSettings/inputSettings.tscn" id="3_05xwx"]
+[ext_resource type="PackedScene" uid="uid://c44uocpx5haec" path="res://Scenes/Settings/settings.tscn" id="4_wiocm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4o818"]
 bg_color = Color(0.419608, 0.0745098, 0.0705882, 0.803922)
@@ -119,3 +120,25 @@ text = "ritorna al menu' iniziale"
 
 [node name="InputSettings" parent="." instance=ExtResource("3_05xwx")]
 layout_mode = 1
+
+[node name="SettingsMenu" parent="." instance=ExtResource("4_wiocm")]
+layout_mode = 1
+
+[node name="Back" type="Button" parent="."]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 0
+offset_left = 37.0
+offset_top = 35.0
+offset_right = 170.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.647059, 0.647059, 0.647059, 1)
+theme_override_colors/font_hover_color = Color(0.646029, 0.646029, 0.646029, 1)
+theme_override_fonts/font = ExtResource("2_5es47")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_601k3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5bfac")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hr28t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6dyxt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_561tv")
+text = "<< indietro"

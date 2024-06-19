@@ -16,7 +16,6 @@ size = Vector2(892.5, 99)
 size = Vector2(32.4199, 29.5552)
 
 [node name="BarInside" type="Node2D"]
-position = Vector2(-189, 0)
 script = ExtResource("1_wr75h")
 
 [node name="Background" type="Sprite2D" parent="."]
