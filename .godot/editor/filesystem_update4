@@ -1,10 +1,8 @@
-res://Scenes/newsStandInside.tscn
-res://Scenes/barInside.tscn
-res://Scenes/Settings/settings.tscn
 res://Scenes/PauseMenu/pauseMenu.tscn
+res://Scenes/Settings/settings.tscn
 res://Scenes/MainMenu/mainMenu.tscn
-res://Scripts/pauseSettings.gd
 res://Scenes/InputSettings/inputSettings.tscn
 res://Scenes/InputSettings/inputButton.tscn
-res://Scenes/Settings/settings.gd
 res://Scenes/WordlEnvironment.tscn
+res://Scripts/pauseSettings.gd
+res://Scenes/worldEnvironment.tscn

@@ -59,7 +59,7 @@ func rienable_all() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("Pause") && !inputSettings.is_visible_in_tree():
+	if Input.is_action_just_pressed("Pause") && !inputSettings.is_visible_in_tree() && !settingsMenu.is_visible_in_tree():
 		if !get_tree().paused:
 			get_tree().paused = true
 			pauseMenu.visible = true
@@ -67,5 +67,5 @@ func _process(delta):
 			get_tree().paused = false
 			pauseMenu.visible = false
 	else:
-		if Input.is_action_just_pressed("Pause") && inputSettings.is_visible_in_tree():
+		if Input.is_action_just_pressed("Pause") && (inputSettings.is_visible_in_tree() || settingsMenu.is_visible_in_tree()):
 			back_to_pause_menu()

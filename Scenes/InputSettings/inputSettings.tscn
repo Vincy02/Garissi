@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bnh6h6y2fs8pj" path="res://Scenes/InputSettings/inputButton.tscn" id="2_je8gh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am1ne"]
-bg_color = Color(0.419608, 0.0745098, 0.0705882, 0.803922)
+bg_color = Color(0.419608, 0.0745098, 0.0705882, 1)
 
 [node name="InputSettings" type="Control"]
 process_mode = 3

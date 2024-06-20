@@ -18,7 +18,7 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 
 NavigationManager="*res://Scripts/Global/navigationManager.gd"
 TransitionScreen="*res://Scenes/Global/transitionScreen.tscn"
-WordlEnvironment="*res://Scenes/WordlEnvironment.tscn"
+WordlEnvironment="*res://Scenes/worldEnvironment.tscn"
 
 [display]
 

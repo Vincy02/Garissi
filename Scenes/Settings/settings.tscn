@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://c44uocpx5haec"]
 
 [ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Scenes/Global/ACDiaryGirlUnicode.otf" id="1_e7edl"]
-[ext_resource type="Script" path="res://Scenes/Settings/settings.gd" id="1_hoxvl"]
+[ext_resource type="Script" path="res://Scripts/settings.gd" id="1_hoxvl"]
 [ext_resource type="Texture2D" uid="uid://yykqaxqck474" path="res://Scenes/Global/checkedBoxIcon.png" id="3_co1xn"]
 [ext_resource type="Texture2D" uid="uid://dfnxoxevwbcmi" path="res://Scenes/Global/uncheckedBoxIcon.png" id="4_3mp5c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ing5f"]
-bg_color = Color(0.419608, 0.0745098, 0.0705882, 0.803922)
+bg_color = Color(0.419608, 0.0745098, 0.0705882, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gwbm"]
 bg_color = Color(0.419608, 0.0745098, 0.0705882, 0)
