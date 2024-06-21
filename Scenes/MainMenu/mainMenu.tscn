@@ -208,6 +208,7 @@ layout_mode = 1
 
 [node name="Back" type="Button" parent="."]
 custom_minimum_size = Vector2(120, 32)
+layout_mode = 0
 offset_left = 37.0
 offset_top = 35.0
 offset_right = 170.0

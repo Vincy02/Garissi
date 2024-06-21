@@ -21,7 +21,7 @@ var brightness_percentage = {
 }
 
 # Called when the node enters the scene tree for the first time.
-func _ready():	
+func _ready():
 	# connect func for elements
 	fullscreenCheckBox.button_up.connect(_toggle_fullscreen)
 	brightness.value_changed.connect(_change_brightness)
@@ -35,7 +35,7 @@ func _ready():
 	brightness.value = min(video_settings.brightness, 1.5)
 	WordlEnvironment.environment.adjustment_brightness = brightness.value
 	brightnessPerc.text = brightness_percentage[str(brightness.value)] + "%"
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	volumePerc.text = str(volume.value) + "%"

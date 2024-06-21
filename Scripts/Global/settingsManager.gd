@@ -10,6 +10,9 @@ var input_actions = [
 
 var config = ConfigFile.new()
 const SETTINGS_FILE_PATH = "user://settings.ini"
+const DEFAULT_AUDIO_VOLUME = 20
+const DEFULT_FULLSCREEN = 0
+const DEFULT_BRIGHTNESS = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,10 +24,10 @@ func _ready():
 			if events.size() > 0:
 				config.set_value("keybinding", action, events[0].as_text().trim_suffix(" (Physical)"))
 		## AUDIO ##
-		config.set_value("audio", "master", 20)
+		config.set_value("audio", "master", DEFAULT_AUDIO_VOLUME)
 		## VIDEO ##
-		config.set_value("video", "fullscreen", false)
-		config.set_value("video", "brightness", 1)
+		config.set_value("video", "fullscreen", DEFULT_FULLSCREEN)
+		config.set_value("video", "brightness", DEFULT_BRIGHTNESS)
 		config.save(SETTINGS_FILE_PATH)
 	else:
 		config.load(SETTINGS_FILE_PATH)
