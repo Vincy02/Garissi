@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvo7b7usxg0ie"]
 
-[ext_resource type="Script" path="res://Scripts/inputSettings.gd" id="1_2taop"]
-[ext_resource type="PackedScene" uid="uid://bnh6h6y2fs8pj" path="res://Scenes/InputSettings/inputButton.tscn" id="2_je8gh"]
+[ext_resource type="Script" path="res://Scripts/bindingMenu.gd" id="1_6vitx"]
+[ext_resource type="PackedScene" uid="uid://bnh6h6y2fs8pj" path="res://Scenes/BindingMenu/inputButton.tscn" id="2_4waup"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am1ne"]
 bg_color = Color(0.419608, 0.0745098, 0.0705882, 1)
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_2taop")
+script = ExtResource("1_6vitx")
 
 [node name="Background" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -57,5 +57,5 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="InputButton" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("2_je8gh")]
+[node name="InputButton" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("2_4waup")]
 layout_mode = 2

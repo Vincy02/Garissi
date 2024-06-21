@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://c2avt6b6weif7"]
 
-[ext_resource type="Script" path="res://Scripts/pauseSettings.gd" id="1_pf6uf"]
+[ext_resource type="Script" path="res://Scripts/pauseMenu.gd" id="1_b3uxj"]
 [ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Scenes/Global/ACDiaryGirlUnicode.otf" id="2_5es47"]
-[ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/InputSettings/inputSettings.tscn" id="3_05xwx"]
-[ext_resource type="PackedScene" uid="uid://c44uocpx5haec" path="res://Scenes/Settings/settings.tscn" id="4_wiocm"]
+[ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/BindingMenu/bindingMenu.tscn" id="3_n8cvn"]
+[ext_resource type="PackedScene" uid="uid://c44uocpx5haec" path="res://Scenes/SettingsMenu/settingsMenu.tscn" id="4_wi7rj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4o818"]
 bg_color = Color(0.419608, 0.0745098, 0.0705882, 1)
@@ -25,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_pf6uf")
+script = ExtResource("1_b3uxj")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -118,10 +118,10 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_6dyxt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_561tv")
 text = "ritorna al menu' iniziale"
 
-[node name="InputSettings" parent="." instance=ExtResource("3_05xwx")]
+[node name="InputSettings" parent="." instance=ExtResource("3_n8cvn")]
 layout_mode = 1
 
-[node name="SettingsMenu" parent="." instance=ExtResource("4_wiocm")]
+[node name="SettingsMenu" parent="." instance=ExtResource("4_wi7rj")]
 layout_mode = 1
 
 [node name="Back" type="Button" parent="."]

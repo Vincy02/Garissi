@@ -1,3 +1,4 @@
+res://Scripts/Global
 res://Scenes
 res://Scripts
 res://Scenes/PauseMenu
@@ -6,5 +7,4 @@ res://Scenes/MainMenu
 res://Sprites/Square
 res://Sprites/CityCentre
 res://Scenes/Global
-res://Scripts/Global
 res://.godot/imported

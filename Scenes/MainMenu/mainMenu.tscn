@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://vfrtd17061hq"]
+[gd_scene load_steps=16 format=3 uid="uid://vfrtd17061hq"]
 
 [ext_resource type="Script" path="res://Scripts/mainMenu.gd" id="1_d20jd"]
 [ext_resource type="Texture2D" uid="uid://c4m53pbbx27jr" path="res://Sprites/MainMenu/garissi_main_menu_bg.png" id="1_ordmb"]
 [ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Scenes/Global/ACDiaryGirlUnicode.otf" id="2_bv3qf"]
+[ext_resource type="PackedScene" uid="uid://c44uocpx5haec" path="res://Scenes/SettingsMenu/settingsMenu.tscn" id="4_7che8"]
+[ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/BindingMenu/bindingMenu.tscn" id="5_c12qw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7i6t6"]
 
@@ -13,6 +15,16 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jekra"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pu02u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nl0nk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aew5o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3hias"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cqoav"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r7glt"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -187,3 +199,27 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_memtk")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_jekra")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pu02u")
 text = "esci"
+
+[node name="SettingsMenu" parent="." instance=ExtResource("4_7che8")]
+layout_mode = 1
+
+[node name="BindingMenu" parent="." instance=ExtResource("5_c12qw")]
+layout_mode = 1
+
+[node name="Back" type="Button" parent="."]
+custom_minimum_size = Vector2(120, 32)
+offset_left = 37.0
+offset_top = 35.0
+offset_right = 170.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.647059, 0.647059, 0.647059, 1)
+theme_override_colors/font_hover_color = Color(0.646029, 0.646029, 0.646029, 1)
+theme_override_fonts/font = ExtResource("2_bv3qf")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nl0nk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_aew5o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3hias")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cqoav")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r7glt")
+text = "<< indietro"
