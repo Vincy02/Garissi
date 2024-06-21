@@ -38,10 +38,12 @@ func on_exit_button_pressed() -> void:
 	get_tree().quit()
 
 func _process(delta):
+	pass
+
+func _unhandled_input(event):
 	if Input.is_action_just_pressed("Pause") && settingMenu.is_visible_in_tree():
 		settingMenu.visible = false
 		backButton.visible = false
 	if Input.is_action_just_pressed("Pause") && bindingMenu.is_visible_in_tree():
 		bindingMenu.visible = false
 		backButton.visible = false
-	

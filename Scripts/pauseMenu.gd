@@ -2,7 +2,7 @@ class_name PauseMenu
 extends Control
 
 @onready var pauseMenu = $"."
-@onready var inputSettings = $InputSettings
+@onready var bindingMenu = $BindingMenu
 @onready var settingsMenu = $SettingsMenu
 @onready var panelConteinerPauseMenu = $PanelContainer
 @onready var continueButton = $PanelContainer/MarginContainer/VBoxContainer/continueGame as Button
@@ -14,6 +14,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time. 
 func _ready():
+	
 	continueButton.button_down.connect(on_continue_button_pressed)
 	optionsButton.button_down.connect(on_options_button_pressed)
 	commandsButton.button_down.connect(on_commands_button_pressed)
@@ -21,7 +22,7 @@ func _ready():
 	backButton.button_down.connect(on_back_button_pressed)
 	pauseMenu.visible = false
 	settingsMenu.visible = false
-	inputSettings.visible = false
+	bindingMenu.visible = false
 	backButton.visible = false
 
 func on_continue_button_pressed() -> void:
@@ -37,12 +38,12 @@ func on_back_button_pressed() -> void:
 	back_to_pause_menu()
 
 func on_commands_button_pressed() -> void:
-	inputSettings.visible = true
+	bindingMenu.visible = true
 	backButton.visible = true
 	disable_all()
 
 func back_to_pause_menu() -> void:
-	inputSettings.visible = false
+	bindingMenu.visible = false
 	settingsMenu.visible = false
 	backButton.visible = false
 	rienable_all()
@@ -59,7 +60,10 @@ func rienable_all() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("Pause") && !inputSettings.is_visible_in_tree() && !settingsMenu.is_visible_in_tree():
+	pass
+			
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("Pause") && !bindingMenu.is_visible_in_tree() && !settingsMenu.is_visible_in_tree():
 		if !get_tree().paused:
 			get_tree().paused = true
 			pauseMenu.visible = true
@@ -67,5 +71,5 @@ func _process(delta):
 			get_tree().paused = false
 			pauseMenu.visible = false
 	else:
-		if Input.is_action_just_pressed("Pause") && (inputSettings.is_visible_in_tree() || settingsMenu.is_visible_in_tree()):
+		if Input.is_action_just_pressed("Pause") && (bindingMenu.is_visible_in_tree() || settingsMenu.is_visible_in_tree()):
 			back_to_pause_menu()

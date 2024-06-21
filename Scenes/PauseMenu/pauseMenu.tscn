@@ -118,7 +118,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_6dyxt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_561tv")
 text = "ritorna al menu' iniziale"
 
-[node name="InputSettings" parent="." instance=ExtResource("3_n8cvn")]
+[node name="BindingMenu" parent="." instance=ExtResource("3_n8cvn")]
 layout_mode = 1
 
 [node name="SettingsMenu" parent="." instance=ExtResource("4_wi7rj")]

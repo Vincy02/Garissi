@@ -9,20 +9,25 @@ var remapping_button = null
 @onready var pause_menu = $"."
 
 var input_actions = {
-	"MoveUp": "Move up",
-	"MoveDown": "Move down",
-	"MoveLeft": "Move left",
-	"MoveRight": "Move right",
-	"Interact": "Interact"
+	"MoveUp": "Vai sù",
+	"MoveDown": "Vai giù",
+	"MoveLeft": "Vai a sinistra",
+	"MoveRight": "Vai a destra",
+	"Interact": "Interagisci"
 }
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_load_keybind_from_settings()
 	_create_action_list()
-	pass # Replace with function body.
+
+func _load_keybind_from_settings():
+	var keybind = SettingsManager.load_keybinds_settings()
+	for action in keybind.keys():
+		InputMap.action_erase_events(action)
+		InputMap.action_add_event(action, keybind[action])
 
 func _create_action_list():
-	InputMap.load_from_project_settings()
 	for item in action_list.get_children():
 		item.queue_free()
 		
@@ -33,10 +38,67 @@ func _create_action_list():
 		
 		action_label.text = input_actions[action]
 		
-		var events = InputMap.action_get_events(action)
-		if events.size() > 0:
-			input_label.text = events[0].as_text().trim_suffix(" (Physical)")
-		else:
-			input_label.text = ""
+		_set_action_label(input_label, action)
 			
 		action_list.add_child(button)
+		button.pressed.connect(_on_input_button_pressed.bind(button, action))
+		
+func _on_input_button_pressed(button, action):
+	if !is_remapping:
+		is_remapping = true
+		remapping_button = button
+		action_to_remap = action
+		button.find_child("LabelInput").text = "Premi per cambiare tasto..."
+
+func _input(event):
+	if is_remapping:
+		if (event is InputEventKey || (event is InputEventMouseButton && event.pressed)):
+			
+			# Turn double click into single click
+			if event is InputEventMouseButton && event.double_click:
+				event.double_click = false
+			
+			# Hangling ESCAPE binding
+			if !Input.is_action_just_pressed("Pause"):
+				InputMap.action_erase_events(action_to_remap)
+					
+				# Remove dupllicate inputs from previously assigned actions
+				for action in input_actions:
+					if InputMap.action_has_event(action, event):
+						InputMap.action_erase_event(action, event)
+						var buttons_with_action = action_list.get_children().filter(func(button):
+							return button.find_child("LabelAction").text == input_actions[action]
+						)
+						for button in buttons_with_action:
+							button.find_child("LabelInput").text = ""
+							
+				InputMap.action_add_event(action_to_remap, event)
+				SettingsManager.save_keybinds_settings(action_to_remap, event)
+				_update_action_list(remapping_button, event)
+			else:
+				_set_action_label(remapping_button.find_child("LabelInput"), action_to_remap)
+				
+			is_remapping = false
+			action_to_remap = null
+			remapping_button = null
+			
+			# Allows to bind a mouse click safely	
+			accept_event()
+			
+func _update_action_list(button, event):
+	button.find_child("LabelInput").text = event.as_text().trim_suffix(" (Physical)")
+	
+func _on_reset_button_pressed():
+	InputMap.load_from_project_settings()
+	for action in input_actions:
+		var events = InputMap.action_get_events(action)
+		if events.size() > 0:
+			SettingsManager.save_keybinds_settings(action, events[0])
+	_create_action_list()
+
+func _set_action_label(label, action):
+	var events = InputMap.action_get_events(action)
+	if events.size() > 0:
+		label.text = events[0].as_text().trim_suffix(" (Physical)")
+	else:
+		label.text = ""

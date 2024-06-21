@@ -66,7 +66,7 @@ theme_override_constants/separation = 30
 [node name="FullScreen" type="HBoxContainer" parent="PanelContainer/MarginContainer/Control/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_constants/separation = 205
+theme_override_constants/separation = 260
 alignment = 1
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/Control/VBoxContainer/FullScreen"]
@@ -90,7 +90,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ienpq")
 [node name="Res" type="HBoxContainer" parent="PanelContainer/MarginContainer/Control/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_constants/separation = 265
+theme_override_constants/separation = 115
 alignment = 1
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/Control/VBoxContainer/Res"]
@@ -100,11 +100,12 @@ theme_override_font_sizes/font_size = 35
 text = "Risoluzione
 "
 
-[node name="OptionButton" type="OptionButton" parent="PanelContainer/MarginContainer/Control/VBoxContainer/Res"]
+[node name="ResButton" type="OptionButton" parent="PanelContainer/MarginContainer/Control/VBoxContainer/Res"]
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
-item_count = 1
-popup/item_0/text = ""
-popup/item_0/id = 0
+theme_override_fonts/font = ExtResource("2_t7p6j")
+theme_override_font_sizes/font_size = 20
+alignment = 1
 
 [node name="Brightness" type="HBoxContainer" parent="PanelContainer/MarginContainer/Control/VBoxContainer"]
 layout_mode = 2

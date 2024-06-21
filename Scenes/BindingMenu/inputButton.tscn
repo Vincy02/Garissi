@@ -36,6 +36,7 @@ layout_mode = 2
 layout_mode = 2
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("1_5ej3u")
+theme_override_font_sizes/font_size = 25
 text = "Vincenzo Monopoli"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -48,6 +49,7 @@ mouse_filter = 1
 [node name="LabelInput" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_5ej3u")
+theme_override_font_sizes/font_size = 25
 text = "Input key
 "
 horizontal_alignment = 1

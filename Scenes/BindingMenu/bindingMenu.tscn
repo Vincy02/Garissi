@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvo7b7usxg0ie"]
+[gd_scene load_steps=5 format=3 uid="uid://bvo7b7usxg0ie"]
 
 [ext_resource type="Script" path="res://Scripts/bindingMenu.gd" id="1_6vitx"]
 [ext_resource type="PackedScene" uid="uid://bnh6h6y2fs8pj" path="res://Scenes/BindingMenu/inputButton.tscn" id="2_4waup"]
+[ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Scenes/Global/ACDiaryGirlUnicode.otf" id="3_k7k6j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am1ne"]
 bg_color = Color(0.419608, 0.0745098, 0.0705882, 1)
@@ -59,3 +60,13 @@ size_flags_horizontal = 3
 
 [node name="InputButton" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("2_4waup")]
 layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_k7k6j")
+theme_override_font_sizes/font_size = 25
+text = "Resetta alle impostazioni di default"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
