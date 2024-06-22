@@ -1,9 +1,11 @@
+class_name Player
 extends CharacterBody2D
 
-class_name Player
 @export var speed: int = 500
 @export var map: Sprite2D
+
 var animated_sprite: AnimatedSprite2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var x = (map.texture.get_size().x * map.scale.x)/2

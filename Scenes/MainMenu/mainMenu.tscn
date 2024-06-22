@@ -167,7 +167,7 @@ text = "opzioni"
 [node name="Separator2" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="commands" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="keybinds" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -203,7 +203,7 @@ text = "esci"
 [node name="SettingsMenu" parent="." instance=ExtResource("4_7che8")]
 layout_mode = 1
 
-[node name="BindingMenu" parent="." instance=ExtResource("5_c12qw")]
+[node name="KeybindsMenu" parent="." instance=ExtResource("5_c12qw")]
 layout_mode = 1
 
 [node name="Back" type="Button" parent="."]

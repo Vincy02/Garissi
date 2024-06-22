@@ -7,6 +7,7 @@ const scene_barInside = preload("res://Scenes/barInside.tscn")
 const scene_newsStandInside = preload("res://Scenes/newsStandInside.tscn")
 const scene_upZone = preload("res://Scenes/upZone.tscn")
 const scene_churchInside = preload("res://Scenes/churchInside.tscn")
+
 signal on_trigger_player_spawn
 
 var spawn_door_tag 

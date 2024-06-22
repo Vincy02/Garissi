@@ -1,12 +1,13 @@
+class_name BindingMenu
 extends Control
 
 @onready var input_button_scene = preload("res://Scenes/BindingMenu/inputButton.tscn")
 @onready var action_list = $PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList
+@onready var pause_menu = $"."
 
 var is_remapping = false
 var action_to_remap = null
 var remapping_button = null
-@onready var pause_menu = $"."
 
 var input_actions = {
 	"MoveUp": "Vai sù",
@@ -22,10 +23,10 @@ func _ready():
 	_create_action_list()
 
 func _load_keybind_from_settings():
-	var keybind = SettingsManager.load_keybinds_settings()
-	for action in keybind.keys():
+	var keybinds = SettingsManager.load_keybinds_settings()
+	for action in keybinds.keys():
 		InputMap.action_erase_events(action)
-		InputMap.action_add_event(action, keybind[action])
+		InputMap.action_add_event(action, keybinds[action])
 
 func _create_action_list():
 	for item in action_list.get_children():
@@ -58,19 +59,21 @@ func _input(event):
 			if event is InputEventMouseButton && event.double_click:
 				event.double_click = false
 			
-			# Hangling ESCAPE binding
+			# Handling ESCAPE binding
 			if !Input.is_action_just_pressed("Pause"):
+				var event_to_remap = InputMap.action_get_events(action_to_remap)[0]
 				InputMap.action_erase_events(action_to_remap)
 					
 				# Remove dupllicate inputs from previously assigned actions
 				for action in input_actions:
 					if InputMap.action_has_event(action, event):
 						InputMap.action_erase_event(action, event)
+						InputMap.action_add_event(action, event_to_remap)
 						var buttons_with_action = action_list.get_children().filter(func(button):
 							return button.find_child("LabelAction").text == input_actions[action]
 						)
 						for button in buttons_with_action:
-							button.find_child("LabelInput").text = ""
+							button.find_child("LabelInput").text = event_to_remap.as_text().trim_suffix(" (Physical)")
 							
 				InputMap.action_add_event(action_to_remap, event)
 				SettingsManager.save_keybinds_settings(action_to_remap, event)

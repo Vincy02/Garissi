@@ -1,6 +1,11 @@
 extends Node
 
-var input_actions = [
+const SETTINGS_FILE_PATH = "user://settings.ini"
+const DEFAULT_AUDIO_VOLUME = 20
+const DEFULT_FULLSCREEN = 0
+const DEFULT_BRIGHTNESS = 1
+const DEFULT_RESOLUTION = 1
+const input_actions = [
 	"MoveUp",
 	"MoveDown",
 	"MoveLeft",
@@ -9,21 +14,16 @@ var input_actions = [
 ]
 
 var config = ConfigFile.new()
-const SETTINGS_FILE_PATH = "user://settings.ini"
-const DEFAULT_AUDIO_VOLUME = 20
-const DEFULT_FULLSCREEN = 0
-const DEFULT_BRIGHTNESS = 1
-const DEFULT_RESOLUTION = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if !FileAccess.file_exists(SETTINGS_FILE_PATH):
-		## KEYBIND ##
+		## KEYBINDS ##
 		InputMap.load_from_project_settings()
 		for action in input_actions:
 			var events = InputMap.action_get_events(action)
 			if events.size() > 0:
-				config.set_value("keybind", action, events[0].as_text().trim_suffix(" (Physical)"))
+				config.set_value("keybinds", action, events[0].as_text().trim_suffix(" (Physical)"))
 		## AUDIO ##
 		config.set_value("audio", "master", DEFAULT_AUDIO_VOLUME)
 		## VIDEO ##
@@ -61,15 +61,15 @@ func save_keybinds_settings(action: StringName, event: InputEvent):
 	elif event is InputEventMouseButton:
 		event_str = "mouse_" + str(event.button_index)
 		
-	config.set_value("keybind", action, event_str)
+	config.set_value("keybinds", action, event_str)
 	config.save(SETTINGS_FILE_PATH)
 	
 func load_keybinds_settings():
 	var keybinds_settings = {}
-	var keys = config.get_section_keys("keybind")
+	var keys = config.get_section_keys("keybinds")
 	for key in keys:
 		var input_event
-		var event_str = config.get_value("keybind", key)
+		var event_str = config.get_value("keybinds", key)
 		
 		if event_str.contains("mouse_"):
 			input_event = InputEventMouseButton.new()
