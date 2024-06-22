@@ -11,19 +11,22 @@ config_version=5
 [application]
 
 config/name="Garissi"
-run/main_scene="res://Scenes/square.tscn"
+run/main_scene="res://Scenes/MainMenu/mainMenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
 [autoload]
 
 NavigationManager="*res://Scripts/Global/navigationManager.gd"
 TransitionScreen="*res://Scenes/Global/transitionScreen.tscn"
+WordlEnvironment="*res://Scenes/worldEnvironment.tscn"
+SettingsManager="*res://Scripts/Global/settingsManager.gd"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/resizable=false
+window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
 [input]

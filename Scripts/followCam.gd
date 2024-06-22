@@ -1,6 +1,8 @@
+class_name FollowCam
 extends Camera2D
 
 @export var map: Sprite2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	limit_top = 0

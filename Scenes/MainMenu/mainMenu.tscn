@@ -1,0 +1,226 @@
+[gd_scene load_steps=16 format=3 uid="uid://vfrtd17061hq"]
+
+[ext_resource type="Script" path="res://Scripts/mainMenu.gd" id="1_d20jd"]
+[ext_resource type="Texture2D" uid="uid://c4m53pbbx27jr" path="res://Sprites/MainMenu/garissi_main_menu_bg.png" id="1_ordmb"]
+[ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Scenes/Global/ACDiaryGirlUnicode.otf" id="2_bv3qf"]
+[ext_resource type="PackedScene" uid="uid://c44uocpx5haec" path="res://Scenes/SettingsMenu/settingsMenu.tscn" id="4_7che8"]
+[ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/BindingMenu/bindingMenu.tscn" id="5_c12qw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7i6t6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ro7tc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_memtk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jekra"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pu02u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nl0nk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aew5o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3hias"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cqoav"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r7glt"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d20jd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ordmb")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Separator" type="Control" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_bv3qf")
+theme_override_font_sizes/font_size = 129
+text = "GARISSI"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Separator14" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator13" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator12" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator11" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator10" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator9" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator8" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator7" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator6" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator5" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="continue" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+tooltip_text = "disabilitato nella versione demo"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.647059, 0.647059, 0.647059, 1)
+theme_override_colors/font_hover_color = Color(0.646029, 0.646029, 0.646029, 1)
+theme_override_fonts/font = ExtResource("2_bv3qf")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7i6t6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ro7tc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_memtk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jekra")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pu02u")
+disabled = true
+text = "continua partita"
+
+[node name="Separator4" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="newGame" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.647059, 0.647059, 0.647059, 1)
+theme_override_colors/font_hover_color = Color(0.646029, 0.646029, 0.646029, 1)
+theme_override_fonts/font = ExtResource("2_bv3qf")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7i6t6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ro7tc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_memtk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jekra")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pu02u")
+text = "nuova partita"
+
+[node name="Separator3" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="options" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.647059, 0.647059, 0.647059, 1)
+theme_override_colors/font_hover_color = Color(0.646029, 0.646029, 0.646029, 1)
+theme_override_fonts/font = ExtResource("2_bv3qf")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7i6t6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ro7tc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_memtk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jekra")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pu02u")
+text = "opzioni"
+
+[node name="Separator2" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="keybinds" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.647059, 0.647059, 0.647059, 1)
+theme_override_colors/font_hover_color = Color(0.646029, 0.646029, 0.646029, 1)
+theme_override_fonts/font = ExtResource("2_bv3qf")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7i6t6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ro7tc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_memtk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jekra")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pu02u")
+text = "comandi"
+
+[node name="Separator" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="exit" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.647059, 0.647059, 0.647059, 1)
+theme_override_colors/font_hover_color = Color(0.647059, 0.647059, 0.647059, 1)
+theme_override_fonts/font = ExtResource("2_bv3qf")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7i6t6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ro7tc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_memtk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jekra")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pu02u")
+text = "esci"
+
+[node name="SettingsMenu" parent="." instance=ExtResource("4_7che8")]
+layout_mode = 1
+
+[node name="KeybindsMenu" parent="." instance=ExtResource("5_c12qw")]
+layout_mode = 1
+
+[node name="Back" type="Button" parent="."]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 0
+offset_left = 37.0
+offset_top = 35.0
+offset_right = 170.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.647059, 0.647059, 0.647059, 1)
+theme_override_colors/font_hover_color = Color(0.646029, 0.646029, 0.646029, 1)
+theme_override_fonts/font = ExtResource("2_bv3qf")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nl0nk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_aew5o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3hias")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cqoav")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r7glt")
+text = "<< indietro"
