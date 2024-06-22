@@ -65,12 +65,11 @@ top_level = true
 position = Vector2(1673, 1077)
 scale = Vector2(0.15, 0.15)
 
-[node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("8_kmige")]
+[node name="Player" parent="." instance=ExtResource("8_kmige")]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(639, 792)
+position = Vector2(-4.76837e-07, -4.76837e-07)
 scale = Vector2(0.2, 0.2)
-map = NodePath("../Background")
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
 light_mask = 0

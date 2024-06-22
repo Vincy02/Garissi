@@ -34,9 +34,8 @@ spawn_direction = "right"
 [node name="Spawn" parent="Doors/Door_E" index="1"]
 position = Vector2(-20.3666, 8.28719e-06)
 
-[node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("5_b5pcg")]
+[node name="Player" parent="." instance=ExtResource("5_b5pcg")]
 scale = Vector2(0.2, 0.2)
-map = NodePath("../Background")
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
 light_mask = 0

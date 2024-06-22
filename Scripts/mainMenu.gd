@@ -1,7 +1,7 @@
 class_name MainMenu
 extends Control
 
-@onready var start_level = preload("res://Scenes/square.tscn") as PackedScene
+
 @onready var start_button = $TextureRect/MarginContainer/HBoxContainer/VBoxContainer/newGame as Button
 @onready var options_button = $TextureRect/MarginContainer/HBoxContainer/VBoxContainer/options as Button
 @onready var exit_button = $TextureRect/MarginContainer/HBoxContainer/VBoxContainer/exit as Button
@@ -21,7 +21,7 @@ func _ready():
 	back_button.visible = false
 	
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_packed(start_level)
+	ScenesManager._start_game()
 
 func _on_options_button_pressed() -> void:
 	settings_menu.visible = true
