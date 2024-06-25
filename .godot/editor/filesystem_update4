@@ -5,3 +5,6 @@ res://Scenes/player.tscn
 res://Scenes/square.tscn
 res://Scenes/park.tscn
 res://Scripts/Global/scenesManager.gd
+res://Scenes/FirstMission/firstMission.tscn
+res://Scenes/Missions/firstMission.tscn
+res://Scripts/Missions/firstMission.gd
