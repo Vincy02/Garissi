@@ -2,10 +2,6 @@ res://Scenes/BindingMenu/bindingMenu.tscn
 res://Scenes/MainMenu/mainMenu.tscn
 res://Scenes/PauseMenu/pauseMenu.tscn
 res://Scenes/player.tscn
-res://Scripts/Global/scenesManager.gd
-res://Scripts/player.gd
 res://Scenes/square.tscn
-res://Scripts/mainMenu.gd
-res://Scenes/upZone.tscn
 res://Scenes/park.tscn
-res://Scripts/followCam.gd
+res://Scripts/Global/scenesManager.gd

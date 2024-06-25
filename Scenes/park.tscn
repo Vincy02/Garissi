@@ -35,6 +35,7 @@ spawn_direction = "right"
 position = Vector2(-20.3666, 8.28719e-06)
 
 [node name="Player" parent="." instance=ExtResource("5_b5pcg")]
+position = Vector2(-2.38419e-07, 2.38419e-07)
 scale = Vector2(0.2, 0.2)
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
