@@ -32,8 +32,6 @@ static func set_player_position(position: Vector2, direction: String):
 		if(direction == "right"):
 			player.scale.x = -SCALE_PLAYER
 			set_player_position_bool = true
-	else:
-		print("Rocco e' gay")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

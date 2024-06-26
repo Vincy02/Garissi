@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbpu50l5aef5k"]
+[gd_scene load_steps=14 format=3 uid="uid://dbpu50l5aef5k"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_vuua6"]
 [ext_resource type="Texture2D" uid="uid://xlu4mvawgri0" path="res://Sprites/UpZone/upZone.png" id="2_etwou"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_q21d4"]
+[ext_resource type="Texture2D" uid="uid://dklt048fb02i5" path="res://Sprites/UpZone/treeBed.png" id="3_ry8de"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="4_euucv"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_sjsw8"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="6_07qtv"]
@@ -11,8 +12,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewdfn"]
 size = Vector2(1756, 72.75)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yj3vo"]
+radius = 61.0
+height = 246.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ka206"]
 size = Vector2(24.1459, 23.4342)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5cid"]
+size = Vector2(12.0463, 12.758)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrviy"]
+size = Vector2(14.0036, 12.758)
 
 [node name="UpZone" type="Node2D"]
 script = ExtResource("1_vuua6")
@@ -27,6 +38,34 @@ position = Vector2(614, 254)
 [node name="CollisionShape1" type="CollisionShape2D" parent="BuildingCollision"]
 position = Vector2(268, 282)
 shape = SubResource("RectangleShape2D_ewdfn")
+
+[node name="TreeBed" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(327, 1030)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("3_ry8de")
+
+[node name="TreeBed2" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(1410, 1030)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("3_ry8de")
+
+[node name="TreeBedCollision" type="StaticBody2D" parent="."]
+position = Vector2(614, 254)
+
+[node name="CollisionShape1" type="CollisionShape2D" parent="TreeBedCollision"]
+position = Vector2(-287, 867)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_yj3vo")
+
+[node name="CollisionShape2" type="CollisionShape2D" parent="TreeBedCollision"]
+position = Vector2(798, 867)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_yj3vo")
+
+[node name="Borders" parent="." instance=ExtResource("6_07qtv")]
+scale = Vector2(1.38, 1.67)
 
 [node name="Doors" type="Node2D" parent="."]
 position = Vector2(3, 474)
@@ -46,12 +85,41 @@ shape = SubResource("RectangleShape2D_ka206")
 position = Vector2(1.77936, -16.548)
 rotation = -1.57079
 
-[node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("4_euucv")]
+[node name="Door_E" parent="Doors" instance=ExtResource("3_q21d4")]
+position = Vector2(1667, 519)
+scale = Vector2(11.24, 11.24)
+destination_level_tag = "seaside"
+destination_door_tag = "W"
+spawn_direction = "right"
+
+[node name="CollisionShape2D" parent="Doors/Door_E" index="0"]
+position = Vector2(13.2562, -16.2811)
+shape = SubResource("RectangleShape2D_g5cid")
+
+[node name="Spawn" parent="Doors/Door_E" index="1"]
+position = Vector2(1.77936, -16.548)
+rotation = -1.57079
+
+[node name="Door_PostOffice" parent="Doors" instance=ExtResource("3_q21d4")]
+position = Vector2(939, 459)
+scale = Vector2(11.24, 11.24)
+destination_level_tag = "postOfficeInside"
+destination_door_tag = "S"
+spawn_direction = "right"
+
+[node name="CollisionShape2D" parent="Doors/Door_PostOffice" index="0"]
+position = Vector2(1.77936, -24.8221)
+shape = SubResource("RectangleShape2D_rrviy")
+
+[node name="Spawn" parent="Doors/Door_PostOffice" index="1"]
+position = Vector2(1.77936, -16.548)
+rotation = -1.57079
+
+[node name="Player" parent="." instance=ExtResource("4_euucv")]
 light_mask = 3
 visibility_layer = 3
 position = Vector2(80, 114)
 scale = Vector2(0.2, 0.2)
-map = NodePath("../Background")
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
 light_mask = 0
@@ -61,12 +129,12 @@ limit_top = 0
 script = ExtResource("5_sjsw8")
 map = NodePath("../../Background")
 
-[node name="Borders" parent="." instance=ExtResource("6_07qtv")]
-scale = Vector2(1.38, 1.67)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_x3w31")]
 process_mode = 3
 
 [editable path="Doors/Door_S"]
+[editable path="Doors/Door_E"]
+[editable path="Doors/Door_PostOffice"]

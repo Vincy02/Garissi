@@ -1,0 +1,101 @@
+[gd_scene load_steps=14 format=3 uid="uid://dj3kn38m1bif1"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_wkf8p"]
+[ext_resource type="Texture2D" uid="uid://cy2bt0egeexw1" path="res://Sprites/Seaside/seaside.png" id="2_6no36"]
+[ext_resource type="Texture2D" uid="uid://dounvjofegbwp" path="res://Sprites/Seaside/building1.png" id="3_72io5"]
+[ext_resource type="Texture2D" uid="uid://b2ggyqotxa2ro" path="res://Sprites/Seaside/building2.png" id="4_o2ab5"]
+[ext_resource type="Texture2D" uid="uid://cwd0jum2dj0cq" path="res://Sprites/Seaside/housePaolo.png" id="5_ywfm7"]
+[ext_resource type="Texture2D" uid="uid://dldhuju878bxs" path="res://Sprites/Seaside/lifeGuardTower.png" id="6_cxebo"]
+[ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="6_qo7na"]
+[ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="7_th8xq"]
+[ext_resource type="Script" path="res://Scripts/followCam.gd" id="8_fdwqv"]
+[ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="9_3f5ha"]
+[ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="10_k02mp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0o3fp"]
+size = Vector2(1756, 72.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uchvd"]
+size = Vector2(12.0463, 12.758)
+
+[node name="Seaside" type="Node2D"]
+script = ExtResource("1_wkf8p")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(798, 646)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_6no36")
+
+[node name="Building1" type="Sprite2D" parent="."]
+position = Vector2(285, 388)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_72io5")
+
+[node name="Building2" type="Sprite2D" parent="."]
+position = Vector2(801, 317)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_o2ab5")
+
+[node name="HousePaolo" type="Sprite2D" parent="."]
+position = Vector2(1313, 380)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_ywfm7")
+
+[node name="LifeGuardTower" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(1368, 936)
+texture = ExtResource("6_cxebo")
+
+[node name="BuildingCollision" type="StaticBody2D" parent="."]
+position = Vector2(558, 129)
+
+[node name="CollisionShape1" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(268, 282)
+shape = SubResource("RectangleShape2D_0o3fp")
+
+[node name="CollisionShape2" type="CollisionPolygon2D" parent="BuildingCollision"]
+position = Vector2(717, 873)
+build_mode = 1
+polygon = PackedVector2Array(31, -26, -40, 60, -35, 112, 181, 118, 181, -25)
+
+[node name="Borders" parent="." instance=ExtResource("9_3f5ha")]
+scale = Vector2(1.247, 1.794)
+
+[node name="Doors" type="Node2D" parent="."]
+position = Vector2(3, 474)
+
+[node name="Door_W" parent="Doors" instance=ExtResource("6_qo7na")]
+position = Vector2(9.99999, 385)
+scale = Vector2(11.24, 11.24)
+destination_level_tag = "upZone"
+destination_door_tag = "E"
+spawn_direction = "left"
+
+[node name="CollisionShape2D" parent="Doors/Door_W" index="0"]
+position = Vector2(-6.49466, -16.2811)
+shape = SubResource("RectangleShape2D_uchvd")
+
+[node name="Spawn" parent="Doors/Door_W" index="1"]
+position = Vector2(1.77936, -16.548)
+rotation = -1.57079
+
+[node name="Player" parent="." instance=ExtResource("7_th8xq")]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(80, 114)
+scale = Vector2(0.2, 0.2)
+
+[node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
+light_mask = 0
+visibility_layer = 0
+limit_left = 0
+limit_top = 0
+script = ExtResource("8_fdwqv")
+map = NodePath("../../Background")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("10_k02mp")]
+process_mode = 3
+
+[editable path="Doors/Door_W"]

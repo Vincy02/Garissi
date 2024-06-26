@@ -57,8 +57,9 @@ func add_resolution_items() -> void:
 		
 func on_resolution_selected(index : int) -> void:
 	DisplayServer.window_set_size(resolution_dictionary.values()[index])
-	var screen = DisplayServer.screen_get_size(0)
-	get_window().position = (screen/2) - get_window().size/2
+	# Need to figure out how to center the window only on resolution changes
+	# var screen = DisplayServer.screen_get_size(0)
+	# get_window().position = (screen/2) - get_window().size/2
 	SettingsManager.save_video_setting("resolution", index)
 		
 func _change_brightness(value) -> void:

@@ -11,47 +11,46 @@
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="8_q3wyf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_typ6s"]
-size = Vector2(892.5, 128.75)
+size = Vector2(657, 128.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kefs5"]
-size = Vector2(32.4199, 29.5552)
+size = Vector2(24.0391, 21.7259)
 
 [node name="NewsStandInside" type="Node2D"]
 script = ExtResource("1_pdr0l")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(450, 511)
-scale = Vector2(0.428366, 0.449824)
+position = Vector2(640, 379)
+scale = Vector2(1, 1.052)
 texture = ExtResource("2_0bvab")
 
 [node name="BarCounter" type="Sprite2D" parent="."]
-position = Vector2(443, 372)
-scale = Vector2(0.395884, 0.360465)
+position = Vector2(641, 287)
+scale = Vector2(0.315, 0.287)
 texture = ExtResource("3_duqsk")
 
 [node name="BarCounterCollision" type="StaticBody2D" parent="."]
-position = Vector2(1, 66)
+position = Vector2(245, -21)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarCounterCollision"]
-position = Vector2(451, 272.625)
+position = Vector2(394.5, 272.625)
 shape = SubResource("RectangleShape2D_typ6s")
 
 [node name="Sign" type="Sprite2D" parent="."]
-position = Vector2(171, 665)
-scale = Vector2(0.4, 0.364)
+position = Vector2(422, 508)
+scale = Vector2(0.25, 0.227)
 texture = ExtResource("4_fsnxo")
 
 [node name="SignCollision" type="StaticBody2D" parent="."]
-position = Vector2(-20, 462)
+position = Vector2(231, 305)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SignCollision"]
 position = Vector2(191, 203)
-scale = Vector2(0.4, 0.364)
+scale = Vector2(0.25, 0.227)
 polygon = PackedVector2Array(132, -281.8, 132, -279.5, 140, -266.6, 140, -262, 255.5, 145, 256.2, 145, 260, 152.5, 260, 173, 258.7, 173, 246.7, 182, 242.3, 182, -61.6, 282, -84.7, 282, -93, 272.8, -93, 268, -115.5, 171.4, -241.6, 227, -249.7, 227, -260, 218.5, -260, 193.3, -201.7, -199, -200.5, -199, -196.6, -215, -194.9, -215, -188.9, -222, -186.5, -222, -180.5, -225, -175.4, -225, 108.5, -282, 130.4, -282)
 
-[node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("3_v6byu")]
+[node name="Player" parent="." instance=ExtResource("3_v6byu")]
 scale = Vector2(0.2, 0.2)
-map = NodePath("../Background")
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
 light_mask = 0
@@ -60,20 +59,20 @@ script = ExtResource("4_e0yg6")
 map = NodePath("../../Background")
 
 [node name="Borders" parent="." instance=ExtResource("5_qorsg")]
-position = Vector2(4.76837e-07, 0)
-scale = Vector2(0.7, 1.42)
+position = Vector2(310, 0)
+scale = Vector2(0.516, 1.052)
 
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="Door_S" parent="Doors" instance=ExtResource("6_tebp3")]
-position = Vector2(-667, -441)
+position = Vector2(-486, -692)
 scale = Vector2(11.24, 11.24)
 destination_level_tag = "square"
 destination_door_tag = "NewsStand"
 spawn_direction = "right"
 
 [node name="CollisionShape2D" parent="Doors/Door_S" index="0"]
-position = Vector2(99.3772, 142.162)
+position = Vector2(99.6441, 139.057)
 shape = SubResource("RectangleShape2D_kefs5")
 
 [node name="Spawn" parent="Doors/Door_S" index="1"]

@@ -1,10 +1,13 @@
+res://Scripts
+res://Utils
+res://Scenes/Global
+res://Sprites/Characters
+res://Sprites/Player
 res://Scripts/Missions
 res://Scripts/Global
 res://Scenes
-res://Scripts
 res://Scenes/PauseMenu
 res://Scenes/MainMenu
 res://Sprites/Square
 res://Sprites/CityCentre
-res://Scenes/Global
 res://.godot/imported

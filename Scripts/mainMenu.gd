@@ -21,6 +21,8 @@ func _ready():
 	back_button.visible = false
 	
 func _on_start_button_pressed() -> void:
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
 	ScenesManager._start_game()
 
 func _on_options_button_pressed() -> void:

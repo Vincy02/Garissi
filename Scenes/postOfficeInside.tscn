@@ -1,0 +1,106 @@
+[gd_scene load_steps=13 format=3 uid="uid://bq1vsbrnul8so"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_ckjsg"]
+[ext_resource type="Texture2D" uid="uid://cvcxj7epo1wxs" path="res://Sprites/UpZone/PostOffice/postOfficeInside.png" id="2_ls8bm"]
+[ext_resource type="Texture2D" uid="uid://dae8ojrmxm6x5" path="res://Sprites/UpZone/PostOffice/postOfficeCounter.png" id="3_gsh3b"]
+[ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="4_piraf"]
+[ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="5_j11nq"]
+[ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="6_r1lx3"]
+[ext_resource type="Script" path="res://Scripts/followCam.gd" id="7_fi5br"]
+[ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="8_sgcvm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nncsl"]
+size = Vector2(428.5, 85.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlv4w"]
+size = Vector2(265, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8n62y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14gog"]
+size = Vector2(10.8007, 13.1406)
+
+[node name="PostOfficeInside" type="Node2D"]
+script = ExtResource("1_ckjsg")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(732, 413)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_ls8bm")
+
+[node name="PostOfficeCounter" type="Sprite2D" parent="."]
+position = Vector2(418.888, 219.1)
+scale = Vector2(0.72916, 0.584375)
+texture = ExtResource("3_gsh3b")
+
+[node name="PostOfficeCounter2" type="Sprite2D" parent="."]
+position = Vector2(1041, 219.1)
+scale = Vector2(0.72916, 0.584375)
+texture = ExtResource("3_gsh3b")
+
+[node name="CounterCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CounterCollision"]
+position = Vector2(415.75, 183.75)
+shape = SubResource("RectangleShape2D_nncsl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CounterCollision"]
+position = Vector2(1046, 183.75)
+shape = SubResource("RectangleShape2D_nncsl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CounterCollision"]
+position = Vector2(733, 115)
+shape = SubResource("RectangleShape2D_wlv4w")
+
+[node name="Borders" parent="." instance=ExtResource("4_piraf")]
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(1.136, 1.147)
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Door_S" parent="Doors" instance=ExtResource("5_j11nq")]
+position = Vector2(-387, -614)
+scale = Vector2(11.24, 11.24)
+destination_level_tag = "upZone"
+destination_door_tag = "postOffice"
+spawn_direction = "right"
+
+[node name="CollisionShape2D" parent="Doors/Door_S" index="0"]
+position = Vector2(99.3772, 136.566)
+shape = SubResource("RectangleShape2D_8n62y")
+
+[node name="Spawn" parent="Doors/Door_S" index="1"]
+position = Vector2(99.5551, 122.331)
+rotation = -1.57079
+
+[node name="Door_HeadOffice" parent="Doors" instance=ExtResource("5_j11nq")]
+position = Vector2(-388, -1206)
+scale = Vector2(11.24, 11.24)
+destination_level_tag = "upZone"
+destination_door_tag = "postOffice"
+spawn_direction = "right"
+
+[node name="CollisionShape2D" parent="Doors/Door_HeadOffice" index="0"]
+position = Vector2(99.6441, 125.698)
+shape = SubResource("RectangleShape2D_14gog")
+
+[node name="Spawn" parent="Doors/Door_HeadOffice" index="1"]
+position = Vector2(99.5551, 134.786)
+rotation = -1.57079
+
+[node name="Player" parent="." instance=ExtResource("6_r1lx3")]
+scale = Vector2(0.2, 0.2)
+
+[node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
+light_mask = 0
+visibility_layer = 0
+script = ExtResource("7_fi5br")
+map = NodePath("../../Background")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_sgcvm")]
+process_mode = 3
+
+[editable path="Doors/Door_S"]
+[editable path="Doors/Door_HeadOffice"]

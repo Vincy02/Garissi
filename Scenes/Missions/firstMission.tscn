@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://brbmbd67yowir"]
 
 [ext_resource type="Script" path="res://Scripts/Missions/firstMission.gd" id="1_v1aq5"]
-[ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Scenes/Global/ACDiaryGirlUnicode.otf" id="2_1045q"]
+[ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Utils/ACDiaryGirlUnicode.otf" id="2_1045q"]
 
 [node name="FirstMission" type="CanvasLayer"]
 script = ExtResource("1_v1aq5")

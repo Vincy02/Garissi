@@ -1,3 +1,7 @@
+CollisionPolygon2D
+Polygon2D
+CollisionShape2D
+StaticBody2D
 VBoxContainer
 MarginContainer
 Label
@@ -8,7 +12,3 @@ WorldEnvironment
 HBoxContainer
 Control
 HSlider
-OptionButton
-VSeparator
-ItemList
-CheckBox

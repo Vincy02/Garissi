@@ -115,12 +115,11 @@ shape = SubResource("RectangleShape2D_kvgyo")
 position = Vector2(1.77936, -16.548)
 rotation = -1.57079
 
-[node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("4_uq0om")]
+[node name="Player" parent="." instance=ExtResource("4_uq0om")]
 light_mask = 3
 visibility_layer = 3
 position = Vector2(-109, 92)
 scale = Vector2(0.2, 0.2)
-map = NodePath("../Background")
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
 light_mask = 0
