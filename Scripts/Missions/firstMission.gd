@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 @onready var label_text = $MarginContainer/VBoxContainer/Label
-@onready var park = "res://Scenes/square.tscn"
-var dialogue_index = 4
+@onready var park = "res://Scenes/park.tscn"
+var dialogue_index = 0
 var transition = false
 var text_to_show = ""
 
