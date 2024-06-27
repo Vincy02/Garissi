@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnh6h6y2fs8pj"]
 
-[ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Scenes/Global/ACDiaryGirlUnicode.otf" id="1_5ej3u"]
+[ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Utils/ACDiaryGirlUnicode.otf" id="1_5ej3u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrkhh"]
 bg_color = Color(0, 0, 0, 0.392157)

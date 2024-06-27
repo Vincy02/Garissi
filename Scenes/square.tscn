@@ -65,12 +65,11 @@ top_level = true
 position = Vector2(1673, 1077)
 scale = Vector2(0.15, 0.15)
 
-[node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("8_kmige")]
+[node name="Player" parent="." instance=ExtResource("8_kmige")]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(639, 792)
+position = Vector2(-4.76837e-07, -4.76837e-07)
 scale = Vector2(0.2, 0.2)
-map = NodePath("../Background")
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
 light_mask = 0
@@ -126,7 +125,7 @@ position = Vector2(-14.2984, 0)
 [node name="Door_Bar" parent="Doors" instance=ExtResource("10_lu4he")]
 position = Vector2(2133, 348)
 scale = Vector2(11.24, 11.24)
-destination_level_tag = "barInside"
+destination_level_tag = "bar"
 destination_door_tag = "S"
 spawn_direction = "right"
 
@@ -141,7 +140,7 @@ rotation = -1.57079
 [node name="Door_NewsStand" parent="Doors" instance=ExtResource("10_lu4he")]
 position = Vector2(510, 1193)
 scale = Vector2(11.24, 11.24)
-destination_level_tag = "newsStandInside"
+destination_level_tag = "newsStand"
 destination_door_tag = "S"
 spawn_direction = "right"
 

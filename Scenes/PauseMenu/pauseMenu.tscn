@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c2avt6b6weif7"]
 
 [ext_resource type="Script" path="res://Scripts/pauseMenu.gd" id="1_b3uxj"]
-[ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Scenes/Global/ACDiaryGirlUnicode.otf" id="2_5es47"]
+[ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Utils/ACDiaryGirlUnicode.otf" id="2_5es47"]
 [ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/BindingMenu/bindingMenu.tscn" id="3_n8cvn"]
 [ext_resource type="PackedScene" uid="uid://c44uocpx5haec" path="res://Scenes/SettingsMenu/settingsMenu.tscn" id="4_wi7rj"]
 

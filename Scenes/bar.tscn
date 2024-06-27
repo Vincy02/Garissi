@@ -1,0 +1,133 @@
+[gd_scene load_steps=16 format=3 uid="uid://dpu0uxlfklphi"]
+
+[ext_resource type="Texture2D" uid="uid://dn1ve26bml4et" path="res://Sprites/Square/Bar/insideBar.png" id="1_8423f"]
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_wr75h"]
+[ext_resource type="Texture2D" uid="uid://b2wxgv1ka06ec" path="res://Sprites/Square/Bar/barCounter.png" id="2_6cms4"]
+[ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_837wm"]
+[ext_resource type="Texture2D" uid="uid://dwlhsl1cqhwyw" path="res://Sprites/Square/Bar/tvAndTables.png" id="4_a3dth"]
+[ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="4_irop4"]
+[ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_203hs"]
+[ext_resource type="Texture2D" uid="uid://mv0livt7ybeu" path="res://Sprites/Square/Bar/priceList.png" id="5_i38w4"]
+[ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="7_pgmjy"]
+[ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="8_ud3gp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hp5g"]
+size = Vector2(1027.13, 261.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyjbf"]
+size = Vector2(1924.5, 99)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u7w34"]
+radius = 31.93
+height = 140.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5hw75"]
+radius = 32.0
+height = 130.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34j1n"]
+size = Vector2(32.4199, 29.5552)
+
+[node name="BarInside" type="Node2D"]
+script = ExtResource("1_wr75h")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(965, 511)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_8423f")
+
+[node name="BorderCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderCollision"]
+position = Vector2(1413.44, 886)
+shape = SubResource("RectangleShape2D_5hp5g")
+
+[node name="BarCounter" type="Sprite2D" parent="."]
+position = Vector2(448, 246)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_6cms4")
+
+[node name="CounterCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CounterCollision"]
+position = Vector2(963.75, 250.5)
+shape = SubResource("RectangleShape2D_uyjbf")
+
+[node name="TvAndTables" type="Sprite2D" parent="."]
+position = Vector2(1646, 402)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_a3dth")
+
+[node name="TvAndTablesCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TvAndTablesCollision"]
+position = Vector2(1646, 402)
+scale = Vector2(0.45, 0.45)
+polygon = PackedVector2Array(614, -550.6, 614, -548.9, 623, -541.5, 623, -449.9, 612.9, -123, 610.9, -123, 604.9, -116, 590, -116, 590, -117.6, 321, -209.2, 321, -169, 318, -44, 327.2, -44, 389, -31.6, 389, -30.3, 432, -12.3, 432, -11, 445, -2, 445, -0.799988, 455, 10.2, 455, 12.7, 460, 24.6, 460, 32.2, 457.6, 42, 456, 42, 442, 62, 439.7, 62, 421.7, 76, 419.5, 76, 392.5, 89, 389.2, 89, 347.3, 101, 341.3, 101, 312.1, 105, 287.9, 105, 272, 103.9, 272, 102.8, 241, 98.8, 241, 97.5, 203, 87.5, 203, 86.3, 177, 75.3, 177, 74, 151, 55, 151, 52.6, 141, 37.6, 141, 18, 142.6, 18, 145.6, 9, 147, 9, 155, -2, 157.2, -2, 166.2, -11, 168.5, -11, 188.4, -23, 191.7, -23, 235.7, -38, 240.7, -38, 271, -42.7, 271, -99, 273, -225.2, 50, -301.6, 50, -302.8, 33, -311.8, 33, -315, 31, -378, 32, -378, 34, -680, 36.2, -680, 42, -685.8, 59, -686)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TvAndTablesCollision"]
+position = Vector2(1477, 466)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_u7w34")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TvAndTablesCollision"]
+position = Vector2(732, 650)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_u7w34")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TvAndTablesCollision"]
+position = Vector2(157, 648)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5hw75")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TvAndTablesCollision"]
+position = Vector2(153, 347)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_u7w34")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TvAndTablesCollision"]
+position = Vector2(1816, 543)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_u7w34")
+
+[node name="PriceList" type="Sprite2D" parent="."]
+position = Vector2(1257, 255)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("5_i38w4")
+
+[node name="Borders" parent="." instance=ExtResource("7_pgmjy")]
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(1.508, 1.42)
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Door_S" parent="Doors" instance=ExtResource("3_837wm")]
+position = Vector2(-667, -441)
+scale = Vector2(11.24, 11.24)
+destination_level_tag = "square"
+destination_door_tag = "Bar"
+spawn_direction = "right"
+
+[node name="CollisionShape2D" parent="Doors/Door_S" index="0"]
+position = Vector2(99.3772, 142.162)
+shape = SubResource("RectangleShape2D_34j1n")
+
+[node name="Spawn" parent="Doors/Door_S" index="1"]
+position = Vector2(99.5551, 119.573)
+rotation = -1.57079
+
+[node name="Player" parent="." instance=ExtResource("4_irop4")]
+scale = Vector2(0.2, 0.2)
+
+[node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
+light_mask = 0
+visibility_layer = 0
+script = ExtResource("5_203hs")
+map = NodePath("../../Background")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_ud3gp")]
+process_mode = 3
+
+[editable path="Doors/Door_S"]

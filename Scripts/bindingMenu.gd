@@ -60,7 +60,7 @@ func _input(event):
 				event.double_click = false
 			
 			# Handling ESCAPE binding
-			if !Input.is_action_just_pressed("Pause"):
+			if !Input.is_action_just_pressed("Pause") && !Input.is_action_just_pressed("dialogic_default_action"):
 				var event_to_remap = InputMap.action_get_events(action_to_remap)[0]
 				InputMap.action_erase_events(action_to_remap)
 					
