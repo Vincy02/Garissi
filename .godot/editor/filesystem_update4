@@ -7,3 +7,6 @@ res://Scripts/Missions/firstMission.gd
 res://Dialogic/Timelines/intro.dtl
 res://Scenes/bar.tscn
 res://Scenes/SquareObj/bar.tscn
+res://Scenes/BindingMenu/bindingMenu.tscn
+res://Scripts/bindingMenu.gd
+res://Scenes/BindingMenu/inputButton.tscn
