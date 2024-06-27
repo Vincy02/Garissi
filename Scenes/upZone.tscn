@@ -103,7 +103,7 @@ rotation = -1.57079
 [node name="Door_PostOffice" parent="Doors" instance=ExtResource("3_q21d4")]
 position = Vector2(939, 459)
 scale = Vector2(11.24, 11.24)
-destination_level_tag = "postOfficeInside"
+destination_level_tag = "postOffice"
 destination_door_tag = "S"
 spawn_direction = "right"
 
@@ -130,7 +130,6 @@ script = ExtResource("5_sjsw8")
 map = NodePath("../../Background")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_x3w31")]
 process_mode = 3

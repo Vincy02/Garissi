@@ -27,8 +27,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Fabrizio": "res://Dialogic/Characters/Fabrizio.dch",
-"Gaia": "res://Dialogic/Characters/Gaia.dch",
-"gaia": "res://Characters/gaia.dch"
+"Gaia": "res://Dialogic/Characters/Gaia.dch"
 }
 directories/dtl_directory={
 "firstMission": "res://Dialogic/Timelines/firstMission.dtl",

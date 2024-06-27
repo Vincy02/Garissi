@@ -125,7 +125,7 @@ position = Vector2(-14.2984, 0)
 [node name="Door_Bar" parent="Doors" instance=ExtResource("10_lu4he")]
 position = Vector2(2133, 348)
 scale = Vector2(11.24, 11.24)
-destination_level_tag = "barInside"
+destination_level_tag = "bar"
 destination_door_tag = "S"
 spawn_direction = "right"
 
@@ -140,7 +140,7 @@ rotation = -1.57079
 [node name="Door_NewsStand" parent="Doors" instance=ExtResource("10_lu4he")]
 position = Vector2(510, 1193)
 scale = Vector2(11.24, 11.24)
-destination_level_tag = "newsStandInside"
+destination_level_tag = "newsStand"
 destination_door_tag = "S"
 spawn_direction = "right"
 

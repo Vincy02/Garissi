@@ -27,18 +27,18 @@ scale = Vector2(0.9, 0.9)
 texture = ExtResource("2_6no36")
 
 [node name="Building1" type="Sprite2D" parent="."]
-position = Vector2(285, 388)
-scale = Vector2(0.9, 0.9)
+position = Vector2(285, 402.8)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_72io5")
 
 [node name="Building2" type="Sprite2D" parent="."]
-position = Vector2(801, 317)
-scale = Vector2(0.9, 0.9)
+position = Vector2(801, 331.8)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("4_o2ab5")
 
 [node name="HousePaolo" type="Sprite2D" parent="."]
-position = Vector2(1313, 380)
-scale = Vector2(0.9, 0.9)
+position = Vector2(1313, 394.8)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("5_ywfm7")
 
 [node name="LifeGuardTower" type="Sprite2D" parent="."]

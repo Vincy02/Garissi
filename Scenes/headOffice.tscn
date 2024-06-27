@@ -1,0 +1,100 @@
+[gd_scene load_steps=15 format=3 uid="uid://cgypxj8cqx1vm"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_lmlf7"]
+[ext_resource type="Texture2D" uid="uid://behmv72hxck1g" path="res://Sprites/UpZone/HeadOffice/headOfficeInside.png" id="2_eahd6"]
+[ext_resource type="Texture2D" uid="uid://b65sdbtt2n5ay" path="res://Sprites/UpZone/HeadOffice/headOfficeDesk.png" id="3_ct4ed"]
+[ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="3_epvtb"]
+[ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="4_4yk1i"]
+[ext_resource type="Texture2D" uid="uid://cbr7o36k552sq" path="res://Sprites/UpZone/HeadOffice/tag.png" id="4_p88ux"]
+[ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="5_am3yn"]
+[ext_resource type="Texture2D" uid="uid://btudjtficutps" path="res://Sprites/UpZone/HeadOffice/vase.png" id="5_q7phd"]
+[ext_resource type="Script" path="res://Scripts/followCam.gd" id="6_a85x6"]
+[ext_resource type="Texture2D" uid="uid://u0q6kpqna21u" path="res://Sprites/UpZone/HeadOffice/computer.png" id="6_x12ju"]
+[ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="7_6r4a4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acdh1"]
+size = Vector2(1023, 52.75)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhgxg"]
+radius = 33.0
+height = 100.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibi17"]
+
+[node name="HeadOffice" type="Node2D"]
+script = ExtResource("1_lmlf7")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(639, 360)
+scale = Vector2(0.73, 0.73)
+texture = ExtResource("2_eahd6")
+
+[node name="Desk" type="Sprite2D" parent="."]
+position = Vector2(662, 357)
+scale = Vector2(0.72916, 0.584375)
+texture = ExtResource("3_ct4ed")
+
+[node name="Tag" type="Sprite2D" parent="."]
+position = Vector2(662, 140)
+scale = Vector2(0.72916, 0.584375)
+texture = ExtResource("4_p88ux")
+
+[node name="Vase" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(258, 546)
+scale = Vector2(0.72916, 0.584375)
+texture = ExtResource("5_q7phd")
+
+[node name="Computer" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(565, 320)
+scale = Vector2(0.72916, 0.584375)
+texture = ExtResource("6_x12ju")
+
+[node name="ObjectCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectCollision"]
+position = Vector2(638.5, 355.625)
+shape = SubResource("RectangleShape2D_acdh1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ObjectCollision"]
+position = Vector2(228, 624)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_qhgxg")
+
+[node name="Borders" parent="." instance=ExtResource("3_epvtb")]
+position = Vector2(127, 0)
+scale = Vector2(0.8, 0.999)
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Door_S" parent="Doors" instance=ExtResource("4_4yk1i")]
+position = Vector2(-485, -719)
+scale = Vector2(11.24, 11.24)
+destination_level_tag = "postOffice"
+destination_door_tag = "HeadOffice"
+spawn_direction = "right"
+
+[node name="CollisionShape2D" parent="Doors/Door_S" index="0"]
+position = Vector2(99.3772, 136.566)
+shape = SubResource("RectangleShape2D_ibi17")
+
+[node name="Spawn" parent="Doors/Door_S" index="1"]
+position = Vector2(99.5551, 123.31)
+rotation = -1.57079
+
+[node name="Player" parent="." instance=ExtResource("5_am3yn")]
+scale = Vector2(0.2, 0.2)
+
+[node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
+light_mask = 0
+visibility_layer = 0
+script = ExtResource("6_a85x6")
+map = NodePath("../../Background")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_6r4a4")]
+process_mode = 3
+
+[editable path="Doors/Door_S"]
