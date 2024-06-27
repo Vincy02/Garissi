@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbyuwtl0ai25a"]
+
+[ext_resource type="Script" path="res://Scripts/interaction.gd" id="1_1h1jh"]
+[ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Utils/ACDiaryGirlUnicode.otf" id="1_538gq"]
+
+[node name="Interaction" type="CanvasLayer"]
+script = ExtResource("1_1h1jh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -289.5
+offset_top = -199.0
+offset_right = 289.5
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.819608)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -14.5
+offset_right = 250.0
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_538gq")
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+autowrap_mode = 1

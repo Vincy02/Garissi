@@ -1,12 +1,12 @@
+Label
+VBoxContainer
+ColorRect
+CanvasLayer
 CollisionShape2D
 CollisionPolygon2D
 Polygon2D
 StaticBody2D
-VBoxContainer
 MarginContainer
-Label
-ColorRect
-CanvasLayer
 Button
 WorldEnvironment
 HBoxContainer

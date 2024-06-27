@@ -109,7 +109,7 @@ position = Vector2(-0.0889711, -1.9573)
 shape = SubResource("RectangleShape2D_1iv5x")
 
 [node name="Spawn" parent="Doors/Door_N" index="1"]
-position = Vector2(0.17794, 15.9253)
+position = Vector2(0.266908, 17.6157)
 rotation = -1.57079
 
 [node name="Door_E" parent="Doors" instance=ExtResource("10_lu4he")]

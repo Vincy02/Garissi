@@ -30,12 +30,11 @@ directories/dch_directory={
 "Gaia": "res://Dialogic/Characters/Gaia.dch"
 }
 directories/dtl_directory={
-"firstMission": "res://Dialogic/Timelines/firstMission.dtl",
 "intro": "res://Dialogic/Timelines/intro.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://Scenes/Global/dialogueStyle.tres"]
-layout/default_style="res://Scenes/Global/dialogueStyle.tres"
+layout/style_list=["res://Utils/dialogueStyle.tres"]
+layout/default_style="res://Utils/dialogueStyle.tres"
 variables={}
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
