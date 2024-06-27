@@ -1,13 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://bq1vsbrnul8so"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_a7o72"]
-[ext_resource type="Texture2D" uid="uid://cvcxj7epo1wxs" path="res://Sprites/UpZone/PostOffice/postOfficeInside.png" id="2_m28ct"]
+[ext_resource type="Texture2D" uid="uid://cvcxj7epo1wxs" path="res://Sprites/UpZone/PostOffice/postOffice.png" id="2_m28ct"]
 [ext_resource type="Texture2D" uid="uid://dae8ojrmxm6x5" path="res://Sprites/UpZone/PostOffice/postOfficeCounter.png" id="3_dha3l"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="4_h42ix"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="5_4yvvf"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="6_gt6tp"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="7_3qbfi"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="8_xhll0"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nncsl"]
 size = Vector2(428.5, 85.5)

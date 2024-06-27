@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://vfrtd17061hq"]
 
 [ext_resource type="Script" path="res://Scripts/mainMenu.gd" id="1_d20jd"]
-[ext_resource type="Texture2D" uid="uid://c4m53pbbx27jr" path="res://Sprites/MainMenu/garissi_main_menu_bg.png" id="1_ordmb"]
 [ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Utils/ACDiaryGirlUnicode.otf" id="2_bv3qf"]
+[ext_resource type="Texture2D" uid="uid://c4m53pbbx27jr" path="res://Sprites/MainMenu/mainMenuBg.png" id="2_g0b3c"]
 [ext_resource type="PackedScene" uid="uid://c44uocpx5haec" path="res://Scenes/SettingsMenu/settingsMenu.tscn" id="4_7che8"]
 [ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/BindingMenu/bindingMenu.tscn" id="5_c12qw"]
 
@@ -42,7 +42,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ordmb")
+texture = ExtResource("2_g0b3c")
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
 layout_mode = 1

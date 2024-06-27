@@ -1,12 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://b01t8dhql51pl"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_2ovvn"]
-[ext_resource type="Texture2D" uid="uid://dpqoqj4q1kikj" path="res://Sprites/Park/bg.png" id="2_lwlfk"]
+[ext_resource type="Texture2D" uid="uid://dpqoqj4q1kikj" path="res://Sprites/Park/park.png" id="2_lwlfk"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="2_md658"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_g3j4a"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_3ake0"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="5_b5pcg"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="7_q5iae"]
+
 
 [node name="Park" type="Node2D"]
 script = ExtResource("1_2ovvn")

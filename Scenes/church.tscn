@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dpj7l0a40t02f"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_dnk14"]
-[ext_resource type="Texture2D" uid="uid://cf6rqfs4vcnku" path="res://Sprites/CityCentre/Church/churchInside.png" id="2_m5f2w"]
+[ext_resource type="Texture2D" uid="uid://cf6rqfs4vcnku" path="res://Sprites/CityCentre/Church/church.png" id="2_m5f2w"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_p3vk2"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="4_uq0om"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_38go0"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="7_qfw8g"]
 [ext_resource type="Texture2D" uid="uid://bblg0o8mqwv45" path="res://Sprites/CityCentre/Church/candleStick.png" id="8_4b2wq"]
 [ext_resource type="Texture2D" uid="uid://bxt57dqx0n777" path="res://Sprites/CityCentre/Church/coffin.png" id="9_e81qt"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvnrd"]
 size = Vector2(321.5, 398.5)

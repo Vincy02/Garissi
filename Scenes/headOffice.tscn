@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://cgypxj8cqx1vm"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_lmlf7"]
-[ext_resource type="Texture2D" uid="uid://behmv72hxck1g" path="res://Sprites/UpZone/HeadOffice/headOfficeInside.png" id="2_eahd6"]
+[ext_resource type="Texture2D" uid="uid://behmv72hxck1g" path="res://Sprites/UpZone/HeadOffice/headOffice.png" id="2_eahd6"]
 [ext_resource type="Texture2D" uid="uid://b65sdbtt2n5ay" path="res://Sprites/UpZone/HeadOffice/headOfficeDesk.png" id="3_ct4ed"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="3_epvtb"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="4_4yk1i"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="6_a85x6"]
 [ext_resource type="Texture2D" uid="uid://u0q6kpqna21u" path="res://Sprites/UpZone/HeadOffice/computer.png" id="6_x12ju"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="7_6r4a4"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acdh1"]
 size = Vector2(1023, 52.75)

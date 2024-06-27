@@ -6,3 +6,4 @@ Fabrizio: Sono in pensione ormai, Gaia. Non sono sicuro di essere ancora all'alt
 Gaia: Fabrizio, sei l'unico di cui mi fido per questo caso. Ho un ufficio pronto per te e tutte le risorse di cui avrai bisogno. Non possiamo permetterci di fallire.
 Fabrizio: D'accordo, Gaia. Prenderò il primo aereo disponibile. Ci vediamo presto.
 Gaia: Grazie, Fabrizio. Ti aspetto.
+[signal arg="ended_conversation"]

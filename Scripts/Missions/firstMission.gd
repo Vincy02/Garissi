@@ -5,17 +5,20 @@ extends CanvasLayer
 var dialogue_index = 0
 var transition = false
 var text_to_show = ""
+var stop_input = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Dialogic.signal_event.connect(dialogicSignal)
 	main_loop()
 
-func _unhandled_input(event):
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) && transition:
-		transition = false
-	else:
-		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) && !transition:
-			main_loop()
+func _input(event):
+	if !stop_input:
+		if Input.is_action_just_pressed("dialogic_default_action") && transition:
+			transition = false
+		else:
+			if Input.is_action_just_pressed("dialogic_default_action") && !transition:
+				main_loop()
 
 func start_text_transition() -> void:
 	label_text.text = ""
@@ -45,6 +48,7 @@ func main_loop() -> void:
 			text_to_show = ""
 			start_text_transition()
 			Dialogic.start("intro")
+			stop_input = true
 		4:
 			text_to_show = "Suono di chiamata terminata."
 			start_text_transition()
@@ -53,4 +57,7 @@ func main_loop() -> void:
 			await TransitionScreen.on_transition_finished
 			get_tree().change_scene_to_file(park)
 			Player.set_player_position(Vector2(1316, 740), "right")
-	
+
+func dialogicSignal(arg: String) -> void:
+	if arg == "ended_conversation":
+		stop_input = false

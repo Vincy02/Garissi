@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://bmdirm1u4hqx3"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_u82kj"]
-[ext_resource type="Texture2D" uid="uid://d2b70egdk8oww" path="res://Sprites/CityCentre/background.png" id="2_1iegc"]
+[ext_resource type="Texture2D" uid="uid://d2b70egdk8oww" path="res://Sprites/CityCentre/cityCentre.png" id="2_1iegc"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="2_b2o0u"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_uhgre"]
 [ext_resource type="Texture2D" uid="uid://ba6abip0y0st1" path="res://Sprites/CityCentre/building1.png" id="3_wttey"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://pstfit8x2rvp" path="res://Sprites/CityCentre/building8.png" id="10_3yc0e"]
 [ext_resource type="Texture2D" uid="uid://c2tupedavj8g8" path="res://Sprites/CityCentre/church.png" id="10_vrbg3"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="15_lclfx"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wplox"]
 size = Vector2(328.938, 227)
