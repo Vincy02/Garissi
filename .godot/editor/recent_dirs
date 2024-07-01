@@ -1,7 +1,10 @@
+res://Sprites/Characters
+res://Dialogic/Characters
+res://Dialogic/Timelines
+res://Scripts/CharactersDialogue
 res://Utils
 res://Scripts
 res://Scenes/Global
-res://Sprites/Characters
 res://Sprites/Player
 res://Scripts/Missions
 res://Scripts/Global

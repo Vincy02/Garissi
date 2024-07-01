@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://c2tupedavj8g8" path="res://Sprites/CityCentre/church.png" id="10_vrbg3"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="15_lclfx"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wplox"]
 size = Vector2(328.938, 227)
 

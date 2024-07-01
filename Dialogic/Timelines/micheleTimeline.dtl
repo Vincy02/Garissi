@@ -1,0 +1,3 @@
+[signal arg="started_conversation"]
+Michele: Era una bravissima persona, ci teneva tantissimo alla città!
+[signal arg="ended_conversation"]

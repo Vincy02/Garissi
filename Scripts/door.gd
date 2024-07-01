@@ -11,7 +11,7 @@ var entered = false
 var body = ""
 
 func _ready():
-	interaction.set_action("per interagire")
+	interaction.set_action("per cambiare zona")
 	interaction.visible = false
 	
 func _process(delta):

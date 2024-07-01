@@ -27,10 +27,14 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Fabrizio": "res://Dialogic/Characters/Fabrizio.dch",
-"Gaia": "res://Dialogic/Characters/Gaia.dch"
+"Gaia": "res://Dialogic/Characters/Gaia.dch",
+"Gioele": "res://Dialogic/Characters/Gioele.dch",
+"Michele": "res://Dialogic/Characters/Michele.dch"
 }
 directories/dtl_directory={
-"intro": "res://Dialogic/Timelines/intro.dtl"
+"gioeleTimeline": "res://Dialogic/Timelines/gioeleTimeline.dtl",
+"intro": "res://Dialogic/Timelines/intro.dtl",
+"micheleTimeline": "res://Dialogic/Timelines/micheleTimeline.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://Utils/dialogueStyle.tres"]

@@ -7,6 +7,7 @@ var animated_sprite: AnimatedSprite2D
 static var player: Player = null
 static var SCALE_PLAYER = 0.2
 static var set_player_position_bool = false
+var is_dialogue_active = false
 
 func _init():
 	if not player:
@@ -14,8 +15,15 @@ func _init():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-		animated_sprite = $AnimatedSprite2D
-		NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
+	Dialogic.signal_event.connect(dialogicSignal)
+	animated_sprite = $AnimatedSprite2D
+	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
+
+func dialogicSignal(arg: String) -> void:
+	if arg == "started_conversation":
+		is_dialogue_active = true
+	if arg == "ended_conversation":
+		is_dialogue_active = false
 
 static func get_player():
 	return player
@@ -32,19 +40,26 @@ static func set_player_position(position: Vector2, direction: String):
 		if(direction == "right"):
 			player.scale.x = -SCALE_PLAYER
 			set_player_position_bool = true
-	
+
+static func get_player_position_x() -> int:
+	if player:
+		return player.global_position[0]
+	else:
+		return -1
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var direction = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")
-	velocity = direction * speed
-	move_and_slide()
-	if velocity.length_squared() == 0:
-		animated_sprite.play("idle")
-	else:
-		if set_player_position_bool:
-			scale.x = -SCALE_PLAYER
-			set_player_position_bool = false
-		animated_sprite.play("walk")
-	
-	if(direction.x > 0): animated_sprite.flip_h = 1
-	if(direction.x < 0): animated_sprite.flip_h = 0
+	if !is_dialogue_active:
+		var direction = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")
+		velocity = direction * speed
+		move_and_slide()
+		if velocity.length_squared() == 0:
+			animated_sprite.play("idle")
+		else:
+			if set_player_position_bool:
+				scale.x = -SCALE_PLAYER
+				set_player_position_bool = false
+			animated_sprite.play("walk")
+		
+		if(direction.x > 0): animated_sprite.flip_h = 1
+		if(direction.x < 0): animated_sprite.flip_h = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b01t8dhql51pl"]
+[gd_scene load_steps=24 format=3 uid="uid://b01t8dhql51pl"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_2ovvn"]
 [ext_resource type="Texture2D" uid="uid://dpqoqj4q1kikj" path="res://Sprites/Park/park.png" id="2_lwlfk"]
@@ -6,15 +6,42 @@
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_g3j4a"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_3ake0"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="5_b5pcg"]
+[ext_resource type="Texture2D" uid="uid://ckqq026kgu5ag" path="res://Sprites/Park/tree.png" id="5_y1fxc"]
+[ext_resource type="Texture2D" uid="uid://d0s1eqdisclpm" path="res://Sprites/Park/bush.png" id="6_kveig"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="7_q5iae"]
+[ext_resource type="Texture2D" uid="uid://yiwrubeo4oba" path="res://Sprites/Park/bench.png" id="7_vunlb"]
+[ext_resource type="Script" path="res://Scripts/characterDialogue.gd" id="11_ij32g"]
+[ext_resource type="Texture2D" uid="uid://b4h2j6g30nupn" path="res://Sprites/Characters/gardnerGioele.png" id="11_updlh"]
+[ext_resource type="Texture2D" uid="uid://drpd2oson08k7" path="res://Sprites/Characters/gardnerMichele.png" id="12_dd4ji"]
+[ext_resource type="PackedScene" uid="uid://dbyuwtl0ai25a" path="res://Scenes/interaction.tscn" id="13_fvjer"]
+[ext_resource type="Texture2D" uid="uid://c5vy7wfylxtro" path="res://Sprites/Characters/gardnerRaffaele.png" id="13_jismw"]
+[ext_resource type="Texture2D" uid="uid://c408v7smek14m" path="res://Sprites/Characters/elderCelestino.png" id="14_sxc1w"]
+[ext_resource type="Texture2D" uid="uid://jx8jaqwxykyw" path="res://Sprites/Characters/elderFranco.png" id="15_iemlp"]
+[ext_resource type="Texture2D" uid="uid://uym0efhan6is" path="res://Sprites/Characters/technicianMario.png" id="16_pijm3"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t55jv"]
+size = Vector2(236, 79.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4l0q"]
+size = Vector2(164, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gs117"]
+size = Vector2(124.5, 42.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sdqwj"]
+radius = 160.0
+height = 570.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nkshi"]
+radius = 345.0
+height = 870.0
 
 [node name="Park" type="Node2D"]
 script = ExtResource("1_2ovvn")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(1304, 732)
-scale = Vector2(0.198159, 0.197817)
+position = Vector2(1301, 732)
+scale = Vector2(0.265, 0.265)
 texture = ExtResource("2_lwlfk")
 
 [node name="Borders" parent="." instance=ExtResource("2_md658")]
@@ -35,6 +62,174 @@ spawn_direction = "right"
 [node name="Spawn" parent="Doors/Door_E" index="1"]
 position = Vector2(-20.3666, 8.28719e-06)
 
+[node name="Trees" type="Node2D" parent="."]
+
+[node name="Tree1" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(1281, 500)
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("5_y1fxc")
+
+[node name="Tree2" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(743, 572)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("5_y1fxc")
+
+[node name="Tree3" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(695, 998)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("5_y1fxc")
+
+[node name="Tree4" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(1355, 1204)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("5_y1fxc")
+
+[node name="Tree5" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(1843, 796)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("5_y1fxc")
+
+[node name="Tree6" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(2135, 1212)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("5_y1fxc")
+
+[node name="Tree7" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(2447, 212)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("5_y1fxc")
+
+[node name="Tree8" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(1599, 164)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("5_y1fxc")
+
+[node name="Tree9" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(955, 160)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("5_y1fxc")
+
+[node name="Tree10" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(139, 644)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("5_y1fxc")
+
+[node name="Bushes" type="Node2D" parent="."]
+
+[node name="Bush1" type="Sprite2D" parent="Bushes"]
+top_level = true
+position = Vector2(1207, 675)
+scale = Vector2(0.295, 0.295)
+texture = ExtResource("6_kveig")
+
+[node name="Bush2" type="Sprite2D" parent="Bushes"]
+top_level = true
+position = Vector2(1335, 695)
+scale = Vector2(0.295, 0.295)
+texture = ExtResource("6_kveig")
+
+[node name="Bush3" type="Sprite2D" parent="Bushes"]
+position = Vector2(1359, 638)
+scale = Vector2(0.295, 0.295)
+texture = ExtResource("6_kveig")
+
+[node name="Benches" type="Node2D" parent="."]
+position = Vector2(575, 334)
+scale = Vector2(0.32, 0.32)
+
+[node name="Bench1" type="Sprite2D" parent="Benches"]
+top_level = true
+position = Vector2(577, 330)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("7_vunlb")
+
+[node name="Bench2" type="Sprite2D" parent="Benches"]
+top_level = true
+position = Vector2(1303, 919)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("7_vunlb")
+
+[node name="Bench3" type="Sprite2D" parent="Benches"]
+top_level = true
+position = Vector2(2507, 765)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("7_vunlb")
+
+[node name="Bench4" type="Sprite2D" parent="Benches"]
+top_level = true
+position = Vector2(1995, 148)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("7_vunlb")
+
+[node name="BuildingCollision" type="StaticBody2D" parent="."]
+position = Vector2(614, 254)
+
+[node name="CollisionShape1" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(675, 418)
+shape = SubResource("RectangleShape2D_t55jv")
+
+[node name="CollisionShape2" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(1233, 678.5)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape3" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(744, 1086)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape4" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(1526, 1094)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape5" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(1839, 91)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape6" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(988, 48)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape7" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(345, 43)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape8" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(135, 457)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape9" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(-473, 527)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape10" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(88, 880)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape11" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(687.5, 682.5)
+shape = SubResource("RectangleShape2D_gs117")
+
+[node name="CollisionShape12" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(-36.25, 93.25)
+shape = SubResource("RectangleShape2D_gs117")
+
+[node name="CollisionShape13" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(1379, -88)
+shape = SubResource("RectangleShape2D_gs117")
+
+[node name="CollisionShape14" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(1892, 529)
+shape = SubResource("RectangleShape2D_gs117")
+
 [node name="Player" parent="." instance=ExtResource("5_b5pcg")]
 position = Vector2(-2.38419e-07, 2.38419e-07)
 scale = Vector2(0.2, 0.2)
@@ -49,5 +244,102 @@ map = NodePath("../../Background")
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_q5iae")]
 process_mode = 3
+
+[node name="GardnerGioele" type="Area2D" parent="."]
+position = Vector2(408, 948)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("11_ij32g")
+timeline = "gioeleTimeline"
+
+[node name="Collision" type="StaticBody2D" parent="GardnerGioele"]
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GardnerGioele/Collision"]
+position = Vector2(-9.99994, 75)
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_sdqwj")
+
+[node name="Body" type="Sprite2D" parent="GardnerGioele"]
+top_level = true
+position = Vector2(404, 945)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_updlh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GardnerGioele"]
+position = Vector2(6.10352e-05, 15)
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_nkshi")
+
+[node name="Interaction" parent="GardnerGioele" instance=ExtResource("13_fvjer")]
+
+[node name="GardnerMichele" type="Area2D" parent="."]
+position = Vector2(408, 948)
+scale = Vector2(0.2, 0.2)
+
+[node name="Body" type="Sprite2D" parent="GardnerMichele"]
+position = Vector2(4225, -3960)
+scale = Vector2(1, 1)
+texture = ExtResource("12_dd4ji")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GardnerMichele"]
+position = Vector2(4200, -3955)
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_nkshi")
+
+[node name="GardnerRaffaele" type="Area2D" parent="."]
+position = Vector2(1751, 1179)
+scale = Vector2(0.2, 0.2)
+
+[node name="Body" type="Sprite2D" parent="GardnerRaffaele"]
+scale = Vector2(1, 1)
+texture = ExtResource("13_jismw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GardnerRaffaele"]
+position = Vector2(0, -5)
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_nkshi")
+
+[node name="ElderCelestino" type="Area2D" parent="."]
+position = Vector2(1417, 906)
+scale = Vector2(0.2, 0.2)
+
+[node name="Body" type="Sprite2D" parent="ElderCelestino"]
+scale = Vector2(1, 1)
+texture = ExtResource("14_sxc1w")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ElderCelestino"]
+position = Vector2(-30, 15)
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_nkshi")
+
+[node name="ElderFranco" type="Area2D" parent="."]
+
+[node name="Body" type="Sprite2D" parent="ElderFranco"]
+position = Vector2(288, 349)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_iemlp")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ElderFranco"]
+position = Vector2(282, 357)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_nkshi")
+
+[node name="TechnicianMario" type="Area2D" parent="."]
+
+[node name="Body" type="Sprite2D" parent="TechnicianMario"]
+position = Vector2(2283, 609)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_pijm3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TechnicianMario"]
+position = Vector2(2286, 609)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_nkshi")
+
+[connection signal="body_entered" from="GardnerGioele" to="GardnerGioele" method="_on_body_entered"]
+[connection signal="body_exited" from="GardnerGioele" to="GardnerGioele" method="_on_body_exited"]
 
 [editable path="Doors/Door_E"]
