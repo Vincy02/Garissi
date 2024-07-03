@@ -20,21 +20,31 @@ NavigationManager="*res://Scripts/Global/navigationManager.gd"
 TransitionScreen="*res://Scenes/Global/transitionScreen.tscn"
 WordlEnvironment="*res://Scenes/Global/worldEnvironment.tscn"
 SettingsManager="*res://Scripts/Global/settingsManager.gd"
-ScenesManager="*res://Scripts/Global/scenesManager.gd"
+FirstMission="*res://Scripts/Missions/firstMission.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+ScenesManager="*res://Scripts/Global/scenesManager.gd"
 
 [dialogic]
 
 directories/dch_directory={
+"Celestino": "res://Dialogic/Characters/Celestino.dch",
 "Fabrizio": "res://Dialogic/Characters/Fabrizio.dch",
+"Franco": "res://Dialogic/Characters/Franco.dch",
 "Gaia": "res://Dialogic/Characters/Gaia.dch",
 "Gioele": "res://Dialogic/Characters/Gioele.dch",
-"Michele": "res://Dialogic/Characters/Michele.dch"
+"Mario": "res://Dialogic/Characters/Mario.dch",
+"Michele": "res://Dialogic/Characters/Michele.dch",
+"Raffaele": "res://Dialogic/Characters/Raffaele.dch"
 }
 directories/dtl_directory={
+"celestinoTimeline": "res://Dialogic/Timelines/celestinoTimeline.dtl",
+"francoTimeline": "res://Dialogic/Timelines/francoTimeline.dtl",
 "gioeleTimeline": "res://Dialogic/Timelines/gioeleTimeline.dtl",
 "intro": "res://Dialogic/Timelines/intro.dtl",
-"micheleTimeline": "res://Dialogic/Timelines/micheleTimeline.dtl"
+"marioTimeline1": "res://Dialogic/Timelines/marioTimeline1.dtl",
+"marioTimeline2": "res://Dialogic/Timelines/marioTimeline2.dtl",
+"micheleTimeline": "res://Dialogic/Timelines/micheleTimeline.dtl",
+"raffaeleTimeline": "res://Dialogic/Timelines/raffaeleTimeline.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://Utils/dialogueStyle.tres"]

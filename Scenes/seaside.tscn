@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="9_3f5ha"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="10_k02mp"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0o3fp"]
 size = Vector2(1756, 72.75)
 

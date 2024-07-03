@@ -240,106 +240,164 @@ visibility_layer = 0
 script = ExtResource("5_3ake0")
 map = NodePath("../../Background")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="NPC" type="Node2D" parent="."]
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_q5iae")]
-process_mode = 3
-
-[node name="GardnerGioele" type="Area2D" parent="."]
+[node name="GardnerGioele" type="Area2D" parent="NPC"]
 position = Vector2(408, 948)
 scale = Vector2(0.2, 0.2)
 script = ExtResource("11_ij32g")
 timeline = "gioeleTimeline"
 
-[node name="Collision" type="StaticBody2D" parent="GardnerGioele"]
-scale = Vector2(1, 1)
+[node name="Collision" type="StaticBody2D" parent="NPC/GardnerGioele"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GardnerGioele/Collision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/GardnerGioele/Collision"]
 position = Vector2(-9.99994, 75)
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_sdqwj")
 
-[node name="Body" type="Sprite2D" parent="GardnerGioele"]
+[node name="Body" type="Sprite2D" parent="NPC/GardnerGioele"]
 top_level = true
 position = Vector2(404, 945)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("11_updlh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GardnerGioele"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/GardnerGioele"]
 position = Vector2(6.10352e-05, 15)
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_nkshi")
 
-[node name="Interaction" parent="GardnerGioele" instance=ExtResource("13_fvjer")]
-
-[node name="GardnerMichele" type="Area2D" parent="."]
+[node name="GardnerMichele" type="Area2D" parent="NPC"]
 position = Vector2(408, 948)
 scale = Vector2(0.2, 0.2)
+script = ExtResource("11_ij32g")
+timeline = "micheleTimeline"
 
-[node name="Body" type="Sprite2D" parent="GardnerMichele"]
-position = Vector2(4225, -3960)
-scale = Vector2(1, 1)
+[node name="Collision" type="StaticBody2D" parent="NPC/GardnerMichele"]
+position = Vector2(4215, -3935)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/GardnerMichele/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_sdqwj")
+
+[node name="Body" type="Sprite2D" parent="NPC/GardnerMichele"]
+top_level = true
+position = Vector2(1251, 156)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("12_dd4ji")
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GardnerMichele"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/GardnerMichele"]
 position = Vector2(4200, -3955)
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_nkshi")
 
-[node name="GardnerRaffaele" type="Area2D" parent="."]
+[node name="GardnerRaffaele" type="Area2D" parent="NPC"]
 position = Vector2(1751, 1179)
 scale = Vector2(0.2, 0.2)
+script = ExtResource("11_ij32g")
+timeline = "raffaeleTimeline"
 
-[node name="Body" type="Sprite2D" parent="GardnerRaffaele"]
-scale = Vector2(1, 1)
+[node name="Collision" type="StaticBody2D" parent="NPC/GardnerRaffaele"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/GardnerRaffaele/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_sdqwj")
+
+[node name="Body" type="Sprite2D" parent="NPC/GardnerRaffaele"]
+top_level = true
+position = Vector2(1748, 1174)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("13_jismw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GardnerRaffaele"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/GardnerRaffaele"]
 position = Vector2(0, -5)
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_nkshi")
 
-[node name="ElderCelestino" type="Area2D" parent="."]
+[node name="ElderCelestino" type="Area2D" parent="NPC"]
 position = Vector2(1417, 906)
 scale = Vector2(0.2, 0.2)
+script = ExtResource("11_ij32g")
+timeline = "celestinoTimeline"
 
-[node name="Body" type="Sprite2D" parent="ElderCelestino"]
-scale = Vector2(1, 1)
+[node name="Collision" type="StaticBody2D" parent="NPC/ElderCelestino"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/ElderCelestino/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_sdqwj")
+
+[node name="Body" type="Sprite2D" parent="NPC/ElderCelestino"]
+top_level = true
+position = Vector2(1419, 895)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("14_sxc1w")
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElderCelestino"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/ElderCelestino"]
 position = Vector2(-30, 15)
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_nkshi")
 
-[node name="ElderFranco" type="Area2D" parent="."]
+[node name="ElderFranco" type="Area2D" parent="NPC"]
+script = ExtResource("11_ij32g")
+timeline = "francoTimeline"
 
-[node name="Body" type="Sprite2D" parent="ElderFranco"]
+[node name="Collision" type="StaticBody2D" parent="NPC/ElderFranco"]
+position = Vector2(287, 355)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/ElderFranco/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_sdqwj")
+
+[node name="Body" type="Sprite2D" parent="NPC/ElderFranco"]
+top_level = true
 position = Vector2(288, 349)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("15_iemlp")
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElderFranco"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/ElderFranco"]
 position = Vector2(282, 357)
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_nkshi")
 
-[node name="TechnicianMario" type="Area2D" parent="."]
+[node name="TechnicianMario" type="Area2D" parent="NPC"]
+script = ExtResource("11_ij32g")
+timeline = "marioTimeline1"
 
-[node name="Body" type="Sprite2D" parent="TechnicianMario"]
+[node name="Collision" type="StaticBody2D" parent="NPC/TechnicianMario"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TechnicianMario/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_sdqwj")
+
+[node name="Body" type="Sprite2D" parent="NPC/TechnicianMario"]
+top_level = true
 position = Vector2(2283, 609)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("16_pijm3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TechnicianMario"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TechnicianMario"]
 position = Vector2(2286, 609)
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_nkshi")
 
-[connection signal="body_entered" from="GardnerGioele" to="GardnerGioele" method="_on_body_entered"]
-[connection signal="body_exited" from="GardnerGioele" to="GardnerGioele" method="_on_body_exited"]
+[node name="Interaction" parent="NPC" instance=ExtResource("13_fvjer")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_q5iae")]
+process_mode = 3
+
+[connection signal="body_entered" from="NPC/GardnerGioele" to="NPC/GardnerGioele" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/GardnerGioele" to="NPC/GardnerGioele" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/GardnerMichele" to="NPC/GardnerMichele" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/GardnerMichele" to="NPC/GardnerMichele" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/GardnerRaffaele" to="NPC/GardnerRaffaele" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/GardnerRaffaele" to="NPC/GardnerRaffaele" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/ElderCelestino" to="NPC/ElderCelestino" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/ElderCelestino" to="NPC/ElderCelestino" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/ElderFranco" to="NPC/ElderFranco" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/ElderFranco" to="NPC/ElderFranco" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/TechnicianMario" to="NPC/TechnicianMario" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/TechnicianMario" to="NPC/TechnicianMario" method="_on_body_exited"]
 
 [editable path="Doors/Door_E"]

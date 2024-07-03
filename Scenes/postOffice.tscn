@@ -9,7 +9,6 @@
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="7_3qbfi"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="8_xhll0"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nncsl"]
 size = Vector2(428.5, 85.5)
 

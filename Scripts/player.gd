@@ -22,6 +22,7 @@ func _ready():
 func dialogicSignal(arg: String) -> void:
 	if arg == "started_conversation":
 		is_dialogue_active = true
+		animated_sprite.play("idle")
 	if arg == "ended_conversation":
 		is_dialogue_active = false
 

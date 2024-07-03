@@ -2,8 +2,9 @@ extends Area2D
 
 var entered = false
 var turned = false
+var is_interacting = false
 
-@onready var interaction = $Interaction
+@onready var interaction = $"../Interaction"
 @onready var character = $Body
 @export var timeline = ""
 
@@ -13,9 +14,10 @@ func _ready():
 	interaction.visible = false
 	
 func _process(delta):
-	if entered && Input.is_action_just_pressed("Interact"):
+	if entered && Input.is_action_just_pressed("Interact") && !is_interacting:
 		flipPlayer()
 		interaction.visible = false
+		FirstMission.npc_interacted(character.get_parent())
 		Dialogic.start(timeline)
 
 func _on_body_entered(_body):
@@ -31,10 +33,13 @@ func _on_body_exited(_body):
 func dialogicSignal(arg: String) -> void:
 	if arg == "ended_conversation":
 		interaction.visible = true
+		is_interacting = false
 		reset_position()
+	if arg == "started_conversation":
+		is_interacting = true
 
 func flipPlayer() -> void:
-	if (character.global_position[0] < Player.get_player_position_x() && character.flip_h == 0) || (character.global_position[0] > Player.get_player_position_x() && character.flip_h == 1):
+	if (character.global_position[0] < Player.get_player_position_x() && character.flip_h == false) || (character.global_position[0] > Player.get_player_position_x() && character.flip_h == true):
 		character.flip_h = !character.flip_h
 		turned = true
 		

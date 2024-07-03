@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://u0q6kpqna21u" path="res://Sprites/UpZone/HeadOffice/computer.png" id="6_x12ju"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="7_6r4a4"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acdh1"]
 size = Vector2(1023, 52.75)
 

@@ -1,0 +1,3 @@
+[signal arg="started_conversation"]
+Raffaele: Adesso chi porterà avanti la sua azienda?
+[signal arg="ended_conversation"]

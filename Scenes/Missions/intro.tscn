@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://brbmbd67yowir"]
 
-[ext_resource type="Script" path="res://Scripts/Missions/firstMission.gd" id="1_v1aq5"]
-[ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Utils/ACDiaryGirlUnicode.otf" id="2_1045q"]
+[ext_resource type="Script" path="res://Scripts/Missions/intro.gd" id="1_hqp0b"]
+[ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Utils/ACDiaryGirlUnicode.otf" id="2_c5w5k"]
 
-[node name="FirstMission" type="CanvasLayer"]
-script = ExtResource("1_v1aq5")
+[node name="Intro" type="CanvasLayer"]
+script = ExtResource("1_hqp0b")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -40,7 +40,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1000, 500)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_1045q")
+theme_override_fonts/font = ExtResource("2_c5w5k")
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1

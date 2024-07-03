@@ -1,0 +1,3 @@
+[signal arg="started_conversation"]
+Franco: L'ho salutato poche ore prima del tragico evento…
+[signal arg="ended_conversation"]
