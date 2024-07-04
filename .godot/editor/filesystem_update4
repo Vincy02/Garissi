@@ -1,11 +1,6 @@
-res://Scenes/MainMenu/mainMenu.tscn
+res://Scenes/park.tscn
 res://Utils/dialogueStyle.tres
 res://Scenes/bar.tscn
 res://Scenes/square.tscn
 res://Scenes/PauseMenu/pauseMenu.tscn
-res://Scripts/Global/navigationManager.gd
-res://Scripts/Missions/firstMission.gd
-res://Scripts/Global/scenesManager.gd
-res://Scripts/level.gd
-res://Scripts/characterDialogue.gd
-res://Scenes/park.tscn
+res://Scenes/cityCentre.tscn
