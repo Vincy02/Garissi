@@ -21,8 +21,8 @@ TransitionScreen="*res://Scenes/Global/transitionScreen.tscn"
 WordlEnvironment="*res://Scenes/Global/worldEnvironment.tscn"
 SettingsManager="*res://Scripts/Global/settingsManager.gd"
 FirstMission="*res://Scripts/Missions/firstMission.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ScenesManager="*res://Scripts/Global/scenesManager.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 

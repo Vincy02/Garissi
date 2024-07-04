@@ -119,9 +119,11 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_561tv")
 text = "ritorna al menu' iniziale"
 
 [node name="KeybindsMenu" parent="." instance=ExtResource("3_n8cvn")]
+visible = false
 layout_mode = 1
 
 [node name="SettingsMenu" parent="." instance=ExtResource("4_wi7rj")]
+visible = false
 layout_mode = 1
 
 [node name="Back" type="Button" parent="."]

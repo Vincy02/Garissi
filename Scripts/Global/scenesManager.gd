@@ -22,7 +22,3 @@ func start_mission() -> void:
 		1:
 			FirstMission.start()
 			
-
-func set_current_scene(scene) -> void:
-	current_scene = scene 
-	print(scene)
