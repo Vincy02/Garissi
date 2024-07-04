@@ -1,5 +1,4 @@
-res://Scenes/World
-res://Scenes/World/Map
+res://Sprites/CityCentre
 res://Scripts/Global
 res://Scripts/Missions
 res://Dialogic/Timelines
@@ -13,5 +12,4 @@ res://Scenes
 res://Scenes/PauseMenu
 res://Scenes/MainMenu
 res://Sprites/Square
-res://Sprites/CityCentre
 res://.godot/imported
