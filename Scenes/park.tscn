@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b01t8dhql51pl"]
+[gd_scene load_steps=25 format=3 uid="uid://b01t8dhql51pl"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_2ovvn"]
 [ext_resource type="Texture2D" uid="uid://dpqoqj4q1kikj" path="res://Sprites/Park/park.png" id="2_lwlfk"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_g3j4a"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_3ake0"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="5_b5pcg"]
-[ext_resource type="Texture2D" uid="uid://ckqq026kgu5ag" path="res://Sprites/Park/tree.png" id="5_y1fxc"]
+[ext_resource type="Texture2D" uid="uid://cgtq18ujgwxr" path="res://Sprites/Park/tree_DOWN.png" id="5_tqlp6"]
+[ext_resource type="Texture2D" uid="uid://bcijwh1fgiy5d" path="res://Sprites/Park/tree_UP.png" id="6_35cbf"]
 [ext_resource type="Texture2D" uid="uid://d0s1eqdisclpm" path="res://Sprites/Park/bush.png" id="6_kveig"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="7_q5iae"]
 [ext_resource type="Texture2D" uid="uid://yiwrubeo4oba" path="res://Sprites/Park/bench.png" id="7_vunlb"]
@@ -20,10 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://uym0efhan6is" path="res://Sprites/Characters/technicianMario.png" id="16_pijm3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t55jv"]
-size = Vector2(236, 79.625)
+size = Vector2(111, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4l0q"]
-size = Vector2(164, 47)
+size = Vector2(79, 16.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gs117"]
 size = Vector2(124.5, 42.5)
@@ -64,82 +65,130 @@ position = Vector2(-20.3666, 8.28719e-06)
 
 [node name="Trees" type="Node2D" parent="."]
 
-[node name="Tree1" type="Sprite2D" parent="Trees"]
+[node name="Tree1_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(1281, 500)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree2_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(743, 572)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree3_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(695, 998)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree4_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(1355, 1204)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree5_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(1843, 796)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree6_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(2135, 1212)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree7_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(2447, 212)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree8_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(1599, 164)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree9_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(955, 160)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree10_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(139, 644)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree1_UP" type="Sprite2D" parent="Trees"]
 top_level = true
 position = Vector2(1281, 500)
-scale = Vector2(0.36, 0.36)
-texture = ExtResource("5_y1fxc")
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("6_35cbf")
 
-[node name="Tree2" type="Sprite2D" parent="Trees"]
+[node name="Tree2_UP" type="Sprite2D" parent="Trees"]
 top_level = true
 position = Vector2(743, 572)
-scale = Vector2(0.31, 0.31)
-texture = ExtResource("5_y1fxc")
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
 
-[node name="Tree3" type="Sprite2D" parent="Trees"]
+[node name="Tree3_UP" type="Sprite2D" parent="Trees"]
 top_level = true
 position = Vector2(695, 998)
-scale = Vector2(0.31, 0.31)
-texture = ExtResource("5_y1fxc")
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
 
-[node name="Tree4" type="Sprite2D" parent="Trees"]
+[node name="Tree4_UP" type="Sprite2D" parent="Trees"]
 top_level = true
 position = Vector2(1355, 1204)
-scale = Vector2(0.31, 0.31)
-texture = ExtResource("5_y1fxc")
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
 
-[node name="Tree5" type="Sprite2D" parent="Trees"]
+[node name="Tree5_UP" type="Sprite2D" parent="Trees"]
 top_level = true
 position = Vector2(1843, 796)
-scale = Vector2(0.31, 0.31)
-texture = ExtResource("5_y1fxc")
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
 
-[node name="Tree6" type="Sprite2D" parent="Trees"]
+[node name="Tree6_UP" type="Sprite2D" parent="Trees"]
 top_level = true
 position = Vector2(2135, 1212)
-scale = Vector2(0.31, 0.31)
-texture = ExtResource("5_y1fxc")
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
 
-[node name="Tree7" type="Sprite2D" parent="Trees"]
+[node name="Tree7_UP" type="Sprite2D" parent="Trees"]
 top_level = true
 position = Vector2(2447, 212)
-scale = Vector2(0.31, 0.31)
-texture = ExtResource("5_y1fxc")
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
 
-[node name="Tree8" type="Sprite2D" parent="Trees"]
+[node name="Tree8_UP" type="Sprite2D" parent="Trees"]
 top_level = true
 position = Vector2(1599, 164)
-scale = Vector2(0.31, 0.31)
-texture = ExtResource("5_y1fxc")
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
 
-[node name="Tree9" type="Sprite2D" parent="Trees"]
+[node name="Tree9_UP" type="Sprite2D" parent="Trees"]
 top_level = true
 position = Vector2(955, 160)
-scale = Vector2(0.31, 0.31)
-texture = ExtResource("5_y1fxc")
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
 
-[node name="Tree10" type="Sprite2D" parent="Trees"]
+[node name="Tree10_UP" type="Sprite2D" parent="Trees"]
 top_level = true
 position = Vector2(139, 644)
-scale = Vector2(0.31, 0.31)
-texture = ExtResource("5_y1fxc")
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
 
 [node name="Bushes" type="Node2D" parent="."]
 
 [node name="Bush1" type="Sprite2D" parent="Bushes"]
-top_level = true
-position = Vector2(1207, 675)
-scale = Vector2(0.295, 0.295)
-texture = ExtResource("6_kveig")
-
-[node name="Bush2" type="Sprite2D" parent="Bushes"]
-top_level = true
-position = Vector2(1335, 695)
+position = Vector2(1192, 659)
 scale = Vector2(0.295, 0.295)
 texture = ExtResource("6_kveig")
 
 [node name="Bush3" type="Sprite2D" parent="Bushes"]
-position = Vector2(1359, 638)
+position = Vector2(1367, 652)
+scale = Vector2(0.295, 0.295)
+texture = ExtResource("6_kveig")
+
+[node name="Bush2" type="Sprite2D" parent="Bushes"]
+position = Vector2(1281, 686)
 scale = Vector2(0.295, 0.295)
 texture = ExtResource("6_kveig")
 
@@ -175,59 +224,59 @@ texture = ExtResource("7_vunlb")
 position = Vector2(614, 254)
 
 [node name="CollisionShape1" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(675, 418)
+position = Vector2(670, 247)
 shape = SubResource("RectangleShape2D_t55jv")
 
 [node name="CollisionShape2" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(1233, 678.5)
+position = Vector2(1229.25, 544.5)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape3" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(744, 1086)
+position = Vector2(740.25, 952)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape4" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(1526, 1094)
+position = Vector2(1522.25, 960)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape5" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(1839, 91)
+position = Vector2(1835.25, -43)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape6" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(988, 48)
+position = Vector2(984.25, -86)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape7" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(345, 43)
+position = Vector2(341.25, -91)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape8" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(135, 457)
+position = Vector2(131, 323)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape9" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(-473, 527)
+position = Vector2(-471, 389)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape10" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(88, 880)
+position = Vector2(84.25, 746)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape11" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(687.5, 682.5)
+position = Vector2(685.75, 667.5)
 shape = SubResource("RectangleShape2D_gs117")
 
 [node name="CollisionShape12" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(-36.25, 93.25)
+position = Vector2(-38, 78.25)
 shape = SubResource("RectangleShape2D_gs117")
 
 [node name="CollisionShape13" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(1379, -88)
+position = Vector2(1377.25, -103)
 shape = SubResource("RectangleShape2D_gs117")
 
 [node name="CollisionShape14" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(1892, 529)
+position = Vector2(1890.25, 514)
 shape = SubResource("RectangleShape2D_gs117")
 
 [node name="Player" parent="." instance=ExtResource("5_b5pcg")]

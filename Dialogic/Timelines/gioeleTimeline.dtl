@@ -1,3 +1,5 @@
 [signal arg="started_conversation"]
+do ScenesManager.stop_movement_player_and_pause()
 Gioele: Anni di lavoro e poi morire cosi...
 [signal arg="ended_conversation"]
+do ScenesManager.resume_movement_player_and_pause()

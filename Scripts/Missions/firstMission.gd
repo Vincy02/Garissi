@@ -25,3 +25,7 @@ func update_world_status(scene : Node2D) -> void:
 			scene.get_node("Doors/Door_E").set_process_mode(PROCESS_MODE_INHERIT)
 		else:
 			scene.get_node("Doors/Door_E").set_process_mode(PROCESS_MODE_DISABLED)
+			
+func reset_scene() -> void:
+	is_mission_completed = false
+	npc_interacted_first_mission = {}

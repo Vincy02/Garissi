@@ -1,2 +1,5 @@
 [signal arg="started_conversation"]
+do ScenesManager.stop_movement_player_and_pause()
 Mario: Ciao, benvenuto a Garissi! Parla con le persone che incontri e poi torna da me.
+[signal arg="you_can_move"]
+do ScenesManager.resume_movement_player_and_pause()

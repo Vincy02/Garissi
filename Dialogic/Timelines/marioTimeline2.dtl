@@ -1,3 +1,5 @@
 [signal arg="started_conversation"]
-Mario:  Complimenti hai già iniziato ad investigare, ecco a te un taccuino, qui troverai alcune informazioni che raccoglierai durante la tua indagine!
+do ScenesManager.stop_movement_player_and_pause()
+Mario: Complimenti hai già iniziato ad investigare, ecco a te un taccuino, qui troverai alcune informazioni che raccoglierai durante la tua indagine!
 [signal arg="ended_conversation"]
+do ScenesManager.resume_movement_player_and_pause()

@@ -7,7 +7,7 @@ var animated_sprite: AnimatedSprite2D
 static var player: Player = null
 static var SCALE_PLAYER = 0.2
 static var set_player_position_bool = false
-var is_dialogue_active = false
+static var move = true
 
 func _init():
 	if not player:
@@ -21,10 +21,11 @@ func _ready():
 
 func dialogicSignal(arg: String) -> void:
 	if arg == "started_conversation":
-		is_dialogue_active = true
+		stop_player()
 		animated_sprite.play("idle")
-	if arg == "ended_conversation":
-		is_dialogue_active = false
+	if arg == "ended_conversation" || arg == "you_can_move":
+		resume_player()
+		
 
 static func get_player():
 	return player
@@ -48,9 +49,15 @@ static func get_player_position_x() -> int:
 	else:
 		return -1
 
+static func stop_player() -> void:
+	move = false
+	
+static func resume_player() -> void:
+	move = true
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if !is_dialogue_active:
+	if move:
 		var direction = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")
 		velocity = direction * speed
 		move_and_slide()

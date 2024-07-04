@@ -14,3 +14,16 @@ func setup_current_scene(scene) -> void:
 	for node in mission_name:
 		var mission = "/root/" + node + "Mission"
 		get_tree().root.get_node(mission).update_world_status(current_scene)
+		
+func reset_scenes() -> void:
+	for node in mission_name:
+		var mission = "/root/" + node + "Mission"
+		get_tree().root.get_node(mission).reset_scene()
+		
+func stop_movement_player_and_pause() -> void:
+	Player.stop_player()
+	PauseMenu.stop_working()
+	
+func resume_movement_player_and_pause() -> void:
+	Player.resume_player()
+	PauseMenu.resume_working()

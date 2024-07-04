@@ -11,6 +11,7 @@ extends Control
 @onready var commands_button = $PanelContainer/MarginContainer/VBoxContainer/keybinds as Button
 @onready var exit_button = $PanelContainer/MarginContainer/VBoxContainer/exit as Button
 @onready var back_button = $Back as Button
+static var work = true
 
 # Called when the node enters the scene tree for the first time. 
 func _ready():
@@ -49,6 +50,7 @@ func back_to_pause_menu() -> void:
 
 func on_exit_button_pressed() -> void:
 	get_tree().paused = false
+	ScenesManager.reset_scenes()
 	get_tree().change_scene_to_packed(main_menu)
 
 func disable_all() -> void:
@@ -56,16 +58,22 @@ func disable_all() -> void:
 	
 func rienable_all() -> void:
 	panel_container_pause_menu.visible = true
-	
+
+static func resume_working() -> void:
+	work = true
+
+static func stop_working() -> void:
+	work = false
 			
 func _unhandled_input(event):
-	if Input.is_action_just_pressed("Pause") && !keybinds_menu.is_visible_in_tree() && !settings_menu.is_visible_in_tree():
-		if !get_tree().paused:
-			get_tree().paused = true
-			pause_menu.visible = true
+	if work:
+		if Input.is_action_just_pressed("Pause") && !keybinds_menu.is_visible_in_tree() && !settings_menu.is_visible_in_tree():
+			if !get_tree().paused:
+				get_tree().paused = true
+				pause_menu.visible = true
+			else:
+				get_tree().paused = false
+				pause_menu.visible = false
 		else:
-			get_tree().paused = false
-			pause_menu.visible = false
-	else:
-		if Input.is_action_just_pressed("Pause") && (keybinds_menu.is_visible_in_tree() || settings_menu.is_visible_in_tree()):
-			back_to_pause_menu()
+			if Input.is_action_just_pressed("Pause") && (keybinds_menu.is_visible_in_tree() || settings_menu.is_visible_in_tree()):
+				back_to_pause_menu()
