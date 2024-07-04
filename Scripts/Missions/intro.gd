@@ -56,7 +56,8 @@ func main_loop() -> void:
 			TransitionScreen.transition()
 			await TransitionScreen.on_transition_finished
 			get_tree().change_scene_to_file(park)
-			Player.set_player_position(Vector2(1316, 740), "right")
+			Player.set_player_position(Vector2(2104, 610), "right")
+			Dialogic.start("marioTimeline0")
 			
 
 func dialogicSignal(arg: String) -> void:

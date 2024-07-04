@@ -36,6 +36,7 @@ func dialogicSignal(arg: String) -> void:
 		is_interacting = false
 		reset_position()
 	if arg == "started_conversation":
+		interaction.visible = false
 		is_interacting = true
 
 func flipPlayer() -> void:

@@ -20,9 +20,9 @@ NavigationManager="*res://Scripts/Global/navigationManager.gd"
 TransitionScreen="*res://Scenes/Global/transitionScreen.tscn"
 WordlEnvironment="*res://Scenes/Global/worldEnvironment.tscn"
 SettingsManager="*res://Scripts/Global/settingsManager.gd"
-FirstMission="*res://Scripts/Missions/firstMission.gd"
 ScenesManager="*res://Scripts/Global/scenesManager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+FirstMission="*res://Scripts/Missions/firstMission.gd"
 
 [dialogic]
 
@@ -41,6 +41,7 @@ directories/dtl_directory={
 "francoTimeline": "res://Dialogic/Timelines/francoTimeline.dtl",
 "gioeleTimeline": "res://Dialogic/Timelines/gioeleTimeline.dtl",
 "intro": "res://Dialogic/Timelines/intro.dtl",
+"marioTimeline0": "res://Dialogic/Timelines/marioTimeline0.dtl",
 "marioTimeline1": "res://Dialogic/Timelines/marioTimeline1.dtl",
 "marioTimeline2": "res://Dialogic/Timelines/marioTimeline2.dtl",
 "micheleTimeline": "res://Dialogic/Timelines/micheleTimeline.dtl",
