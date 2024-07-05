@@ -5,6 +5,7 @@ extends Control
 @onready var pause_menu = $"."
 @onready var keybinds_menu = $KeybindsMenu
 @onready var settings_menu = $SettingsMenu
+@onready var inventory = $Inventory
 @onready var panel_container_pause_menu = $PanelContainer
 @onready var continue_button = $PanelContainer/MarginContainer/VBoxContainer/continueGame as Button
 @onready var options_button = $PanelContainer/MarginContainer/VBoxContainer/options as Button
@@ -23,6 +24,7 @@ func _ready():
 	pause_menu.visible = false
 	settings_menu.visible = false
 	keybinds_menu.visible = false
+	inventory.visible = false
 	back_button.visible = false
 
 func on_continue_button_pressed() -> void:
@@ -67,7 +69,7 @@ static func stop_working() -> void:
 			
 func _unhandled_input(event):
 	if work:
-		if Input.is_action_just_pressed("Pause") && !keybinds_menu.is_visible_in_tree() && !settings_menu.is_visible_in_tree():
+		if Input.is_action_just_pressed("Pause") && !keybinds_menu.is_visible_in_tree() && !settings_menu.is_visible_in_tree() && !inventory.is_visible_in_tree():
 			if !get_tree().paused:
 				get_tree().paused = true
 				pause_menu.visible = true
@@ -75,5 +77,19 @@ func _unhandled_input(event):
 				get_tree().paused = false
 				pause_menu.visible = false
 		else:
-			if Input.is_action_just_pressed("Pause") && (keybinds_menu.is_visible_in_tree() || settings_menu.is_visible_in_tree()):
+			if Input.is_action_just_pressed("Pause") && (keybinds_menu.is_visible_in_tree() || settings_menu.is_visible_in_tree()) && !inventory.is_visible_in_tree():
 				back_to_pause_menu()
+		
+		#gestione dell'inventario
+		if Input.is_action_just_pressed("Inventory") && !keybinds_menu.is_visible_in_tree() && !settings_menu.is_visible_in_tree():
+			if !get_tree().paused:
+				get_tree().paused = true
+				pause_menu.visible = true
+				inventory.visible = true
+		else:
+			if Input.is_action_just_pressed("Pause") && inventory.is_visible_in_tree():
+				if get_tree().paused:
+					get_tree().paused = false
+					pause_menu.visible = false
+					inventory.visible = false
+				

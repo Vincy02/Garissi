@@ -10,7 +10,8 @@ const input_actions = [
 	"MoveDown",
 	"MoveLeft",
 	"MoveRight",
-	"Interact"
+	"Interact",
+	"Inventory"
 ]
 
 var config = ConfigFile.new()

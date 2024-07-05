@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2avt6b6weif7"]
+[gd_scene load_steps=12 format=3 uid="uid://c2avt6b6weif7"]
 
 [ext_resource type="Script" path="res://Scripts/pauseMenu.gd" id="1_b3uxj"]
 [ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Utils/ACDiaryGirlUnicode.otf" id="2_5es47"]
 [ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/BindingMenu/bindingMenu.tscn" id="3_n8cvn"]
 [ext_resource type="PackedScene" uid="uid://c44uocpx5haec" path="res://Scenes/SettingsMenu/settingsMenu.tscn" id="4_wi7rj"]
+[ext_resource type="PackedScene" uid="uid://b5cbjr6nmpdlu" path="res://Scenes/Inventory/inventory.tscn" id="5_ud4jw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4o818"]
 bg_color = Color(0.419608, 0.0745098, 0.0705882, 1)
@@ -119,11 +120,12 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_561tv")
 text = "ritorna al menu' iniziale"
 
 [node name="KeybindsMenu" parent="." instance=ExtResource("3_n8cvn")]
-visible = false
 layout_mode = 1
 
 [node name="SettingsMenu" parent="." instance=ExtResource("4_wi7rj")]
-visible = false
+layout_mode = 1
+
+[node name="Inventory" parent="." instance=ExtResource("5_ud4jw")]
 layout_mode = 1
 
 [node name="Back" type="Button" parent="."]

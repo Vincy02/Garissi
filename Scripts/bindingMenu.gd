@@ -14,7 +14,8 @@ var input_actions = {
 	"MoveDown": "Vai giù",
 	"MoveLeft": "Vai a sinistra",
 	"MoveRight": "Vai a destra",
-	"Interact": "Interagisci"
+	"Interact": "Interagisci",
+	"Inventory": "Apri inventario"
 }
 
 # Called when the node enters the scene tree for the first time.

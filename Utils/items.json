@@ -1,0 +1,17 @@
+[
+	{
+		"NAME": "Flight Ticket",
+		"FILE NAME": "flightTicket",
+		"DESCRIPTION": "biglietto aereo di tizio"
+	},
+	{
+		"NAME": "Newspaper",
+		"FILE NAME": "newspaper",
+		"DESCRIPTION": "giornale di garissi, possibile trovarlo nelle migliori edicole"
+	},
+	{
+		"NAME": "News Clock Tower",
+		"FILE NAME": "newsClockTower",
+		"DESCRIPTION": "pagina di giornale riguardate la torre dell'orologio di Garissi"
+	}
+]

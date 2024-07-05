@@ -1,12 +1,13 @@
+res://Utils
+res://Scripts/Global
+res://Scripts
+res://Scenes/Inventory
 res://Sprites/Park
 res://Dialogic/Timelines
 res://Scripts/Missions
 res://Sprites/CityCentre
-res://Scripts/Global
 res://Sprites/Characters
 res://Dialogic/Characters
-res://Scripts
-res://Utils
 res://Scenes/Global
 res://Sprites/Player
 res://Scenes
