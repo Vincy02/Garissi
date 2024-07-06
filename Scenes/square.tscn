@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://btcc4nvtu3rft"]
+[gd_scene load_steps=22 format=3 uid="uid://btcc4nvtu3rft"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_yc4ar"]
 [ext_resource type="PackedScene" uid="uid://clqpppuywx1g0" path="res://Scenes/SquareObj/cityHall.tscn" id="2_tqofx"]
@@ -11,10 +11,21 @@
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="8_yo0ik"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="9_nhf34"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="10_lu4he"]
+[ext_resource type="Script" path="res://Scripts/characterDialogue.gd" id="11_hpxt7"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="12_7o22p"]
+[ext_resource type="Texture2D" uid="uid://bspxs4l4t1an5" path="res://Sprites/Characters/sophie.png" id="12_7vup2"]
+[ext_resource type="PackedScene" uid="uid://dbyuwtl0ai25a" path="res://Scenes/interaction.tscn" id="13_7v8c8"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mouic"]
 load_path = "res://.godot/imported/square.png-a221151fa95b2af00c35ab8d21443d17.ctex"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wtj6p"]
+radius = 160.0
+height = 570.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ko2o4"]
+radius = 345.0
+height = 870.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1iv5x"]
 size = Vector2(25.1246, 23.968)
@@ -83,6 +94,34 @@ map = NodePath("../../Background")
 light_mask = 2
 visibility_layer = 2
 scale = Vector2(2.055, 2.055)
+
+[node name="NPC" type="Node2D" parent="."]
+
+[node name="Sophie" type="Area2D" parent="NPC"]
+position = Vector2(-560, -119)
+script = ExtResource("11_hpxt7")
+timeline = "sophieTimeline0"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/Sophie"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Sophie/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_wtj6p")
+
+[node name="Body" type="Sprite2D" parent="NPC/Sophie"]
+top_level = true
+position = Vector2(1723, 490)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_7vup2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Sophie"]
+position = Vector2(2286, 609)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_ko2o4")
+
+[node name="Interaction" parent="NPC" instance=ExtResource("13_7v8c8")]
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -156,6 +195,9 @@ rotation = -1.57079
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("12_7o22p")]
 process_mode = 3
+
+[connection signal="body_entered" from="NPC/Sophie" to="NPC/Sophie" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/Sophie" to="NPC/Sophie" method="_on_body_exited"]
 
 [editable path="Doors/Door_W"]
 [editable path="Doors/Door_N"]

@@ -1,5 +1,7 @@
 [signal arg="started_conversation"]
 do ScenesManager.stop_movement_player_and_pause()
-Mario: Complimenti hai già iniziato ad investigare, ecco a te un taccuino, qui troverai alcune informazioni che raccoglierai durante la tua indagine!
+Mario: Complimenti hai già iniziato ad investigare!\
+Se non lo hai già scoperto, puoi premere [ TAB ] per aprire l'inventario in cui potrai consultare gli oggetti che raccoglierai durante l'indagine.
+[signal arg="unlock_park_door"]
 [signal arg="ended_conversation"]
 do ScenesManager.resume_movement_player_and_pause()

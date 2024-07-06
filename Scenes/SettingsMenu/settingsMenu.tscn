@@ -142,8 +142,8 @@ text = "Volume     "
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-step = 5.0
-value = 20.0
+min_value = -10.0
+max_value = 10.0
 
 [node name="PercentageContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/Control"]
 layout_mode = 2

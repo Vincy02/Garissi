@@ -15,6 +15,8 @@ func _init():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if not player:
+		player = self
 	Dialogic.signal_event.connect(dialogicSignal)
 	animated_sprite = $AnimatedSprite2D
 	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)

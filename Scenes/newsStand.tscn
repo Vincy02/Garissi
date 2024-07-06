@@ -1,22 +1,33 @@
-[gd_scene load_steps=12 format=3 uid="uid://bvcb6xv0gih1x"]
+[gd_scene load_steps=17 format=3 uid="uid://bvcb6xv0gih1x"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_pdr0l"]
 [ext_resource type="Texture2D" uid="uid://bvcf8ygbngc0r" path="res://Sprites/Square/NewsStand/newsStandInside.png" id="2_0bvab"]
+[ext_resource type="Script" path="res://Scripts/characterDialogue.gd" id="3_0r3jd"]
 [ext_resource type="Texture2D" uid="uid://bj5jm124msah1" path="res://Sprites/Square/NewsStand/newsStandCounter.png" id="3_duqsk"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="3_v6byu"]
+[ext_resource type="Texture2D" uid="uid://dxh34sdtiqarw" path="res://Sprites/Characters/newsAgentSimone.png" id="4_2hr2w"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="4_e0yg6"]
 [ext_resource type="Texture2D" uid="uid://crxkfkymrorjl" path="res://Sprites/Square/NewsStand/newsStandSign.png" id="4_fsnxo"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="5_qorsg"]
+[ext_resource type="PackedScene" uid="uid://dbyuwtl0ai25a" path="res://Scenes/interaction.tscn" id="5_yatys"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="6_tebp3"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="8_q3wyf"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_678pc"]
+radius = 160.0
+height = 570.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qd2sd"]
+radius = 480.0
+height = 1280.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_typ6s"]
-size = Vector2(657, 128.75)
+size = Vector2(657, 102.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kefs5"]
 size = Vector2(24.0391, 21.7259)
 
-[node name="NewsStandInside" type="Node2D"]
+[node name="NewsStand" type="Node2D"]
 script = ExtResource("1_pdr0l")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -24,16 +35,43 @@ position = Vector2(640, 379)
 scale = Vector2(1, 1.052)
 texture = ExtResource("2_0bvab")
 
-[node name="BarCounter" type="Sprite2D" parent="."]
+[node name="NPC" type="Node2D" parent="."]
+
+[node name="Simone" type="Area2D" parent="NPC"]
+position = Vector2(-1655, -434)
+script = ExtResource("3_0r3jd")
+timeline = "simoneTimeline0"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/Simone"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Simone/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_678pc")
+
+[node name="Body" type="Sprite2D" parent="NPC/Simone"]
+position = Vector2(2290, 609)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_2hr2w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Simone"]
+position = Vector2(2287, 699)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_qd2sd")
+
+[node name="Interaction" parent="NPC" instance=ExtResource("5_yatys")]
+
+[node name="Counter" type="Sprite2D" parent="."]
 position = Vector2(641, 287)
-scale = Vector2(0.315, 0.287)
+scale = Vector2(0.275, 0.25)
 texture = ExtResource("3_duqsk")
 
-[node name="BarCounterCollision" type="StaticBody2D" parent="."]
+[node name="CounterCollision" type="StaticBody2D" parent="."]
 position = Vector2(245, -21)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BarCounterCollision"]
-position = Vector2(394.5, 272.625)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CounterCollision"]
+position = Vector2(394.5, 259.625)
 shape = SubResource("RectangleShape2D_typ6s")
 
 [node name="Sign" type="Sprite2D" parent="."]
@@ -83,5 +121,8 @@ rotation = -1.57079
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_q3wyf")]
 process_mode = 3
+
+[connection signal="body_entered" from="NPC/Simone" to="NPC/Simone" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/Simone" to="NPC/Simone" method="_on_body_exited"]
 
 [editable path="Doors/Door_S"]

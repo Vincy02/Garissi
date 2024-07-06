@@ -15,9 +15,10 @@ func _ready():
 	inventory = InventoryManager.get_invetory()
 	load_item(index)
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func update_inventory():
 	inventory = InventoryManager.get_invetory()
+	check()
+	load_item(index)
 
 func _on_button_left_down():
 	index -= 1
@@ -40,3 +41,7 @@ func load_item(_index: int):
 		name_item.text = inventory[_index]["NAME"]
 		desc_item.text = inventory[_index]["DESCRIPTION"]
 		image_item.texture = load("res://Sprites/Items/" + inventory[_index]["FILE NAME"] + ".png")
+	if inventory.size() == 0:
+		name_item.text = ""
+		desc_item.text = ""
+		image_item.texture = load("res://Sprites/Items/emptyItem.png")

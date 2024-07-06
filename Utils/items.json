@@ -13,5 +13,15 @@
 		"NAME": "News Clock Tower",
 		"FILE NAME": "newsClockTower",
 		"DESCRIPTION": "pagina di giornale riguardate la torre dell'orologio di Garissi"
+	},
+	{
+		"NAME": "Foto Sophie",
+		"FILE NAME": "photoSophie",
+		"DESCRIPTION": "foto scattata il 18 giugno 2015 da Sophie, che ritrae Tino (vittima) che beve davanti al bar 'U Garissi'"
+	},
+	{
+		"NAME": "Batterie",
+		"FILE NAME": "battery",
+		"DESCRIPTION": "coppia di batterie di ottima qualita'"
 	}
 ]

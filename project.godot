@@ -22,8 +22,9 @@ WordlEnvironment="*res://Scenes/Global/worldEnvironment.tscn"
 SettingsManager="*res://Scripts/Global/settingsManager.gd"
 ScenesManager="*res://Scripts/Global/scenesManager.gd"
 FirstMission="*res://Scripts/Missions/firstMission.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 InventoryManager="*res://Scripts/Global/inventoryManager.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+SecondMission="*res://Scripts/Missions/secondMission.gd"
 
 [dialogic]
 
@@ -35,7 +36,9 @@ directories/dch_directory={
 "Gioele": "res://Dialogic/Characters/Gioele.dch",
 "Mario": "res://Dialogic/Characters/Mario.dch",
 "Michele": "res://Dialogic/Characters/Michele.dch",
-"Raffaele": "res://Dialogic/Characters/Raffaele.dch"
+"Raffaele": "res://Dialogic/Characters/Raffaele.dch",
+"Simone": "res://Dialogic/Characters/Simone.dch",
+"Sophie": "res://Dialogic/Characters/Sophie.dch"
 }
 directories/dtl_directory={
 "celestinoTimeline": "res://Dialogic/Timelines/celestinoTimeline.dtl",
@@ -46,7 +49,13 @@ directories/dtl_directory={
 "marioTimeline1": "res://Dialogic/Timelines/marioTimeline1.dtl",
 "marioTimeline2": "res://Dialogic/Timelines/marioTimeline2.dtl",
 "micheleTimeline": "res://Dialogic/Timelines/micheleTimeline.dtl",
-"raffaeleTimeline": "res://Dialogic/Timelines/raffaeleTimeline.dtl"
+"raffaeleTimeline": "res://Dialogic/Timelines/raffaeleTimeline.dtl",
+"simoneTimeline0": "res://Dialogic/Timelines/simoneTimeline0.dtl",
+"simoneTimeline1": "res://Dialogic/Timelines/simoneTimeline1.dtl",
+"sophieTimeline0": "res://Dialogic/Timelines/sophieTimeline0.dtl",
+"sophieTimeline1": "res://Dialogic/Timelines/sophieTimeline1.dtl",
+"sophieTimeline2": "res://Dialogic/Timelines/sophieTimeline2.dtl",
+"sophieTimeline3": "res://Dialogic/Timelines/sophieTimeline3.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://Utils/dialogueStyle.tres"]

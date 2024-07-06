@@ -34,7 +34,9 @@ func _on_commands_button_pressed() -> void:
 	back_button.visible = true
 
 func _on_back_button_pressed() -> void:
-	get_tree().reload_current_scene()
+	settings_menu.visible = false
+	keybinds_menu.visible = false
+	back_button.visible = false
 	
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()

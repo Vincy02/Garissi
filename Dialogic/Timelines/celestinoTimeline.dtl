@@ -1,5 +1,5 @@
 [signal arg="started_conversation"]
 do ScenesManager.stop_movement_player_and_pause()
-Celestino: Si...ricordo anche io alle 22\:00 era in piazza…
+Celestino: Si...ricordo anche io alle 22\:00 era in piazza...
 [signal arg="ended_conversation"]
 do ScenesManager.resume_movement_player_and_pause()

@@ -86,6 +86,7 @@ func _unhandled_input(event):
 				get_tree().paused = true
 				pause_menu.visible = true
 				inventory.visible = true
+				inventory.update_inventory()
 		else:
 			if Input.is_action_just_pressed("Pause") && inventory.is_visible_in_tree():
 				if get_tree().paused:

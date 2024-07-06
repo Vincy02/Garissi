@@ -25,6 +25,29 @@ var brightness_dictionary : Dictionary = {
 	"1.4": "90",
 	"1.5": "100"
 }
+var volume_dictionary : Dictionary = {
+	"-10": "0",
+	"-9": "5",
+	"-8": "10",
+	"-7": "15",
+	"-6": "20",
+	"-5": "25",
+	"-4": "30",
+	"-3": "35",
+	"-2": "40",
+	"-1": "45",
+	"0": "50",
+	"1": "55",
+	"2": "60",
+	"3": "65",
+	"4": "70",
+	"5": "75",
+	"6": "80",
+	"7": "85",
+	"8": "90",
+	"9": "85",
+	"10": "100"
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,6 +55,7 @@ func _ready():
 	fullscreen_checkBox.button_up.connect(_toggle_fullscreen)
 	brightness_slider.value_changed.connect(_change_brightness)
 	resolution_button.item_selected.connect(on_resolution_selected)
+	volume_slider.value_changed.connect(_change_volume)
 	add_resolution_items()
 	# load fullscreen var
 	var video_settings = SettingsManager.load_video_settings()
@@ -39,6 +63,7 @@ func _ready():
 	var fullscreen = fullscreen_checkBox.button_pressed
 	if fullscreen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN) 
+		resolution_button.disabled = true
 	# load resoultion var
 	on_resolution_selected(video_settings.resolution)
 	resolution_button.selected = video_settings.resolution
@@ -46,11 +71,12 @@ func _ready():
 	brightness_slider.value = min(video_settings.brightness, 1.5)
 	WordlEnvironment.environment.adjustment_brightness = brightness_slider.value
 	brightness_percentage.text = brightness_dictionary[str(brightness_slider.value)] + "%"
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	volume_percentage.text = str(volume_slider.value) + "%"
-		
+	# load volume var
+	var audio_settings = SettingsManager.load_audio_settings()
+	volume_slider.value = min(audio_settings.master, 10)
+	AudioServer.set_bus_volume_db(0, volume_slider.value)
+	volume_percentage.text = volume_dictionary[str(volume_slider.value)] + "%"
+
 func add_resolution_items() -> void:
 	for resolution_size_text in resolution_dictionary:
 		resolution_button.add_item(resolution_size_text)
@@ -66,11 +92,22 @@ func _change_brightness(value) -> void:
 	brightness_percentage.text = brightness_dictionary[str(brightness_slider.value)] + "%"
 	WordlEnvironment.environment.adjustment_brightness = value
 	SettingsManager.save_video_setting("brightness", value)
+	
+func _change_volume(value) -> void:
+	volume_percentage.text = volume_dictionary[str(volume_slider.value)] + "%"
+	AudioServer.set_bus_volume_db(0, value)
+	if volume_slider.value == -10:
+		AudioServer.set_bus_mute(0, true)
+	else:
+		AudioServer.set_bus_mute(0, false)
+	SettingsManager.save_audio_setting("master", value)
 
 func _toggle_fullscreen() -> void:
 	var fullscreen = fullscreen_checkBox.button_pressed
 	if fullscreen:
+		resolution_button.disabled = true
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
+		resolution_button.disabled = false
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	SettingsManager.save_video_setting("fullscreen", fullscreen)
