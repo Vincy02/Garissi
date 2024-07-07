@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhg2be7io711"]
+[gd_scene load_steps=4 format=3 uid="uid://dhg2be7io711"]
 
 [ext_resource type="Script" path="res://Scripts/door.gd" id="1_nkbkf"]
+[ext_resource type="PackedScene" uid="uid://dbyuwtl0ai25a" path="res://Scenes/interaction.tscn" id="2_a8h6q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xoosj"]
 
@@ -11,6 +12,8 @@ script = ExtResource("1_nkbkf")
 shape = SubResource("RectangleShape2D_xoosj")
 
 [node name="Spawn" type="Marker2D" parent="."]
+
+[node name="Interaction" parent="." instance=ExtResource("2_a8h6q")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

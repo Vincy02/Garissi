@@ -9,7 +9,6 @@
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="7_3qbfi"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="8_xhll0"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nncsl"]
 size = Vector2(428.5, 85.5)
 
@@ -42,11 +41,11 @@ texture = ExtResource("3_dha3l")
 [node name="CounterCollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CounterCollision"]
-position = Vector2(415.75, 183.75)
+position = Vector2(415.75, 110)
 shape = SubResource("RectangleShape2D_nncsl")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CounterCollision"]
-position = Vector2(1046, 183.75)
+position = Vector2(1046, 110)
 shape = SubResource("RectangleShape2D_nncsl")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="CounterCollision"]
@@ -102,6 +101,7 @@ map = NodePath("../../Background")
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_xhll0")]
 process_mode = 3
+visible = false
 
 [editable path="Doors/Door_S"]
 [editable path="Doors/Door_HeadOffice"]

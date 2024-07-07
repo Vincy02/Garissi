@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://vfrtd17061hq"]
+[gd_scene load_steps=17 format=3 uid="uid://vfrtd17061hq"]
 
 [ext_resource type="Script" path="res://Scripts/mainMenu.gd" id="1_d20jd"]
 [ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Utils/ACDiaryGirlUnicode.otf" id="2_bv3qf"]
 [ext_resource type="Texture2D" uid="uid://c4m53pbbx27jr" path="res://Sprites/MainMenu/mainMenuBg.png" id="2_g0b3c"]
 [ext_resource type="PackedScene" uid="uid://c44uocpx5haec" path="res://Scenes/SettingsMenu/settingsMenu.tscn" id="4_7che8"]
 [ext_resource type="PackedScene" uid="uid://bvo7b7usxg0ie" path="res://Scenes/BindingMenu/bindingMenu.tscn" id="5_c12qw"]
+[ext_resource type="AudioStream" uid="uid://dn6smmm63wh4t" path="res://Audio/mainTheme.mp3" id="6_imk3u"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7i6t6"]
 
@@ -224,3 +225,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_3hias")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_cqoav")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_r7glt")
 text = "<< indietro"
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_imk3u")
+autoplay = true

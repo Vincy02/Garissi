@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://bblg0o8mqwv45" path="res://Sprites/CityCentre/Church/candleStick.png" id="8_4b2wq"]
 [ext_resource type="Texture2D" uid="uid://bxt57dqx0n777" path="res://Sprites/CityCentre/Church/coffin.png" id="9_e81qt"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvnrd"]
 size = Vector2(321.5, 398.5)
 

@@ -1,0 +1,5 @@
+[signal arg="started_conversation"]
+do ScenesManager.stop_movement_player_and_pause()
+Sophie: Guarda che bella giornata, perfetta per scattare delle foto!
+[signal arg="ended_conversation"]
+do ScenesManager.resume_movement_player_and_pause()

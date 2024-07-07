@@ -1,7 +1,7 @@
 extends Node
 
 const SETTINGS_FILE_PATH = "user://settings.ini"
-const DEFAULT_AUDIO_VOLUME = 20
+const DEFAULT_AUDIO_VOLUME = 0
 const DEFULT_FULLSCREEN = 0
 const DEFULT_BRIGHTNESS = 1
 const DEFULT_RESOLUTION = 1
@@ -10,7 +10,8 @@ const input_actions = [
 	"MoveDown",
 	"MoveLeft",
 	"MoveRight",
-	"Interact"
+	"Interact",
+	"Inventory"
 ]
 
 var config = ConfigFile.new()

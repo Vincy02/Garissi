@@ -5,12 +5,14 @@ extends Control
 @onready var pause_menu = $"."
 @onready var keybinds_menu = $KeybindsMenu
 @onready var settings_menu = $SettingsMenu
+@onready var inventory = $Inventory
 @onready var panel_container_pause_menu = $PanelContainer
 @onready var continue_button = $PanelContainer/MarginContainer/VBoxContainer/continueGame as Button
 @onready var options_button = $PanelContainer/MarginContainer/VBoxContainer/options as Button
 @onready var commands_button = $PanelContainer/MarginContainer/VBoxContainer/keybinds as Button
 @onready var exit_button = $PanelContainer/MarginContainer/VBoxContainer/exit as Button
 @onready var back_button = $Back as Button
+static var work = true
 
 # Called when the node enters the scene tree for the first time. 
 func _ready():
@@ -22,6 +24,7 @@ func _ready():
 	pause_menu.visible = false
 	settings_menu.visible = false
 	keybinds_menu.visible = false
+	inventory.visible = false
 	back_button.visible = false
 
 func on_continue_button_pressed() -> void:
@@ -49,6 +52,7 @@ func back_to_pause_menu() -> void:
 
 func on_exit_button_pressed() -> void:
 	get_tree().paused = false
+	ScenesManager.reset_scenes()
 	get_tree().change_scene_to_packed(main_menu)
 
 func disable_all() -> void:
@@ -56,16 +60,37 @@ func disable_all() -> void:
 	
 func rienable_all() -> void:
 	panel_container_pause_menu.visible = true
-	
+
+static func resume_working() -> void:
+	work = true
+
+static func stop_working() -> void:
+	work = false
 			
 func _unhandled_input(event):
-	if Input.is_action_just_pressed("Pause") && !keybinds_menu.is_visible_in_tree() && !settings_menu.is_visible_in_tree():
-		if !get_tree().paused:
-			get_tree().paused = true
-			pause_menu.visible = true
+	if work:
+		if Input.is_action_just_pressed("Pause") && !keybinds_menu.is_visible_in_tree() && !settings_menu.is_visible_in_tree() && !inventory.is_visible_in_tree():
+			if !get_tree().paused:
+				get_tree().paused = true
+				pause_menu.visible = true
+			else:
+				get_tree().paused = false
+				pause_menu.visible = false
 		else:
-			get_tree().paused = false
-			pause_menu.visible = false
-	else:
-		if Input.is_action_just_pressed("Pause") && (keybinds_menu.is_visible_in_tree() || settings_menu.is_visible_in_tree()):
-			back_to_pause_menu()
+			if Input.is_action_just_pressed("Pause") && (keybinds_menu.is_visible_in_tree() || settings_menu.is_visible_in_tree()) && !inventory.is_visible_in_tree():
+				back_to_pause_menu()
+		
+		#gestione dell'inventario
+		if Input.is_action_just_pressed("Inventory") && !keybinds_menu.is_visible_in_tree() && !settings_menu.is_visible_in_tree():
+			if !get_tree().paused:
+				get_tree().paused = true
+				pause_menu.visible = true
+				inventory.visible = true
+				inventory.update_inventory()
+		else:
+			if Input.is_action_just_pressed("Pause") && inventory.is_visible_in_tree():
+				if get_tree().paused:
+					get_tree().paused = false
+					pause_menu.visible = false
+					inventory.visible = false
+				

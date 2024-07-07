@@ -21,21 +21,45 @@ TransitionScreen="*res://Scenes/Global/transitionScreen.tscn"
 WordlEnvironment="*res://Scenes/Global/worldEnvironment.tscn"
 SettingsManager="*res://Scripts/Global/settingsManager.gd"
 ScenesManager="*res://Scripts/Global/scenesManager.gd"
+FirstMission="*res://Scripts/Missions/firstMission.gd"
+InventoryManager="*res://Scripts/Global/inventoryManager.gd"
+SecondMission="*res://Scripts/Missions/secondMission.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
+"Celestino": "res://Dialogic/Characters/Celestino.dch",
 "Fabrizio": "res://Dialogic/Characters/Fabrizio.dch",
-"Gaia": "res://Dialogic/Characters/Gaia.dch"
+"Franco": "res://Dialogic/Characters/Franco.dch",
+"Gaia": "res://Dialogic/Characters/Gaia.dch",
+"Gioele": "res://Dialogic/Characters/Gioele.dch",
+"Mario": "res://Dialogic/Characters/Mario.dch",
+"Michele": "res://Dialogic/Characters/Michele.dch",
+"Raffaele": "res://Dialogic/Characters/Raffaele.dch",
+"Simone": "res://Dialogic/Characters/Simone.dch",
+"Sophie": "res://Dialogic/Characters/Sophie.dch"
 }
 directories/dtl_directory={
-"firstMission": "res://Dialogic/Timelines/firstMission.dtl",
-"intro": "res://Dialogic/Timelines/intro.dtl"
+"celestinoTimeline": "res://Dialogic/Timelines/celestinoTimeline.dtl",
+"francoTimeline": "res://Dialogic/Timelines/francoTimeline.dtl",
+"gioeleTimeline": "res://Dialogic/Timelines/gioeleTimeline.dtl",
+"intro": "res://Dialogic/Timelines/intro.dtl",
+"marioTimeline0": "res://Dialogic/Timelines/marioTimeline0.dtl",
+"marioTimeline1": "res://Dialogic/Timelines/marioTimeline1.dtl",
+"marioTimeline2": "res://Dialogic/Timelines/marioTimeline2.dtl",
+"micheleTimeline": "res://Dialogic/Timelines/micheleTimeline.dtl",
+"raffaeleTimeline": "res://Dialogic/Timelines/raffaeleTimeline.dtl",
+"simoneTimeline0": "res://Dialogic/Timelines/simoneTimeline0.dtl",
+"simoneTimeline1": "res://Dialogic/Timelines/simoneTimeline1.dtl",
+"sophieTimeline0": "res://Dialogic/Timelines/sophieTimeline0.dtl",
+"sophieTimeline1": "res://Dialogic/Timelines/sophieTimeline1.dtl",
+"sophieTimeline2": "res://Dialogic/Timelines/sophieTimeline2.dtl",
+"sophieTimeline3": "res://Dialogic/Timelines/sophieTimeline3.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://Scenes/Global/dialogueStyle.tres"]
-layout/default_style="res://Scenes/Global/dialogueStyle.tres"
+layout/style_list=["res://Utils/dialogueStyle.tres"]
+layout/default_style="res://Utils/dialogueStyle.tres"
 variables={}
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -97,6 +121,11 @@ Interact={
 Pause={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+Inventory={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 dialogic_default_action={

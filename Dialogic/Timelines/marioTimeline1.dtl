@@ -1,0 +1,5 @@
+[signal arg="started_conversation"]
+do ScenesManager.stop_movement_player_and_pause()
+Mario: Non hai ancora parlato con tutti. Torna da me quando avrai finito!
+[signal arg="ended_conversation"]
+do ScenesManager.resume_movement_player_and_pause()

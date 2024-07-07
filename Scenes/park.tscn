@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b01t8dhql51pl"]
+[gd_scene load_steps=26 format=3 uid="uid://b01t8dhql51pl"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_2ovvn"]
 [ext_resource type="Texture2D" uid="uid://dpqoqj4q1kikj" path="res://Sprites/Park/park.png" id="2_lwlfk"]
@@ -6,15 +6,46 @@
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_g3j4a"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_3ake0"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="5_b5pcg"]
+[ext_resource type="Texture2D" uid="uid://cgtq18ujgwxr" path="res://Sprites/Park/tree_DOWN.png" id="5_tqlp6"]
+[ext_resource type="Texture2D" uid="uid://bcijwh1fgiy5d" path="res://Sprites/Park/tree_UP.png" id="6_35cbf"]
+[ext_resource type="Texture2D" uid="uid://d0s1eqdisclpm" path="res://Sprites/Park/bush.png" id="6_kveig"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="7_q5iae"]
+[ext_resource type="Texture2D" uid="uid://yiwrubeo4oba" path="res://Sprites/Park/bench.png" id="7_vunlb"]
+[ext_resource type="Script" path="res://Scripts/characterDialogue.gd" id="11_ij32g"]
+[ext_resource type="Texture2D" uid="uid://b4h2j6g30nupn" path="res://Sprites/Characters/gardnerGioele.png" id="11_updlh"]
+[ext_resource type="Texture2D" uid="uid://drpd2oson08k7" path="res://Sprites/Characters/gardnerMichele.png" id="12_dd4ji"]
+[ext_resource type="PackedScene" uid="uid://dbyuwtl0ai25a" path="res://Scenes/interaction.tscn" id="13_fvjer"]
+[ext_resource type="Texture2D" uid="uid://c5vy7wfylxtro" path="res://Sprites/Characters/gardnerRaffaele.png" id="13_jismw"]
+[ext_resource type="Texture2D" uid="uid://c408v7smek14m" path="res://Sprites/Characters/elderCelestino.png" id="14_sxc1w"]
+[ext_resource type="Texture2D" uid="uid://jx8jaqwxykyw" path="res://Sprites/Characters/elderFranco.png" id="15_iemlp"]
+[ext_resource type="Texture2D" uid="uid://uym0efhan6is" path="res://Sprites/Characters/technicianMario.png" id="16_pijm3"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t55jv"]
+size = Vector2(111, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4l0q"]
+size = Vector2(79, 16.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gs117"]
+size = Vector2(124.5, 42.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sy46i"]
+size = Vector2(93, 33)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sdqwj"]
+radius = 160.0
+height = 570.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nkshi"]
+radius = 345.0
+height = 870.0
 
 [node name="Park" type="Node2D"]
 script = ExtResource("1_2ovvn")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(1304, 732)
-scale = Vector2(0.198159, 0.197817)
+position = Vector2(1301, 732)
+scale = Vector2(0.265, 0.265)
 texture = ExtResource("2_lwlfk")
 
 [node name="Borders" parent="." instance=ExtResource("2_md658")]
@@ -35,6 +66,226 @@ spawn_direction = "right"
 [node name="Spawn" parent="Doors/Door_E" index="1"]
 position = Vector2(-20.3666, 8.28719e-06)
 
+[node name="Trees" type="Node2D" parent="."]
+
+[node name="Tree1_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(1281, 500)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree2_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(743, 572)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree3_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(695, 998)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree4_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(1355, 1204)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree5_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(1843, 796)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree6_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(2135, 1212)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree7_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(2447, 212)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree8_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(1599, 164)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree9_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(955, 160)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree10_DOWN" type="Sprite2D" parent="Trees"]
+position = Vector2(139, 644)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("5_tqlp6")
+
+[node name="Tree1_UP" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(1281, 500)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("6_35cbf")
+
+[node name="Tree2_UP" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(743, 572)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
+
+[node name="Tree3_UP" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(695, 998)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
+
+[node name="Tree4_UP" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(1355, 1204)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
+
+[node name="Tree5_UP" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(1843, 796)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
+
+[node name="Tree6_UP" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(2135, 1212)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
+
+[node name="Tree7_UP" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(2447, 212)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
+
+[node name="Tree8_UP" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(1599, 164)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
+
+[node name="Tree9_UP" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(955, 160)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
+
+[node name="Tree10_UP" type="Sprite2D" parent="Trees"]
+top_level = true
+position = Vector2(139, 644)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6_35cbf")
+
+[node name="Bushes" type="Node2D" parent="."]
+
+[node name="Bush1" type="Sprite2D" parent="Bushes"]
+position = Vector2(1192, 659)
+scale = Vector2(0.295, 0.295)
+texture = ExtResource("6_kveig")
+
+[node name="Bush3" type="Sprite2D" parent="Bushes"]
+position = Vector2(1367, 652)
+scale = Vector2(0.295, 0.295)
+texture = ExtResource("6_kveig")
+
+[node name="Bush2" type="Sprite2D" parent="Bushes"]
+position = Vector2(1281, 686)
+scale = Vector2(0.295, 0.295)
+texture = ExtResource("6_kveig")
+
+[node name="Benches" type="Node2D" parent="."]
+position = Vector2(575, 334)
+scale = Vector2(0.32, 0.32)
+
+[node name="Bench1" type="Sprite2D" parent="Benches"]
+top_level = true
+position = Vector2(577, 330)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("7_vunlb")
+
+[node name="Bench2" type="Sprite2D" parent="Benches"]
+top_level = true
+position = Vector2(1303, 919)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("7_vunlb")
+
+[node name="Bench3" type="Sprite2D" parent="Benches"]
+top_level = true
+position = Vector2(2507, 765)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("7_vunlb")
+
+[node name="Bench4" type="Sprite2D" parent="Benches"]
+top_level = true
+position = Vector2(1995, 148)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("7_vunlb")
+
+[node name="BuildingCollision" type="StaticBody2D" parent="."]
+position = Vector2(614, 254)
+
+[node name="CollisionShape1" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(670, 280)
+shape = SubResource("RectangleShape2D_t55jv")
+
+[node name="CollisionShape2" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(1229.25, 528)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape3" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(740.25, 935)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape4" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(1522.25, 943)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape5" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(1835.25, -55)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape6" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(984.25, -103)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape7" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(341.25, -107)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape8" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(131, 304)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape9" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(-471, 376)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape10" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(84.25, 730)
+shape = SubResource("RectangleShape2D_p4l0q")
+
+[node name="CollisionShape11" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(685.75, 667.5)
+shape = SubResource("RectangleShape2D_gs117")
+
+[node name="CollisionShape12" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(-38, 78.25)
+shape = SubResource("RectangleShape2D_gs117")
+
+[node name="CollisionShape13" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(1377.25, -103)
+shape = SubResource("RectangleShape2D_gs117")
+
+[node name="CollisionShape16" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(669.5, 257.5)
+shape = SubResource("RectangleShape2D_sy46i")
+
+[node name="CollisionShape14" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(1890.25, 514)
+shape = SubResource("RectangleShape2D_gs117")
+
 [node name="Player" parent="." instance=ExtResource("5_b5pcg")]
 position = Vector2(-2.38419e-07, 2.38419e-07)
 scale = Vector2(0.2, 0.2)
@@ -45,9 +296,165 @@ visibility_layer = 0
 script = ExtResource("5_3ake0")
 map = NodePath("../../Background")
 
+[node name="NPC" type="Node2D" parent="."]
+
+[node name="GardnerGioele" type="Area2D" parent="NPC"]
+position = Vector2(408, 948)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("11_ij32g")
+timeline = "gioeleTimeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/GardnerGioele"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/GardnerGioele/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_sdqwj")
+
+[node name="Body" type="Sprite2D" parent="NPC/GardnerGioele"]
+top_level = true
+position = Vector2(404, 945)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_updlh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/GardnerGioele"]
+position = Vector2(6.10352e-05, 15)
+shape = SubResource("CapsuleShape2D_nkshi")
+
+[node name="GardnerMichele" type="Area2D" parent="NPC"]
+position = Vector2(408, 948)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("11_ij32g")
+timeline = "micheleTimeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/GardnerMichele"]
+position = Vector2(4215, -3935)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/GardnerMichele/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_sdqwj")
+
+[node name="Body" type="Sprite2D" parent="NPC/GardnerMichele"]
+top_level = true
+position = Vector2(1251, 156)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_dd4ji")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/GardnerMichele"]
+position = Vector2(4200, -3955)
+shape = SubResource("CapsuleShape2D_nkshi")
+
+[node name="GardnerRaffaele" type="Area2D" parent="NPC"]
+position = Vector2(1751, 1179)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("11_ij32g")
+timeline = "raffaeleTimeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/GardnerRaffaele"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/GardnerRaffaele/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_sdqwj")
+
+[node name="Body" type="Sprite2D" parent="NPC/GardnerRaffaele"]
+top_level = true
+position = Vector2(1748, 1174)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("13_jismw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/GardnerRaffaele"]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_nkshi")
+
+[node name="ElderCelestino" type="Area2D" parent="NPC"]
+position = Vector2(1417, 906)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("11_ij32g")
+timeline = "celestinoTimeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/ElderCelestino"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/ElderCelestino/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_sdqwj")
+
+[node name="Body" type="Sprite2D" parent="NPC/ElderCelestino"]
+top_level = true
+position = Vector2(1419, 895)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_sxc1w")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/ElderCelestino"]
+position = Vector2(-30, 15)
+shape = SubResource("CapsuleShape2D_nkshi")
+
+[node name="ElderFranco" type="Area2D" parent="NPC"]
+script = ExtResource("11_ij32g")
+timeline = "francoTimeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/ElderFranco"]
+position = Vector2(287, 355)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/ElderFranco/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_sdqwj")
+
+[node name="Body" type="Sprite2D" parent="NPC/ElderFranco"]
+top_level = true
+position = Vector2(288, 349)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_iemlp")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/ElderFranco"]
+position = Vector2(282, 357)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_nkshi")
+
+[node name="TechnicianMario" type="Area2D" parent="NPC"]
+script = ExtResource("11_ij32g")
+timeline = "marioTimeline1"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/TechnicianMario"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TechnicianMario/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_sdqwj")
+
+[node name="Body" type="Sprite2D" parent="NPC/TechnicianMario"]
+top_level = true
+position = Vector2(2283, 609)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_pijm3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TechnicianMario"]
+position = Vector2(2286, 609)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_nkshi")
+
+[node name="Interaction" parent="NPC" instance=ExtResource("13_fvjer")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_q5iae")]
 process_mode = 3
+visible = false
+
+[connection signal="body_entered" from="NPC/GardnerGioele" to="NPC/GardnerGioele" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/GardnerGioele" to="NPC/GardnerGioele" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/GardnerMichele" to="NPC/GardnerMichele" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/GardnerMichele" to="NPC/GardnerMichele" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/GardnerRaffaele" to="NPC/GardnerRaffaele" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/GardnerRaffaele" to="NPC/GardnerRaffaele" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/ElderCelestino" to="NPC/ElderCelestino" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/ElderCelestino" to="NPC/ElderCelestino" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/ElderFranco" to="NPC/ElderFranco" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/ElderFranco" to="NPC/ElderFranco" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/TechnicianMario" to="NPC/TechnicianMario" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/TechnicianMario" to="NPC/TechnicianMario" method="_on_body_exited"]
 
 [editable path="Doors/Door_E"]

@@ -3,6 +3,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Current node passed as parameter to update gamelogic
+	ScenesManager.setup_current_scene(self)
 	if NavigationManager.spawn_door_tag != null:
 		_on_level_spawn(NavigationManager.spawn_door_tag)
 		
