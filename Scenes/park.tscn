@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b01t8dhql51pl"]
+[gd_scene load_steps=26 format=3 uid="uid://b01t8dhql51pl"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_2ovvn"]
 [ext_resource type="Texture2D" uid="uid://dpqoqj4q1kikj" path="res://Sprites/Park/park.png" id="2_lwlfk"]
@@ -28,6 +28,9 @@ size = Vector2(79, 16.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gs117"]
 size = Vector2(124.5, 42.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sy46i"]
+size = Vector2(93, 33)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sdqwj"]
 radius = 160.0
@@ -224,43 +227,43 @@ texture = ExtResource("7_vunlb")
 position = Vector2(614, 254)
 
 [node name="CollisionShape1" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(670, 247)
+position = Vector2(670, 280)
 shape = SubResource("RectangleShape2D_t55jv")
 
 [node name="CollisionShape2" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(1229.25, 544.5)
+position = Vector2(1229.25, 528)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape3" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(740.25, 952)
+position = Vector2(740.25, 935)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape4" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(1522.25, 960)
+position = Vector2(1522.25, 943)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape5" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(1835.25, -43)
+position = Vector2(1835.25, -55)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape6" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(984.25, -86)
+position = Vector2(984.25, -103)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape7" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(341.25, -91)
+position = Vector2(341.25, -107)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape8" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(131, 323)
+position = Vector2(131, 304)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape9" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(-471, 389)
+position = Vector2(-471, 376)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape10" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(84.25, 746)
+position = Vector2(84.25, 730)
 shape = SubResource("RectangleShape2D_p4l0q")
 
 [node name="CollisionShape11" type="CollisionShape2D" parent="BuildingCollision"]
@@ -274,6 +277,10 @@ shape = SubResource("RectangleShape2D_gs117")
 [node name="CollisionShape13" type="CollisionShape2D" parent="BuildingCollision"]
 position = Vector2(1377.25, -103)
 shape = SubResource("RectangleShape2D_gs117")
+
+[node name="CollisionShape16" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(669.5, 257.5)
+shape = SubResource("RectangleShape2D_sy46i")
 
 [node name="CollisionShape14" type="CollisionShape2D" parent="BuildingCollision"]
 position = Vector2(1890.25, 514)
@@ -435,6 +442,7 @@ shape = SubResource("CapsuleShape2D_nkshi")
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_q5iae")]
 process_mode = 3
+visible = false
 
 [connection signal="body_entered" from="NPC/GardnerGioele" to="NPC/GardnerGioele" method="_on_body_entered"]
 [connection signal="body_exited" from="NPC/GardnerGioele" to="NPC/GardnerGioele" method="_on_body_exited"]

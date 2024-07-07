@@ -310,11 +310,11 @@ texture = ExtResource("25_1ivr4")
 position = Vector2(614, 254)
 
 [node name="CollisionShape1" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(-409.469, 548)
+position = Vector2(-409.469, 570)
 shape = SubResource("RectangleShape2D_wplox")
 
 [node name="CollisionShape2" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(-402, 1261.25)
+position = Vector2(-402, 1240)
 shape = SubResource("RectangleShape2D_oonjs")
 
 [node name="CollisionShape4" type="CollisionShape2D" parent="BuildingCollision"]

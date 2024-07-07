@@ -23,8 +23,8 @@ SettingsManager="*res://Scripts/Global/settingsManager.gd"
 ScenesManager="*res://Scripts/Global/scenesManager.gd"
 FirstMission="*res://Scripts/Missions/firstMission.gd"
 InventoryManager="*res://Scripts/Global/inventoryManager.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 SecondMission="*res://Scripts/Missions/secondMission.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
