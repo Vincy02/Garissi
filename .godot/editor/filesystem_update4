@@ -1,6 +1,8 @@
 res://Scenes/player.tscn
 res://Utils/dialogueStyle.tres
-res://Scripts/player.gd
 res://Scenes/Missions/intro.tscn
-res://Dialogic/Timelines/marioTimeline2.dtl
+res://Scenes/cityCentre.tscn
 res://Dialogic/Timelines/marioTimeline0.dtl
+res://Dialogic/Timelines/marioTimeline2.dtl
+res://Dialogic/Timelines/sophieTimeline1.dtl
+res://Dialogic/Timelines/sophieTimeline0.dtl

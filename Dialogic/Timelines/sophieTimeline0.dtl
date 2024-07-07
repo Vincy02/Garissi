@@ -1,15 +1,12 @@
 [signal arg="started_conversation"]
 do ScenesManager.stop_movement_player_and_pause()
-Sophie: Ciao sono Sophie sto realizzando degli scatti per una rivista culturale. 
-Sophie: Vorrei fartene vedere alcuni interessanti ma si è scaricata la macchina fotografica. 
+Sophie: Ciao sono Sophie sto realizzando degli scatti per una rivista culturale.
+Sophie: Vorrei fartene vedere alcuni interessanti ma si è scaricata la macchina fotografica.
 Sophie: Potresti aiutarmi?
 - Sì
 	Sophie: Grazie mille! Ti aspetto qui.
 - No
-	Sophie: Se nel mondo esistesse un po’ di bene\
-e ognuno si considerasse suo fratello,\
-ci sarebbe meno pensieri e meno pene\
-e il mondo ne sarebbe assai più bello.
+	Sophie: Se nel mondo esistesse un po’ di bene e ognuno si considerasse suo fratello, ci sarebbe meno pensieri e meno pene e il mondo ne sarebbe assai più bello.
 	Sophie: Adesso ti tocca aiutarmi...
 [signal arg="ended_conversation"]
 do ScenesManager.resume_movement_player_and_pause()
