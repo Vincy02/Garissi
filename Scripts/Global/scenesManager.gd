@@ -1,7 +1,7 @@
 extends Node
 
 var current_scene
-var mission_name = ["First", "Second"]
+var mission_name = ["First", "Second", "Third"]
 
 func get_current_scene() -> Node2D:
 	return current_scene

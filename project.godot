@@ -24,11 +24,13 @@ ScenesManager="*res://Scripts/Global/scenesManager.gd"
 FirstMission="*res://Scripts/Missions/firstMission.gd"
 InventoryManager="*res://Scripts/Global/inventoryManager.gd"
 SecondMission="*res://Scripts/Missions/secondMission.gd"
+ThirdMission="*res://Scripts/Missions/thirdMission.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
+"BarCustomer5": "res://Dialogic/Characters/BarCustomer5.dch",
 "Celestino": "res://Dialogic/Characters/Celestino.dch",
 "Fabrizio": "res://Dialogic/Characters/Fabrizio.dch",
 "Franco": "res://Dialogic/Characters/Franco.dch",
@@ -41,6 +43,7 @@ directories/dch_directory={
 "Sophie": "res://Dialogic/Characters/Sophie.dch"
 }
 directories/dtl_directory={
+"barCustomer5Timeline": "res://Dialogic/Timelines/barCustomer5Timeline.dtl",
 "celestinoTimeline": "res://Dialogic/Timelines/celestinoTimeline.dtl",
 "francoTimeline": "res://Dialogic/Timelines/francoTimeline.dtl",
 "gioeleTimeline": "res://Dialogic/Timelines/gioeleTimeline.dtl",
@@ -60,7 +63,9 @@ directories/dtl_directory={
 glossary/default_case_sensitive=true
 layout/style_list=["res://Utils/dialogueStyle.tres"]
 layout/default_style="res://Utils/dialogueStyle.tres"
-variables={}
+variables={
+"password_bar": "0"
+}
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1

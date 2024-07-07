@@ -53,6 +53,7 @@ func back_to_pause_menu() -> void:
 func on_exit_button_pressed() -> void:
 	get_tree().paused = false
 	ScenesManager.reset_scenes()
+	InventoryManager.reset_inventory()
 	get_tree().change_scene_to_packed(main_menu)
 
 func disable_all() -> void:

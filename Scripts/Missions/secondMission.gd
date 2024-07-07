@@ -21,6 +21,7 @@ func dialogicSignal(arg: String) -> void:
 		update_world_status(current_scene)
 	if arg == "give_photoSophie" && battery_given:
 		photo_given = true
+		is_mission_completed = true
 		InventoryManager.add_item("photoSophie")
 		InventoryManager.remove_item("battery")
 		current_scene = ScenesManager.get_current_scene()
