@@ -8,6 +8,7 @@ static var player: Player = null
 static var SCALE_PLAYER = 0.2
 static var set_player_position_bool = false
 static var move = true
+@onready var foot_step = $FootStep
 
 func _init():
 	if not player:
@@ -65,11 +66,17 @@ func _process(delta):
 		move_and_slide()
 		if velocity.length_squared() == 0:
 			animated_sprite.play("idle")
+			if foot_step.playing:
+				foot_step.stop()
 		else:
 			if set_player_position_bool:
 				scale.x = -SCALE_PLAYER
 				set_player_position_bool = false
 			animated_sprite.play("walk")
+			if !foot_step.playing:
+				foot_step.play()
 		
 		if(direction.x > 0): animated_sprite.flip_h = 1
 		if(direction.x < 0): animated_sprite.flip_h = 0
+	else:
+		foot_step.stop()

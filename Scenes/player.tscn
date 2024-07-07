@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://crnoals7bkk2k"]
+[gd_scene load_steps=11 format=3 uid="uid://crnoals7bkk2k"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_oaxyf"]
 [ext_resource type="Texture2D" uid="uid://dl10sw1fi2cym" path="res://Sprites/Player/playerIdle.png" id="2_2lknf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://t8sj62i3ypje" path="res://Sprites/Player/player3.png" id="5_gj0xh"]
 [ext_resource type="Texture2D" uid="uid://l8cs5y3vvhga" path="res://Sprites/Player/player4.png" id="6_237ou"]
 [ext_resource type="Texture2D" uid="uid://df0d4q26t7afg" path="res://Sprites/Player/player5.png" id="7_ei2uo"]
+[ext_resource type="AudioStream" uid="uid://bkpgmhduu8vp5" path="res://Audio/stepFoot.mp3" id="8_oewxn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yo2yb"]
 animations = [{
@@ -53,3 +54,6 @@ animation = &"idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -15)
 shape = SubResource("CapsuleShape2D_nm1t4")
+
+[node name="FootStep" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_oewxn")
