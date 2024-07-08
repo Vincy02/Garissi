@@ -1,10 +1,11 @@
 res://Dialogic/Timelines
+res://addons/dialogic/Core
+res://Scripts
+res://Scripts/Missions
 res://Sprites/Characters
 res://Dialogic/Characters
-res://Scripts/Missions
 res://Utils
 res://Scripts/Global
-res://Scripts
 res://Scenes/Inventory
 res://Sprites/Park
 res://Sprites/CityCentre

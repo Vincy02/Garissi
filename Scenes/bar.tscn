@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dpu0uxlfklphi"]
+[gd_scene load_steps=29 format=3 uid="uid://dpu0uxlfklphi"]
 
 [ext_resource type="Texture2D" uid="uid://dn1ve26bml4et" path="res://Sprites/Square/Bar/insideBar.png" id="1_8423f"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_wr75h"]
@@ -12,10 +12,31 @@
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="8_ud3gp"]
 [ext_resource type="Script" path="res://Scripts/characterDialogue.gd" id="10_2b73j"]
 [ext_resource type="Texture2D" uid="uid://ca1a6mv50d8t6" path="res://Sprites/Characters/barCustomer5.png" id="11_ccag8"]
+[ext_resource type="Texture2D" uid="uid://b3agao0qrj8jj" path="res://Sprites/Characters/barCustomer2.png" id="11_yjsyt"]
 [ext_resource type="PackedScene" uid="uid://dbyuwtl0ai25a" path="res://Scenes/interaction.tscn" id="12_pn7bb"]
+[ext_resource type="Texture2D" uid="uid://clwaqx4vq0a2g" path="res://Sprites/Characters/barCustomer1.png" id="12_qpnu6"]
+[ext_resource type="Texture2D" uid="uid://d4edfglghwql4" path="res://Sprites/Characters/barCustomer3.png" id="13_4hqy8"]
+[ext_resource type="Texture2D" uid="uid://dpvk40oge3m1t" path="res://Sprites/Characters/barCustomer4.png" id="14_u4lru"]
+[ext_resource type="Texture2D" uid="uid://5qnq3gjogbm0" path="res://Sprites/Characters/barman.png" id="16_5qj43"]
+[ext_resource type="Texture2D" uid="uid://dn8ig08wfbw3n" path="res://Sprites/Characters/mayor.png" id="16_ukho4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hp5g"]
 size = Vector2(1027.13, 261.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7wvup"]
+radius = 160.0
+height = 570.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h28lm"]
+radius = 320.0
+height = 790.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_348co"]
+size = Vector2(2640, 1325)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_03rdr"]
+radius = 440.0
+height = 1220.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyjbf"]
 size = Vector2(1924.5, 99)
@@ -31,13 +52,6 @@ height = 130.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34j1n"]
 size = Vector2(32.4199, 29.5552)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7wvup"]
-radius = 160.0
-height = 570.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_348co"]
-size = Vector2(2640, 1325)
-
 [node name="Bar" type="Node2D"]
 script = ExtResource("1_wr75h")
 
@@ -52,6 +66,172 @@ texture = ExtResource("1_8423f")
 position = Vector2(1413.44, 886)
 shape = SubResource("RectangleShape2D_5hp5g")
 
+[node name="NPC" type="Node2D" parent="."]
+
+[node name="BarCustomer1" type="Area2D" parent="NPC"]
+position = Vector2(-2190, -120)
+script = ExtResource("10_2b73j")
+timeline = "barCustomer2Timeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/BarCustomer1"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/BarCustomer1/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_7wvup")
+
+[node name="Body" type="Sprite2D" parent="NPC/BarCustomer1"]
+top_level = true
+position = Vector2(95, 493)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_yjsyt")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/BarCustomer1"]
+position = Vector2(2286, 621)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_h28lm")
+
+[node name="BarCustomer2" type="Area2D" parent="NPC"]
+position = Vector2(-644, -165)
+script = ExtResource("10_2b73j")
+timeline = "barCustomer1Timeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/BarCustomer2"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/BarCustomer2/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_7wvup")
+
+[node name="Body" type="Sprite2D" parent="NPC/BarCustomer2"]
+top_level = true
+position = Vector2(1637, 452)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_qpnu6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/BarCustomer2"]
+position = Vector2(2286, 621)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_h28lm")
+
+[node name="BarCustomer3" type="Area2D" parent="NPC"]
+position = Vector2(-1395, -14)
+script = ExtResource("10_2b73j")
+timeline = "barCustomer3Timeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/BarCustomer3"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/BarCustomer3/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_7wvup")
+
+[node name="Body" type="Sprite2D" parent="NPC/BarCustomer3"]
+top_level = true
+position = Vector2(887, 604)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("13_4hqy8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/BarCustomer3"]
+position = Vector2(2286, 621)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_h28lm")
+
+[node name="BarCustomer4" type="Area2D" parent="NPC"]
+position = Vector2(-1219, -265)
+script = ExtResource("10_2b73j")
+timeline = "barCustomer4Timeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/BarCustomer4"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/BarCustomer4/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_7wvup")
+
+[node name="Body" type="Sprite2D" parent="NPC/BarCustomer4"]
+top_level = true
+position = Vector2(1065, 354)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_u4lru")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/BarCustomer4"]
+position = Vector2(2286, 621)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_h28lm")
+
+[node name="BarCustomer5" type="Area2D" parent="NPC"]
+position = Vector2(-1524, 317)
+script = ExtResource("10_2b73j")
+timeline = "barCustomer5Timeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/BarCustomer5"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/BarCustomer5/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_7wvup")
+
+[node name="Body" type="Sprite2D" parent="NPC/BarCustomer5"]
+top_level = true
+position = Vector2(762, 932)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_ccag8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/BarCustomer5"]
+position = Vector2(2054, 753.5)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_348co")
+
+[node name="Mayor" type="Area2D" parent="NPC"]
+position = Vector2(-409, 55)
+script = ExtResource("10_2b73j")
+timeline = "mayorBarTimeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/Mayor"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Mayor/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_7wvup")
+
+[node name="Body" type="Sprite2D" parent="NPC/Mayor"]
+top_level = true
+position = Vector2(1878, 676)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_ukho4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Mayor"]
+position = Vector2(2286, 621)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_h28lm")
+
+[node name="Barman" type="Area2D" parent="NPC"]
+position = Vector2(-1803, -443)
+script = ExtResource("10_2b73j")
+timeline = "barmanTimeline"
+
+[node name="Body" type="Sprite2D" parent="NPC/Barman"]
+top_level = true
+position = Vector2(489, 143)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_5qj43")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Barman"]
+position = Vector2(2285, 624)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_03rdr")
+
+[node name="Interaction" parent="NPC" instance=ExtResource("12_pn7bb")]
+
 [node name="BarCounter" type="Sprite2D" parent="."]
 position = Vector2(448, 246)
 scale = Vector2(0.45, 0.45)
@@ -60,7 +240,7 @@ texture = ExtResource("2_6cms4")
 [node name="CounterCollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CounterCollision"]
-position = Vector2(963.75, 250.5)
+position = Vector2(963.75, 206)
 shape = SubResource("RectangleShape2D_uyjbf")
 
 [node name="TvAndTables" type="Sprite2D" parent="."]
@@ -135,40 +315,24 @@ visibility_layer = 0
 script = ExtResource("5_203hs")
 map = NodePath("../../Background")
 
-[node name="NPC" type="Node2D" parent="."]
-
-[node name="BarCustomer5" type="Area2D" parent="NPC"]
-position = Vector2(-1524, 317)
-script = ExtResource("10_2b73j")
-timeline = "barCustomer5Timeline"
-
-[node name="Collision" type="StaticBody2D" parent="NPC/BarCustomer5"]
-position = Vector2(2289, 614)
-scale = Vector2(0.2, 0.2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/BarCustomer5/Collision"]
-position = Vector2(-9.99994, 75)
-shape = SubResource("CapsuleShape2D_7wvup")
-
-[node name="Body" type="Sprite2D" parent="NPC/BarCustomer5"]
-top_level = true
-position = Vector2(762, 932)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("11_ccag8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/BarCustomer5"]
-position = Vector2(2054, 753.5)
-scale = Vector2(0.2, 0.2)
-shape = SubResource("RectangleShape2D_348co")
-
-[node name="Interaction" parent="NPC" instance=ExtResource("12_pn7bb")]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_ud3gp")]
 process_mode = 3
 
+[connection signal="body_entered" from="NPC/BarCustomer1" to="NPC/BarCustomer1" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/BarCustomer1" to="NPC/BarCustomer1" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/BarCustomer2" to="NPC/BarCustomer2" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/BarCustomer2" to="NPC/BarCustomer2" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/BarCustomer3" to="NPC/BarCustomer3" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/BarCustomer3" to="NPC/BarCustomer3" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/BarCustomer4" to="NPC/BarCustomer4" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/BarCustomer4" to="NPC/BarCustomer4" method="_on_body_exited"]
 [connection signal="body_entered" from="NPC/BarCustomer5" to="NPC/BarCustomer5" method="_on_body_entered"]
 [connection signal="body_exited" from="NPC/BarCustomer5" to="NPC/BarCustomer5" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/Mayor" to="NPC/Mayor" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/Mayor" to="NPC/Mayor" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/Barman" to="NPC/Barman" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/Barman" to="NPC/Barman" method="_on_body_exited"]
 
 [editable path="Doors/Door_S"]

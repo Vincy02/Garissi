@@ -1,6 +1,6 @@
 extends Node
 
-const PARK_NPC = 1
+const PARK_NPC = 5
 
 var is_mission_completed = false
 var npc_interacted_first_mission = {}

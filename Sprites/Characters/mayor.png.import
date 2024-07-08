@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5qnq3gjogbm0"
-path="res://.godot/imported/barista.png-c44924c1f5e359e91b72a0457274aaba.ctex"
+uid="uid://dn8ig08wfbw3n"
+path="res://.godot/imported/mayor.png-68a3c7d1a0d4c0c6c918e11d681c5b23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/barista.png"
-dest_files=["res://.godot/imported/barista.png-c44924c1f5e359e91b72a0457274aaba.ctex"]
+source_file="res://Sprites/Characters/mayor.png"
+dest_files=["res://.godot/imported/mayor.png-68a3c7d1a0d4c0c6c918e11d681c5b23.ctex"]
 
 [params]
 

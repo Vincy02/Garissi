@@ -1,0 +1,6 @@
+do ScenesManager.stop_movement_player_and_pause()
+Simone: Oh... L'hai risolto!
+Simone: Ecco a te il paio di batterie che ti avevo promesso.
+do ScenesManager.resume_movement_player_and_pause()
+[signal arg="give_battery"]
+[sound path="res://Audio/itemDropped.mp3" volume="0.0" bus="0"]

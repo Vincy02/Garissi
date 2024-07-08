@@ -6,4 +6,5 @@ Sophie: Credo proprio questo scatto potrà esserti d'aiuto, te lo regalo in segn
 [signal arg="ended_conversation"]
 do ScenesManager.resume_movement_player_and_pause()
 [signal arg="give_photoSophie"]
+[sound path="res://Audio/itemDropped.mp3" volume="0.0" bus="0"]
 [signal arg="second_mission_completed"]
