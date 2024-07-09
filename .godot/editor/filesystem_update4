@@ -25,3 +25,6 @@ res://Scripts/interactiveItem.gd
 res://Dialogic/Timelines/headOfficeDoorTimeline.dtl
 res://Scripts/Missions/firstMission.gd
 res://Scenes/headOffice.tscn
+res://Dialogic/Timelines/marioTimeline0.dtl
+res://Scripts/Missions/intro.gd
+res://Dialogic/Timelines/marioTimeline2.dtl
