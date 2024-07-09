@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b01t8dhql51pl"]
+[gd_scene load_steps=27 format=3 uid="uid://b01t8dhql51pl"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_2ovvn"]
 [ext_resource type="Texture2D" uid="uid://dpqoqj4q1kikj" path="res://Sprites/Park/park.png" id="2_lwlfk"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d0s1eqdisclpm" path="res://Sprites/Park/bush.png" id="6_kveig"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="7_q5iae"]
 [ext_resource type="Texture2D" uid="uid://yiwrubeo4oba" path="res://Sprites/Park/bench.png" id="7_vunlb"]
+[ext_resource type="Texture2D" uid="uid://e3j3bd5yrl07" path="res://Sprites/Minigame/Mission2/secondCombination.png" id="11_404lu"]
 [ext_resource type="Script" path="res://Scripts/characterDialogue.gd" id="11_ij32g"]
 [ext_resource type="Texture2D" uid="uid://b4h2j6g30nupn" path="res://Sprites/Characters/gardnerGioele.png" id="11_updlh"]
 [ext_resource type="Texture2D" uid="uid://drpd2oson08k7" path="res://Sprites/Characters/gardnerMichele.png" id="12_dd4ji"]
@@ -295,6 +296,12 @@ light_mask = 0
 visibility_layer = 0
 script = ExtResource("5_3ake0")
 map = NodePath("../../Background")
+
+[node name="ThirdCombination" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(2450, 254)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("11_404lu")
 
 [node name="NPC" type="Node2D" parent="."]
 

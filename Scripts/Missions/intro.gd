@@ -58,6 +58,7 @@ func main_loop() -> void:
 			get_tree().change_scene_to_file(park)
 			Player.set_player_position(Vector2(2104, 610), "right")
 			Dialogic.start("marioTimeline0")
+			MainThemeTrack.play()
 			
 
 func dialogicSignal(arg: String) -> void:

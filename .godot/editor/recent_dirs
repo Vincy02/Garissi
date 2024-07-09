@@ -1,3 +1,4 @@
+res://Scenes/Global
 res://Scripts
 res://Dialogic/Timelines
 res://Scripts/Missions
@@ -9,7 +10,6 @@ res://Scripts/Global
 res://Scenes/Inventory
 res://Sprites/Park
 res://Sprites/CityCentre
-res://Scenes/Global
 res://Sprites/Player
 res://Scenes
 res://Scenes/PauseMenu

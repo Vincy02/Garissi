@@ -40,6 +40,9 @@ func update_world_status(scene : Node2D) -> void:
 				scene.get_node("NPC/Sophie").timeline = "sophieTimeline2"
 			if photo_given:
 				scene.get_node("NPC/Sophie").timeline = "sophieTimeline3"
+			if is_mission_completed:
+				scene.get_node("FirstCombination").visible = false
+				scene.get_node("SecondCombination").visible = false
 		if scene.name == "NewsStand":
 			scene.get_node("InteractiveItem/Locker").set_process_mode(PROCESS_MODE_DISABLED)
 			if sophie_quest_accepted && !battery_given:
@@ -47,8 +50,10 @@ func update_world_status(scene : Node2D) -> void:
 				scene.get_node("InteractiveItem/Locker").set_process_mode(PROCESS_MODE_INHERIT)
 			if sophie_quest_accepted && battery_given:
 				scene.get_node("NPC/Simone").timeline = "simoneTimeline0"
-				
-			
+		if scene.name == "Park":
+			if is_mission_completed:
+				scene.get_node("ThirdCombination").visible = false
+							
 func reset_scene() -> void:
 	is_mission_completed = false
 	sophie_quest_accepted = false
