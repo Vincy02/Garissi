@@ -32,21 +32,22 @@ func minigame_completed():
 	Dialogic.start("simoneTimeline2")
 
 func update_world_status(scene : Node2D) -> void:
-	if scene.name == "Square":
-		if sophie_quest_accepted && !battery_given:
-			scene.get_node("NPC/Sophie").timeline = "sophieTimeline1"
-		if sophie_quest_accepted && battery_given:
-			scene.get_node("NPC/Sophie").timeline = "sophieTimeline2"
-		if photo_given:
-			scene.get_node("NPC/Sophie").timeline = "sophieTimeline3"
-	if scene.name == "NewsStand":
-		scene.get_node("InteractiveItem/Locker").set_process_mode(PROCESS_MODE_DISABLED)
-		if sophie_quest_accepted && !battery_given:
-			scene.get_node("NPC/Simone").timeline = "simoneTimeline1"
-			scene.get_node("InteractiveItem/Locker").set_process_mode(PROCESS_MODE_INHERIT)
-		if sophie_quest_accepted && battery_given:
-			scene.get_node("NPC/Simone").timeline = "simoneTimeline0"
-			
+	if FirstMission.is_mission_completed:
+		if scene.name == "Square":
+			if sophie_quest_accepted && !battery_given:
+				scene.get_node("NPC/Sophie").timeline = "sophieTimeline1"
+			if sophie_quest_accepted && battery_given:
+				scene.get_node("NPC/Sophie").timeline = "sophieTimeline2"
+			if photo_given:
+				scene.get_node("NPC/Sophie").timeline = "sophieTimeline3"
+		if scene.name == "NewsStand":
+			scene.get_node("InteractiveItem/Locker").set_process_mode(PROCESS_MODE_DISABLED)
+			if sophie_quest_accepted && !battery_given:
+				scene.get_node("NPC/Simone").timeline = "simoneTimeline1"
+				scene.get_node("InteractiveItem/Locker").set_process_mode(PROCESS_MODE_INHERIT)
+			if sophie_quest_accepted && battery_given:
+				scene.get_node("NPC/Simone").timeline = "simoneTimeline0"
+				
 			
 func reset_scene() -> void:
 	is_mission_completed = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bmdirm1u4hqx3"]
+[gd_scene load_steps=51 format=3 uid="uid://bmdirm1u4hqx3"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_u82kj"]
 [ext_resource type="Texture2D" uid="uid://d2b70egdk8oww" path="res://Sprites/CityCentre/cityCentre.png" id="2_1iegc"]
@@ -27,6 +27,10 @@
 [ext_resource type="Texture2D" uid="uid://bmd28dddo3rdt" path="res://Sprites/CityCentre/building8_DOWN.png" id="18_tjnrj"]
 [ext_resource type="Texture2D" uid="uid://b5xcw1fw68cn4" path="res://Sprites/CityCentre/fountain_UP.png" id="24_kjam6"]
 [ext_resource type="Texture2D" uid="uid://d0k2l7v4oi00k" path="res://Sprites/CityCentre/fountain_DOWN.png" id="25_1ivr4"]
+[ext_resource type="Script" path="res://Scripts/interactiveItem.gd" id="27_7rcec"]
+[ext_resource type="PackedScene" uid="uid://dbyuwtl0ai25a" path="res://Scenes/interaction.tscn" id="29_eut8f"]
+[ext_resource type="Script" path="res://Scripts/characterDialogue.gd" id="30_0x8v4"]
+[ext_resource type="Texture2D" uid="uid://ce4ecxp3suyba" path="res://Sprites/Characters/gaia.png" id="31_b851c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wplox"]
 size = Vector2(328.938, 350)
@@ -75,6 +79,17 @@ size = Vector2(102.5, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e71d1"]
 size = Vector2(6.49469, 11.6014)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ej2ek"]
+size = Vector2(400, 581.25)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bhcf2"]
+radius = 160.0
+height = 570.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xpkq8"]
+radius = 320.0
+height = 790.0
 
 [node name="CityCentre" type="Node2D"]
 script = ExtResource("1_u82kj")
@@ -450,7 +465,6 @@ rotation = -1.57079
 [node name="Player" parent="." instance=ExtResource("4_7om6w")]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(80, 114)
 scale = Vector2(0.2, 0.2)
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
@@ -461,10 +475,57 @@ limit_top = 0
 script = ExtResource("5_bk5eb")
 map = NodePath("../../Background")
 
+[node name="InteractiveItem" type="Node2D" parent="."]
+
+[node name="Office" type="Area2D" parent="InteractiveItem"]
+position = Vector2(-2139, 641)
+script = ExtResource("27_7rcec")
+scene = "office"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveItem/Office"]
+position = Vector2(2286, 429.875)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_ej2ek")
+
+[node name="Interaction" parent="InteractiveItem" instance=ExtResource("29_eut8f")]
+
+[node name="NPC" type="Node2D" parent="."]
+
+[node name="Gaia" type="Area2D" parent="NPC"]
+position = Vector2(-1917, 622)
+script = ExtResource("30_0x8v4")
+timeline = "barCustomer2Timeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/Gaia"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Gaia/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_bhcf2")
+
+[node name="Body" type="Sprite2D" parent="NPC/Gaia"]
+top_level = true
+position = Vector2(372, 1243)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("31_b851c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Gaia"]
+position = Vector2(2286, 621)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_xpkq8")
+
+[node name="Interaction" parent="NPC" instance=ExtResource("29_eut8f")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("15_lclfx")]
 process_mode = 3
+
+[connection signal="body_entered" from="InteractiveItem/Office" to="InteractiveItem/Office" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractiveItem/Office" to="InteractiveItem/Office" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/Gaia" to="NPC/Gaia" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/Gaia" to="NPC/Gaia" method="_on_body_exited"]
 
 [editable path="Doors/Door_W"]
 [editable path="Doors/Door_Church"]

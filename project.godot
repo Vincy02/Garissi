@@ -26,6 +26,7 @@ InventoryManager="*res://Scripts/Global/inventoryManager.gd"
 SecondMission="*res://Scripts/Missions/secondMission.gd"
 ThirdMission="*res://Scripts/Missions/thirdMission.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+FourthMission="*res://Scripts/Missions/fourthMission.gd"
 
 [dialogic]
 
@@ -57,6 +58,8 @@ directories/dtl_directory={
 "barmanTimeline": "res://Dialogic/Timelines/barmanTimeline.dtl",
 "celestinoTimeline": "res://Dialogic/Timelines/celestinoTimeline.dtl",
 "francoTimeline": "res://Dialogic/Timelines/francoTimeline.dtl",
+"gaiaOfficeTimeline0": "res://Dialogic/Timelines/gaiaOfficeTimeline0.dtl",
+"gaiaOfficeTimeline1": "res://Dialogic/Timelines/gaiaOfficeTimeline1.dtl",
 "gioeleTimeline": "res://Dialogic/Timelines/gioeleTimeline.dtl",
 "intro": "res://Dialogic/Timelines/intro.dtl",
 "marioTimeline0": "res://Dialogic/Timelines/marioTimeline0.dtl",
