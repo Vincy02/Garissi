@@ -1,0 +1,5 @@
+[signal arg="started_conversation"]
+do ScenesManager.stop_movement_player_and_pause()
+ElderOffice2: Sono stanco di aspettare!
+[signal arg="ended_conversation"]
+do ScenesManager.resume_movement_player_and_pause()

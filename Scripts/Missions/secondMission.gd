@@ -25,8 +25,8 @@ func dialogicSignal(arg: String) -> void:
 		check_progession()
 
 func check_progession() -> void:
-		current_scene = ScenesManager.get_current_scene()
-		update_world_status(current_scene)
+	current_scene = ScenesManager.get_current_scene()
+	update_world_status(current_scene)
 		
 func minigame_completed():
 	Dialogic.start("simoneTimeline2")

@@ -23,5 +23,10 @@
 		"NAME": "Batterie",
 		"FILE NAME": "battery",
 		"DESCRIPTION": "coppia di batterie di ottima qualita'"
-	}
+	},
+	{
+		"NAME": "Articolo di giornale",
+		"FILE NAME": "newsClockTower",
+		"DESCRIPTION": "articolo di giornale che parla della leggenda dell'orologio di Garissi"
+	}	
 ]

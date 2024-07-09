@@ -480,7 +480,7 @@ map = NodePath("../../Background")
 [node name="Office" type="Area2D" parent="InteractiveItem"]
 position = Vector2(-2139, 641)
 script = ExtResource("27_7rcec")
-scene = "office"
+arg = "office"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveItem/Office"]
 position = Vector2(2286, 429.875)

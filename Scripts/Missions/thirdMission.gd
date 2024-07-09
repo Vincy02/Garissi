@@ -10,22 +10,19 @@ func _ready():
 		
 func dialogicSignal(arg: String) -> void:
 	if arg == "second_mission_completed":
-		current_scene = ScenesManager.get_current_scene()
-		update_world_status(current_scene)		
+		check_progession()	
 	if arg == "third_mission_completed":
 		is_mission_completed = true
-		current_scene = ScenesManager.get_current_scene()
-		update_world_status(current_scene)
+		check_progession()
 	if arg == "mayor_interaction":
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished
 		transition_mayor = true
-		current_scene = ScenesManager.get_current_scene()
-		update_world_status(current_scene)
+		check_progession()
 
 func check_progession() -> void:
-		current_scene = ScenesManager.get_current_scene()
-		update_world_status(current_scene)
+	current_scene = ScenesManager.get_current_scene()
+	update_world_status(current_scene)
 
 func update_world_status(scene : Node2D) -> void:
 	if scene.name == "Square":

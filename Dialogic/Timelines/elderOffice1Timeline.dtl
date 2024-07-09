@@ -1,0 +1,8 @@
+[signal arg="started_conversation"]
+do ScenesManager.stop_movement_player_and_pause()
+ElderOffice1: Sono ore che aspetto! Basta ora ritorno a casa e' tardi!
+ElderOffice1: Aspetta...nel mentre stavo leggendo questo articolo. Sembrava molto interessante! Dacci un'occhiata appena puoi.
+[signal arg="ended_conversation"]
+do ScenesManager.resume_movement_player_and_pause()
+[signal arg="give_newspaper"]
+[sound path="res://Audio/itemDropped.mp3" volume="0.0"]

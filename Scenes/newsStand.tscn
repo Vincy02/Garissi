@@ -60,7 +60,7 @@ shape = SubResource("CapsuleShape2D_qd2sd")
 [node name="Locker" type="Area2D" parent="InteractiveItem"]
 position = Vector2(-1392, -199)
 script = ExtResource("6_0cxxg")
-scene = "Missions/minigameBattery"
+arg = "Missions/minigameBattery"
 
 [node name="Body" type="Sprite2D" parent="InteractiveItem/Locker"]
 position = Vector2(2290, 474)

@@ -21,8 +21,8 @@ func dialogicSignal(arg: String) -> void:
 		is_mission_completed = true
 
 func check_progession() -> void:
-		current_scene = ScenesManager.get_current_scene()
-		update_world_status(current_scene)
+	current_scene = ScenesManager.get_current_scene()
+	update_world_status(current_scene)
 
 func update_world_status(scene : Node2D) -> void:
 	if scene.name == "CityCentre":

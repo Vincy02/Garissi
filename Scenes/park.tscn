@@ -449,7 +449,6 @@ shape = SubResource("CapsuleShape2D_nkshi")
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_q5iae")]
 process_mode = 3
-visible = false
 
 [connection signal="body_entered" from="NPC/GardnerGioele" to="NPC/GardnerGioele" method="_on_body_entered"]
 [connection signal="body_exited" from="NPC/GardnerGioele" to="NPC/GardnerGioele" method="_on_body_exited"]

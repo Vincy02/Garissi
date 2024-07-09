@@ -1,10 +1,10 @@
-res://Scenes/Global
-res://Scripts
 res://Dialogic/Timelines
-res://Scripts/Missions
-res://addons/dialogic/Core
 res://Sprites/Characters
 res://Dialogic/Characters
+res://Scripts/Missions
+res://Scenes/Global
+res://Scripts
+res://addons/dialogic/Core
 res://Utils
 res://Scripts/Global
 res://Scenes/Inventory

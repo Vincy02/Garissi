@@ -26,8 +26,9 @@ InventoryManager="*res://Scripts/Global/inventoryManager.gd"
 SecondMission="*res://Scripts/Missions/secondMission.gd"
 ThirdMission="*res://Scripts/Missions/thirdMission.gd"
 FourthMission="*res://Scripts/Missions/fourthMission.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 MainThemeTrack="*res://Scenes/Global/mainThemeTrack.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+FifthMission="*res://Scripts/Missions/fifthMission.gd"
 
 [dialogic]
 
@@ -39,6 +40,8 @@ directories/dch_directory={
 "BarCustomer5": "res://Dialogic/Characters/BarCustomer5.dch",
 "Barman": "res://Dialogic/Characters/Barman.dch",
 "Celestino": "res://Dialogic/Characters/Celestino.dch",
+"ElderOffice1": "res://Dialogic/Characters/ElderOffice1.dch",
+"ElderOffice2": "res://Dialogic/Characters/ElderOffice2.dch",
 "Fabrizio": "res://Dialogic/Characters/Fabrizio.dch",
 "Franco": "res://Dialogic/Characters/Franco.dch",
 "Gaia": "res://Dialogic/Characters/Gaia.dch",
@@ -48,7 +51,9 @@ directories/dch_directory={
 "Michele": "res://Dialogic/Characters/Michele.dch",
 "Raffaele": "res://Dialogic/Characters/Raffaele.dch",
 "Simone": "res://Dialogic/Characters/Simone.dch",
-"Sophie": "res://Dialogic/Characters/Sophie.dch"
+"Sophie": "res://Dialogic/Characters/Sophie.dch",
+"WorkerOffice1": "res://Dialogic/Characters/WorkerOffice1.dch",
+"WorkerOffice2": "res://Dialogic/Characters/WorkerOffice2.dch"
 }
 directories/dtl_directory={
 "barCustomer1Timeline": "res://Dialogic/Timelines/barCustomer1Timeline.dtl",
@@ -58,10 +63,13 @@ directories/dtl_directory={
 "barCustomer5Timeline": "res://Dialogic/Timelines/barCustomer5Timeline.dtl",
 "barmanTimeline": "res://Dialogic/Timelines/barmanTimeline.dtl",
 "celestinoTimeline": "res://Dialogic/Timelines/celestinoTimeline.dtl",
+"elderOffice1Timeline": "res://Dialogic/Timelines/elderOffice1Timeline.dtl",
+"elderOffice2Timeline": "res://Dialogic/Timelines/elderOffice2Timeline.dtl",
 "francoTimeline": "res://Dialogic/Timelines/francoTimeline.dtl",
 "gaiaOfficeTimeline0": "res://Dialogic/Timelines/gaiaOfficeTimeline0.dtl",
 "gaiaOfficeTimeline1": "res://Dialogic/Timelines/gaiaOfficeTimeline1.dtl",
 "gioeleTimeline": "res://Dialogic/Timelines/gioeleTimeline.dtl",
+"headOfficeDoorTimeline": "res://Dialogic/Timelines/headOfficeDoorTimeline.dtl",
 "intro": "res://Dialogic/Timelines/intro.dtl",
 "marioTimeline0": "res://Dialogic/Timelines/marioTimeline0.dtl",
 "marioTimeline1": "res://Dialogic/Timelines/marioTimeline1.dtl",
@@ -75,13 +83,16 @@ directories/dtl_directory={
 "sophieTimeline0": "res://Dialogic/Timelines/sophieTimeline0.dtl",
 "sophieTimeline1": "res://Dialogic/Timelines/sophieTimeline1.dtl",
 "sophieTimeline2": "res://Dialogic/Timelines/sophieTimeline2.dtl",
-"sophieTimeline3": "res://Dialogic/Timelines/sophieTimeline3.dtl"
+"sophieTimeline3": "res://Dialogic/Timelines/sophieTimeline3.dtl",
+"workerOffice1Timeline": "res://Dialogic/Timelines/workerOffice1Timeline.dtl",
+"workerOffice2Timeline": "res://Dialogic/Timelines/workerOffice2Timeline.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://Utils/dialogueStyle.tres"]
 layout/default_style="res://Utils/dialogueStyle.tres"
 variables={
-"password_bar": "0"
+"password_bar": "0",
+"password_headOfficeDoor": ""
 }
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
