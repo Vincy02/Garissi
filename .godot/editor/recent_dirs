@@ -1,3 +1,4 @@
+res://Utils
 res://Dialogic/Timelines
 res://Sprites/Characters
 res://Dialogic/Characters
@@ -5,7 +6,6 @@ res://Scripts/Missions
 res://Scenes/Global
 res://Scripts
 res://addons/dialogic/Core
-res://Utils
 res://Scripts/Global
 res://Scenes/Inventory
 res://Sprites/Park
