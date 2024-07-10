@@ -24,6 +24,17 @@ func dialogicSignal(arg: String) -> void:
 		await TransitionScreen.on_transition_finished
 		Player.set_player_position(Vector2(729, 362), "right")
 		check_progession()
+	if arg == "start_minigame_pc":
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
+		get_tree().change_scene_to_file("res://Scenes/Missions/minigamePc.tscn")
+	if arg == "give_postal_printout":
+		is_mission_completed = true
+		InventoryManager.add_item("postalPrintout")
+		check_progession()
+		
+func minigame_completed():
+	Dialogic.start("postalDirectorTimeline1")
 
 func check_progession() -> void:
 	current_scene = ScenesManager.get_current_scene()
@@ -41,6 +52,9 @@ func update_world_status(scene : Node2D) -> void:
 		else:
 			scene.get_node("Doors/Door_HeadOffice").set_process_mode(PROCESS_MODE_DISABLED)
 			scene.get_node("Doors/Door_HeadOffice").visible = false
+	if scene.name == "HeadOffice":
+		if is_mission_completed:
+			scene.get_node("NPC/PostalDirector").timeline = "postalDirectorTimeline2"
 			
 func reset_scene() -> void:
 	is_mission_completed = false

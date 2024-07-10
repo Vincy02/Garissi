@@ -28,5 +28,10 @@
 		"NAME": "Articolo di giornale",
 		"FILE NAME": "newsClockTower",
 		"DESCRIPTION": "articolo di giornale che parla della leggenda dell'orologio di Garissi"
-	}	
+	},
+	{
+		"NAME": "Tabulato postale",
+		"FILE NAME": "postalPrintout",
+		"DESCRIPTION": "stampa del tabulato postale risalente al 10/06/2015"
+	}
 ]

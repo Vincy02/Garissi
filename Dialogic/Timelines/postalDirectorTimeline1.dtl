@@ -1,0 +1,5 @@
+do ScenesManager.stop_movement_player_and_pause()
+PostalDirector: Grazie brothmo per la postepay
+do ScenesManager.resume_movement_player_and_pause()
+[signal arg="give_postal_printout"]
+[sound path="res://Audio/itemDropped.mp3" volume="0.0" bus="0"]

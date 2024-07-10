@@ -7,7 +7,6 @@ signal minigame_battery_completed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var signal_receiver = get_node("/root/SecondMission")
 	connect("minigame_battery_completed", Callable(SecondMission, "minigame_completed"))
 	for i in range(1,7):
 		var button_name = "Button" + str(i)

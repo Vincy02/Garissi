@@ -7,3 +7,13 @@ res://Scenes/square.tscn
 res://Scenes/park.tscn
 res://Scenes/postOffice.tscn
 res://Scenes/headOffice.tscn
+res://Dialogic/Characters/Mayor.dch
+res://Scenes/Missions/minigamePc.tscn
+res://Scripts/Missions/tailButton.gd
+res://Scripts/Missions/minigameBattery.gd
+res://Scripts/Missions/minigamePc.gd
+res://Scripts/Missions/fifthMission.gd
+res://Dialogic/Characters/PostalDirector.dch
+res://Dialogic/Timelines/postalDirectorTimeline0.dtl
+res://Dialogic/Timelines/postalDirectorTimeline1.dtl
+res://Dialogic/Timelines/postalDirectorTimeline2.dtl
