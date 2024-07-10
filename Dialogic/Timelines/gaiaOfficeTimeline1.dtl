@@ -3,7 +3,9 @@ do ScenesManager.stop_movement_player_and_pause()
 Gaia: Benvenuto nel tuo nuovo quartier generale, Fabrizio.
 Gaia: Qui avrai accesso a tutto ciò di cui hai bisogno per portare avanti le indagini.
 Gaia: Questo ufficio è equipaggiato con vari strumenti utili.
-Gaia: A sinistra trovi un PC su cui potrai appuntare gli eventi che si susseguiranno durante le indagini per tenere sempre tutto sotto controllo. È molto utile per visualizzare connessioni tra i sospettati, le prove e gli eventi.
+Gaia: A sinistra trovi un PC su cui potrai appuntare gli eventi che si susseguiranno durante le indagini.
+Gaia: Ti servirà per tenere sempre tutto sotto controllo!
+Gaia: È molto utile per visualizzare connessioni tra i sospettati, le prove e gli eventi.
 Gaia: A destra c'è una mappa della città che può servirti in caso voglia raggiungere posti che non conosci.
 Gaia: Io devo tornare in ufficio, ci aggiorniamo più in là!
 [signal arg="ended_conversation"]
