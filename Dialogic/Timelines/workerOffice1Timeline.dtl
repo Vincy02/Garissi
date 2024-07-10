@@ -1,5 +1,3 @@
-[signal arg="started_conversation"]
 do ScenesManager.stop_movement_player_and_pause()
 WorkerOffice1: Oggi ho deciso di lavorare poiche' la palestra che freqneto e' chiusa, ma perche'?
-[signal arg="ended_conversation"]
 do ScenesManager.resume_movement_player_and_pause()

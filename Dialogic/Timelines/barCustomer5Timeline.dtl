@@ -1,4 +1,3 @@
-[signal arg="started_conversation"]
 do ScenesManager.stop_movement_player_and_pause()
 BarCustomer5: Ei! Dove credi di andare! Pensa ad uno spritz, ad un calice di vino e ad un caffe!
 BarCustomer5: Quali sono i 3 numeri che ti vengono in mente?
@@ -8,5 +7,4 @@ if {password_bar} == "561":
 	[signal arg="third_mission_completed"]
 else:
 	BarCustomer5: Sbagliato! Torna nel bar!
-[signal arg="ended_conversation"]
 do ScenesManager.resume_movement_player_and_pause()

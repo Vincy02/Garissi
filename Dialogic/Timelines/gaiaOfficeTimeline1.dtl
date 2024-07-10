@@ -1,4 +1,3 @@
-[signal arg="started_conversation"]
 do ScenesManager.stop_movement_player_and_pause()
 Gaia: Benvenuto nel tuo nuovo quartier generale, Fabrizio.
 Gaia: Qui avrai accesso a tutto ciò di cui hai bisogno per portare avanti le indagini.
@@ -8,6 +7,5 @@ Gaia: Ti servirà per tenere sempre tutto sotto controllo!
 Gaia: È molto utile per visualizzare connessioni tra i sospettati, le prove e gli eventi.
 Gaia: A destra c'è una mappa della città che può servirti in caso voglia raggiungere posti che non conosci.
 Gaia: Io devo tornare in ufficio, ci aggiorniamo più in là!
-[signal arg="ended_conversation"]
 do ScenesManager.resume_movement_player_and_pause()
 [signal arg="exit_office"]

@@ -18,18 +18,9 @@ func _init():
 func _ready():
 	if not player:
 		player = self
-	Dialogic.signal_event.connect(dialogicSignal)
 	animated_sprite = $AnimatedSprite2D
 	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
-
-func dialogicSignal(arg: String) -> void:
-	if arg == "started_conversation":
-		stop_player()
-		animated_sprite.play("idle")
-	if arg == "ended_conversation" || arg == "you_can_move":
-		resume_player()
 		
-
 static func get_player():
 	return player
 
@@ -80,3 +71,4 @@ func _process(delta):
 		if(direction.x < 0): animated_sprite.flip_h = 0
 	else:
 		foot_step.stop()
+		animated_sprite.play("idle")

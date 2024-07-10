@@ -1,6 +1,4 @@
-[signal arg="started_conversation"]
 do ScenesManager.stop_movement_player_and_pause()
 BarCustomer3: Garissi ha un bellissimo centro storico.
 BarCustomer3: Peccato che ultimamente stia diventando una zona un po' pericolosa…
-[signal arg="ended_conversation"]
 do ScenesManager.resume_movement_player_and_pause()
