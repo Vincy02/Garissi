@@ -22,6 +22,16 @@ var input_actions = {
 func _ready():
 	_load_keybind_from_settings()
 	_create_action_list()
+	_update_dialogic_var()
+	
+func _update_dialogic_var():
+	Dialogic.VAR.set("go_up", InputMap.action_get_events("MoveUp")[0].as_text().trim_suffix(" (Physical)"))
+	Dialogic.VAR.set("go_down", InputMap.action_get_events("MoveDown")[0].as_text().trim_suffix(" (Physical)"))
+	Dialogic.VAR.set("go_right", InputMap.action_get_events("MoveRight")[0].as_text().trim_suffix(" (Physical)"))
+	Dialogic.VAR.set("go_left", InputMap.action_get_events("MoveLeft")[0].as_text().trim_suffix(" (Physical)"))
+	Dialogic.VAR.set("go_up", InputMap.action_get_events("MoveUp")[0].as_text().trim_suffix(" (Physical)"))
+	Dialogic.VAR.set("pause", InputMap.action_get_events("Pause")[0].as_text().trim_suffix(" (Physical)"))
+	Dialogic.VAR.set("inventory", InputMap.action_get_events("Inventory")[0].as_text().trim_suffix(" (Physical)"))
 
 func _load_keybind_from_settings():
 	var keybinds = SettingsManager.load_keybinds_settings()
@@ -91,6 +101,7 @@ func _input(event):
 			
 func _update_action_list(button, event):
 	button.find_child("LabelInput").text = event.as_text().trim_suffix(" (Physical)")
+	_update_dialogic_var()
 	
 func _on_reset_button_pressed():
 	InputMap.load_from_project_settings()
@@ -99,6 +110,7 @@ func _on_reset_button_pressed():
 		if events.size() > 0:
 			SettingsManager.save_keybinds_settings(action, events[0])
 	_create_action_list()
+	_update_dialogic_var()
 
 func _set_action_label(label, action):
 	var events = InputMap.action_get_events(action)
