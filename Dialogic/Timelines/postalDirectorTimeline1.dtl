@@ -1,5 +1,11 @@
 do ScenesManager.stop_movement_player_and_pause()
-PostalDirector: Grazie brothmo per la postepay
+PostalDirector: Lei è un uomo in gamba. Si vede lontano un miglio la sua determinazione!
+PostalDirector: Guardi un po qui... Tutti conoscevano Tino in paese
+PostalDirector: Non era solito frequentare la posta però c'è un giorno in particolare...
+PostalDirector: Sono stati effettuati dei moviemnti... direi strani.
+PostalDirector: Insomma lei saprà cosa farsene, le consegno questi tabulati.
+PostalDirector: Posso darle del tu?
+PostalDirector: Bene, a presto Fabrizio!
 do ScenesManager.resume_movement_player_and_pause()
 [signal arg="give_postal_printout"]
 [sound path="res://Audio/itemDropped.mp3" volume="0.0" bus="0"]

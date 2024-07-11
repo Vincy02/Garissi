@@ -1,3 +1,3 @@
 do ScenesManager.stop_movement_player_and_pause()
-PostalDirector: Ciao come va?
+PostalDirector: Ciao Fabrizio, prosegue la tua indagine?
 do ScenesManager.resume_movement_player_and_pause()

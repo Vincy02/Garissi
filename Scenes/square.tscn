@@ -206,6 +206,7 @@ position = Vector2(-2.66904, 5.33808)
 rotation = -1.57079
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("12_7o22p")]
 process_mode = 3

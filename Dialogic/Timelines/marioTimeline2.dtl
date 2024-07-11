@@ -1,5 +1,6 @@
 do ScenesManager.stop_movement_player_and_pause()
 Mario: Complimenti hai già iniziato ad investigare!
-Mario: Se non lo hai già scoperto, puoi premere [ {inventory} ] per aprire l'inventario in cui potrai consultare gli oggetti che raccoglierai durante l'indagine.
+Mario: Se non lo hai già scoperto, puoi premere [ {inventory} ] per aprire l'inventario.
+Mario: In questa sezione potrai consultare gli oggetti che raccoglierai durante l'indagine.
 do ScenesManager.resume_movement_player_and_pause()
 [signal arg="unlock_park_door"]

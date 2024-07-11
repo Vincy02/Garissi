@@ -1,6 +1,9 @@
-res://Scenes/newsStand.tscn
+res://Scenes/cityCentre.tscn
 res://Utils/dialogueStyle.tres
 res://Scenes/postOffice.tscn
 res://Scenes/headOffice.tscn
 res://Scenes/player.tscn
 res://Scenes/Missions/intro.tscn
+res://Scenes/newsStand.tscn
+res://Dialogic/Timelines/marioTimeline2.dtl
+res://Dialogic/Timelines/elderOffice1Timeline.dtl
