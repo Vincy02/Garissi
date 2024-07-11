@@ -17,7 +17,6 @@ func dialogicSignal(arg: String) -> void:
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished
 		get_tree().change_scene_to_file("res://Scenes/cityCentre.tscn")
-		Player.set_player_position(Vector2(240, 1154), "left")
 		is_mission_completed = true
 
 func check_progession() -> void:

@@ -56,7 +56,7 @@ func main_loop() -> void:
 			TransitionScreen.transition()
 			await TransitionScreen.on_transition_finished
 			get_tree().change_scene_to_file(park)
-			Player.set_player_position(Vector2(2104, 610), "right")
+			#Player.set_player_position(Vector2(2104, 610), "right")
 			Dialogic.VAR.set("go_up", InputMap.action_get_events("MoveUp")[0].as_text().trim_suffix(" (Physical)"))
 			Dialogic.VAR.set("go_down", InputMap.action_get_events("MoveDown")[0].as_text().trim_suffix(" (Physical)"))
 			Dialogic.VAR.set("go_right", InputMap.action_get_events("MoveRight")[0].as_text().trim_suffix(" (Physical)"))

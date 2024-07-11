@@ -22,7 +22,6 @@ func dialogicSignal(arg: String) -> void:
 	if arg == "door_headOffice_still_locked":
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished
-		Player.set_player_position(Vector2(729, 362), "right")
 		check_progession()
 	if arg == "start_minigame_pc":
 		TransitionScreen.transition()
@@ -41,6 +40,11 @@ func check_progession() -> void:
 	update_world_status(current_scene)
 
 func update_world_status(scene : Node2D) -> void:
+	if scene.name == "UpZone":
+		if !FourthMission.is_mission_completed:
+			scene.get_node("Doors/Door_PostOffice").set_process_mode(PROCESS_MODE_DISABLED)
+		else: 
+			scene.get_node("Doors/Door_PostOffice").set_process_mode(PROCESS_MODE_INHERIT)
 	if scene.name == "PostOffice":
 		if newspaper_given:
 			scene.get_node("NPC/Elder1").set_process_mode(PROCESS_MODE_DISABLED)

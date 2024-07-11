@@ -2,6 +2,7 @@ extends Control
 
 var solution = [45, 135, 0, 0, 90, 0]
 var path = "res://Scenes/newsStand.tscn"
+var is_exiting = false
 
 signal minigame_battery_completed
 
@@ -28,7 +29,6 @@ func back_to_news_stand():
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	get_tree().change_scene_to_file(path)
-	Player.set_player_position(Vector2(772, 359), "right")
 	
 func check_solution():
 	for i in range(1,7):
@@ -41,5 +41,6 @@ func check_solution():
 	return true
 	
 func _input(event):
-	if Input.is_action_just_pressed("Pause"):
+	if Input.is_action_just_pressed("Pause") && !is_exiting:
+		is_exiting = true
 		back_to_news_stand()

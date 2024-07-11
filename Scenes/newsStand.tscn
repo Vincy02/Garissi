@@ -100,7 +100,9 @@ scale = Vector2(0.25, 0.227)
 polygon = PackedVector2Array(132, -281.8, 132, -279.5, 140, -266.6, 140, -262, 255.5, 145, 256.2, 145, 260, 152.5, 260, 173, 258.7, 173, 246.7, 182, 242.3, 182, -61.6, 282, -84.7, 282, -93, 272.8, -93, 268, -115.5, 171.4, -241.6, 227, -249.7, 227, -260, 218.5, -260, 193.3, -201.7, -199, -200.5, -199, -196.6, -215, -194.9, -215, -188.9, -222, -186.5, -222, -180.5, -225, -175.4, -225, 108.5, -282, 130.4, -282)
 
 [node name="Player" parent="." instance=ExtResource("3_v6byu")]
+position = Vector2(772, 359)
 scale = Vector2(0.2, 0.2)
+facing = "right"
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
 light_mask = 0

@@ -191,7 +191,9 @@ position = Vector2(99.5551, 134.786)
 rotation = -1.57079
 
 [node name="Player" parent="." instance=ExtResource("6_gt6tp")]
+position = Vector2(729, 362)
 scale = Vector2(0.2, 0.2)
+facing = "right"
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
 light_mask = 0

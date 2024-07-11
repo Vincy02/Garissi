@@ -24,10 +24,12 @@ func stop_movement_player_and_pause() -> void:
 	Player.stop_player()
 	CharacterDialoge.set_is_interacting(true)
 	InteractiveItem.set_is_interacting(true)
+	Office.set_is_interacting(true)
 	PauseMenu.stop_working()
 	
 func resume_movement_player_and_pause() -> void:
 	Player.resume_player()
 	CharacterDialoge.set_is_interacting(false)
 	InteractiveItem.set_is_interacting(false)
+	Office.set_is_interacting(false)
 	PauseMenu.resume_working()

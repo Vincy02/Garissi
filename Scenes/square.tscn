@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_yc4ar"]
 [ext_resource type="PackedScene" uid="uid://clqpppuywx1g0" path="res://Scenes/SquareObj/cityHall.tscn" id="2_tqofx"]
+[ext_resource type="Texture2D" uid="uid://d281mondyfmlx" path="res://Sprites/Square/square.png" id="2_vp5cj"]
 [ext_resource type="PackedScene" uid="uid://u4r2r7voc3tk" path="res://Scenes/SquareObj/bar.tscn" id="3_u5o7i"]
 [ext_resource type="PackedScene" uid="uid://b53vayhqngl1q" path="res://Scenes/SquareObj/newsStand.tscn" id="4_ypc5u"]
 [ext_resource type="Texture2D" uid="uid://dkq6nesoeoo4r" path="res://Sprites/Square/curtain.png" id="5_yexi6"]
@@ -17,9 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="12_7o22p"]
 [ext_resource type="Texture2D" uid="uid://bspxs4l4t1an5" path="res://Sprites/Characters/sophie.png" id="12_7vup2"]
 [ext_resource type="PackedScene" uid="uid://dbyuwtl0ai25a" path="res://Scenes/interaction.tscn" id="13_7v8c8"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mouic"]
-load_path = "res://.godot/imported/square.png-a221151fa95b2af00c35ab8d21443d17.ctex"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wtj6p"]
 radius = 160.0
@@ -46,7 +44,7 @@ light_mask = 2
 visibility_layer = 2
 position = Vector2(1316, 740)
 scale = Vector2(0.2, 0.2)
-texture = SubResource("CompressedTexture2D_mouic")
+texture = ExtResource("2_vp5cj")
 
 [node name="CityHall" parent="." instance=ExtResource("2_tqofx")]
 position = Vector2(134, 3)

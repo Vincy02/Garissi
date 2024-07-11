@@ -2,6 +2,7 @@ class_name InteractiveItem
 extends Area2D
 
 var entered = false
+var aux = false
 
 @onready var interaction = $"../Interaction"
 @export var is_pickable = false
@@ -14,8 +15,9 @@ func _ready():
 	interaction.visible = false
 	
 func _process(delta):
-	if entered:
-		if Input.is_action_just_pressed("Interact"):
+	if entered && !is_interacting:
+		if Input.is_action_just_pressed("Interact") && !aux:
+			aux = true
 			if !is_pickable && !is_interactable:
 				var path = "res://Scenes/" + arg + ".tscn"
 				TransitionScreen.transition()

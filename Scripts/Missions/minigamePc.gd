@@ -1,7 +1,9 @@
 extends Node2D
 
 @onready var puzzle = $TextureRect/MarginContainer/Control/GridContainer
+
 var path = "res://Scenes/headOffice.tscn"
+var is_exiting = false
 
 signal minigame_pc_completed
 
@@ -23,7 +25,6 @@ func back_to_head_office():
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	get_tree().change_scene_to_file(path)
-	Player.set_player_position(Vector2(439, 478), "right")
 	
 func is_puzzle_completed():
 	var last_index = 0
@@ -42,5 +43,6 @@ func is_puzzle_completed():
 	return true
 
 func _input(event):
-	if Input.is_action_just_pressed("Pause"):
+	if Input.is_action_just_pressed("Pause") && !is_exiting:
+		is_exiting = true
 		back_to_head_office()
