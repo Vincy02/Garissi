@@ -1,0 +1,3 @@
+do ScenesManager.stop_movement_player_and_pause()
+Citizen3: Citizen3
+do ScenesManager.resume_movement_player_and_pause()
