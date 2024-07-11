@@ -15,7 +15,7 @@ func _ready():
 	interaction.visible = false
 	
 func _process(delta):
-	if entered:
+	if entered && !is_interacting:
 		if Input.is_action_just_pressed("Interact"):
 			flipPlayer()
 			FirstMission.npc_interacted(character.get_parent())

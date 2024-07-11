@@ -5,5 +5,11 @@ res://Scenes/headOffice.tscn
 res://Scenes/player.tscn
 res://Scenes/Missions/intro.tscn
 res://Scenes/newsStand.tscn
-res://Dialogic/Timelines/marioTimeline2.dtl
-res://Dialogic/Timelines/elderOffice1Timeline.dtl
+res://Scripts/characterDialogue.gd
+res://Scenes/square.tscn
+res://Scenes/park.tscn
+res://Scenes/bar.tscn
+res://Scenes/PauseMenu/pauseMenu.tscn
+res://Scenes/SettingsMenu/settingsMenu.tscn
+res://Scenes/office.tscn
+res://Scenes/MainMenu/mainMenu.tscn

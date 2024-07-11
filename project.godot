@@ -11,10 +11,13 @@ config_version=5
 [application]
 
 config/name="Garissi"
+config/version="1.0.0"
 run/main_scene="res://Scenes/MainMenu/mainMenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://Utils/vm2r_logo.png"
+config/icon="res://Utils/logo.png"
+config/windows_native_icon="res://Utils/logo.ico"
 boot_splash/minimum_display_time=1500
 
 [autoload]
