@@ -35,6 +35,8 @@ FourthMission="*res://Scripts/Missions/fourthMission.gd"
 MainThemeTrack="*res://Scenes/Global/mainThemeTrack.tscn"
 FifthMission="*res://Scripts/Missions/fifthMission.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+SixthMission="*res://Scripts/Missions/sixthMission.gd"
+AudioItemDropped="*res://Scenes/Global/audioItemDropped.tscn"
 
 [dialogic]
 

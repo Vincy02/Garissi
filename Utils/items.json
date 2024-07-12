@@ -33,5 +33,10 @@
 		"NAME": "Tabulato postale",
 		"FILE NAME": "postalPrintout",
 		"DESCRIPTION": "stampa del tabulato postale risalente al 10/06/2015"
+	},
+	{
+		"NAME": "Candela",
+		"FILE NAME": "candle",
+		"DESCRIPTION": "candela economica con luce a led"
 	}
 ]

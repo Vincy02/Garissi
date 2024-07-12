@@ -2,7 +2,7 @@ class_name InteractiveItem
 extends Area2D
 
 var entered = false
-var aux = false
+var is_exiting = false
 
 @onready var interaction = $"../Interaction"
 @export var is_pickable = false
@@ -16,15 +16,20 @@ func _ready():
 	
 func _process(delta):
 	if entered && !is_interacting:
-		if Input.is_action_just_pressed("Interact") && !aux:
-			aux = true
-			if !is_pickable && !is_interactable:
+		if Input.is_action_just_pressed("Interact"):
+			if !is_pickable && !is_interactable  && !is_exiting:
+				is_exiting = true
 				var path = "res://Scenes/" + arg + ".tscn"
 				TransitionScreen.transition()
 				await TransitionScreen.on_transition_finished
 				get_tree().change_scene_to_file(path)
-			if is_interactable:
+			if is_interactable && !is_pickable:
 				Dialogic.start(arg)
+			if is_interactable && is_pickable:
+				InventoryManager.add_item(arg)
+				var scene = ScenesManager.get_current_scene()
+				scene.get_node("InteractiveItem/"+arg).set_process_mode(PROCESS_MODE_DISABLED)
+				scene.get_node("InteractiveItem/"+arg).visible = false
 		else:
 			interaction.visible = true
 	if is_interacting:

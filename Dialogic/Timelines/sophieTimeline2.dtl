@@ -4,5 +4,4 @@ Sophie: Dall'abbigliamento direi proprio che sei un detective.
 Sophie: Credo proprio questo scatto potrà esserti d'aiuto, te lo regalo in segno di gratitudine.
 do ScenesManager.resume_movement_player_and_pause()
 [signal arg="give_photoSophie"]
-[sound path="res://Audio/itemDropped.mp3" volume="0.0" bus="0"]
 [signal arg="second_mission_completed"]

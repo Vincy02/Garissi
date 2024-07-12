@@ -1,3 +1,6 @@
+res://Scenes/Global
+res://Scripts/Global
+res://Scripts/Missions
 res://Sprites/Characters
 res://Dialogic/Characters
 res://
@@ -5,11 +8,8 @@ C:/Users/rocco/Desktop/GitHub/Garissi
 C:/Users/rocco/Desktop
 res://Utils
 res://Dialogic/Timelines
-res://Scripts/Missions
-res://Scenes/Global
 res://Scripts
 res://addons/dialogic/Core
-res://Scripts/Global
 res://Scenes/Inventory
 res://Sprites/Park
 res://Sprites/CityCentre

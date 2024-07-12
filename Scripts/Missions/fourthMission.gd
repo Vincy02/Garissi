@@ -1,6 +1,6 @@
 extends Node
 
-var is_mission_completed = false
+var is_mission_completed = true
 var first_time_entering = true
 var current_scene
 

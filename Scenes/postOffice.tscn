@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bq1vsbrnul8so"]
+[gd_scene load_steps=25 format=3 uid="uid://bq1vsbrnul8so"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_a7o72"]
 [ext_resource type="Texture2D" uid="uid://cvcxj7epo1wxs" path="res://Sprites/UpZone/PostOffice/postOffice.png" id="2_m28ct"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cl82dukjy648p" path="res://Sprites/Characters/workerPostOffice2.png" id="7_t32ur"]
 [ext_resource type="PackedScene" uid="uid://dbyuwtl0ai25a" path="res://Scenes/interaction.tscn" id="8_0gvwa"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="8_xhll0"]
+[ext_resource type="Texture2D" uid="uid://ybl0n8r5ivcd" path="res://Sprites/UpZone/PostOffice/candle.png" id="10_4qb36"]
 [ext_resource type="Script" path="res://Scripts/interactiveItem.gd" id="15_n4tuh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mg1aj"]
@@ -23,6 +24,13 @@ height = 570.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3he3x"]
 radius = 345.0
 height = 870.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcoqe"]
+size = Vector2(642.5, 751.25)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ldho3"]
+radius = 150.0
+height = 300.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nncsl"]
 size = Vector2(428.5, 85.5)
@@ -34,9 +42,6 @@ size = Vector2(265, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_14gog"]
 size = Vector2(10.8007, 13.1406)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcoqe"]
-size = Vector2(642.5, 751.25)
 
 [node name="PostOffice" type="Node2D"]
 script = ExtResource("1_a7o72")
@@ -140,6 +145,38 @@ position = Vector2(1041, 219.1)
 scale = Vector2(0.72916, 0.584375)
 texture = ExtResource("3_dha3l")
 
+[node name="InteractiveItem" type="Node2D" parent="."]
+
+[node name="HeadOfficeDoor" type="Area2D" parent="InteractiveItem"]
+position = Vector2(-1392, -199)
+script = ExtResource("15_n4tuh")
+is_interactable = true
+arg = "headOfficeDoorTimeline"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveItem/HeadOfficeDoor"]
+position = Vector2(2124, 402)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_wcoqe")
+
+[node name="Candle" type="Area2D" parent="InteractiveItem"]
+position = Vector2(-1392, -199)
+script = ExtResource("15_n4tuh")
+is_pickable = true
+is_interactable = true
+arg = "Candle"
+
+[node name="Candle" type="Sprite2D" parent="InteractiveItem/Candle"]
+position = Vector2(1670, 350)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("10_4qb36")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveItem/Candle"]
+position = Vector2(1669, 350)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_ldho3")
+
+[node name="Interaction" parent="InteractiveItem" instance=ExtResource("8_0gvwa")]
+
 [node name="CounterCollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CounterCollision"]
@@ -201,21 +238,6 @@ visibility_layer = 0
 script = ExtResource("7_3qbfi")
 map = NodePath("../../Background")
 
-[node name="InteractiveItem" type="Node2D" parent="."]
-
-[node name="HeadOfficeDoor" type="Area2D" parent="InteractiveItem"]
-position = Vector2(-1392, -199)
-script = ExtResource("15_n4tuh")
-is_interactable = true
-arg = "headOfficeDoorTimeline"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveItem/HeadOfficeDoor"]
-position = Vector2(2124, 402)
-scale = Vector2(0.2, 0.2)
-shape = SubResource("RectangleShape2D_wcoqe")
-
-[node name="Interaction" parent="InteractiveItem" instance=ExtResource("8_0gvwa")]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_xhll0")]
@@ -231,6 +253,8 @@ process_mode = 3
 [connection signal="body_exited" from="NPC/Worker2" to="NPC/Worker2" method="_on_body_exited"]
 [connection signal="body_entered" from="InteractiveItem/HeadOfficeDoor" to="InteractiveItem/HeadOfficeDoor" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractiveItem/HeadOfficeDoor" to="InteractiveItem/HeadOfficeDoor" method="_on_body_exited"]
+[connection signal="body_entered" from="InteractiveItem/Candle" to="InteractiveItem/Candle" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractiveItem/Candle" to="InteractiveItem/Candle" method="_on_body_exited"]
 
 [editable path="Doors/Door_S"]
 [editable path="Doors/Door_HeadOffice"]

@@ -1,9 +1,9 @@
+AudioStreamPlayer
 TextureRect
 TextureButton
 Control
 GridContainer
 MarginContainer
-AudioStreamPlayer
 AudioStreamPlayer2D
 Sprite2D
 Label

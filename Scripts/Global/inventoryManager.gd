@@ -11,10 +11,12 @@ func _ready():
 	dataFile.close()
 
 func add_item(arg: String):
+	arg[0] = arg[0].to_lower()
 	for item in items:
 		if item["FILE NAME"] == arg:
 			inventory.append(item)
 			break
+	AudioItemDropped.play()
 
 func remove_item(arg: String):
 	for item in inventory:
