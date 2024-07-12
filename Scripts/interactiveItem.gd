@@ -30,6 +30,7 @@ func _process(delta):
 				var scene = ScenesManager.get_current_scene()
 				scene.get_node("InteractiveItem/"+arg).set_process_mode(PROCESS_MODE_DISABLED)
 				scene.get_node("InteractiveItem/"+arg).visible = false
+				Dialogic.start(arg.to_lower()+"Timeline")
 		else:
 			interaction.visible = true
 	if is_interacting:

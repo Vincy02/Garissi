@@ -1,0 +1,4 @@
+do ScenesManager.stop_movement_player_and_pause()
+Priest: SEI MATTO
+do ScenesManager.resume_movement_player_and_pause()
+[signal arg="sixth_mission_completed"]

@@ -1,0 +1,4 @@
+do ScenesManager.stop_movement_player_and_pause()
+Fabrizio: Ue uagliu bella sta candela
+do ScenesManager.resume_movement_player_and_pause()
+[signal arg="give_candle"]

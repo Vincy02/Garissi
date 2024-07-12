@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://dpj7l0a40t02f"]
+[gd_scene load_steps=28 format=3 uid="uid://dpj7l0a40t02f"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_dnk14"]
 [ext_resource type="Texture2D" uid="uid://cf6rqfs4vcnku" path="res://Sprites/CityCentre/Church/church.png" id="2_m5f2w"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_p3vk2"]
 [ext_resource type="Script" path="res://Scripts/interactiveItem.gd" id="3_tpv2a"]
+[ext_resource type="Texture2D" uid="uid://8jpfeirxcvem" path="res://Sprites/CityCentre/Church/picture.png" id="3_vqivn"]
 [ext_resource type="Texture2D" uid="uid://cyy60oor761g3" path="res://Sprites/CityCentre/Church/candlestick.png" id="4_n3rqj"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="4_uq0om"]
 [ext_resource type="Texture2D" uid="uid://y031cuxrvtm6" path="res://Sprites/CityCentre/Church/candlestickMissing.png" id="5_07v3x"]
@@ -42,7 +43,7 @@ height = 570.0
 radius = 345.0
 height = 870.0
 
-[node name="ChurchInside" type="Node2D"]
+[node name="Church" type="Node2D"]
 position = Vector2(595, 228)
 script = ExtResource("1_dnk14")
 
@@ -51,12 +52,17 @@ position = Vector2(256, 546)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_m5f2w")
 
+[node name="Picture" type="Sprite2D" parent="."]
+position = Vector2(-331, -85)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_vqivn")
+
 [node name="InteractiveItem" type="Node2D" parent="."]
 
 [node name="Candlestick1" type="Area2D" parent="InteractiveItem"]
-position = Vector2(-1392, -199)
+position = Vector2(-1260, -199)
 script = ExtResource("3_tpv2a")
-arg = "Missions/minigameBattery"
+arg = "Missions/minigameCandlestick"
 
 [node name="Body" type="Sprite2D" parent="InteractiveItem/Candlestick1"]
 position = Vector2(2238, 258)
@@ -69,9 +75,9 @@ scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_82p7h")
 
 [node name="Candlestick2" type="Area2D" parent="InteractiveItem"]
-position = Vector2(-1794, -186)
+position = Vector2(-697, -186)
 script = ExtResource("3_tpv2a")
-arg = "Missions/minigameBattery"
+arg = "Missions/minigameCandlestick"
 
 [node name="Body" type="Sprite2D" parent="InteractiveItem/Candlestick2"]
 position = Vector2(1421, 243)
@@ -109,12 +115,12 @@ position = Vector2(287.625, 681)
 shape = SubResource("RectangleShape2D_xhuv3")
 
 [node name="Coffin" type="Sprite2D" parent="BuildingCollision"]
-position = Vector2(-419, 118)
+position = Vector2(-1017, 18)
 scale = Vector2(0.35, 0.318)
 texture = ExtResource("9_e81qt")
 
 [node name="CoffinCollision" type="StaticBody2D" parent="BuildingCollision"]
-position = Vector2(-868, -161)
+position = Vector2(-1466, -261)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BuildingCollision/CoffinCollision"]
 position = Vector2(449, 279)
@@ -147,6 +153,7 @@ rotation = -1.57079
 [node name="Player" parent="." instance=ExtResource("4_uq0om")]
 light_mask = 3
 visibility_layer = 3
+position = Vector2(845, 271)
 scale = Vector2(0.2, 0.2)
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]

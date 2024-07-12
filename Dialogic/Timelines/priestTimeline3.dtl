@@ -1,0 +1,3 @@
+do ScenesManager.stop_movement_player_and_pause()
+Priest: ciao
+do ScenesManager.resume_movement_player_and_pause()

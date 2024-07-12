@@ -1,7 +1,8 @@
-AudioStreamPlayer
+Button
 TextureRect
-TextureButton
 Control
+AudioStreamPlayer
+TextureButton
 GridContainer
 MarginContainer
 AudioStreamPlayer2D
@@ -11,4 +12,3 @@ Node2D
 CollisionShape2D
 VBoxContainer
 HBoxContainer
-Button

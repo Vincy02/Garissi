@@ -1,6 +1,6 @@
 extends Node
 
-var is_mission_completed = false
+var is_mission_completed = true
 var newspaper_given = false
 var door_headOffice = false
 var headOffice = "res://Scenes/headOffice.tscn"

@@ -34,9 +34,9 @@ ThirdMission="*res://Scripts/Missions/thirdMission.gd"
 FourthMission="*res://Scripts/Missions/fourthMission.gd"
 MainThemeTrack="*res://Scenes/Global/mainThemeTrack.tscn"
 FifthMission="*res://Scripts/Missions/fifthMission.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 SixthMission="*res://Scripts/Missions/sixthMission.gd"
 AudioItemDropped="*res://Scenes/Global/audioItemDropped.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -63,6 +63,7 @@ directories/dch_directory={
 "Mayor": "res://Dialogic/Characters/Mayor.dch",
 "Michele": "res://Dialogic/Characters/Michele.dch",
 "PostalDirector": "res://Dialogic/Characters/PostalDirector.dch",
+"Priest": "res://Dialogic/Characters/Priest.dch",
 "Raffaele": "res://Dialogic/Characters/Raffaele.dch",
 "Simone": "res://Dialogic/Characters/Simone.dch",
 "Sophie": "res://Dialogic/Characters/Sophie.dch",
@@ -76,6 +77,7 @@ directories/dtl_directory={
 "barCustomer4Timeline": "res://Dialogic/Timelines/barCustomer4Timeline.dtl",
 "barCustomer5Timeline": "res://Dialogic/Timelines/barCustomer5Timeline.dtl",
 "barmanTimeline": "res://Dialogic/Timelines/barmanTimeline.dtl",
+"candleTimeline": "res://Dialogic/Timelines/candleTimeline.dtl",
 "celestinoTimeline": "res://Dialogic/Timelines/celestinoTimeline.dtl",
 "citizen1Timeline": "res://Dialogic/Timelines/citizen1Timeline.dtl",
 "citizen2Timeline": "res://Dialogic/Timelines/citizen2Timeline.dtl",
@@ -98,6 +100,10 @@ directories/dtl_directory={
 "postalDirectorTimeline0": "res://Dialogic/Timelines/postalDirectorTimeline0.dtl",
 "postalDirectorTimeline1": "res://Dialogic/Timelines/postalDirectorTimeline1.dtl",
 "postalDirectorTimeline2": "res://Dialogic/Timelines/postalDirectorTimeline2.dtl",
+"priestTimeline0": "res://Dialogic/Timelines/priestTimeline0.dtl",
+"priestTimeline1": "res://Dialogic/Timelines/priestTimeline1.dtl",
+"priestTimeline2": "res://Dialogic/Timelines/priestTimeline2.dtl",
+"priestTimeline3": "res://Dialogic/Timelines/priestTimeline3.dtl",
 "raffaeleTimeline": "res://Dialogic/Timelines/raffaeleTimeline.dtl",
 "simoneTimeline0": "res://Dialogic/Timelines/simoneTimeline0.dtl",
 "simoneTimeline1": "res://Dialogic/Timelines/simoneTimeline1.dtl",

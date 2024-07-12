@@ -2,27 +2,38 @@ extends Node
 
 var is_mission_completed = false
 var current_scene
-var priest_first_dialogue = false
-var candle_picked = false
+var priest_quest_accepted = true
+var candle_picked = true
+var candlestick_minigame_unlocked = false
 
 func _ready():
 	Dialogic.signal_event.connect(dialogicSignal)
 		
 func dialogicSignal(arg: String) -> void:
-	if arg == "give_newspaper":
-		priest_first_dialogue = true
+	if arg == "priest_quest_accepted":
+		priest_quest_accepted = true
 		check_progession()
-	if arg == "candle":
+	if arg == "give_candle":
 		candle_picked = true
+		check_progession()
+	if arg == "unlock_candlestick_minigame":
+		candlestick_minigame_unlocked = true
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
 		check_progession()
 	if arg == "start_minigame_candlestick":
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished
 		get_tree().change_scene_to_file("res://Scenes/Missions/minigameCandlestick.tscn")
+	if arg == "sixth_mission_completed":
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
+		is_mission_completed = true
+		check_progession()
 		
 func minigame_completed():
-	is_mission_completed = true
 	Dialogic.start("priestTimeline2")
+	
 
 func check_progession() -> void:
 	current_scene = ScenesManager.get_current_scene()
@@ -30,7 +41,7 @@ func check_progession() -> void:
 
 func update_world_status(scene : Node2D) -> void:
 	if scene.name == "PostOffice":
-		if !FifthMission.is_mission_completed && !priest_first_dialogue:
+		if !(FifthMission.is_mission_completed && priest_quest_accepted):
 			scene.get_node("InteractiveItem/Candle").set_process_mode(PROCESS_MODE_DISABLED)
 		else:
 			scene.get_node("InteractiveItem/Candle").set_process_mode(PROCESS_MODE_INHERIT)
@@ -39,24 +50,55 @@ func update_world_status(scene : Node2D) -> void:
 			scene.get_node("InteractiveItem/Candle").visible = false
 	if scene.name == "CityCentre":
 		if !FifthMission.is_mission_completed:
-			pass
-			#scene.get_node("../Block").set_mode(SET_MODE_DISABLED)
-			#scene.get_node("../Block").visible = false
-		#else:
-		#	...
+			scene.get_node("Doors/Door_Church").set_process_mode(PROCESS_MODE_DISABLED)
 	if scene.name == "Church":
-		if priest_first_dialogue:
+		if priest_quest_accepted && candle_picked:
 			scene.get_node("NPC/Priest").timeline = "priestTimeline1"
-		if candle_picked:
-			scene.get_node("NPC/Priest").timeline = "priestTimeline2"
-			scene.get_node("Candelabro").set_process_mode(PROCESS_MODE_INHERIT)
+		if candle_picked && candlestick_minigame_unlocked:
+			scene.get_node("InteractiveItem/Candlestick2/Body").texture = ResourceLoader.load("res://Sprites/CityCentre/Church/candlestick.png")
+			scene.get_node("InteractiveItem/Candlestick1").set_process_mode(PROCESS_MODE_INHERIT)
+			scene.get_node("InteractiveItem/Candlestick2").set_process_mode(PROCESS_MODE_INHERIT)
 		else:
-			scene.get_node("InteractiveItem/Candelabro").set_process_mode(PROCESS_MODE_DISABLED)
+			scene.get_node("InteractiveItem/Candlestick1").set_process_mode(PROCESS_MODE_DISABLED)
+			scene.get_node("InteractiveItem/Candlestick2").set_process_mode(PROCESS_MODE_DISABLED)
 		if !is_mission_completed:
-			pass
-			#DISABILITARE TUTTI I PERSONAGGI NELLA CHIESA:
+			scene.get_node("NPC/TinosBrother").set_process_mode(PROCESS_MODE_DISABLED)
+			scene.get_node("NPC/TinosBrother").visible = false
+			scene.get_node("NPC/TinosFriend1").set_process_mode(PROCESS_MODE_DISABLED)
+			scene.get_node("NPC/TinosFriend1").visible = false
+			scene.get_node("NPC/TinosFriend2").set_process_mode(PROCESS_MODE_DISABLED)
+			scene.get_node("NPC/TinosFriend2").visible = false
+			scene.get_node("NPC/TinosFriend3").set_process_mode(PROCESS_MODE_DISABLED)
+			scene.get_node("NPC/TinosFriend3").visible = false
+			scene.get_node("NPC/Shifu").set_process_mode(PROCESS_MODE_DISABLED)
+			scene.get_node("NPC/Shifu").visible = false
+			scene.get_node("NPC/Employee1").set_process_mode(PROCESS_MODE_DISABLED)
+			scene.get_node("NPC/Employee1").visible = false
+			scene.get_node("NPC/Employee2").set_process_mode(PROCESS_MODE_DISABLED)
+			scene.get_node("NPC/Employee2").visible = false
+			scene.get_node("NPC/Elder").set_process_mode(PROCESS_MODE_DISABLED)
+			scene.get_node("NPC/Elder").visible = false
 		else:
-			scene.get_node("NPC/Priest").timeline = "priestTimeline4"
+			scene.get_node("NPC/Priest").timeline = "priestTimeline3"
+			scene.get_node("InteractiveItem/Candlestick1").set_process_mode(PROCESS_MODE_DISABLED)
+			scene.get_node("InteractiveItem/Candlestick2").set_process_mode(PROCESS_MODE_DISABLED)
+			scene.get_node("NPC/TinosBrother").set_process_mode(PROCESS_MODE_INHERIT)
+			scene.get_node("NPC/TinosBrother").visible = true
+			scene.get_node("NPC/TinosFriend1").set_process_mode(PROCESS_MODE_INHERIT)
+			scene.get_node("NPC/TinosFriend1").visible = true
+			scene.get_node("NPC/TinosFriend2").set_process_mode(PROCESS_MODE_INHERIT)
+			scene.get_node("NPC/TinosFriend2").visible = true
+			scene.get_node("NPC/TinosFriend3").set_process_mode(PROCESS_MODE_INHERIT)
+			scene.get_node("NPC/TinosFriend3").visible = true
+			scene.get_node("NPC/Shifu").set_process_mode(PROCESS_MODE_INHERIT)
+			scene.get_node("NPC/Shifu").visible = true
+			scene.get_node("NPC/Employee1").set_process_mode(PROCESS_MODE_INHERIT)
+			scene.get_node("NPC/Employee1").visible = true
+			scene.get_node("NPC/Employee2").set_process_mode(PROCESS_MODE_INHERIT)
+			scene.get_node("NPC/Employee2").visible = true
+			scene.get_node("NPC/Elder").set_process_mode(PROCESS_MODE_INHERIT)
+			scene.get_node("NPC/Elder").visible = true
+			
 	if scene.name == "Square":
 		if FifthMission.is_mission_completed:
 			scene.get_node("AdPanel2").visible = false
@@ -67,5 +109,6 @@ func update_world_status(scene : Node2D) -> void:
 			
 func reset_scene() -> void:
 	is_mission_completed = false
-	priest_first_dialogue = false
+	priest_quest_accepted = false
 	candle_picked = false
+	candlestick_minigame_unlocked = false
