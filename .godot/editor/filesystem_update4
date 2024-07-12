@@ -1,15 +1,3 @@
-res://Dialogic/Characters/Citizen2.dch
-res://Sprites/Characters/citizen1Timeline.dtl
-res://citizen2Timeline.dtl
-res://citizen3Timeline.dtl
-res://citizen4Timeline.dtl
-res://citizen5Timeline.dtl
-res://Dialogic/Characters/Michele.dch
-res://Sprites/Characters/Citizen3.dch
-res://Sprites/Characters/Citizen4.dch
-res://Dialogic/Characters/Citizen5.dch
-res://Dialogic/Characters/Citizen4.dch
-res://Dialogic/Characters/Citizen3.dch
 res://Scenes/square.tscn
 res://Utils/dialogueStyle.tres
 res://Scenes/postOffice.tscn
@@ -20,3 +8,10 @@ res://Scenes/newsStand.tscn
 res://Scenes/office.tscn
 res://Scenes/upZone.tscn
 res://Scenes/cityCentre.tscn
+res://Dialogic/Timelines/citizen1Timeline.dtl
+res://Dialogic/Timelines/citizen2Timeline.dtl
+res://Dialogic/Timelines/citizen3Timeline.dtl
+res://Dialogic/Timelines/citizen4Timeline.dtl
+res://Dialogic/Timelines/citizen5Timeline.dtl
+res://Dialogic/Timelines/postalDirectorTimeline1.dtl
+res://Dialogic/Timelines/workerOffice1Timeline.dtl

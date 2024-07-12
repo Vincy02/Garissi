@@ -1,0 +1,5 @@
+do ScenesManager.stop_movement_player_and_pause()
+Citizen2: Oggi sono stato al mare, l'acqua era freschissima!
+Citizen2: Come non conosci le nostre spiagge?
+Citizen2: Dovresti andarci, sono fantastiche!
+do ScenesManager.resume_movement_player_and_pause()

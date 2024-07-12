@@ -1,3 +1,0 @@
-do ScenesManager.stop_movement_player_and_pause()
-Citizen2: Citizen2
-do ScenesManager.resume_movement_player_and_pause()

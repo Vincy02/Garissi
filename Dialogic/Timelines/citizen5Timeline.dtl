@@ -1,0 +1,7 @@
+do ScenesManager.stop_movement_player_and_pause()
+Citizen5: Gianni sembra essere sparito dopo l'ultimo avvenimento?
+Citizen5: Cosa? 
+Citizen5: Vuoi sapere da me chi e' Gianni? POVERO ILLUSO!
+Citizen5: Sei un detective, se sei in gamba lo scoprirai da solo...
+Citizen5: BABBEO!
+do ScenesManager.resume_movement_player_and_pause()
