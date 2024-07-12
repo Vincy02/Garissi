@@ -18,11 +18,13 @@ func dialogicSignal(arg: String) -> void:
 		InventoryManager.add_item("battery")
 		check_progession()
 	if arg == "give_photoSophie" && battery_given:
-		photo_given = true
-		is_mission_completed = true
-		InventoryManager.add_item("photoSophie")
-		InventoryManager.remove_item("battery")
-		check_progession()
+		if !photo_given:
+			photo_given = true
+			ScenesManager.transition_mission_completed()
+			is_mission_completed = true
+			InventoryManager.add_item("photoSophie")
+			InventoryManager.remove_item("battery")
+			check_progession()
 
 func check_progession() -> void:
 	current_scene = ScenesManager.get_current_scene()

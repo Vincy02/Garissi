@@ -1,6 +1,6 @@
 extends Node
 
-var is_mission_completed = true
+var is_mission_completed = false
 var newspaper_given = false
 var door_headOffice = false
 var headOffice = "res://Scenes/headOffice.tscn"
@@ -28,9 +28,11 @@ func dialogicSignal(arg: String) -> void:
 		await TransitionScreen.on_transition_finished
 		get_tree().change_scene_to_file("res://Scenes/Missions/minigamePc.tscn")
 	if arg == "give_postal_printout":
-		is_mission_completed = true
-		InventoryManager.add_item("postalPrintout")
-		check_progession()
+		if !is_mission_completed:
+			ScenesManager.transition_mission_completed()
+			is_mission_completed = true
+			InventoryManager.add_item("postalPrintout")
+			check_progession()
 		
 func minigame_completed():
 	Dialogic.start("postalDirectorTimeline1")

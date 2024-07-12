@@ -17,9 +17,12 @@ func npc_interacted(npc):
 		
 func dialogicSignal(arg: String) -> void:
 	if arg == "unlock_park_door":
-		unlock_door = true
-		current_scene = ScenesManager.get_current_scene()
-		update_world_status(current_scene)
+		if !unlock_door:
+			unlock_door = true
+			ScenesManager.transition_mission_completed()
+			current_scene = ScenesManager.get_current_scene()
+			update_world_status(current_scene)
+			
 		
 func check_progession() -> void:
 	if npc_interacted_first_mission.size() >= PARK_NPC:

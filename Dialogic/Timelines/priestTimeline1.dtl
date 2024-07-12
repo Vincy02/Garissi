@@ -1,4 +1,7 @@
 do ScenesManager.stop_movement_player_and_pause()
-Priest: Potresti accendere le candele come da tradizione? Messa deve iniziare
+Priest: Grazie per aver recuperato le candele!\
+Fabrizio, che la pace sia con te!
+Priest: Ti sarei grato se accendessi i candelabri per me, come da tradizione.\
+E poi la santa messa avra' inizio.
 do ScenesManager.resume_movement_player_and_pause()
 [signal arg="unlock_candlestick_minigame"]

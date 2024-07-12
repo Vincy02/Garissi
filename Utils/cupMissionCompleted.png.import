@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyy60oor761g3"
-path="res://.godot/imported/candleStick.png-5c08e3f3f9204fd33e90bb8b5e01bec5.ctex"
+uid="uid://lrnyh1m37ji0"
+path="res://.godot/imported/cupMissionCompleted.png-4dfbb48c66deeadfd272c2435ba80da6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/CityCentre/Church/candleStick.png"
-dest_files=["res://.godot/imported/candleStick.png-5c08e3f3f9204fd33e90bb8b5e01bec5.ctex"]
+source_file="res://Utils/cupMissionCompleted.png"
+dest_files=["res://.godot/imported/cupMissionCompleted.png-4dfbb48c66deeadfd272c2435ba80da6.ctex"]
 
 [params]
 

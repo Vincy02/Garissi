@@ -1,6 +1,6 @@
 extends Node
 
-var is_mission_completed = true
+var is_mission_completed = false
 var first_time_entering = true
 var current_scene
 
@@ -17,7 +17,9 @@ func dialogicSignal(arg: String) -> void:
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished
 		get_tree().change_scene_to_file("res://Scenes/cityCentre.tscn")
-		is_mission_completed = true
+		if !is_mission_completed:
+			ScenesManager.transition_mission_completed()
+			is_mission_completed = true
 
 func check_progession() -> void:
 	current_scene = ScenesManager.get_current_scene()

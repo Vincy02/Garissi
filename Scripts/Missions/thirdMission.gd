@@ -12,8 +12,10 @@ func dialogicSignal(arg: String) -> void:
 	if arg == "second_mission_completed":
 		check_progession()	
 	if arg == "third_mission_completed":
-		is_mission_completed = true
-		check_progession()
+		if !is_mission_completed:
+			ScenesManager.transition_mission_completed()
+			is_mission_completed = true
+			check_progession()
 	if arg == "mayor_interaction":
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished

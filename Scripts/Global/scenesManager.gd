@@ -33,3 +33,9 @@ func resume_movement_player_and_pause() -> void:
 	InteractiveItem.set_is_interacting(false)
 	Office.set_is_interacting(false)
 	PauseMenu.resume_working()
+
+func transition_mission_completed() -> void:
+	stop_movement_player_and_pause()
+	TransitionMissionCompleted.transition()
+	await TransitionMissionCompleted.on_transition_finished
+	resume_movement_player_and_pause()

@@ -1,11 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://dpj7l0a40t02f"]
+[gd_scene load_steps=30 format=3 uid="uid://dpj7l0a40t02f"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_dnk14"]
 [ext_resource type="Texture2D" uid="uid://cf6rqfs4vcnku" path="res://Sprites/CityCentre/Church/church.png" id="2_m5f2w"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_p3vk2"]
 [ext_resource type="Script" path="res://Scripts/interactiveItem.gd" id="3_tpv2a"]
 [ext_resource type="Texture2D" uid="uid://8jpfeirxcvem" path="res://Sprites/CityCentre/Church/picture.png" id="3_vqivn"]
-[ext_resource type="Texture2D" uid="uid://cyy60oor761g3" path="res://Sprites/CityCentre/Church/candlestick.png" id="4_n3rqj"]
+[ext_resource type="Texture2D" uid="uid://cyy60oor761g3" path="res://Sprites/CityCentre/Church/candleStick.png" id="4_n3rqj"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="4_uq0om"]
 [ext_resource type="Texture2D" uid="uid://y031cuxrvtm6" path="res://Sprites/CityCentre/Church/candlestickMissing.png" id="5_07v3x"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_38go0"]
@@ -21,6 +21,20 @@
 [ext_resource type="Texture2D" uid="uid://drpd2oson08k7" path="res://Sprites/Characters/gardnerMichele.png" id="18_kyyhw"]
 [ext_resource type="Texture2D" uid="uid://dkng4eyhekvod" path="res://Sprites/Characters/elderPostOffice1.png" id="19_rqmvy"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_udwv3"]
+radius = 160.0
+height = 570.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8rdja"]
+radius = 390.0
+height = 780.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_su86j"]
+size = Vector2(572.5, 835)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6860i"]
+size = Vector2(600, 560)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82p7h"]
 size = Vector2(642.5, 502.5)
 
@@ -35,14 +49,6 @@ size = Vector2(404.75, 762)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvgyo"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_udwv3"]
-radius = 160.0
-height = 570.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8rdja"]
-radius = 345.0
-height = 870.0
-
 [node name="Church" type="Node2D"]
 position = Vector2(595, 228)
 script = ExtResource("1_dnk14")
@@ -56,6 +62,228 @@ texture = ExtResource("2_m5f2w")
 position = Vector2(-331, -85)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_vqivn")
+
+[node name="NPC" type="Node2D" parent="."]
+position = Vector2(541, -207)
+
+[node name="Priest" type="Area2D" parent="NPC"]
+position = Vector2(-2969, -189)
+script = ExtResource("13_05qph")
+timeline = "priestTimeline0"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/Priest"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Priest/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_udwv3")
+
+[node name="Body" type="Sprite2D" parent="NPC/Priest"]
+top_level = true
+position = Vector2(454, 435)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_vssn4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Priest"]
+position = Vector2(2286, 609)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_8rdja")
+
+[node name="TinosBrother" type="Area2D" parent="NPC"]
+position = Vector2(-2747, 281)
+script = ExtResource("13_05qph")
+timeline = "tinosBrotherTimeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/TinosBrother"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TinosBrother/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_udwv3")
+
+[node name="Body" type="Sprite2D" parent="NPC/TinosBrother"]
+top_level = true
+position = Vector2(676, 902)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_nsclo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TinosBrother"]
+position = Vector2(2286, 609)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_8rdja")
+
+[node name="TinosFriend1" type="Area2D" parent="NPC"]
+position = Vector2(-2429, 442)
+script = ExtResource("13_05qph")
+timeline = "tinosFriend1Timeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/TinosFriend1"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TinosFriend1/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_udwv3")
+
+[node name="Body" type="Sprite2D" parent="NPC/TinosFriend1"]
+top_level = true
+position = Vector2(990, 1069)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_n5mnj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TinosFriend1"]
+position = Vector2(2286, 609)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_8rdja")
+
+[node name="TinosFriend2" type="Area2D" parent="NPC"]
+position = Vector2(-2433, 273)
+script = ExtResource("13_05qph")
+timeline = "tinosFriend1Timeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/TinosFriend2"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TinosFriend2/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_udwv3")
+
+[node name="Body" type="Sprite2D" parent="NPC/TinosFriend2"]
+top_level = true
+position = Vector2(988, 888)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_5jruj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TinosFriend2"]
+position = Vector2(2286, 609)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_8rdja")
+
+[node name="TinosFriend3" type="Area2D" parent="NPC"]
+position = Vector2(-2445, 618)
+script = ExtResource("13_05qph")
+timeline = "tinosFriend1Timeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/TinosFriend3"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TinosFriend3/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_udwv3")
+
+[node name="Body" type="Sprite2D" parent="NPC/TinosFriend3"]
+top_level = true
+position = Vector2(977, 1240)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("18_kyyhw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TinosFriend3"]
+position = Vector2(2286, 609)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_8rdja")
+
+[node name="Shifu" type="Area2D" parent="NPC"]
+position = Vector2(-2730, 621)
+script = ExtResource("13_05qph")
+timeline = "shifuTimeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/Shifu"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Shifu/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_udwv3")
+
+[node name="Body" type="Sprite2D" parent="NPC/Shifu"]
+top_level = true
+position = Vector2(692, 1233)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("19_rqmvy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Shifu"]
+position = Vector2(2286, 609)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_8rdja")
+
+[node name="Employee1" type="Area2D" parent="NPC"]
+position = Vector2(-2941, 276)
+script = ExtResource("13_05qph")
+timeline = "employee1Timeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/Employee1"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Employee1/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_udwv3")
+
+[node name="Body" type="Sprite2D" parent="NPC/Employee1"]
+top_level = true
+position = Vector2(485, 909)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("19_rqmvy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Employee1"]
+position = Vector2(2286, 609)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_8rdja")
+
+[node name="Employee2" type="Area2D" parent="NPC"]
+position = Vector2(-2921, 604)
+script = ExtResource("13_05qph")
+timeline = "employee1Timeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/Employee2"]
+position = Vector2(2276, 745)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Employee2/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_udwv3")
+
+[node name="Body" type="Sprite2D" parent="NPC/Employee2"]
+top_level = true
+position = Vector2(487, 1364)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("19_rqmvy")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Employee2"]
+position = Vector2(2276.75, 746)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_su86j")
+
+[node name="Elder" type="Area2D" parent="NPC"]
+position = Vector2(-2225, 701)
+script = ExtResource("13_05qph")
+timeline = "elderChurchTimeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/Elder"]
+position = Vector2(2288, 657)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Elder/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_udwv3")
+
+[node name="Body" type="Sprite2D" parent="NPC/Elder"]
+top_level = true
+position = Vector2(1196, 1368)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("19_rqmvy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Elder"]
+position = Vector2(2279, 678)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_6860i")
+
+[node name="Interaction" parent="NPC" instance=ExtResource("6_f5vcb")]
 
 [node name="InteractiveItem" type="Node2D" parent="."]
 
@@ -169,236 +397,10 @@ position = Vector2(-595, -228)
 scale = Vector2(1.33, 2.15)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_qfw8g")]
 process_mode = 3
 
-[node name="NPC" type="Node2D" parent="."]
-position = Vector2(541, -207)
-
-[node name="Priest" type="Area2D" parent="NPC"]
-position = Vector2(-2969, -189)
-script = ExtResource("13_05qph")
-timeline = "priestTimeline0"
-
-[node name="Collision" type="StaticBody2D" parent="NPC/Priest"]
-position = Vector2(2289, 614)
-scale = Vector2(0.2, 0.2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Priest/Collision"]
-position = Vector2(-9.99994, 75)
-shape = SubResource("CapsuleShape2D_udwv3")
-
-[node name="Body" type="Sprite2D" parent="NPC/Priest"]
-top_level = true
-position = Vector2(454, 435)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("14_vssn4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Priest"]
-position = Vector2(2286, 609)
-scale = Vector2(0.2, 0.2)
-shape = SubResource("CapsuleShape2D_8rdja")
-
-[node name="TinosBrother" type="Area2D" parent="NPC"]
-position = Vector2(-2744, 270)
-script = ExtResource("13_05qph")
-timeline = "tinosBrotherTimeline"
-
-[node name="Collision" type="StaticBody2D" parent="NPC/TinosBrother"]
-position = Vector2(2289, 614)
-scale = Vector2(0.2, 0.2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TinosBrother/Collision"]
-position = Vector2(-9.99994, 75)
-shape = SubResource("CapsuleShape2D_udwv3")
-
-[node name="Body" type="Sprite2D" parent="NPC/TinosBrother"]
-top_level = true
-position = Vector2(675, 897)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("15_nsclo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TinosBrother"]
-position = Vector2(2286, 609)
-scale = Vector2(0.2, 0.2)
-shape = SubResource("CapsuleShape2D_8rdja")
-
-[node name="TinosFriend1" type="Area2D" parent="NPC"]
-position = Vector2(-2423, 435)
-script = ExtResource("13_05qph")
-timeline = "tinosFriend1Timeline"
-
-[node name="Collision" type="StaticBody2D" parent="NPC/TinosFriend1"]
-position = Vector2(2289, 614)
-scale = Vector2(0.2, 0.2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TinosFriend1/Collision"]
-position = Vector2(-9.99994, 75)
-shape = SubResource("CapsuleShape2D_udwv3")
-
-[node name="Body" type="Sprite2D" parent="NPC/TinosFriend1"]
-top_level = true
-position = Vector2(996, 1060)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("16_n5mnj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TinosFriend1"]
-position = Vector2(2286, 609)
-scale = Vector2(0.2, 0.2)
-shape = SubResource("CapsuleShape2D_8rdja")
-
-[node name="TinosFriend2" type="Area2D" parent="NPC"]
-position = Vector2(-2433, 273)
-script = ExtResource("13_05qph")
-timeline = "tinosFriend1Timeline"
-
-[node name="Collision" type="StaticBody2D" parent="NPC/TinosFriend2"]
-position = Vector2(2289, 614)
-scale = Vector2(0.2, 0.2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TinosFriend2/Collision"]
-position = Vector2(-9.99994, 75)
-shape = SubResource("CapsuleShape2D_udwv3")
-
-[node name="Body" type="Sprite2D" parent="NPC/TinosFriend2"]
-top_level = true
-position = Vector2(988, 888)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("17_5jruj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TinosFriend2"]
-position = Vector2(2286, 609)
-scale = Vector2(0.2, 0.2)
-shape = SubResource("CapsuleShape2D_8rdja")
-
-[node name="TinosFriend3" type="Area2D" parent="NPC"]
-position = Vector2(-2445, 618)
-script = ExtResource("13_05qph")
-timeline = "tinosFriend1Timeline"
-
-[node name="Collision" type="StaticBody2D" parent="NPC/TinosFriend3"]
-position = Vector2(2289, 614)
-scale = Vector2(0.2, 0.2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TinosFriend3/Collision"]
-position = Vector2(-9.99994, 75)
-shape = SubResource("CapsuleShape2D_udwv3")
-
-[node name="Body" type="Sprite2D" parent="NPC/TinosFriend3"]
-top_level = true
-position = Vector2(977, 1240)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("18_kyyhw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TinosFriend3"]
-position = Vector2(2286, 609)
-scale = Vector2(0.2, 0.2)
-shape = SubResource("CapsuleShape2D_8rdja")
-
-[node name="Shifu" type="Area2D" parent="NPC"]
-position = Vector2(-2736, 602)
-script = ExtResource("13_05qph")
-timeline = "shifuTimeline"
-
-[node name="Collision" type="StaticBody2D" parent="NPC/Shifu"]
-position = Vector2(2289, 614)
-scale = Vector2(0.2, 0.2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Shifu/Collision"]
-position = Vector2(-9.99994, 75)
-shape = SubResource("CapsuleShape2D_udwv3")
-
-[node name="Body" type="Sprite2D" parent="NPC/Shifu"]
-top_level = true
-position = Vector2(678, 1214)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("19_rqmvy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Shifu"]
-position = Vector2(2286, 609)
-scale = Vector2(0.2, 0.2)
-shape = SubResource("CapsuleShape2D_8rdja")
-
-[node name="Employee1" type="Area2D" parent="NPC"]
-position = Vector2(-2941, 276)
-script = ExtResource("13_05qph")
-timeline = "employee1Timeline"
-
-[node name="Collision" type="StaticBody2D" parent="NPC/Employee1"]
-position = Vector2(2289, 614)
-scale = Vector2(0.2, 0.2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Employee1/Collision"]
-position = Vector2(-9.99994, 75)
-shape = SubResource("CapsuleShape2D_udwv3")
-
-[node name="Body" type="Sprite2D" parent="NPC/Employee1"]
-top_level = true
-position = Vector2(485, 909)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("19_rqmvy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Employee1"]
-position = Vector2(2286, 609)
-scale = Vector2(0.2, 0.2)
-shape = SubResource("CapsuleShape2D_8rdja")
-
-[node name="Employee2" type="Area2D" parent="NPC"]
-position = Vector2(-2921, 604)
-script = ExtResource("13_05qph")
-timeline = "employee1Timeline"
-
-[node name="Collision" type="StaticBody2D" parent="NPC/Employee2"]
-position = Vector2(2289, 614)
-scale = Vector2(0.2, 0.2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Employee2/Collision"]
-position = Vector2(-9.99994, 75)
-shape = SubResource("CapsuleShape2D_udwv3")
-
-[node name="Body" type="Sprite2D" parent="NPC/Employee2"]
-top_level = true
-position = Vector2(498, 1232)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("19_rqmvy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Employee2"]
-position = Vector2(2286, 609)
-scale = Vector2(0.2, 0.2)
-shape = SubResource("CapsuleShape2D_8rdja")
-
-[node name="Elder" type="Area2D" parent="NPC"]
-position = Vector2(-2234, 602)
-script = ExtResource("13_05qph")
-timeline = "elderChurchTimeline"
-
-[node name="Collision" type="StaticBody2D" parent="NPC/Elder"]
-position = Vector2(2289, 614)
-scale = Vector2(0.2, 0.2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Elder/Collision"]
-position = Vector2(-9.99994, 75)
-shape = SubResource("CapsuleShape2D_udwv3")
-
-[node name="Body" type="Sprite2D" parent="NPC/Elder"]
-top_level = true
-position = Vector2(1190, 1227)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("19_rqmvy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Elder"]
-position = Vector2(2286, 609)
-scale = Vector2(0.2, 0.2)
-shape = SubResource("CapsuleShape2D_8rdja")
-
-[node name="Interaction" parent="NPC" instance=ExtResource("6_f5vcb")]
-
-[connection signal="body_entered" from="InteractiveItem/Candlestick1" to="InteractiveItem/Candlestick1" method="_on_body_entered"]
-[connection signal="body_exited" from="InteractiveItem/Candlestick1" to="InteractiveItem/Candlestick1" method="_on_body_exited"]
-[connection signal="body_entered" from="InteractiveItem/Candlestick2" to="InteractiveItem/Candlestick2" method="_on_body_entered"]
-[connection signal="body_exited" from="InteractiveItem/Candlestick2" to="InteractiveItem/Candlestick2" method="_on_body_exited"]
 [connection signal="body_entered" from="NPC/Priest" to="NPC/Priest" method="_on_body_entered"]
 [connection signal="body_exited" from="NPC/Priest" to="NPC/Priest" method="_on_body_exited"]
 [connection signal="body_entered" from="NPC/TinosBrother" to="NPC/TinosBrother" method="_on_body_entered"]
@@ -417,5 +419,9 @@ shape = SubResource("CapsuleShape2D_8rdja")
 [connection signal="body_exited" from="NPC/Employee2" to="NPC/Employee2" method="_on_body_exited"]
 [connection signal="body_entered" from="NPC/Elder" to="NPC/Elder" method="_on_body_entered"]
 [connection signal="body_exited" from="NPC/Elder" to="NPC/Elder" method="_on_body_exited"]
+[connection signal="body_entered" from="InteractiveItem/Candlestick1" to="InteractiveItem/Candlestick1" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractiveItem/Candlestick1" to="InteractiveItem/Candlestick1" method="_on_body_exited"]
+[connection signal="body_entered" from="InteractiveItem/Candlestick2" to="InteractiveItem/Candlestick2" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractiveItem/Candlestick2" to="InteractiveItem/Candlestick2" method="_on_body_exited"]
 
 [editable path="Doors/Door_S"]

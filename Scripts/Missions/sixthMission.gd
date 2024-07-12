@@ -2,9 +2,10 @@ extends Node
 
 var is_mission_completed = false
 var current_scene
-var priest_quest_accepted = true
-var candle_picked = true
+var priest_quest_accepted = false
+var candle_picked = false
 var candlestick_minigame_unlocked = false
+var first_time_unlock_candlestick_minigame = true
 
 func _ready():
 	Dialogic.signal_event.connect(dialogicSignal)
@@ -18,18 +19,21 @@ func dialogicSignal(arg: String) -> void:
 		check_progession()
 	if arg == "unlock_candlestick_minigame":
 		candlestick_minigame_unlocked = true
-		TransitionScreen.transition()
-		await TransitionScreen.on_transition_finished
+		if first_time_unlock_candlestick_minigame:
+			InventoryManager.remove_item("candle")
+			first_time_unlock_candlestick_minigame = false
+			TransitionScreen.transition()
+			await TransitionScreen.on_transition_finished
 		check_progession()
 	if arg == "start_minigame_candlestick":
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished
 		get_tree().change_scene_to_file("res://Scenes/Missions/minigameCandlestick.tscn")
 	if arg == "sixth_mission_completed":
-		TransitionScreen.transition()
-		await TransitionScreen.on_transition_finished
-		is_mission_completed = true
-		check_progession()
+		if !is_mission_completed:
+			ScenesManager.transition_mission_completed()
+			is_mission_completed = true
+			check_progession()
 		
 func minigame_completed():
 	Dialogic.start("priestTimeline2")
@@ -112,3 +116,4 @@ func reset_scene() -> void:
 	priest_quest_accepted = false
 	candle_picked = false
 	candlestick_minigame_unlocked = false
+	first_time_unlock_candlestick_minigame = true
