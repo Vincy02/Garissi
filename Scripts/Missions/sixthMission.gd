@@ -6,6 +6,7 @@ var priest_quest_accepted = false
 var candle_picked = false
 var candlestick_minigame_unlocked = false
 var first_time_unlock_candlestick_minigame = true
+var photo_given = false
 
 func _ready():
 	Dialogic.signal_event.connect(dialogicSignal)
@@ -33,6 +34,11 @@ func dialogicSignal(arg: String) -> void:
 		if !is_mission_completed:
 			ScenesManager.transition_mission_completed()
 			is_mission_completed = true
+			check_progession()
+	if arg == "give_photoBrotherTino":
+		if !photo_given:
+			photo_given = true
+			InventoryManager.add_item("photoBrotherTino")
 			check_progession()
 		
 func minigame_completed():
@@ -119,3 +125,4 @@ func reset_scene() -> void:
 	candle_picked = false
 	candlestick_minigame_unlocked = false
 	first_time_unlock_candlestick_minigame = true
+	photo_given = false

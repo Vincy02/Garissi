@@ -16,7 +16,7 @@ func add_item(arg: String):
 		if item["FILE NAME"] == arg:
 			inventory.append(item)
 			break
-	AudioItemDropped.play()
+	AudioStreamManager.play("res://Audio/itemDropped.mp3")
 
 func remove_item(arg: String):
 	for item in inventory:

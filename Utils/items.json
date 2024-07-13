@@ -38,5 +38,10 @@
 		"NAME": "Candela",
 		"FILE NAME": "candle",
 		"DESCRIPTION": "candela economica con luce a led"
+	},
+	{
+		"NAME": "Foto Fratello Tino",
+		"FILE NAME": "photoBrotherTino",
+		"DESCRIPTION": "foto scattata il 12 maggio 2015 alle 5:03 del mattino, che ritrae Simona con Paolo"
 	}
 ]

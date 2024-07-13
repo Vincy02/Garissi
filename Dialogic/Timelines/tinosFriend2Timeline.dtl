@@ -1,0 +1,4 @@
+do ScenesManager.stop_movement_player_and_pause()
+TinosFriend2: Erano anni che cercava di diventare sponsor della Garissese.
+TinosFriend2: Il suo sacrificio lo aveva ripagato...
+do ScenesManager.resume_movement_player_and_pause()
