@@ -1,8 +1,5 @@
-res://Dialogic/Characters/Commissioner.dch
-res://Dialogic/Timelines/commissionerTimeline.dtl
-res://Scenes/cityCentre.tscn
-res://Utils/dialogueStyle.tres
 res://Scenes/seaside.tscn
-res://Scenes/upZone.tscn
-res://Dialogic/Timelines/priestTimeline3.dtl
-res://Dialogic/Timelines/seasideCitizenTimeline.dtl
+res://Utils/dialogueStyle.tres
+res://Scenes/park.tscn
+res://Scenes/MainMenu/mainMenu.tscn
+res://Scripts/Missions/sixthMission.gd
