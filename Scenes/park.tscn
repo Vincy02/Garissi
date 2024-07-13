@@ -483,7 +483,6 @@ shape = SubResource("CapsuleShape2D_nkshi")
 [node name="Interaction" parent="NPC" instance=ExtResource("13_fvjer")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_q5iae")]
 process_mode = 3

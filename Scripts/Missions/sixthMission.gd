@@ -67,7 +67,7 @@ func update_world_status(scene : Node2D) -> void:
 		if priest_quest_accepted && candle_picked:
 			scene.get_node("NPC/Priest").timeline = "priestTimeline1"
 		if candle_picked && candlestick_minigame_unlocked:
-			scene.get_node("InteractiveItem/Candlestick2/Body").texture = ResourceLoader.load("res://Sprites/CityCentre/Church/candlestick.png")
+			scene.get_node("InteractiveItem/Candlestick2/Body").texture = load("res://Sprites/CityCentre/Church/candleStick.png")
 			scene.get_node("InteractiveItem/Candlestick1").set_process_mode(PROCESS_MODE_INHERIT)
 			scene.get_node("InteractiveItem/Candlestick2").set_process_mode(PROCESS_MODE_INHERIT)
 		else:
