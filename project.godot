@@ -82,7 +82,8 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "barCustomer1Timeline": "res://Dialogic/Timelines/barCustomer1Timeline.dtl",
-"barCustomer2Timeline": "res://Dialogic/Timelines/barCustomer2Timeline.dtl",
+"barCustomer2Timeline0": "res://Dialogic/Timelines/barCustomer2Timeline0.dtl",
+"barCustomer2Timeline1": "res://Dialogic/Timelines/barCustomer2Timeline1.dtl",
 "barCustomer3Timeline": "res://Dialogic/Timelines/barCustomer3Timeline.dtl",
 "barCustomer4Timeline": "res://Dialogic/Timelines/barCustomer4Timeline.dtl",
 "barCustomer5Timeline": "res://Dialogic/Timelines/barCustomer5Timeline.dtl",

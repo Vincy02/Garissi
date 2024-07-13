@@ -1,0 +1,5 @@
+do ScenesManager.stop_movement_player_and_pause()
+BarCustomer2: Con radici storiche profonde, Garissi ha resistito a numerosi assedi e conflitti nel tempo!
+BarCustomer2: Ho finito di leggere questo giornale, prendilo tu.
+do ScenesManager.resume_movement_player_and_pause()
+[signal arg="give_barNewspaper"]

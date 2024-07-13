@@ -71,7 +71,7 @@ shape = SubResource("RectangleShape2D_5hp5g")
 [node name="BarCustomer1" type="Area2D" parent="NPC"]
 position = Vector2(-2190, -120)
 script = ExtResource("10_2b73j")
-timeline = "barCustomer2Timeline"
+timeline = "barCustomer2Timeline0"
 
 [node name="Collision" type="StaticBody2D" parent="NPC/BarCustomer1"]
 position = Vector2(2289, 614)
@@ -307,6 +307,7 @@ position = Vector2(99.5551, 119.573)
 rotation = -1.57079
 
 [node name="Player" parent="." instance=ExtResource("4_irop4")]
+position = Vector2(629, 540)
 scale = Vector2(0.2, 0.2)
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]

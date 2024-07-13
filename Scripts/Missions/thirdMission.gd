@@ -3,6 +3,7 @@ extends Node
 var is_mission_completed = false
 var transition_barCustomer5 = false
 var transition_mayor = false
+var newspaper_given = false
 var current_scene
 
 func _ready():
@@ -21,6 +22,10 @@ func dialogicSignal(arg: String) -> void:
 		await TransitionScreen.on_transition_finished
 		transition_mayor = true
 		check_progession()
+	if arg == "give_barNewspaper":
+		InventoryManager.add_item("newspaper")
+		newspaper_given = true
+		check_progession()
 
 func check_progession() -> void:
 	current_scene = ScenesManager.get_current_scene()
@@ -34,6 +39,8 @@ func update_world_status(scene : Node2D) -> void:
 			scene.get_node("TrunksBar").visible = false
 			scene.get_node("Doors/Door_Bar").set_process_mode(PROCESS_MODE_INHERIT)
 	if scene.name == "Bar":
+		if newspaper_given:
+			scene.get_node("NPC/BarCustomer1").timeline = "barCustomer2Timeline1"
 		if transition_mayor:
 			scene.get_node("NPC/Mayor").set_process_mode(PROCESS_MODE_DISABLED)
 			scene.get_node("NPC/Mayor").visible = false
@@ -52,3 +59,4 @@ func reset_scene() -> void:
 	is_mission_completed = false
 	transition_barCustomer5 = false
 	transition_mayor = false
+	newspaper_given = false

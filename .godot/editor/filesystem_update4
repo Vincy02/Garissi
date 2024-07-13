@@ -1,7 +1,9 @@
 res://Scenes/church.tscn
 res://Utils/dialogueStyle.tres
-res://Scenes/square.tscn
-res://Dialogic/Timelines/citizen4Timeline.dtl
-res://Dialogic/Characters/ChurchPraying.dch
-res://Dialogic/Timelines/citizen3Timeline.dtl
-res://Dialogic/Timelines/priestTimeline2.dtl
+res://Scenes/bar.tscn
+res://Dialogic/Timelines/barCustomer2Timeline.dtl
+res://Dialogic/Timelines/barCustomer2Timeline0.dtl
+res://addons/dialogic/Editor/Events/styles/InputFieldsStyle.tres
+res://Dialogic/Timelines/barCustomer2Timeline1.dtl
+res://Scripts/Missions/thirdMission.gd
+res://Scenes/cityCentre.tscn
