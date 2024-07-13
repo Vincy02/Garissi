@@ -202,7 +202,7 @@ scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_ko2o4")
 
 [node name="Citizen3" type="Area2D" parent="NPC"]
-position = Vector2(-1222, 578)
+position = Vector2(-1227, 710)
 script = ExtResource("11_hpxt7")
 timeline = "citizen3Timeline"
 
@@ -216,7 +216,7 @@ shape = SubResource("CapsuleShape2D_wtj6p")
 
 [node name="Body" type="Sprite2D" parent="NPC/Citizen3"]
 top_level = true
-position = Vector2(1060, 1179)
+position = Vector2(1062, 1316)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("18_caxc5")
 flip_h = true

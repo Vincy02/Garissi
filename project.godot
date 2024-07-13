@@ -49,6 +49,7 @@ directories/dch_directory={
 "BarCustomer5": "res://Dialogic/Characters/BarCustomer5.dch",
 "Barman": "res://Dialogic/Characters/Barman.dch",
 "Celestino": "res://Dialogic/Characters/Celestino.dch",
+"ChurchPraying": "res://Dialogic/Characters/ChurchPraying.dch",
 "Citizen1": "res://Dialogic/Characters/Citizen1.dch",
 "Citizen2": "res://Dialogic/Characters/Citizen2.dch",
 "Citizen3": "res://Dialogic/Characters/Citizen3.dch",

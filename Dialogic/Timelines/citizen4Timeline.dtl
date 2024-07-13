@@ -8,7 +8,7 @@ Citizen4: L'evento religioso del funerale qui è sacro e ci sono delle regole da
 Citizen4: Vuoi saperne di piu?
 - Sì
 	Citizen4: In chiesa il candelabro sinistro deve essere acceso al centro!
-	Citizen4: Si pensa che aiuti il defunto a giungere nel paradiso
+	Citizen4: Si pensa che aiuti il defunto a giungere nel paradiso.
 - No
 	Citizen4: Va bene, lei non e' molto interessato alla nostra storia allora.
 do ScenesManager.resume_movement_player_and_pause()

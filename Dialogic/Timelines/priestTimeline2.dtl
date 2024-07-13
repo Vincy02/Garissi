@@ -1,6 +1,6 @@
 do ScenesManager.stop_movement_player_and_pause()
 Priest: Che la pace sia con voi!
-E con il tuo spirito!
+ChurchPraying: E con il tuo spirito!
 Priest: Il nostro defunto è volato in cielo e li' trovera' la pace eterna.
 Priest: Abbiate fede e lui ci proteggera' con la sua mano dal regno dei cieli...
 Priest: La messa e' finita, uniti nel dolore e nella speranza della risurrezione...\
