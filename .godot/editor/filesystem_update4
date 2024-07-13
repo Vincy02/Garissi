@@ -1,9 +1,8 @@
-res://Scenes/church.tscn
-res://Utils/dialogueStyle.tres
-res://Scenes/bar.tscn
-res://Dialogic/Timelines/barCustomer2Timeline.dtl
-res://Dialogic/Timelines/barCustomer2Timeline0.dtl
-res://addons/dialogic/Editor/Events/styles/InputFieldsStyle.tres
-res://Dialogic/Timelines/barCustomer2Timeline1.dtl
-res://Scripts/Missions/thirdMission.gd
+res://Dialogic/Characters/Commissioner.dch
+res://Dialogic/Timelines/commissionerTimeline.dtl
 res://Scenes/cityCentre.tscn
+res://Utils/dialogueStyle.tres
+res://Scenes/seaside.tscn
+res://Scenes/upZone.tscn
+res://Dialogic/Timelines/priestTimeline3.dtl
+res://Dialogic/Timelines/seasideCitizenTimeline.dtl

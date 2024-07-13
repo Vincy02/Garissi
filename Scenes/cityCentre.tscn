@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bmdirm1u4hqx3"]
+[gd_scene load_steps=54 format=3 uid="uid://bmdirm1u4hqx3"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_u82kj"]
 [ext_resource type="Texture2D" uid="uid://d2b70egdk8oww" path="res://Sprites/CityCentre/cityCentre.png" id="2_1iegc"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://dbyuwtl0ai25a" path="res://Scenes/interaction.tscn" id="29_eut8f"]
 [ext_resource type="Script" path="res://Scripts/characterDialogue.gd" id="30_0x8v4"]
 [ext_resource type="Texture2D" uid="uid://ce4ecxp3suyba" path="res://Sprites/Characters/gaia.png" id="31_b851c"]
+[ext_resource type="Texture2D" uid="uid://fqpao11168lj" path="res://Sprites/Characters/commissioner.png" id="33_ccf2k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wplox"]
 size = Vector2(328.938, 350)
@@ -544,6 +545,31 @@ position = Vector2(2286, 621)
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_xpkq8")
 
+[node name="Commissioner" type="Area2D" parent="NPC"]
+position = Vector2(-1686, 1242)
+script = ExtResource("30_0x8v4")
+timeline = "commissionerTimeline"
+
+[node name="Collision" type="StaticBody2D" parent="NPC/Commissioner"]
+position = Vector2(2289, 614)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Commissioner/Collision"]
+position = Vector2(-9.99994, 75)
+shape = SubResource("CapsuleShape2D_bhcf2")
+
+[node name="Body" type="Sprite2D" parent="NPC/Commissioner"]
+top_level = true
+position = Vector2(601, 1845)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("33_ccf2k")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Commissioner"]
+position = Vector2(2286, 621)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_xpkq8")
+
 [node name="Interaction" parent="NPC" instance=ExtResource("29_eut8f")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -555,6 +581,8 @@ process_mode = 3
 [connection signal="body_exited" from="InteractiveItem/Office" to="InteractiveItem/Office" method="_on_body_exited"]
 [connection signal="body_entered" from="NPC/Gaia" to="NPC/Gaia" method="_on_body_entered"]
 [connection signal="body_exited" from="NPC/Gaia" to="NPC/Gaia" method="_on_body_exited"]
+[connection signal="body_entered" from="NPC/Commissioner" to="NPC/Commissioner" method="_on_body_entered"]
+[connection signal="body_exited" from="NPC/Commissioner" to="NPC/Commissioner" method="_on_body_exited"]
 
 [editable path="Doors/Door_W"]
 [editable path="Doors/Door_Church"]
