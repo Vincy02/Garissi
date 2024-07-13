@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b01t8dhql51pl"]
+[gd_scene load_steps=32 format=3 uid="uid://b01t8dhql51pl"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_2ovvn"]
 [ext_resource type="Texture2D" uid="uid://dpqoqj4q1kikj" path="res://Sprites/Park/park.png" id="2_lwlfk"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="7_q5iae"]
 [ext_resource type="Texture2D" uid="uid://yiwrubeo4oba" path="res://Sprites/Park/bench.png" id="7_vunlb"]
 [ext_resource type="Texture2D" uid="uid://cfg7pmkwya4hx" path="res://Sprites/Minigame/Mission2/thirdCombination.png" id="9_0bg6n"]
+[ext_resource type="Texture2D" uid="uid://b2v3uwiwygpkx" path="res://Utils/trunksDown.png" id="9_ofnfv"]
+[ext_resource type="Texture2D" uid="uid://c4koett8cg8lr" path="res://Utils/trunksFront.png" id="10_hn5jj"]
+[ext_resource type="Texture2D" uid="uid://d37wj4bxfacsp" path="res://Utils/trunksRightSide.png" id="11_0qko2"]
 [ext_resource type="Script" path="res://Scripts/characterDialogue.gd" id="11_ij32g"]
 [ext_resource type="Texture2D" uid="uid://b4h2j6g30nupn" path="res://Sprites/Characters/gardnerGioele.png" id="11_updlh"]
 [ext_resource type="Texture2D" uid="uid://drpd2oson08k7" path="res://Sprites/Characters/gardnerMichele.png" id="12_dd4ji"]
@@ -30,8 +33,14 @@ size = Vector2(79, 16.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gs117"]
 size = Vector2(124.5, 42.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lam6v"]
+size = Vector2(143, 20)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sy46i"]
 size = Vector2(93, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8mi2"]
+size = Vector2(53.625, 163)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sdqwj"]
 radius = 160.0
@@ -49,6 +58,11 @@ position = Vector2(1301, 732)
 scale = Vector2(0.265, 0.265)
 texture = ExtResource("2_lwlfk")
 
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(1301, 732)
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("2_lwlfk")
+
 [node name="Borders" parent="." instance=ExtResource("2_md658")]
 light_mask = 2
 visibility_layer = 2
@@ -58,7 +72,7 @@ scale = Vector2(2.033, 2.033)
 position = Vector2(-9, 1)
 
 [node name="Door_E" parent="Doors" instance=ExtResource("3_g3j4a")]
-position = Vector2(2667, 970)
+position = Vector2(2667, 952)
 scale = Vector2(7.365, 7.365)
 destination_level_tag = "square"
 destination_door_tag = "W"
@@ -224,6 +238,21 @@ position = Vector2(1995, 148)
 scale = Vector2(0.37, 0.37)
 texture = ExtResource("7_vunlb")
 
+[node name="TrunksExit1" type="Sprite2D" parent="."]
+position = Vector2(943, 1379)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("9_ofnfv")
+
+[node name="TrunksExit2" type="Sprite2D" parent="."]
+position = Vector2(661, -34)
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("10_hn5jj")
+
+[node name="TrunksSquare" type="Sprite2D" parent="."]
+position = Vector2(2588, 954)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("11_0qko2")
+
 [node name="BuildingCollision" type="StaticBody2D" parent="."]
 position = Vector2(614, 254)
 
@@ -279,13 +308,21 @@ shape = SubResource("RectangleShape2D_gs117")
 position = Vector2(1377.25, -103)
 shape = SubResource("RectangleShape2D_gs117")
 
+[node name="CollisionShape14" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(1890.25, 514)
+shape = SubResource("RectangleShape2D_gs117")
+
+[node name="CollisionShape15" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(329.5, 1197)
+shape = SubResource("RectangleShape2D_lam6v")
+
 [node name="CollisionShape16" type="CollisionShape2D" parent="BuildingCollision"]
 position = Vector2(669.5, 257.5)
 shape = SubResource("RectangleShape2D_sy46i")
 
-[node name="CollisionShape14" type="CollisionShape2D" parent="BuildingCollision"]
-position = Vector2(1890.25, 514)
-shape = SubResource("RectangleShape2D_gs117")
+[node name="CollisionShapeExit" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(1983, 700)
+shape = SubResource("RectangleShape2D_a8mi2")
 
 [node name="ThirdCombination" type="Sprite2D" parent="."]
 position = Vector2(2450, 254)
@@ -446,6 +483,7 @@ shape = SubResource("CapsuleShape2D_nkshi")
 [node name="Interaction" parent="NPC" instance=ExtResource("13_fvjer")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_q5iae")]
 process_mode = 3

@@ -1,16 +1,21 @@
-[gd_scene load_steps=14 format=3 uid="uid://dbpu50l5aef5k"]
+[gd_scene load_steps=17 format=3 uid="uid://dbpu50l5aef5k"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_vuua6"]
-[ext_resource type="Texture2D" uid="uid://xlu4mvawgri0" path="res://Sprites/UpZone/upZone.png" id="2_etwou"]
+[ext_resource type="Texture2D" uid="uid://crubybynsxyy7" path="res://Sprites/UpZone/upZone.png" id="2_etwou"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="3_q21d4"]
 [ext_resource type="Texture2D" uid="uid://dklt048fb02i5" path="res://Sprites/UpZone/treeBed.png" id="3_ry8de"]
 [ext_resource type="PackedScene" uid="uid://crnoals7bkk2k" path="res://Scenes/player.tscn" id="4_euucv"]
 [ext_resource type="Script" path="res://Scripts/followCam.gd" id="5_sjsw8"]
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="6_07qtv"]
+[ext_resource type="Texture2D" uid="uid://c4koett8cg8lr" path="res://Utils/trunksFront.png" id="6_ructv"]
+[ext_resource type="Texture2D" uid="uid://dyf5mkdj174tr" path="res://Utils/trunksLeftSide.png" id="7_1qccm"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="7_x3w31"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewdfn"]
 size = Vector2(1756, 72.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hy2rk"]
+size = Vector2(40, 189)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yj3vo"]
 radius = 61.0
@@ -38,6 +43,10 @@ position = Vector2(614, 254)
 [node name="CollisionShape1" type="CollisionShape2D" parent="BuildingCollision"]
 position = Vector2(268, 282)
 shape = SubResource("RectangleShape2D_ewdfn")
+
+[node name="CollisionShape2" type="CollisionShape2D" parent="BuildingCollision"]
+position = Vector2(-594, 550.5)
+shape = SubResource("RectangleShape2D_hy2rk")
 
 [node name="TreeBed" type="Sprite2D" parent="."]
 top_level = true
@@ -115,10 +124,19 @@ shape = SubResource("RectangleShape2D_rrviy")
 position = Vector2(1.77936, -16.548)
 rotation = -1.57079
 
+[node name="TrunksPostOffice" type="Sprite2D" parent="."]
+position = Vector2(969, 633)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("6_ructv")
+
+[node name="TrunksExit" type="Sprite2D" parent="."]
+position = Vector2(23, 805)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_1qccm")
+
 [node name="Player" parent="." instance=ExtResource("4_euucv")]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(80, 114)
 scale = Vector2(0.2, 0.2)
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]

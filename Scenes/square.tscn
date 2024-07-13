@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://btcc4nvtu3rft"]
+[gd_scene load_steps=31 format=3 uid="uid://btcc4nvtu3rft"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_yc4ar"]
 [ext_resource type="PackedScene" uid="uid://clqpppuywx1g0" path="res://Scenes/SquareObj/cityHall.tscn" id="2_tqofx"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dfrnbwn57b5jj" path="res://Scenes/borders.tscn" id="9_nhf34"]
 [ext_resource type="PackedScene" uid="uid://dhg2be7io711" path="res://Scenes/door.tscn" id="10_lu4he"]
 [ext_resource type="Script" path="res://Scripts/characterDialogue.gd" id="11_hpxt7"]
+[ext_resource type="Texture2D" uid="uid://c4koett8cg8lr" path="res://Utils/trunksFront.png" id="12_5bqke"]
 [ext_resource type="PackedScene" uid="uid://c2avt6b6weif7" path="res://Scenes/PauseMenu/pauseMenu.tscn" id="12_7o22p"]
 [ext_resource type="Texture2D" uid="uid://bspxs4l4t1an5" path="res://Sprites/Characters/sophie.png" id="12_7vup2"]
 [ext_resource type="PackedScene" uid="uid://dbyuwtl0ai25a" path="res://Scenes/interaction.tscn" id="13_7v8c8"]
@@ -102,10 +103,14 @@ position = Vector2(2107, 62)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("9_l1fal")
 
+[node name="TrunksBar" type="Sprite2D" parent="."]
+position = Vector2(2115, 384)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_5bqke")
+
 [node name="Player" parent="." instance=ExtResource("8_kmige")]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(-4.76837e-07, -4.76837e-07)
 scale = Vector2(0.2, 0.2)
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]

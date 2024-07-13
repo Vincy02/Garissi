@@ -55,6 +55,8 @@ func update_world_status(scene : Node2D) -> void:
 	if scene.name == "CityCentre":
 		if !FifthMission.is_mission_completed:
 			scene.get_node("Doors/Door_Church").set_process_mode(PROCESS_MODE_DISABLED)
+		else:
+			scene.get_node("TrunksChurch").visible = false
 	if scene.name == "Church":
 		if priest_quest_accepted && candle_picked:
 			scene.get_node("NPC/Priest").timeline = "priestTimeline1"

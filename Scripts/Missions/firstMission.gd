@@ -35,6 +35,8 @@ func update_world_status(scene : Node2D) -> void:
 		if is_mission_completed:
 			scene.get_node("NPC/TechnicianMario").timeline = "marioTimeline2"
 			if unlock_door:
+				scene.get_node("BuildingCollision/CollisionShapeExit").disabled = true
+				scene.get_node("TrunksSquare").visible = false
 				scene.get_node("Doors/Door_E").set_process_mode(PROCESS_MODE_INHERIT)
 		else:
 			scene.get_node("Doors/Door_E").set_process_mode(PROCESS_MODE_DISABLED)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bmdirm1u4hqx3"]
+[gd_scene load_steps=52 format=3 uid="uid://bmdirm1u4hqx3"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_u82kj"]
 [ext_resource type="Texture2D" uid="uid://d2b70egdk8oww" path="res://Sprites/CityCentre/cityCentre.png" id="2_1iegc"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://b5xcw1fw68cn4" path="res://Sprites/CityCentre/fountain_UP.png" id="24_kjam6"]
 [ext_resource type="Texture2D" uid="uid://d0k2l7v4oi00k" path="res://Sprites/CityCentre/fountain_DOWN.png" id="25_1ivr4"]
 [ext_resource type="Script" path="res://Scripts/interactiveItem.gd" id="27_7rcec"]
+[ext_resource type="Texture2D" uid="uid://c4koett8cg8lr" path="res://Utils/trunksFront.png" id="27_pvpeg"]
 [ext_resource type="PackedScene" uid="uid://dbyuwtl0ai25a" path="res://Scenes/interaction.tscn" id="29_eut8f"]
 [ext_resource type="Script" path="res://Scripts/characterDialogue.gd" id="30_0x8v4"]
 [ext_resource type="Texture2D" uid="uid://ce4ecxp3suyba" path="res://Sprites/Characters/gaia.png" id="31_b851c"]
@@ -461,6 +462,16 @@ shape = SubResource("RectangleShape2D_e71d1")
 [node name="Spawn" parent="Doors/Door_Church" index="1"]
 position = Vector2(198.665, -43.4164)
 rotation = -1.57079
+
+[node name="TrunksChurch" type="Sprite2D" parent="."]
+position = Vector2(1304, 555)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("27_pvpeg")
+
+[node name="TrunksOffice" type="Sprite2D" parent="."]
+position = Vector2(146, 1068)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("27_pvpeg")
 
 [node name="Player" parent="." instance=ExtResource("4_7om6w")]
 light_mask = 3

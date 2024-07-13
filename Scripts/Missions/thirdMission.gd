@@ -31,6 +31,7 @@ func update_world_status(scene : Node2D) -> void:
 		if !SecondMission.is_mission_completed:
 			scene.get_node("Doors/Door_Bar").set_process_mode(PROCESS_MODE_DISABLED)
 		else:
+			scene.get_node("TrunksBar").visible = false
 			scene.get_node("Doors/Door_Bar").set_process_mode(PROCESS_MODE_INHERIT)
 	if scene.name == "Bar":
 		if transition_mayor:

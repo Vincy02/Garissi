@@ -33,6 +33,7 @@ func update_world_status(scene : Node2D) -> void:
 		if !ThirdMission.is_mission_completed:
 			scene.get_node("InteractiveItem/Office").set_process_mode(PROCESS_MODE_DISABLED)
 		else:
+			scene.get_node("TrunksOffice").visible = false
 			if first_time_entering:
 				office_presentation(scene)
 

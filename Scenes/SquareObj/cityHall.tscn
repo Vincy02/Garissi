@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://clqpppuywx1g0"]
 
-[ext_resource type="Texture2D" uid="uid://che1aot2dcsoh" path="res://Sprites/Square/cityHall.png" id="2_grtdc"]
+[ext_resource type="Texture2D" uid="uid://cbcx0pispg42i" path="res://Sprites/Square/cityHall.png" id="2_grtdc"]
 [ext_resource type="Texture2D" uid="uid://bfefkob0upvt6" path="res://Sprites/Square/fence.png" id="3_qsvlm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tpd8"]
