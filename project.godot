@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Garissi"
+config/version="1.0.0"
 run/main_scene="res://Scenes/MainMenu/mainMenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://Utils/vm2r_logo.png"
+config/icon="res://Utils/logo.png"
+config/windows_native_icon="res://Utils/icon.ico"
+boot_splash/minimum_display_time=1500
 
 [autoload]
 
@@ -24,43 +30,126 @@ ScenesManager="*res://Scripts/Global/scenesManager.gd"
 FirstMission="*res://Scripts/Missions/firstMission.gd"
 InventoryManager="*res://Scripts/Global/inventoryManager.gd"
 SecondMission="*res://Scripts/Missions/secondMission.gd"
+ThirdMission="*res://Scripts/Missions/thirdMission.gd"
+FourthMission="*res://Scripts/Missions/fourthMission.gd"
+MainThemeTrack="*res://Scenes/Global/mainThemeTrack.tscn"
+FifthMission="*res://Scripts/Missions/fifthMission.gd"
+SixthMission="*res://Scripts/Missions/sixthMission.gd"
+TransitionMissionCompleted="*res://Scenes/Global/transitionMissionCompleted.tscn"
+AudioStreamManager="*res://Scenes/Global/audioStreamManager.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
+"BarCustomer1": "res://Dialogic/Characters/BarCustomer1.dch",
+"BarCustomer2": "res://Dialogic/Characters/BarCustomer2.dch",
+"BarCustomer3": "res://Dialogic/Characters/BarCustomer3.dch",
+"BarCustomer4": "res://Dialogic/Characters/BarCustomer4.dch",
+"BarCustomer5": "res://Dialogic/Characters/BarCustomer5.dch",
+"Barman": "res://Dialogic/Characters/Barman.dch",
 "Celestino": "res://Dialogic/Characters/Celestino.dch",
+"ChurchPraying": "res://Dialogic/Characters/ChurchPraying.dch",
+"Citizen1": "res://Dialogic/Characters/Citizen1.dch",
+"Citizen2": "res://Dialogic/Characters/Citizen2.dch",
+"Citizen3": "res://Dialogic/Characters/Citizen3.dch",
+"Citizen4": "res://Dialogic/Characters/Citizen4.dch",
+"Citizen5": "res://Dialogic/Characters/Citizen5.dch",
+"Commissioner": "res://Dialogic/Characters/Commissioner.dch",
+"ElderChurch": "res://Dialogic/Characters/ElderChurch.dch",
+"ElderOffice1": "res://Dialogic/Characters/ElderOffice1.dch",
+"ElderOffice2": "res://Dialogic/Characters/ElderOffice2.dch",
+"Employee1": "res://Dialogic/Characters/Employee1.dch",
+"Employee2": "res://Dialogic/Characters/Employee2.dch",
 "Fabrizio": "res://Dialogic/Characters/Fabrizio.dch",
 "Franco": "res://Dialogic/Characters/Franco.dch",
 "Gaia": "res://Dialogic/Characters/Gaia.dch",
 "Gioele": "res://Dialogic/Characters/Gioele.dch",
 "Mario": "res://Dialogic/Characters/Mario.dch",
+"Mayor": "res://Dialogic/Characters/Mayor.dch",
 "Michele": "res://Dialogic/Characters/Michele.dch",
+"PostalDirector": "res://Dialogic/Characters/PostalDirector.dch",
+"Priest": "res://Dialogic/Characters/Priest.dch",
 "Raffaele": "res://Dialogic/Characters/Raffaele.dch",
+"Shifu": "res://Dialogic/Characters/Shifu.dch",
 "Simone": "res://Dialogic/Characters/Simone.dch",
-"Sophie": "res://Dialogic/Characters/Sophie.dch"
+"Sophie": "res://Dialogic/Characters/Sophie.dch",
+"TinosBrother": "res://Dialogic/Characters/TinosBrother.dch",
+"TinosFriend1": "res://Dialogic/Characters/TinosFriend1.dch",
+"TinosFriend2": "res://Dialogic/Characters/TinosFriend2.dch",
+"TinosFriend3": "res://Dialogic/Characters/TinosFriend3.dch",
+"WorkerOffice1": "res://Dialogic/Characters/WorkerOffice1.dch",
+"WorkerOffice2": "res://Dialogic/Characters/WorkerOffice2.dch"
 }
 directories/dtl_directory={
+"barCustomer1Timeline": "res://Dialogic/Timelines/barCustomer1Timeline.dtl",
+"barCustomer2Timeline0": "res://Dialogic/Timelines/barCustomer2Timeline0.dtl",
+"barCustomer2Timeline1": "res://Dialogic/Timelines/barCustomer2Timeline1.dtl",
+"barCustomer3Timeline": "res://Dialogic/Timelines/barCustomer3Timeline.dtl",
+"barCustomer4Timeline": "res://Dialogic/Timelines/barCustomer4Timeline.dtl",
+"barCustomer5Timeline": "res://Dialogic/Timelines/barCustomer5Timeline.dtl",
+"barmanTimeline": "res://Dialogic/Timelines/barmanTimeline.dtl",
+"candleTimeline": "res://Dialogic/Timelines/candleTimeline.dtl",
 "celestinoTimeline": "res://Dialogic/Timelines/celestinoTimeline.dtl",
+"citizen1Timeline": "res://Dialogic/Timelines/citizen1Timeline.dtl",
+"citizen2Timeline": "res://Dialogic/Timelines/citizen2Timeline.dtl",
+"citizen3Timeline": "res://Dialogic/Timelines/citizen3Timeline.dtl",
+"citizen4Timeline": "res://Dialogic/Timelines/citizen4Timeline.dtl",
+"citizen5Timeline": "res://Dialogic/Timelines/citizen5Timeline.dtl",
+"commissionerTimeline": "res://Dialogic/Timelines/commissionerTimeline.dtl",
+"elderChurchTimeline": "res://Dialogic/Timelines/elderChurchTimeline.dtl",
+"elderOffice1Timeline": "res://Dialogic/Timelines/elderOffice1Timeline.dtl",
+"elderOffice2Timeline": "res://Dialogic/Timelines/elderOffice2Timeline.dtl",
+"employee1Timeline": "res://Dialogic/Timelines/employee1Timeline.dtl",
+"employee2Timeline": "res://Dialogic/Timelines/employee2Timeline.dtl",
 "francoTimeline": "res://Dialogic/Timelines/francoTimeline.dtl",
+"gaiaOfficeTimeline0": "res://Dialogic/Timelines/gaiaOfficeTimeline0.dtl",
+"gaiaOfficeTimeline1": "res://Dialogic/Timelines/gaiaOfficeTimeline1.dtl",
 "gioeleTimeline": "res://Dialogic/Timelines/gioeleTimeline.dtl",
+"headOfficeDoorTimeline": "res://Dialogic/Timelines/headOfficeDoorTimeline.dtl",
 "intro": "res://Dialogic/Timelines/intro.dtl",
 "marioTimeline0": "res://Dialogic/Timelines/marioTimeline0.dtl",
 "marioTimeline1": "res://Dialogic/Timelines/marioTimeline1.dtl",
 "marioTimeline2": "res://Dialogic/Timelines/marioTimeline2.dtl",
+"mayorBarTimeline": "res://Dialogic/Timelines/mayorBarTimeline.dtl",
 "micheleTimeline": "res://Dialogic/Timelines/micheleTimeline.dtl",
+"postalDirectorTimeline0": "res://Dialogic/Timelines/postalDirectorTimeline0.dtl",
+"postalDirectorTimeline1": "res://Dialogic/Timelines/postalDirectorTimeline1.dtl",
+"postalDirectorTimeline2": "res://Dialogic/Timelines/postalDirectorTimeline2.dtl",
+"priestTimeline0": "res://Dialogic/Timelines/priestTimeline0.dtl",
+"priestTimeline1": "res://Dialogic/Timelines/priestTimeline1.dtl",
+"priestTimeline2": "res://Dialogic/Timelines/priestTimeline2.dtl",
+"priestTimeline3": "res://Dialogic/Timelines/priestTimeline3.dtl",
 "raffaeleTimeline": "res://Dialogic/Timelines/raffaeleTimeline.dtl",
+"seasideCitizenTimeline": "res://Dialogic/Timelines/seasideCitizenTimeline.dtl",
+"shifuTimeline": "res://Dialogic/Timelines/shifuTimeline.dtl",
 "simoneTimeline0": "res://Dialogic/Timelines/simoneTimeline0.dtl",
 "simoneTimeline1": "res://Dialogic/Timelines/simoneTimeline1.dtl",
+"simoneTimeline2": "res://Dialogic/Timelines/simoneTimeline2.dtl",
 "sophieTimeline0": "res://Dialogic/Timelines/sophieTimeline0.dtl",
 "sophieTimeline1": "res://Dialogic/Timelines/sophieTimeline1.dtl",
 "sophieTimeline2": "res://Dialogic/Timelines/sophieTimeline2.dtl",
-"sophieTimeline3": "res://Dialogic/Timelines/sophieTimeline3.dtl"
+"sophieTimeline3": "res://Dialogic/Timelines/sophieTimeline3.dtl",
+"tinosBrotherTimeline": "res://Dialogic/Timelines/tinosBrotherTimeline.dtl",
+"tinosFriend1Timeline": "res://Dialogic/Timelines/tinosFriend1Timeline.dtl",
+"tinosFriend2Timeline": "res://Dialogic/Timelines/tinosFriend2Timeline.dtl",
+"tinosFriend3Timeline": "res://Dialogic/Timelines/tinosFriend3Timeline.dtl",
+"workerOffice1Timeline": "res://Dialogic/Timelines/workerOffice1Timeline.dtl",
+"workerOffice2Timeline": "res://Dialogic/Timelines/workerOffice2Timeline.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://Utils/dialogueStyle.tres"]
 layout/default_style="res://Utils/dialogueStyle.tres"
-variables={}
+variables={
+"go_down": "",
+"go_left": "",
+"go_right": "",
+"go_up": "",
+"inventory": "",
+"password_bar": "",
+"password_headOfficeDoor": "",
+"pause": ""
+}
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1

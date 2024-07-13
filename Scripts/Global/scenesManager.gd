@@ -1,7 +1,7 @@
 extends Node
 
 var current_scene
-var mission_name = ["First", "Second"]
+var mission_name = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth"]
 
 func get_current_scene() -> Node2D:
 	return current_scene
@@ -22,8 +22,20 @@ func reset_scenes() -> void:
 		
 func stop_movement_player_and_pause() -> void:
 	Player.stop_player()
+	CharacterDialoge.set_is_interacting(true)
+	InteractiveItem.set_is_interacting(true)
+	Office.set_is_interacting(true)
 	PauseMenu.stop_working()
 	
 func resume_movement_player_and_pause() -> void:
 	Player.resume_player()
+	CharacterDialoge.set_is_interacting(false)
+	InteractiveItem.set_is_interacting(false)
+	Office.set_is_interacting(false)
 	PauseMenu.resume_working()
+
+func transition_mission_completed() -> void:
+	stop_movement_player_and_pause()
+	TransitionMissionCompleted.transition()
+	await TransitionMissionCompleted.on_transition_finished
+	resume_movement_player_and_pause()

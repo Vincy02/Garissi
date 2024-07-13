@@ -1,0 +1,12 @@
+do ScenesManager.stop_movement_player_and_pause()
+Fabrizio: La porta sembra essere bloccata.\
+Serve un codice...
+[text_input text="La password deve essere nel seguente formato: XX-XX" var="password_headOfficeDoor"]
+if {password_headOfficeDoor} == "12-15":
+	Fabrizio: Si, ho indovinato la passoword! Sono entrato nell'ufficio!
+	[signal arg="door_headOffice_unlocked"]
+else:
+	Fabrizio: Combinazione sbagliata...la porta non sembra aprirsi.
+	WorkerOffice1: Ei! Che ci fai vicino alla porta?? Non puoi entrare se non hai la password! Allontanati subito da li!
+	[signal arg="door_headOffice_still_locked"]
+do ScenesManager.resume_movement_player_and_pause()

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://vj1axni1vqt4"]
+
+[ext_resource type="Script" path="res://Scripts/office.gd" id="1_0objc"]
+[ext_resource type="Texture2D" uid="uid://dyxhlkyq3sum8" path="res://Sprites/CityCentre/Office/office.png" id="1_g45kp"]
+[ext_resource type="FontFile" uid="uid://crmpbal4ch8up" path="res://Utils/ACDiaryGirlUnicode.otf" id="2_5652f"]
+
+[node name="Office" type="Node2D"]
+script = ExtResource("1_0objc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_g45kp")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 100)
+offset_left = 285.0
+offset_top = 248.0
+offset_right = 617.0
+offset_bottom = 348.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5652f")
+theme_override_font_sizes/font_size = 30
+text = "Funzioni dell'ufficio 
+disabilitate nella demo"
+horizontal_alignment = 1
+vertical_alignment = 1

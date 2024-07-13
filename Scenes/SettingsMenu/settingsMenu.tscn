@@ -97,8 +97,7 @@ alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_t7p6j")
 theme_override_font_sizes/font_size = 35
-text = "Risoluzione
-"
+text = "Risoluzione"
 
 [node name="ResButton" type="OptionButton" parent="PanelContainer/MarginContainer/Control/VBoxContainer/Res"]
 custom_minimum_size = Vector2(250, 0)
@@ -151,12 +150,13 @@ size_flags_horizontal = 8
 theme_override_constants/separation = 30
 
 [node name="Null" type="Label" parent="PanelContainer/MarginContainer/Control/PercentageContainer"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_t7p6j")
 theme_override_font_sizes/font_size = 35
-text = "          "
 
 [node name="Nil" type="Label" parent="PanelContainer/MarginContainer/Control/PercentageContainer"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_t7p6j")
 theme_override_font_sizes/font_size = 35

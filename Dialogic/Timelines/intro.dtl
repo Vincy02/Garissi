@@ -3,7 +3,8 @@ Gaia: Fabrizio, sono io, Gaia. Abbiamo un problema a Garissi e ho bisogno del tu
 Fabrizio: Gaia? Quanto tempo. Di che si tratta?
 Gaia: Un omicidio. Ma c'è qualcosa di più sotto. Qualcosa di grosso. Ho bisogno della tua esperienza per risolverlo.
 Fabrizio: Sono in pensione ormai, Gaia. Non sono sicuro di essere ancora all'altezza.
-Gaia: Fabrizio, sei l'unico di cui mi fido per questo caso. Ho un ufficio pronto per te e tutte le risorse di cui avrai bisogno. Non possiamo permetterci di fallire.
+Gaia: Fabrizio, sei l'unico di cui mi fido per questo caso.
+Gaia: Ho un ufficio pronto per te e tutte le risorse di cui avrai bisogno. Non possiamo permetterci di fallire.
 Fabrizio: D'accordo, Gaia. Prenderò il primo aereo disponibile. Ci vediamo presto.
 Gaia: Grazie, Fabrizio. Ti aspetto.
 [signal arg="ended_conversation"]

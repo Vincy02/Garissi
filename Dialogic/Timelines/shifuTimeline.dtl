@@ -1,0 +1,5 @@
+do ScenesManager.stop_movement_player_and_pause()
+Shifu: Oggi ho chiuso la mia palestra.
+Shifu: Non potevo mancare oggi.
+Shifu: Frequentava fin da piccolino la mia attivita'...
+do ScenesManager.resume_movement_player_and_pause()

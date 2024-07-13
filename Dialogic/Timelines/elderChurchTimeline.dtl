@@ -1,0 +1,5 @@
+do ScenesManager.stop_movement_player_and_pause()
+ElderChurch: Réquiem aetérnam dona eis, Dómine,
+ElderChurch: et lux perpétua lúceat eis.
+ElderChurch: Requiéscant in pace.
+do ScenesManager.resume_movement_player_and_pause()

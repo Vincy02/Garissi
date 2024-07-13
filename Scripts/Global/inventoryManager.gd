@@ -11,10 +11,12 @@ func _ready():
 	dataFile.close()
 
 func add_item(arg: String):
+	arg[0] = arg[0].to_lower()
 	for item in items:
 		if item["FILE NAME"] == arg:
 			inventory.append(item)
 			break
+	AudioStreamManager.play("res://Audio/itemDropped.mp3")
 
 func remove_item(arg: String):
 	for item in inventory:
@@ -25,6 +27,5 @@ func remove_item(arg: String):
 func get_invetory():
 	return inventory
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func reset_inventory():
+	inventory = []

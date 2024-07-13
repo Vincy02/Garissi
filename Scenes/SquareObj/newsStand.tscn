@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b53vayhqngl1q"]
 
-[ext_resource type="Texture2D" uid="uid://dck3vxaagwoou" path="res://Sprites/Square/newsStand.png" id="1_7pae0"]
+[ext_resource type="Texture2D" uid="uid://jusoghcrj72c" path="res://Sprites/Square/newsStand.png" id="1_7pae0"]
 [ext_resource type="Texture2D" uid="uid://bfefkob0upvt6" path="res://Sprites/Square/fence.png" id="2_2dtk4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jf1rm"]

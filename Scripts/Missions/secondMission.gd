@@ -12,38 +12,50 @@ func _ready():
 func dialogicSignal(arg: String) -> void:
 	if arg == "change_sophie_timeline":
 		sophie_quest_accepted = true
-		current_scene = ScenesManager.get_current_scene()
-		update_world_status(current_scene)
+		check_progession()
 	if arg == "give_battery":
 		battery_given = true
 		InventoryManager.add_item("battery")
-		current_scene = ScenesManager.get_current_scene()
-		update_world_status(current_scene)
+		check_progession()
 	if arg == "give_photoSophie" && battery_given:
-		photo_given = true
-		InventoryManager.add_item("photoSophie")
-		InventoryManager.remove_item("battery")
-		current_scene = ScenesManager.get_current_scene()
-		update_world_status(current_scene)
+		if !photo_given:
+			photo_given = true
+			ScenesManager.transition_mission_completed()
+			is_mission_completed = true
+			InventoryManager.add_item("photoSophie")
+			InventoryManager.remove_item("battery")
+			check_progession()
 
 func check_progession() -> void:
-		current_scene = ScenesManager.get_current_scene()
-		update_world_status(current_scene)
+	current_scene = ScenesManager.get_current_scene()
+	update_world_status(current_scene)
+		
+func minigame_completed():
+	Dialogic.start("simoneTimeline2")
 
 func update_world_status(scene : Node2D) -> void:
-	if scene.name == "Square":
-		if sophie_quest_accepted && !battery_given:
-			scene.get_node("NPC/Sophie").timeline = "sophieTimeline1"
-		if sophie_quest_accepted && battery_given:
-			scene.get_node("NPC/Sophie").timeline = "sophieTimeline2"
-		if photo_given:
-			scene.get_node("NPC/Sophie").timeline = "sophieTimeline3"
-	if scene.name == "NewsStand":
-		if sophie_quest_accepted && !battery_given:
-			scene.get_node("NPC/Simone").timeline = "simoneTimeline1"
-		if sophie_quest_accepted && battery_given:
-			scene.get_node("NPC/Simone").timeline = "simoneTimeline0"
-			
+	if FirstMission.is_mission_completed:
+		if scene.name == "Square":
+			if sophie_quest_accepted && !battery_given:
+				scene.get_node("NPC/Sophie").timeline = "sophieTimeline1"
+			if sophie_quest_accepted && battery_given:
+				scene.get_node("NPC/Sophie").timeline = "sophieTimeline2"
+			if photo_given:
+				scene.get_node("NPC/Sophie").timeline = "sophieTimeline3"
+			if is_mission_completed:
+				scene.get_node("FirstCombination").visible = false
+				scene.get_node("SecondCombination").visible = false
+		if scene.name == "NewsStand":
+			scene.get_node("InteractiveItem/Locker").set_process_mode(PROCESS_MODE_DISABLED)
+			if sophie_quest_accepted && !battery_given:
+				scene.get_node("NPC/Simone").timeline = "simoneTimeline1"
+				scene.get_node("InteractiveItem/Locker").set_process_mode(PROCESS_MODE_INHERIT)
+			if sophie_quest_accepted && battery_given:
+				scene.get_node("NPC/Simone").timeline = "simoneTimeline0"
+		if scene.name == "Park":
+			if is_mission_completed:
+				scene.get_node("ThirdCombination").visible = false
+							
 func reset_scene() -> void:
 	is_mission_completed = false
 	sophie_quest_accepted = false

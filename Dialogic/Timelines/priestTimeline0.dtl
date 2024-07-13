@@ -1,0 +1,6 @@
+do ScenesManager.stop_movement_player_and_pause()
+Priest: Signore, aiutami! 
+Priest: Sono quasi le 15.00 e mancano due candele nei candelabri!
+Mario: [ NELLA DEMO DOVRAI SOLO RECUPERARNE UNA ]
+do ScenesManager.resume_movement_player_and_pause()
+[signal arg="priest_quest_accepted"]

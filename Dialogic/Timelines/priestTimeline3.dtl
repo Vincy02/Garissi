@@ -1,0 +1,3 @@
+do ScenesManager.stop_movement_player_and_pause()
+Priest: Dio ti assista affinche' tu possa portare al termine la tua indagine.
+do ScenesManager.resume_movement_player_and_pause()

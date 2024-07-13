@@ -1,6 +1,4 @@
-[signal arg="started_conversation"]
 do ScenesManager.stop_movement_player_and_pause()
-Sophie: Non hai ancora trovato le mie pile?\
-Ti aspetto sempre qui.
-[signal arg="ended_conversation"]
+Sophie: Non hai ancora trovato delle pile?
+Sophie: Ti aspetto sempre qui.
 do ScenesManager.resume_movement_player_and_pause()

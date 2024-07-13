@@ -1,0 +1,6 @@
+do ScenesManager.stop_movement_player_and_pause()
+ElderOffice1: Sono ore che aspetto! Basta ora ritorno a casa e' tardi!
+ElderOffice1: Nel mentre stavo leggendo questo articolo...
+ElderOffice1: Sembra molto interessante! Dacci un'occhiata appena puoi.
+do ScenesManager.resume_movement_player_and_pause()
+[signal arg="give_newspaper"]

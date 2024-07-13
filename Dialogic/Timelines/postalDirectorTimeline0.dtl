@@ -1,0 +1,9 @@
+do ScenesManager.stop_movement_player_and_pause()
+PostalDirector: Come è possibile che lei sia qui!
+PostalDirector: Dannazione per le problematiche con la posta non dovete venire da me!
+PostalDirector: Aspetti, come?? Lei dunque è un detective... Bene
+PostalDirector: Allora se vuole che le dia delle informazioni mi sblocchi il PC.
+PostalDirector: Qualche dipendente ehm, un po' sbadato ha aperto schede strane e... dunque... si....
+PostalDirector: Basta, se vuole essere aiutato si faccia gli affari suoi e lo sblocchi!
+do ScenesManager.resume_movement_player_and_pause()
+[signal arg="start_minigame_pc"]

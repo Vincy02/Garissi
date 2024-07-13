@@ -1,0 +1,3 @@
+do ScenesManager.stop_movement_player_and_pause()
+WorkerOffice2: Vedo che lei non ha nessuna operazione da effettura, che ci fa qui?
+do ScenesManager.resume_movement_player_and_pause()

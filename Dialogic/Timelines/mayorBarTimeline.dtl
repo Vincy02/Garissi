@@ -1,0 +1,6 @@
+do ScenesManager.stop_movement_player_and_pause()
+Mayor: Immagino che lei sia qui per il caso di Tino.
+Mayor: Non si intrometta nelle indagini.
+Mayor: Le autorità stanno già lavorando sul caso.
+do ScenesManager.resume_movement_player_and_pause()
+[signal arg="mayor_interaction"]

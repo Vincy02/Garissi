@@ -1,0 +1,3 @@
+do ScenesManager.stop_movement_player_and_pause()
+BarCustomer1: Garissi, una piccola città di mare, fu fondata secoli fa come fortezza strategica.
+do ScenesManager.resume_movement_player_and_pause()

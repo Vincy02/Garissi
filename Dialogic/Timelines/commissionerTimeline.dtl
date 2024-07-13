@@ -1,0 +1,5 @@
+do ScenesManager.stop_movement_player_and_pause()
+Commissioner: Questa e' la scena del crimine.
+Commissioner: Stanne alla larga!
+Commissioner: Le autorita' competenti sapranno cosa fare.
+do ScenesManager.resume_movement_player_and_pause()

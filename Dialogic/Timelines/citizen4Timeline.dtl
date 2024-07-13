@@ -1,0 +1,14 @@
+do ScenesManager.stop_movement_player_and_pause()
+Citizen4: Garissi e' una citta' ricca di cultura e tradizione.
+Citizen4: A Luglio si tiene la sagra di paese...
+Citizen4: Lunapark, carne alla brace,  pesce crudo e tanto divertimento!
+Citizen4: Poi qui a Garissi abbiamo anche delle tradizioni...
+Citizen4: Insomma... più macabre.
+Citizen4: L'evento religioso del funerale qui è sacro e ci sono delle regole da seguire.
+Citizen4: Vuoi saperne di piu?
+- Sì
+	Citizen4: In chiesa il candelabro sinistro deve essere acceso al centro!
+	Citizen4: Si pensa che aiuti il defunto a giungere nel paradiso.
+- No
+	Citizen4: Va bene, lei non e' molto interessato alla nostra storia allora.
+do ScenesManager.resume_movement_player_and_pause()

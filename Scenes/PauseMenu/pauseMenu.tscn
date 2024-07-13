@@ -98,8 +98,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_5bfac")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_hr28t")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_6dyxt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_561tv")
-text = "comandi
-"
+text = "comandi"
 
 [node name="Separator" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

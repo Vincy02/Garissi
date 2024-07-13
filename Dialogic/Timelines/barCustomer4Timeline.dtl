@@ -1,0 +1,3 @@
+do ScenesManager.stop_movement_player_and_pause()
+BarCustomer4: Garissi è conosciuta per le sue tradizioni antiche e una comunità fortemente legata alla storia.
+do ScenesManager.resume_movement_player_and_pause()

@@ -1,0 +1,5 @@
+do ScenesManager.stop_movement_player_and_pause()
+Employee1: La sera prima dell'omicidio l'ho visto nel suo ufficio in azienda parlare con una persona!
+Employee1: Pero l'ho chiamato e mi aveva comunicato che era a casa con la sua famiglia...
+Employee1: Perche' mentire?
+do ScenesManager.resume_movement_player_and_pause()

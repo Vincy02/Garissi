@@ -1,7 +1,5 @@
-[signal arg="started_conversation"]
 do ScenesManager.stop_movement_player_and_pause()
 Simone: Benvenuto nella mia edicola!
-Simone: Sto promuovendo questa ditta di batterie. Eccotene un paio.
-[signal arg="ended_conversation"]
+Simone: Posso donarti delle batterie, però devi aiutarmi!
+Simone: Un gruppo di vandali è entrato nella mia edicola e ha manomesso quelle manopole!
 do ScenesManager.resume_movement_player_and_pause()
-[signal arg="give_battery"]

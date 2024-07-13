@@ -1,0 +1,6 @@
+do ScenesManager.stop_movement_player_and_pause()
+TinosFriend3: Tino aveva finalmente  levato il monopolio alla Palmieri S.r.l, 
+TinosFriend3: Quell'azienda aveva un potere economico incredibile!
+TinosFriend3: Era poi così legata al mondo del calcio che strapparla via per avere del cambiamento...
+TinosFriend3: Non e' stato facile... poi la tragedia... povero Tino... Manchi a tutti noi...
+do ScenesManager.resume_movement_player_and_pause()

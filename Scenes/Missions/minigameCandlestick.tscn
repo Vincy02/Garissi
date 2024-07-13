@@ -1,0 +1,140 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckhi8fdpg81dt"]
+
+[ext_resource type="Script" path="res://Scripts/Missions/minigameCandlestick.gd" id="1_mwssv"]
+[ext_resource type="Texture2D" uid="uid://bn7d7wr2572kh" path="res://Sprites/Minigame/Mission6/minigameCandle.png" id="1_qs35x"]
+[ext_resource type="Texture2D" uid="uid://7g67k6u0fsyf" path="res://Sprites/Minigame/Mission6/offCandle.png" id="2_7usga"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_if1nb"]
+
+[node name="MinigameCandlestick" type="Node2D"]
+script = ExtResource("1_mwssv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_qs35x")
+
+[node name="Control" type="Control" parent="TextureRect"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect1" type="TextureRect" parent="TextureRect/Control"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 94.0
+offset_right = 223.0
+offset_bottom = 246.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_7usga")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect/Control"]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 31.0
+offset_right = 368.0
+offset_bottom = 183.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_7usga")
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect/Control"]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 101.0
+offset_right = 505.0
+offset_bottom = 253.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_7usga")
+
+[node name="TextureRect4" type="TextureRect" parent="TextureRect/Control"]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 94.0
+offset_right = 854.0
+offset_bottom = 246.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_7usga")
+
+[node name="TextureRect5" type="TextureRect" parent="TextureRect/Control"]
+layout_mode = 0
+offset_left = 938.0
+offset_top = 30.0
+offset_right = 998.0
+offset_bottom = 182.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_7usga")
+
+[node name="TextureRect6" type="TextureRect" parent="TextureRect/Control"]
+layout_mode = 0
+offset_left = 1074.0
+offset_top = 101.0
+offset_right = 1134.0
+offset_bottom = 253.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_7usga")
+
+[node name="Button1" type="Button" parent="TextureRect/Control"]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 607.0
+offset_right = 258.0
+offset_bottom = 635.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_if1nb")
+
+[node name="Button2" type="Button" parent="TextureRect/Control"]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 607.0
+offset_right = 336.0
+offset_bottom = 635.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_if1nb")
+
+[node name="Button3" type="Button" parent="TextureRect/Control"]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 607.0
+offset_right = 413.0
+offset_bottom = 635.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_if1nb")
+
+[node name="Button4" type="Button" parent="TextureRect/Control"]
+layout_mode = 0
+offset_left = 866.0
+offset_top = 607.0
+offset_right = 888.0
+offset_bottom = 635.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_if1nb")
+
+[node name="Button5" type="Button" parent="TextureRect/Control"]
+layout_mode = 0
+offset_left = 944.0
+offset_top = 607.0
+offset_right = 966.0
+offset_bottom = 635.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_if1nb")
+
+[node name="Button6" type="Button" parent="TextureRect/Control"]
+layout_mode = 0
+offset_left = 1022.0
+offset_top = 607.0
+offset_right = 1044.0
+offset_bottom = 635.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_if1nb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_if1nb")

@@ -2,12 +2,12 @@ class_name Player
 extends CharacterBody2D
 
 @export var speed: int = 500
+@export var facing: String = "left"
 
 var animated_sprite: AnimatedSprite2D
-static var player: Player = null
-static var SCALE_PLAYER = 0.2
-static var set_player_position_bool = false
 static var move = true
+static var player: Player = null
+@onready var foot_step = $FootStep
 
 func _init():
 	if not player:
@@ -17,20 +17,12 @@ func _init():
 func _ready():
 	if not player:
 		player = self
-	Dialogic.signal_event.connect(dialogicSignal)
 	animated_sprite = $AnimatedSprite2D
 	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
-
-func dialogicSignal(arg: String) -> void:
-	if arg == "started_conversation":
-		stop_player()
-		animated_sprite.play("idle")
-	if arg == "ended_conversation" || arg == "you_can_move":
-		resume_player()
-		
-
-static func get_player():
-	return player
+	if facing == "right":
+		animated_sprite.flip_h = 1
+	else:
+		animated_sprite.flip_h = 0
 
 func _on_spawn(position: Vector2, direction: String):
 	global_position = position
@@ -38,24 +30,17 @@ func _on_spawn(position: Vector2, direction: String):
 	if(direction == "left"):
 		animated_sprite.flip_h = 1
 
-static func set_player_position(position: Vector2, direction: String):
-	if player:
-		player.global_position = position
-		if(direction == "right"):
-			player.scale.x = -SCALE_PLAYER
-			set_player_position_bool = true
-
-static func get_player_position_x() -> int:
-	if player:
-		return player.global_position[0]
-	else:
-		return -1
-
 static func stop_player() -> void:
 	move = false
 	
 static func resume_player() -> void:
 	move = true
+
+static func get_player_position_x() -> int:
+	if player:
+		return player.global_position[0]
+	else:
+		return 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -65,11 +50,15 @@ func _process(delta):
 		move_and_slide()
 		if velocity.length_squared() == 0:
 			animated_sprite.play("idle")
+			if foot_step.playing:
+				foot_step.stop()
 		else:
-			if set_player_position_bool:
-				scale.x = -SCALE_PLAYER
-				set_player_position_bool = false
 			animated_sprite.play("walk")
+			if !foot_step.playing:
+				foot_step.play()
 		
 		if(direction.x > 0): animated_sprite.flip_h = 1
 		if(direction.x < 0): animated_sprite.flip_h = 0
+	else:
+		foot_step.stop()
+		animated_sprite.play("idle")

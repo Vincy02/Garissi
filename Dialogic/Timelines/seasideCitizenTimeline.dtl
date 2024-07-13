@@ -1,0 +1,4 @@
+do ScenesManager.stop_movement_player_and_pause()
+Employee1: Sta spiaggia è diventata deserta!
+Employee1: È sì cuntaminata e sporca l'acqua ca nun c'abiti cchiù neanche i pisci.
+do ScenesManager.resume_movement_player_and_pause()

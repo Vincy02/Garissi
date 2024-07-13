@@ -1,0 +1,5 @@
+do ScenesManager.stop_movement_player_and_pause()
+Gaia: Ciao Fabrizio!
+Gaia: Ti stavo giusto cercando!
+Gaia: Seguimi, ho allestito un ufficio fantastico per aiutarti a svolgere le tue indagini! Forza!
+[signal arg="bring_to_office"]

@@ -1,0 +1,3 @@
+do ScenesManager.stop_movement_player_and_pause()
+BarCustomer2: Con radici storiche profonde, Garissi ha resistito a numerosi assedi e conflitti nel tempo!
+do ScenesManager.resume_movement_player_and_pause()

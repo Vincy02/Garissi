@@ -17,9 +17,12 @@ func npc_interacted(npc):
 		
 func dialogicSignal(arg: String) -> void:
 	if arg == "unlock_park_door":
-		unlock_door = true
-		current_scene = ScenesManager.get_current_scene()
-		update_world_status(current_scene)
+		if !unlock_door:
+			unlock_door = true
+			ScenesManager.transition_mission_completed()
+			current_scene = ScenesManager.get_current_scene()
+			update_world_status(current_scene)
+			
 		
 func check_progession() -> void:
 	if npc_interacted_first_mission.size() >= PARK_NPC:
@@ -32,6 +35,8 @@ func update_world_status(scene : Node2D) -> void:
 		if is_mission_completed:
 			scene.get_node("NPC/TechnicianMario").timeline = "marioTimeline2"
 			if unlock_door:
+				scene.get_node("BuildingCollision/CollisionShapeExit").disabled = true
+				scene.get_node("TrunksSquare").visible = false
 				scene.get_node("Doors/Door_E").set_process_mode(PROCESS_MODE_INHERIT)
 		else:
 			scene.get_node("Doors/Door_E").set_process_mode(PROCESS_MODE_DISABLED)

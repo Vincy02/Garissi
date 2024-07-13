@@ -1,0 +1,6 @@
+do ScenesManager.stop_movement_player_and_pause()
+Barman: La comunità è scossa per quello che è accaduto ma dobbiamo festeggiare la vittoria della Garissese!
+Barman: Oggi drink in sconto!
+Barman: Leggi la lavagnetta
+[signal arg="ended_conversation"]
+do ScenesManager.resume_movement_player_and_pause()

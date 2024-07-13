@@ -1,0 +1,4 @@
+do ScenesManager.stop_movement_player_and_pause()
+Citizen3: La citta' si sta preparando a vivere l'ultimo saluto a Tino...
+Citizen3: La chiesa è ancora chiusa, devono appendere prima i manifesti.
+do ScenesManager.resume_movement_player_and_pause()

@@ -1,0 +1,227 @@
+[gd_scene load_steps=20 format=3 uid="uid://diw2erek6rdeh"]
+
+[ext_resource type="Script" path="res://Scripts/Missions/minigamePc.gd" id="1_ohs13"]
+[ext_resource type="Texture2D" uid="uid://c5qs0885rb3x5" path="res://Sprites/Minigame/Mission5/computerScreen.png" id="1_y58yl"]
+[ext_resource type="Script" path="res://Scripts/Missions/tailButton.gd" id="2_5tmpd"]
+[ext_resource type="Texture2D" uid="uid://6xpfobodup3o" path="res://Sprites/Minigame/Mission5/tails/tail4.png" id="3_qgngq"]
+[ext_resource type="Texture2D" uid="uid://f64i8y3v5jre" path="res://Sprites/Minigame/Mission5/tails/tail6.png" id="4_h5ct0"]
+[ext_resource type="Texture2D" uid="uid://jtwkdye5qnje" path="res://Sprites/Minigame/Mission5/tails/tail7.png" id="5_hiivg"]
+[ext_resource type="Texture2D" uid="uid://f8w7yvyjs2eb" path="res://Sprites/Minigame/Mission5/tails/tail9.png" id="6_jekwg"]
+[ext_resource type="Texture2D" uid="uid://daax12b6ls0o0" path="res://Sprites/Minigame/Mission5/tails/tail10.png" id="7_6es3r"]
+[ext_resource type="Texture2D" uid="uid://b082m70qhfuw8" path="res://Sprites/Minigame/Mission5/tails/tail11.png" id="8_a1ei3"]
+[ext_resource type="Texture2D" uid="uid://c6pucwyg152a3" path="res://Sprites/Minigame/Mission5/tails/tail14.png" id="9_4alc8"]
+[ext_resource type="Texture2D" uid="uid://cxb64msnfu4or" path="res://Sprites/Minigame/Mission5/tails/tail16.png" id="10_ku6ac"]
+[ext_resource type="Texture2D" uid="uid://mewt4yc4vmte" path="res://Sprites/Minigame/Mission5/tails/tail8.png" id="11_5t76y"]
+[ext_resource type="Texture2D" uid="uid://ci5oy86e6n3ey" path="res://Sprites/Minigame/Mission5/tails/tail1.png" id="12_55ar7"]
+[ext_resource type="Texture2D" uid="uid://caodwneexfw17" path="res://Sprites/Minigame/Mission5/tails/tail15.png" id="13_5lp3c"]
+[ext_resource type="Texture2D" uid="uid://dwrgqnl3csdui" path="res://Sprites/Minigame/Mission5/tails/tail12.png" id="14_1p24j"]
+[ext_resource type="Texture2D" uid="uid://c8i41d076qj42" path="res://Sprites/Minigame/Mission5/tails/tail3.png" id="15_36v23"]
+[ext_resource type="Texture2D" uid="uid://deyxqrk2hluqc" path="res://Sprites/Minigame/Mission5/tails/tail2.png" id="16_0dqlx"]
+[ext_resource type="Texture2D" uid="uid://dga3qno3gfddy" path="res://Sprites/Minigame/Mission5/tails/tail13.png" id="17_hbksi"]
+[ext_resource type="Texture2D" uid="uid://r6687y0ogay" path="res://Sprites/Minigame/Mission5/tails/tail5.png" id="18_7ok7o"]
+
+[node name="MinigamePc" type="Node2D"]
+script = ExtResource("1_ohs13")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_y58yl")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="TextureRect/MarginContainer/Control"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+offset_left = 402.0
+offset_top = 224.0
+offset_right = 707.0
+offset_bottom = 529.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 4
+
+[node name="TextureButton" type="TextureButton" parent="TextureRect/MarginContainer/Control/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+script = ExtResource("2_5tmpd")
+
+[node name="TextureButton2" type="TextureButton" parent="TextureRect/MarginContainer/Control/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+script = ExtResource("2_5tmpd")
+
+[node name="TextureButton3" type="TextureButton" parent="TextureRect/MarginContainer/Control/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+script = ExtResource("2_5tmpd")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/MarginContainer/Control/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_qgngq")
+
+[node name="TextureButton4" type="TextureButton" parent="TextureRect/MarginContainer/Control/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+script = ExtResource("2_5tmpd")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect/MarginContainer/Control/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_h5ct0")
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect/MarginContainer/Control/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("5_hiivg")
+
+[node name="TextureButton5" type="TextureButton" parent="TextureRect/MarginContainer/Control/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+script = ExtResource("2_5tmpd")
+
+[node name="TextureRect4" type="TextureRect" parent="TextureRect/MarginContainer/Control/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("6_jekwg")
+
+[node name="TextureRect5" type="TextureRect" parent="TextureRect/MarginContainer/Control/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("7_6es3r")
+
+[node name="TextureRect7" type="TextureRect" parent="TextureRect/MarginContainer/Control/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("8_a1ei3")
+
+[node name="TextureButton6" type="TextureButton" parent="TextureRect/MarginContainer/Control/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+script = ExtResource("2_5tmpd")
+
+[node name="TextureButton7" type="TextureButton" parent="TextureRect/MarginContainer/Control/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+script = ExtResource("2_5tmpd")
+
+[node name="TextureRect6" type="TextureRect" parent="TextureRect/MarginContainer/Control/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("9_4alc8")
+
+[node name="TextureButton8" type="TextureButton" parent="TextureRect/MarginContainer/Control/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+script = ExtResource("2_5tmpd")
+
+[node name="TextureRect8" type="TextureRect" parent="TextureRect/MarginContainer/Control/GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("10_ku6ac")
+
+[node name="TextureButton" type="TextureButton" parent="TextureRect/MarginContainer/Control"]
+custom_minimum_size = Vector2(75, 75)
+offset_left = 200.0
+offset_top = 290.0
+offset_right = 275.0
+offset_bottom = 365.0
+texture_normal = ExtResource("11_5t76y")
+script = ExtResource("2_5tmpd")
+
+[node name="TextureButton2" type="TextureButton" parent="TextureRect/MarginContainer/Control"]
+custom_minimum_size = Vector2(75, 75)
+offset_left = 292.0
+offset_top = 290.0
+offset_right = 367.0
+offset_bottom = 365.0
+texture_normal = ExtResource("12_55ar7")
+script = ExtResource("2_5tmpd")
+
+[node name="TextureButton3" type="TextureButton" parent="TextureRect/MarginContainer/Control"]
+custom_minimum_size = Vector2(75, 75)
+offset_left = 199.0
+offset_top = 386.0
+offset_right = 274.0
+offset_bottom = 461.0
+texture_normal = ExtResource("13_5lp3c")
+script = ExtResource("2_5tmpd")
+
+[node name="TextureButton4" type="TextureButton" parent="TextureRect/MarginContainer/Control"]
+custom_minimum_size = Vector2(75, 75)
+offset_left = 292.0
+offset_top = 386.0
+offset_right = 367.0
+offset_bottom = 461.0
+texture_normal = ExtResource("14_1p24j")
+script = ExtResource("2_5tmpd")
+
+[node name="TextureButton5" type="TextureButton" parent="TextureRect/MarginContainer/Control"]
+custom_minimum_size = Vector2(75, 75)
+offset_left = 835.0
+offset_top = 292.0
+offset_right = 910.0
+offset_bottom = 367.0
+texture_normal = ExtResource("15_36v23")
+script = ExtResource("2_5tmpd")
+
+[node name="TextureButton6" type="TextureButton" parent="TextureRect/MarginContainer/Control"]
+custom_minimum_size = Vector2(75, 75)
+offset_left = 743.0
+offset_top = 292.0
+offset_right = 818.0
+offset_bottom = 367.0
+texture_normal = ExtResource("16_0dqlx")
+script = ExtResource("2_5tmpd")
+
+[node name="TextureButton7" type="TextureButton" parent="TextureRect/MarginContainer/Control"]
+custom_minimum_size = Vector2(75, 75)
+offset_left = 743.0
+offset_top = 388.0
+offset_right = 818.0
+offset_bottom = 463.0
+texture_normal = ExtResource("17_hbksi")
+script = ExtResource("2_5tmpd")
+
+[node name="TextureButton8" type="TextureButton" parent="TextureRect/MarginContainer/Control"]
+custom_minimum_size = Vector2(75, 75)
+offset_left = 835.0
+offset_top = 388.0
+offset_right = 910.0
+offset_bottom = 463.0
+texture_normal = ExtResource("18_7ok7o")
+script = ExtResource("2_5tmpd")
+
+[connection signal="pressed" from="TextureRect/MarginContainer/Control/GridContainer/TextureButton" to="TextureRect/MarginContainer/Control/GridContainer/TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/Control/GridContainer/TextureButton2" to="TextureRect/MarginContainer/Control/GridContainer/TextureButton2" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/Control/GridContainer/TextureButton3" to="TextureRect/MarginContainer/Control/GridContainer/TextureButton3" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/Control/GridContainer/TextureButton4" to="TextureRect/MarginContainer/Control/GridContainer/TextureButton4" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/Control/GridContainer/TextureButton5" to="TextureRect/MarginContainer/Control/GridContainer/TextureButton5" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/Control/GridContainer/TextureButton6" to="TextureRect/MarginContainer/Control/GridContainer/TextureButton6" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/Control/GridContainer/TextureButton7" to="TextureRect/MarginContainer/Control/GridContainer/TextureButton7" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/Control/GridContainer/TextureButton8" to="TextureRect/MarginContainer/Control/GridContainer/TextureButton8" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/Control/TextureButton" to="TextureRect/MarginContainer/Control/TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/Control/TextureButton2" to="TextureRect/MarginContainer/Control/TextureButton2" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/Control/TextureButton3" to="TextureRect/MarginContainer/Control/TextureButton3" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/Control/TextureButton4" to="TextureRect/MarginContainer/Control/TextureButton4" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/Control/TextureButton5" to="TextureRect/MarginContainer/Control/TextureButton5" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/Control/TextureButton6" to="TextureRect/MarginContainer/Control/TextureButton6" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/Control/TextureButton7" to="TextureRect/MarginContainer/Control/TextureButton7" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/Control/TextureButton8" to="TextureRect/MarginContainer/Control/TextureButton8" method="_on_pressed"]

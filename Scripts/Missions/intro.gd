@@ -10,6 +10,7 @@ var stop_input = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Dialogic.signal_event.connect(dialogicSignal)
+	AudioStreamManager.play("res://Audio/introSound.mp3")
 	main_loop()
 
 func _input(event):
@@ -42,22 +43,26 @@ func main_loop() -> void:
 			text_to_show = "Garissi 2015"
 			start_text_transition()
 		2:
-			text_to_show = "Suono di telefono che squilla.\nFabrizio risponde."
+			AudioStreamManager.play("res://Audio/phoneRing.mp3")
+			text_to_show = "'Suono di telefono che squilla.'\nFabrizio risponde."
 			start_text_transition()
 		3:
+			AudioStreamManager.stop("res://Audio/phoneRing.mp3")
 			text_to_show = ""
 			start_text_transition()
 			Dialogic.start("intro")
 			stop_input = true
 		4:
-			text_to_show = "Suono di chiamata terminata."
+			AudioStreamManager.play("res://Audio/closedPhone.mp3")
+			text_to_show = "'Suono di chiamata terminata.'"
 			start_text_transition()
 		5:
 			TransitionScreen.transition()
 			await TransitionScreen.on_transition_finished
 			get_tree().change_scene_to_file(park)
-			Player.set_player_position(Vector2(2104, 610), "right")
 			Dialogic.start("marioTimeline0")
+			AudioStreamManager.stop("res://Audio/introSound.mp3")
+			MainThemeTrack.play()
 			
 
 func dialogicSignal(arg: String) -> void:
